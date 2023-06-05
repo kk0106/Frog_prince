@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GrappleHook : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class GrappleHook : MonoBehaviour
     public LayerMask _grappleLayer;
     public float _maxGrappleDistance;
 
+    bool input;
     bool freeze;
     public Rigidbody rb;
 
@@ -43,10 +45,10 @@ public class GrappleHook : MonoBehaviour
 
         }
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            ShootHook();
-        }
+      //  if (input)
+       // {
+       //     ShootHook();
+      //  }
 
         if (isGrappling)
         {
@@ -68,17 +70,12 @@ public class GrappleHook : MonoBehaviour
         }
     }
 
-
-    private void LateUpdate()
+    public void GrappleHookk(InputAction.CallbackContext ctx)
     {
-        if (_lineRenderer.enabled)
+        if (ctx.performed )
         {
-            _lineRenderer.SetPosition(0, _hookEndPoint.position);
-            _lineRenderer.SetPosition(1, _handPos.position);
-        }
-    }
-        private void ShootHook() 
-        {
+            //input = true;
+            //ShootHook();
             if (isShooting || isGrappling) return;
             isShooting = true;
             RaycastHit hit;
@@ -94,6 +91,21 @@ public class GrappleHook : MonoBehaviour
             }
             isShooting = false;
         }
+     
+    }
+
+    private void LateUpdate()
+    {
+        if (_lineRenderer.enabled)
+        {
+            _lineRenderer.SetPosition(0, _hookEndPoint.position);
+            _lineRenderer.SetPosition(1, _handPos.position);
+        }
+    }
+        //private void ShootHook() 
+        //{
+            
+        //}
 
     
 }
