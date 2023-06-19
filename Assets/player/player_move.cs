@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 public class player_move : MonoBehaviour
 {
     Rigidbody playerRigidbody;
+    
 
 
     public float maxSpeedX;//限制最高水平移動數值
@@ -33,6 +34,8 @@ public class player_move : MonoBehaviour
     public LayerMask groundLayer;//地面圖層
 
     public bool grounded;
+    public bool IsRight;
+    public bool IsLeft;
 
     bool IsGround//玩家物件底部有一個很短的射線，偵測射線是否打到地板圖層，有的話代表踩在地面
     {
@@ -79,10 +82,16 @@ public class player_move : MonoBehaviour
     void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();//偵測場景中腳色的RIGDIBODY
+        IsRight= true;
+        IsLeft= false;
     }
 
     void movementX()//水平移動
     {
+        if (IsRight)
+        {
+            
+        }
         horizontalDirection=Input.GetAxis(HORIZONTAL);
         playerRigidbody.AddForce(new Vector3(xForce * horizontalDirection, 0, 0));
     }
