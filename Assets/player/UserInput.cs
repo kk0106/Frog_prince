@@ -7,7 +7,7 @@ public class UserInput : MonoBehaviour
     [HideInInspector] public Controls controls;
     [HideInInspector] public Vector2 moveInput;
     public static UserInput instance;
-
+   
     private void Awake()
     {
         if (instance == null)
