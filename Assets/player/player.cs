@@ -6,12 +6,17 @@ using UnityEngine;
 public class player : MonoBehaviour
 {
     [SerializeField] private float MoveSpeed=7.5f;
+
+    [SerializeField] private GameObject _cameraGo;
+
     private Rigidbody rb;
     private float moveInput;
 
     private Vector3 player00;
 
-    private bool FaceRight;
+    public bool FaceRight;
+
+    private CameraFollowObject _CamerafollowObject;
     // Start is called before the first frame update
     private void Start()
     {
@@ -19,6 +24,8 @@ public class player : MonoBehaviour
         FaceRight = true;
       
         StartDirectionCheck();
+
+        _CamerafollowObject = _cameraGo.GetComponent<CameraFollowObject>();
     }
 
     // Update is called once per frame
@@ -70,12 +77,17 @@ public class player : MonoBehaviour
             Vector3 rotator = new Vector3 (transform.rotation.x,180f,transform.rotation.z);
             transform.rotation=Quaternion.Euler(rotator);
             FaceRight = !FaceRight;
+
+            _CamerafollowObject.CallTurn();
         }
         else
         {
             Vector3 rotator = new Vector3(transform.rotation.x, 0f, transform.rotation.z);
             transform.rotation = Quaternion.Euler(rotator);
             FaceRight = !FaceRight;
+
+
+            _CamerafollowObject.CallTurn();
         }
     }
 }
