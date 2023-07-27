@@ -16,17 +16,8 @@
                 },
                 {
                     "name": "jump",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "edc9564a-10f5-4025-8760-7236acfee617",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "long jump",
-                    "type": "Button",
-                    "id": "72fa54d3-5f3d-40b3-afe5-3107bf3d5137",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -172,28 +163,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "860b1dc1-15ea-4091-916f-7ea58a0e54a4",
-                    "path": "<XInputController>/buttonSouth",
-                    "interactions": "Hold(duration=1)",
-                    "processors": "",
-                    "groups": "",
-                    "action": "long jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6690abdc-1fbc-4c12-b09d-1d2cfa7dd923",
-                    "path": "<Keyboard>/space",
-                    "interactions": "Hold(duration=1)",
-                    "processors": "",
-                    "groups": "",
-                    "action": "long jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

@@ -38,17 +38,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""jump"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""edc9564a-10f5-4025-8760-7236acfee617"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""long jump"",
-                    ""type"": ""Button"",
-                    ""id"": ""72fa54d3-5f3d-40b3-afe5-3107bf3d5137"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -199,28 +190,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""860b1dc1-15ea-4091-916f-7ea58a0e54a4"",
-                    ""path"": ""<XInputController>/buttonSouth"",
-                    ""interactions"": ""Hold(duration=1)"",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""long jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""6690abdc-1fbc-4c12-b09d-1d2cfa7dd923"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": ""Hold(duration=1)"",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""long jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""bd58b233-9206-49fd-91ff-e5e04326a9ec"",
                     ""path"": ""<XInputController>/buttonEast"",
                     ""interactions"": """",
@@ -250,7 +219,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_playerControls = asset.FindActionMap("playerControls", throwIfNotFound: true);
         m_playerControls_Movement = m_playerControls.FindAction("Movement", throwIfNotFound: true);
         m_playerControls_jump = m_playerControls.FindAction("jump", throwIfNotFound: true);
-        m_playerControls_longjump = m_playerControls.FindAction("long jump", throwIfNotFound: true);
         m_playerControls_GrappleHook = m_playerControls.FindAction("Grapple Hook", throwIfNotFound: true);
     }
 
@@ -315,7 +283,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private List<IPlayerControlsActions> m_PlayerControlsActionsCallbackInterfaces = new List<IPlayerControlsActions>();
     private readonly InputAction m_playerControls_Movement;
     private readonly InputAction m_playerControls_jump;
-    private readonly InputAction m_playerControls_longjump;
     private readonly InputAction m_playerControls_GrappleHook;
     public struct PlayerControlsActions
     {
@@ -323,7 +290,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public PlayerControlsActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_playerControls_Movement;
         public InputAction @jump => m_Wrapper.m_playerControls_jump;
-        public InputAction @longjump => m_Wrapper.m_playerControls_longjump;
         public InputAction @GrappleHook => m_Wrapper.m_playerControls_GrappleHook;
         public InputActionMap Get() { return m_Wrapper.m_playerControls; }
         public void Enable() { Get().Enable(); }
@@ -340,9 +306,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @jump.started += instance.OnJump;
             @jump.performed += instance.OnJump;
             @jump.canceled += instance.OnJump;
-            @longjump.started += instance.OnLongjump;
-            @longjump.performed += instance.OnLongjump;
-            @longjump.canceled += instance.OnLongjump;
             @GrappleHook.started += instance.OnGrappleHook;
             @GrappleHook.performed += instance.OnGrappleHook;
             @GrappleHook.canceled += instance.OnGrappleHook;
@@ -356,9 +319,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @jump.started -= instance.OnJump;
             @jump.performed -= instance.OnJump;
             @jump.canceled -= instance.OnJump;
-            @longjump.started -= instance.OnLongjump;
-            @longjump.performed -= instance.OnLongjump;
-            @longjump.canceled -= instance.OnLongjump;
             @GrappleHook.started -= instance.OnGrappleHook;
             @GrappleHook.performed -= instance.OnGrappleHook;
             @GrappleHook.canceled -= instance.OnGrappleHook;
@@ -383,7 +343,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
-        void OnLongjump(InputAction.CallbackContext context);
         void OnGrappleHook(InputAction.CallbackContext context);
     }
 }
