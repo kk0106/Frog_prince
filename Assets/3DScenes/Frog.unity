@@ -370,8 +370,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506892691}
-  m_LocalRotation: {x: 0.097880796, y: 0.034577787, z: -0.0034664713, w: 0.9945913}
-  m_LocalPosition: {x: -30.611029, y: 2.905425, z: -22.382475}
+  m_LocalRotation: {x: 0.20488273, y: 0.034017064, z: -0.007182218, w: 0.9781689}
+  m_LocalPosition: {x: -28.446804, y: 5.7981853, z: -22.83286}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1239,6 +1239,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1158521155
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1158521156}
+  - component: {fileID: 1158521157}
+  m_Layer: 0
+  m_Name: plan
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1158521156
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158521155}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 543450653129960526}
+  m_RootOrder: 92
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1158521157
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158521155}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 38.119644, y: 0.9261331, z: 13.6522045}
+  m_Center: {x: -11.611534, y: -0.036933452, z: 3.1349955}
 --- !u!1 &1271236916
 GameObject:
   m_ObjectHideFlags: 0
@@ -1301,15 +1346,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271236916}
-  m_LocalRotation: {x: 0.097880796, y: 0.034577787, z: -0.0034664713, w: 0.9945913}
-  m_LocalPosition: {x: -30.611029, y: 2.905425, z: -22.382475}
+  m_LocalRotation: {x: 0.20488273, y: 0.034017064, z: -0.007182218, w: 0.9781689}
+  m_LocalPosition: {x: -28.446804, y: 5.7981853, z: -22.83286}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1609276769}
   m_Father: {fileID: 0}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 23.66, y: 3.982, z: -0.007}
 --- !u!1 &1365227703
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,7 +1625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TrackedObjectOffset: {x: 0.64, y: 0.21, z: 0}
+  m_TrackedObjectOffset: {x: 0.64, y: 0.57, z: 0}
   m_LookaheadTime: 0.05
   m_LookaheadSmoothing: 1
   m_LookaheadIgnoreY: 0
@@ -1590,7 +1635,7 @@ MonoBehaviour:
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.5
-  m_CameraDistance: 10
+  m_CameraDistance: 12.37
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
@@ -1939,7 +1984,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1910171961}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30.57, y: 0.746, z: -12.598}
+  m_LocalPosition: {x: -28.3, y: 0.264, z: -11.53}
   m_LocalScale: {x: 0.0077085933, y: 0.0077085933, z: 0.007708593}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2037,7 +2082,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 300.15784, y: 130}
+  m_Size: {x: 34.684742, y: 99.20999}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -4060,6 +4105,7 @@ Transform:
   - {fileID: 1746492676457854027}
   - {fileID: 7070986642676433291}
   - {fileID: 696224114}
+  - {fileID: 1158521156}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
