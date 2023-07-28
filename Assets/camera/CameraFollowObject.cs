@@ -40,7 +40,7 @@ public class CameraFollowObject : MonoBehaviour
     {
         float startRotation = transform.localEulerAngles.y;
         float endRotation = DetermineEndRotation();
-        float yRotation = 10f;
+        float yRotation = 0f;
 
         float elapsedTime = 0f;
         while (elapsedTime < endRotation)
