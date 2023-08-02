@@ -7,9 +7,11 @@ public class player : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float MoveSpeed = 7.5f;
+    [SerializeField] private float MoveSpeed1 = 7.5f;
     [SerializeField] public bool FaceRight;
     private Vector3 player00;
     private Animator move_ani;
+    
 
     [Header("Jump")]
     [SerializeField] private float JumpForce = 5f;
@@ -23,52 +25,11 @@ public class player : MonoBehaviour
     [SerializeField] private CameraFollowObject _CamerafollowObject;
 
     [Header("ground check")]
-    //private Collider coll;
-    //[SerializeField]private float groundCheckOffest = 0f;
-    // [SerializeField]private float groundCheckDistance = 0.4f;
-    //[SerializeField] private float groundCheckRidious = 0.25f;
-    //[SerializeField] private LayerMask WhatIsGround;
-
-  
-
-    public bool grouned=false;
+     public bool grouned=false;
 
     private float moveInput;
+    private float moveInput1;
     private Rigidbody rb;
-
-    //地板確認
-    private void OnCollisionEnter(Collision collision)
-    {
-        grouned = true;
-    }
-    private void OnCollisionExit(Collision collision) 
-    {
-        grouned = false;
-    }
-    private bool CheckForLand()
-    {
-        if (Falling)
-        {
-            if (grouned)
-            {
-                Falling = false;
-
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-
-
-
 
 
 
@@ -90,10 +51,12 @@ public class player : MonoBehaviour
     {
         Move();
         Jump();
-        move1();
+        
         
     }
 
+
+    //腳色跳躍設定
     private void Jump()
     {
         //按一次跳鍵
@@ -141,9 +104,47 @@ public class player : MonoBehaviour
         }
     }
 
+
+    //腳色是否在地面上
+    private void OnCollisionEnter(Collision collision)
+    {
+        grouned = true;
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        grouned = false;
+    }
+    private bool CheckForLand()
+    {
+        if (Falling)
+        {
+            if (grouned)
+            {
+                Falling = false;
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
+
+    //腳色移動設定
+
+    
+   
     private void Move()
     {
         moveInput = UserInput.instance.moveInput.x;
+        moveInput1=UserInput.instance.moveInput.y;
         if (moveInput > 0 || moveInput < 0)
         {
             move_ani.SetBool("IsWalk_Right", true);
@@ -155,9 +156,9 @@ public class player : MonoBehaviour
         {
             move_ani.SetBool("IsWalk_Right", false);
         }
-        rb.velocity = new Vector3(moveInput * MoveSpeed, rb.velocity.y,0);
+        rb.velocity = new Vector3(moveInput * MoveSpeed, rb.velocity.y,moveInput1*MoveSpeed1);
     }
-
+    //偵測腳色是否面向右邊
     private void StartDirectionCheck()
     {
         if (player00.x > 0)
@@ -181,7 +182,7 @@ public class player : MonoBehaviour
             Turn();
         }
     }
-
+    //更改腳色面向
     private void Turn()
     {
         if (FaceRight)
@@ -203,12 +204,8 @@ public class player : MonoBehaviour
         }
     }
 
-   private void move1()
-    {
-       moveInput = UserInput.instance.moveInput.y;
-        //rb.velocity = new Vector3(moveInput * MoveSpeed, 0,rb.velocity.z);
-      
-    }
+  
+    
 
 
 }

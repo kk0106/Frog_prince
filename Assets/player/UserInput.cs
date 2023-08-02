@@ -5,7 +5,8 @@ using UnityEngine;
 public class UserInput : MonoBehaviour
 {
     [HideInInspector] public Controls controls;
-    [HideInInspector] public Vector3 moveInput;
+    [HideInInspector] public Vector2 moveInput;
+
     public static UserInput instance;
    
     private void Awake()

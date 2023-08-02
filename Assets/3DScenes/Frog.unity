@@ -1971,7 +1971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 293d831329b1c7947920b94c9395fb06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveInput: {x: 0, y: 0, z: 0}
+  moveInput: {x: 0, y: 0}
 --- !u!4 &1577273198
 Transform:
   m_ObjectHideFlags: 0
@@ -2479,7 +2479,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 120
+  m_Constraints: 112
   m_CollisionDetection: 1
 --- !u!114 &1910171966
 MonoBehaviour:
@@ -2494,6 +2494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 2
+  MoveSpeed1: 2
   FaceRight: 0
   JumpForce: 3
   JumpTime: 0.35
