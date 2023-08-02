@@ -29,15 +29,42 @@ public class player : MonoBehaviour
     //[SerializeField] private float groundCheckRidious = 0.25f;
     //[SerializeField] private LayerMask WhatIsGround;
 
-    public float distance;//偵測與地板的距離
-    public Transform groundCheck;//偵測地板射線起點
-    public LayerMask groundLayer;//地面圖層
-    public bool grounded;
+  
+
+    public bool grouned=false;
 
     private float moveInput;
     private Rigidbody rb;
 
+    //地板確認
+    private void OnCollisionEnter(Collision collision)
+    {
+        grouned = true;
+    }
+    private void OnCollisionExit(Collision collision) 
+    {
+        grouned = false;
+    }
+    private bool CheckForLand()
+    {
+        if (Falling)
+        {
+            if (grouned)
+            {
+                Falling = false;
 
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
 
 
 
@@ -63,16 +90,19 @@ public class player : MonoBehaviour
     {
         Move();
         Jump();
+        move1();
+        
     }
 
     private void Jump()
     {
         //按一次跳鍵
-        if (UserInput.instance.controls.playerControls.jump.WasPressedThisFrame() )
+        if (UserInput.instance.controls.playerControls.jump.WasPressedThisFrame()&&grouned)
         {
             JumpTimeCounter = JumpTime;
             Jumping = true;
             rb.velocity = new Vector2(rb.velocity.x, JumpForce);
+            move_ani.SetTrigger("jump");
         }
 
         //持續按著跳鍵
@@ -85,10 +115,15 @@ public class player : MonoBehaviour
 
             }
 
-            else
+            else if(JumpTimeCounter==0)
             {
+                Falling = true;
                 Jumping = false;
                 JumpTime = 0.36f;
+            }
+            else
+            {
+                Jumping=false;
             }
 
         }
@@ -97,6 +132,12 @@ public class player : MonoBehaviour
         if (UserInput.instance.controls.playerControls.jump.WasReleasedThisFrame())
         {
             Jumping = false;
+            Falling = true;
+        }
+        
+        if(!Jumping && CheckForLand())
+        {
+            move_ani.SetTrigger("land");
         }
     }
 
@@ -114,7 +155,7 @@ public class player : MonoBehaviour
         {
             move_ani.SetBool("IsWalk_Right", false);
         }
-        rb.velocity = new Vector2(moveInput * MoveSpeed, rb.velocity.y);
+        rb.velocity = new Vector3(moveInput * MoveSpeed, rb.velocity.y,0);
     }
 
     private void StartDirectionCheck()
@@ -162,6 +203,12 @@ public class player : MonoBehaviour
         }
     }
 
+   private void move1()
+    {
+       moveInput = UserInput.instance.moveInput.y;
+        //rb.velocity = new Vector3(moveInput * MoveSpeed, 0,rb.velocity.z);
+      
+    }
 
 
 }
