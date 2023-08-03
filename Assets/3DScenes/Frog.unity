@@ -1776,15 +1776,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c55106fd3d5394f4c826f6db3c247ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lr: {fileID: 0}
-  grapplePoint: {x: 0, y: 0, z: 0}
-  whatIsGrappleable:
-    m_Bits: 128
-  gunTips: {fileID: 1113625779}
-  cam: {fileID: 506892695}
-  player: {fileID: 1910171964}
-  maxDistance: 100
-  joint: {fileID: 0}
 --- !u!120 &1113625778
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -2917,14 +2908,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1843320215}
-  m_LocalRotation: {x: 0.6397821, y: -0.18931666, z: -0.26552632, w: 0.695941}
-  m_LocalPosition: {x: -1.48, y: 3, z: -3.1}
+  m_LocalRotation: {x: 0.39096943, y: 0.07013466, z: -0.18180943, w: 0.89953846}
+  m_LocalPosition: {x: 60.5, y: -234.3, z: 287.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 127.81799, y: -259.69598, z: -266.227}
+  m_LocalEulerAnglesHint: {x: 133.207, y: -181.338, z: -203.432}
 --- !u!1 &1904274826
 GameObject:
   m_ObjectHideFlags: 0
@@ -3230,11 +3221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b40cf71ec9f0a1e4583504f91cbba20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grappleableLayer:
-    m_Bits: 128
-  grappleDistance: 20
-  grapplePoint: {fileID: 0}
-  isGrappling: 0
 --- !u!1001 &1976768022
 PrefabInstance:
   m_ObjectHideFlags: 0
