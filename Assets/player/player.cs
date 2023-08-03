@@ -67,7 +67,7 @@ public class player : MonoBehaviour
             JumpTimeCounter = JumpTime;
             Jumping = true;
             rb.velocity = new Vector2(rb.velocity.x, JumpForce);
-            move_ani.SetTrigger("jump");
+           // move_ani.SetTrigger("jump");
         }
 
         //«ùÄò«öµÛ¸õÁä
@@ -80,15 +80,16 @@ public class player : MonoBehaviour
 
             }
 
-            else if(JumpTimeCounter==0)
-            {
-                Falling = true;
-                Jumping = false;
-                JumpTime = 0.36f;
-            }
+            //else if(JumpTimeCounter==0)
+           // {
+           //     Falling = true;
+           //     Jumping = false;
+          //      JumpTime = 0.36f;
+          //  }
             else
             {
                 Jumping=false;
+                JumpTime = 0.36f;
             }
 
         }
@@ -102,7 +103,7 @@ public class player : MonoBehaviour
         
         if(!Jumping && CheckForLand())
         {
-            move_ani.SetTrigger("land");
+         //   move_ani.SetTrigger("land");
         }
     }
 
