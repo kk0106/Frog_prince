@@ -1,7 +1,7 @@
 # 🌺 Flower
-**Flower** : a KrKr-like dialog system for Unity.
+**This is Flower, a Unity Dialog System by EmptyStudio.**
 
 - Github page : [https://github.com/emptygamer/flower](https://github.com/emptygamer/flower)
-- Version : 2.0
+- Version : 1.0
 
-For more detail about licenses and documents, please check the github page.
+For more detail about license and document, please check the github page.
