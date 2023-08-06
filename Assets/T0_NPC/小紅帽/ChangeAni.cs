@@ -12,20 +12,28 @@ public class ChangeAni : MonoBehaviour
         ani = GetComponent<Animator>();
         ani.SetBool("jump", false);
 
-        StartCoroutine("dosomething");
+        //StartCoroutine("dosomething");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Invoke("change", 30f);
     }
 
-    IEnumerator dosomething()
+
+    void change()
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(10);
-        }
+        ani.SetBool("jump",true);
     }
+
+
+   // IEnumerator dosomething()
+    //{
+      //  while (true)
+        //{
+          //  ani.SetBool("jump",true);
+            //yield return new WaitForSeconds(10);
+        //}
+    //}
 }
