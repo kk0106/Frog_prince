@@ -53,6 +53,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""talk"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""c4ecf1c3-96ec-44a5-9f04-a2873605dfd8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -209,6 +218,28 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""Grapple Hook"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""882028dc-84b1-46a6-9f4a-85308d803500"",
+                    ""path"": ""<Keyboard>/g"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""talk"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d549ee8f-b557-4789-a0ff-29732dc6fe1a"",
+                    ""path"": ""<XInputController>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""talk"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -220,6 +251,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_playerControls_Movement = m_playerControls.FindAction("Movement", throwIfNotFound: true);
         m_playerControls_jump = m_playerControls.FindAction("jump", throwIfNotFound: true);
         m_playerControls_GrappleHook = m_playerControls.FindAction("Grapple Hook", throwIfNotFound: true);
+        m_playerControls_talk = m_playerControls.FindAction("talk", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -284,6 +316,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_playerControls_Movement;
     private readonly InputAction m_playerControls_jump;
     private readonly InputAction m_playerControls_GrappleHook;
+    private readonly InputAction m_playerControls_talk;
     public struct PlayerControlsActions
     {
         private @Controls m_Wrapper;
@@ -291,6 +324,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_playerControls_Movement;
         public InputAction @jump => m_Wrapper.m_playerControls_jump;
         public InputAction @GrappleHook => m_Wrapper.m_playerControls_GrappleHook;
+        public InputAction @talk => m_Wrapper.m_playerControls_talk;
         public InputActionMap Get() { return m_Wrapper.m_playerControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -309,6 +343,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @GrappleHook.started += instance.OnGrappleHook;
             @GrappleHook.performed += instance.OnGrappleHook;
             @GrappleHook.canceled += instance.OnGrappleHook;
+            @talk.started += instance.OnTalk;
+            @talk.performed += instance.OnTalk;
+            @talk.canceled += instance.OnTalk;
         }
 
         private void UnregisterCallbacks(IPlayerControlsActions instance)
@@ -322,6 +359,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @GrappleHook.started -= instance.OnGrappleHook;
             @GrappleHook.performed -= instance.OnGrappleHook;
             @GrappleHook.canceled -= instance.OnGrappleHook;
+            @talk.started -= instance.OnTalk;
+            @talk.performed -= instance.OnTalk;
+            @talk.canceled -= instance.OnTalk;
         }
 
         public void RemoveCallbacks(IPlayerControlsActions instance)
@@ -344,5 +384,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnGrappleHook(InputAction.CallbackContext context);
+        void OnTalk(InputAction.CallbackContext context);
     }
 }
