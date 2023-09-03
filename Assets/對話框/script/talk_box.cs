@@ -19,6 +19,7 @@ public class talk_box : MonoBehaviour
         {
             TalkUI.SetActive(true);
         }
+     
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -28,4 +29,6 @@ public class talk_box : MonoBehaviour
     {
         Button.SetActive(false); 
     }
+    
+
 }

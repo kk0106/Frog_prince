@@ -7,7 +7,7 @@ public class DialogSystem : MonoBehaviour
 {
 
     [Header("ui²Õ¥ó")]
-    public Text textLabel;
+    public  Text  textLabel;
 
 
 
@@ -50,8 +50,7 @@ public class DialogSystem : MonoBehaviour
     {
         //textLabel.text = textList[index];
         //index++;
-        btn1 = GetComponent<Button>();
-        btn2 = GetComponent<Button>();
+     
 
         TextFinsh = true;
         StartCoroutine(SetTextUI());
@@ -128,9 +127,10 @@ public class DialogSystem : MonoBehaviour
                     index++;
                     break;
                 case "C":
+                
                       btn1.gameObject.SetActive(true);
-                      btn2.gameObject.SetActive(true);
-              
+                      //btn2.gameObject.SetActive(true);
+                
                 
                 break;
                 case "D":
@@ -158,5 +158,10 @@ public class DialogSystem : MonoBehaviour
         cancelTyping = false;
         TextFinsh=true;
         index++;
+    }
+
+    private void chose()
+    {
+        
     }
 }
