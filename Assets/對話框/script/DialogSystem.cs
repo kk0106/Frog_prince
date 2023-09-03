@@ -9,7 +9,7 @@ public class DialogSystem : MonoBehaviour
     [Header("ui組件")]
     public Text textLabel;
 
-   
+
 
     [Header("文本文件")]
     public TextAsset textFile;
@@ -23,6 +23,10 @@ public class DialogSystem : MonoBehaviour
     public GameObject faceImage02;
     public GameObject face_namebox02;
 
+    [Header("選擇")]
+    public Button btn1;
+    public Button btn2;
+
     bool TextFinsh;
     bool cancelTyping;
 
@@ -34,7 +38,10 @@ public class DialogSystem : MonoBehaviour
         
         faceImage02.SetActive(false);
         face_namebox02.SetActive(false);
+        btn1.gameObject.SetActive(false);
+        btn2.gameObject.SetActive(false);
 
+        
     }
 
   
@@ -43,6 +50,8 @@ public class DialogSystem : MonoBehaviour
     {
         //textLabel.text = textList[index];
         //index++;
+        btn1 = GetComponent<Button>();
+        btn2 = GetComponent<Button>();
 
         TextFinsh = true;
         StartCoroutine(SetTextUI());
@@ -118,6 +127,17 @@ public class DialogSystem : MonoBehaviour
                     face_namebox02.SetActive(true);
                     index++;
                     break;
+                case "C":
+                      btn1.gameObject.SetActive(true);
+                      btn2.gameObject.SetActive(true);
+              
+                
+                break;
+                case "D":
+                       index++;
+                       break;
+                case "E":
+                       index ++; break;
         }
 
         // for(int i=0;i<textList[index].Length;i++)
