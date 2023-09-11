@@ -28,6 +28,13 @@ public class DialogueManger : MonoBehaviour
 
     private static DialogueManger instance;
 
+
+    private const string SPEAKER_TAG = "speaker";
+
+    private const string PORTRAIT_TAG = "portrait";
+
+    private const string LAYOUT_TAG = "layout";
+
     private void Awake()
     {
         if (instance != null)
@@ -97,12 +104,45 @@ public class DialogueManger : MonoBehaviour
             DialogueText.text = currentStory.Continue();
 
             DisplayChoices();
+
+            HandleTags(currentStory.currentTags);
         }
         else
         {
             StartCoroutine(ExitDialogueMode());
         }
 
+    }
+
+    private void HandleTags(List<string> currentTags)
+    {
+        foreach (string tag in currentTags)
+        {
+            string[] splitsTag = tag.Split(':');
+            if (splitsTag.Length != 2)
+            {
+                Debug.LogError("tag could not be appropriately parsed:" + tag);
+            }
+            string tagKey = splitsTag[0].Trim();
+            string tagValue = splitsTag[1].Trim();
+
+
+            switch(tagKey)
+            {
+                case SPEAKER_TAG:
+                    Debug.Log("speaker="+tagValue); 
+                    break;
+                case PORTRAIT_TAG:
+                    Debug.Log("portrait=" + tagValue);
+                    break;
+                case LAYOUT_TAG:
+                    Debug.Log("layout=" + tagValue);
+                    break;
+                default:
+                    Debug.LogWarning("tag came in but isn't currently being handle:" + tag);
+                    break;
+            }
+        }
     }
 
     private void DisplayChoices()
