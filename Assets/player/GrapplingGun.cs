@@ -4,12 +4,14 @@ public class GrapplingGun : MonoBehaviour
 {
     private LineRenderer lr;
     private Vector3 grapplePoint;
+    private BreakableObject breakableObject;
     public LayerMask whatIsGrappleable;
     public Transform gunTip, player;
 
-    private float maxDistance = 100f;
+    private float maxDistance = 1.5f;
     private float grappleRadius = 1.0f; // Adjust this radius to your needs
     private SpringJoint joint;
+    public float damageAmount = 5f;
 
     int numberOfRays = 10; // Adjust the number of rays as needed
     float coneAngle = 30f; // Adjust the cone angle as needed
@@ -29,12 +31,34 @@ public class GrapplingGun : MonoBehaviour
         {
             StopGrapple();
         }
+        else if (IsGrappling())
+        {
+            DrawRope(); // Draw the rope and continue applying damage here
+        }
     }
-
     // Called after Update
     void LateUpdate()
     {
         DrawRope();
+
+        // Check if the player is retracting the grapple
+        if (Input.GetMouseButtonUp(0) && IsGrappling())
+        {
+            ApplyDamageToBreakableObject();
+        }
+    }
+
+    // Call this method to apply damage to the breakable object
+    void ApplyDamageToBreakableObject()
+    {
+        if (IsGrappling() && breakableObject != null)
+        {
+            // Apply damage to the breakable object
+            breakableObject.ApplyDamage(damageAmount);
+
+            // Log a message to the console
+            Debug.Log("Damage Applied: " + damageAmount);
+        }
     }
 
     /// <summary>
@@ -63,19 +87,41 @@ public class GrapplingGun : MonoBehaviour
     /// </summary>
     void SetupGrapple()
     {
-        joint = player.gameObject.AddComponent<SpringJoint>();
-        joint.autoConfigureConnectedAnchor = false;
-        joint.connectedAnchor = grapplePoint;
+        RaycastHit hit;
+        // Use your existing SphereCast here
+        if (Physics.SphereCast(gunTip.position, grappleRadius, gunTip.forward, out hit, maxDistance, whatIsGrappleable))
+        {
+            // Attempt to find a BreakableObject component on the collided object
+            BreakableObject collidedObject = hit.collider.GetComponent<BreakableObject>();
 
-        // Set up SpringJoint properties (adjust these as needed)
-        joint.maxDistance = Vector3.Distance(player.position, grapplePoint) * 0.8f;
-        joint.minDistance = Vector3.Distance(player.position, grapplePoint) * 0.25f;
-        joint.spring = 4.5f;
-        joint.damper = 7f;
-        joint.massScale = 4.5f;
+            if (collidedObject != null)
+            {
+                breakableObject = collidedObject;
+            }
+            else
+            {
+                // If the collided object doesn't have a BreakableObject component, clear the reference
+                breakableObject = null;
+            }
 
-        lr.positionCount = 2;
+            grapplePoint = hit.point;
+
+            joint = player.gameObject.AddComponent<SpringJoint>();
+            joint.autoConfigureConnectedAnchor = false;
+            joint.connectedAnchor = grapplePoint;
+
+            // Set up SpringJoint properties (adjust these as needed)
+            joint.maxDistance = Vector3.Distance(player.position, grapplePoint) * 0.8f;
+            joint.minDistance = Vector3.Distance(player.position, grapplePoint) * 0.25f;
+            joint.spring = 4.5f;
+            joint.damper = 7f;
+            joint.massScale = 4.5f;
+
+            lr.positionCount = 2;
+        }
     }
+
+
 
     /// <summary>
     /// Call whenever we want to stop a grapple
@@ -90,13 +136,35 @@ public class GrapplingGun : MonoBehaviour
 
     void DrawRope()
     {
-        // If not grappling, don't draw rope
-        if (!joint) return;
+        // If not grappling or the joint is null, don't draw rope
+        if (!IsGrappling() || joint == null)
+        {
+            // Reset the breakableObject reference to null
+            breakableObject = null;
+            return;
+        }
 
         currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, grapplePoint, Time.deltaTime * 8f);
 
         lr.SetPosition(0, gunTip.position);
         lr.SetPosition(1, currentGrapplePosition);
+
+        // Check if we have a reference to the breakable object
+        if (breakableObject == null)
+        {
+            // Attempt to find the connected breakable object
+            if (joint.connectedBody != null)
+            {
+                breakableObject = joint.connectedBody.GetComponent<BreakableObject>();
+            }
+        }
+
+        // Ensure the breakableObject is not null before applying damage
+        if (breakableObject != null)
+        {
+            // Adjust damageAmount as needed
+            breakableObject.ApplyDamage(damageAmount);
+        }
     }
 
     public bool IsGrappling()
