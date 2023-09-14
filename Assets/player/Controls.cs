@@ -25,21 +25,30 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     ""maps"": [
         {
             ""name"": ""playerControls"",
-            ""id"": ""b4f3dc0b-09fc-4e06-85c9-55cc033fee9e"",
+            ""id"": ""d25fee8e-22e4-4927-ac0e-1537f4e96283"",
             ""actions"": [
                 {
                     ""name"": ""Movement"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""2a8061c8-f2b6-4985-a345-8815c97d635e"",
+                    ""id"": ""17eeca0a-d20f-465a-920b-5671630e507e"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""jump"",
+                    ""name"": ""talk"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""edc9564a-10f5-4025-8760-7236acfee617"",
+                    ""id"": ""dbf9969d-9247-4ab1-b51f-77f9ce870dbf"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DialogueSystem"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""cc9bb320-cf2b-4ae0-91e9-45321105e077"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -48,16 +57,16 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Grapple Hook"",
                     ""type"": ""Button"",
-                    ""id"": ""8d292aca-8e1a-4a4f-9367-e0dac7113fec"",
+                    ""id"": ""ad32473e-52c4-4816-aafb-685953f70ad9"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""talk"",
+                    ""name"": ""jump"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""c4ecf1c3-96ec-44a5-9f04-a2873605dfd8"",
+                    ""id"": ""4ba10eec-436d-4c86-87e8-a5b6ef74a80f"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -67,7 +76,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": ""wasd keys"",
-                    ""id"": ""87b7cddc-cb03-4637-81f5-a640b8011f5a"",
+                    ""id"": ""86b41216-b9ad-4db3-8d31-dfb6d7d40cd8"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -78,7 +87,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""1e14f3a8-ca6e-4e28-8ff1-3947a76127b2"",
+                    ""id"": ""4ebdf3d4-a7e3-4b26-bdaa-db071d29c075"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -89,7 +98,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""f6a8d63a-f3b8-4e32-8b37-902039c2a563"",
+                    ""id"": ""089c791b-a02a-4801-9051-c7433515580a"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -100,7 +109,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""70681d4a-e4e3-4a84-be52-971f32e4f30c"",
+                    ""id"": ""bd8da32c-2cac-4321-875a-53eb2ef1fda0"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -111,7 +120,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""ed3a3219-e67e-478c-b4aa-f99867208410"",
+                    ""id"": ""83ce58ce-10fb-46bf-82a2-761654024294"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -122,7 +131,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""xbox move"",
-                    ""id"": ""a2198e72-7d16-466a-952a-7cc74d018c91"",
+                    ""id"": ""02442d65-fd51-45d2-b989-dc9e0bd8342f"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -133,7 +142,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""up"",
-                    ""id"": ""1400e58c-e926-4b50-8627-6c1b11e399f6"",
+                    ""id"": ""4c253b65-0856-4823-9640-33d6176915df"",
                     ""path"": ""<XInputController>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -144,7 +153,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""down"",
-                    ""id"": ""9c5a621f-30dc-4fdf-928e-ca21ef821544"",
+                    ""id"": ""96151c44-959b-46d2-a699-29c0b6d3d695"",
                     ""path"": ""<XInputController>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -155,7 +164,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""left"",
-                    ""id"": ""97dd5e89-3d1f-447e-af90-61e9cabbb73f"",
+                    ""id"": ""79ee413b-55dc-419f-b8af-94cc28bf29f1"",
                     ""path"": ""<XInputController>/leftStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -166,7 +175,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""right"",
-                    ""id"": ""70591c3b-8a86-4ca7-8ef6-f720971e73ff"",
+                    ""id"": ""4eae3693-e0e2-4d18-99a5-5c13403564b9"",
                     ""path"": ""<XInputController>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -177,7 +186,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""3401100b-dde3-48b1-b1c0-b4d1e724540d"",
+                    ""id"": ""0b81060c-d37e-4eca-8584-bb10da118c1b"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -188,7 +197,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""62b8b649-98e2-4682-9bab-389579cdf8d2"",
+                    ""id"": ""1d324c17-bcf2-4dc7-ba31-0271cc403ed2"",
                     ""path"": ""<XInputController>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -199,7 +208,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""bd58b233-9206-49fd-91ff-e5e04326a9ec"",
+                    ""id"": ""f96007a2-c9ef-4efa-9889-b1aa664ca86e"",
                     ""path"": ""<XInputController>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -210,7 +219,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""2382bf5e-bb13-4631-bf47-f2ad59caf2c7"",
+                    ""id"": ""5d8251ef-c722-41e1-957b-765374e909ec"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -221,7 +230,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""882028dc-84b1-46a6-9f4a-85308d803500"",
+                    ""id"": ""3f733377-e8d8-495d-b61d-044565cd3f35"",
                     ""path"": ""<Keyboard>/g"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -232,12 +241,78 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""d549ee8f-b557-4789-a0ff-29732dc6fe1a"",
+                    ""id"": ""d6a22a31-53da-4e5f-9dcc-185c5fb6a28c"",
                     ""path"": ""<XInputController>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""talk"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""715266c1-7840-4e97-b17d-ffa800f6f586"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""talk"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""783e8f03-36a5-454b-a6fa-70aeb08e6943"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""talk"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a8f7ceb2-4cc9-42ea-87ab-4b345e8d26c2"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""talk"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fdc80ec9-d32c-4824-b366-a8e7c3a2d21c"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DialogueSystem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4e70ce55-0ffc-4ba3-9d52-3506266d0379"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DialogueSystem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8efe16ec-26aa-4725-94e0-604e8c7fb8a6"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DialogueSystem"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -249,9 +324,10 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         // playerControls
         m_playerControls = asset.FindActionMap("playerControls", throwIfNotFound: true);
         m_playerControls_Movement = m_playerControls.FindAction("Movement", throwIfNotFound: true);
-        m_playerControls_jump = m_playerControls.FindAction("jump", throwIfNotFound: true);
-        m_playerControls_GrappleHook = m_playerControls.FindAction("Grapple Hook", throwIfNotFound: true);
         m_playerControls_talk = m_playerControls.FindAction("talk", throwIfNotFound: true);
+        m_playerControls_DialogueSystem = m_playerControls.FindAction("DialogueSystem", throwIfNotFound: true);
+        m_playerControls_GrappleHook = m_playerControls.FindAction("Grapple Hook", throwIfNotFound: true);
+        m_playerControls_jump = m_playerControls.FindAction("jump", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -314,17 +390,19 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_playerControls;
     private List<IPlayerControlsActions> m_PlayerControlsActionsCallbackInterfaces = new List<IPlayerControlsActions>();
     private readonly InputAction m_playerControls_Movement;
-    private readonly InputAction m_playerControls_jump;
-    private readonly InputAction m_playerControls_GrappleHook;
     private readonly InputAction m_playerControls_talk;
+    private readonly InputAction m_playerControls_DialogueSystem;
+    private readonly InputAction m_playerControls_GrappleHook;
+    private readonly InputAction m_playerControls_jump;
     public struct PlayerControlsActions
     {
         private @Controls m_Wrapper;
         public PlayerControlsActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_playerControls_Movement;
-        public InputAction @jump => m_Wrapper.m_playerControls_jump;
-        public InputAction @GrappleHook => m_Wrapper.m_playerControls_GrappleHook;
         public InputAction @talk => m_Wrapper.m_playerControls_talk;
+        public InputAction @DialogueSystem => m_Wrapper.m_playerControls_DialogueSystem;
+        public InputAction @GrappleHook => m_Wrapper.m_playerControls_GrappleHook;
+        public InputAction @jump => m_Wrapper.m_playerControls_jump;
         public InputActionMap Get() { return m_Wrapper.m_playerControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -337,15 +415,18 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
-            @jump.started += instance.OnJump;
-            @jump.performed += instance.OnJump;
-            @jump.canceled += instance.OnJump;
-            @GrappleHook.started += instance.OnGrappleHook;
-            @GrappleHook.performed += instance.OnGrappleHook;
-            @GrappleHook.canceled += instance.OnGrappleHook;
             @talk.started += instance.OnTalk;
             @talk.performed += instance.OnTalk;
             @talk.canceled += instance.OnTalk;
+            @DialogueSystem.started += instance.OnDialogueSystem;
+            @DialogueSystem.performed += instance.OnDialogueSystem;
+            @DialogueSystem.canceled += instance.OnDialogueSystem;
+            @GrappleHook.started += instance.OnGrappleHook;
+            @GrappleHook.performed += instance.OnGrappleHook;
+            @GrappleHook.canceled += instance.OnGrappleHook;
+            @jump.started += instance.OnJump;
+            @jump.performed += instance.OnJump;
+            @jump.canceled += instance.OnJump;
         }
 
         private void UnregisterCallbacks(IPlayerControlsActions instance)
@@ -353,15 +434,18 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
             @Movement.canceled -= instance.OnMovement;
-            @jump.started -= instance.OnJump;
-            @jump.performed -= instance.OnJump;
-            @jump.canceled -= instance.OnJump;
-            @GrappleHook.started -= instance.OnGrappleHook;
-            @GrappleHook.performed -= instance.OnGrappleHook;
-            @GrappleHook.canceled -= instance.OnGrappleHook;
             @talk.started -= instance.OnTalk;
             @talk.performed -= instance.OnTalk;
             @talk.canceled -= instance.OnTalk;
+            @DialogueSystem.started -= instance.OnDialogueSystem;
+            @DialogueSystem.performed -= instance.OnDialogueSystem;
+            @DialogueSystem.canceled -= instance.OnDialogueSystem;
+            @GrappleHook.started -= instance.OnGrappleHook;
+            @GrappleHook.performed -= instance.OnGrappleHook;
+            @GrappleHook.canceled -= instance.OnGrappleHook;
+            @jump.started -= instance.OnJump;
+            @jump.performed -= instance.OnJump;
+            @jump.canceled -= instance.OnJump;
         }
 
         public void RemoveCallbacks(IPlayerControlsActions instance)
@@ -382,8 +466,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     public interface IPlayerControlsActions
     {
         void OnMovement(InputAction.CallbackContext context);
-        void OnJump(InputAction.CallbackContext context);
-        void OnGrappleHook(InputAction.CallbackContext context);
         void OnTalk(InputAction.CallbackContext context);
+        void OnDialogueSystem(InputAction.CallbackContext context);
+        void OnGrappleHook(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
     }
 }
