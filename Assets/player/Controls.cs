@@ -55,7 +55,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Grapple Hook"",
+                    ""name"": ""Grapple Gun"",
                     ""type"": ""Button"",
                     ""id"": ""ad32473e-52c4-4816-aafb-685953f70ad9"",
                     ""expectedControlType"": ""Button"",
@@ -209,11 +209,11 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f96007a2-c9ef-4efa-9889-b1aa664ca86e"",
-                    ""path"": ""<XInputController>/buttonEast"",
+                    ""path"": ""<XInputController>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Grapple Hook"",
+                    ""action"": ""Grapple Gun"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -224,7 +224,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Grapple Hook"",
+                    ""action"": ""Grapple Gun"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -326,7 +326,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_playerControls_Movement = m_playerControls.FindAction("Movement", throwIfNotFound: true);
         m_playerControls_talk = m_playerControls.FindAction("talk", throwIfNotFound: true);
         m_playerControls_DialogueSystem = m_playerControls.FindAction("DialogueSystem", throwIfNotFound: true);
-        m_playerControls_GrappleHook = m_playerControls.FindAction("Grapple Hook", throwIfNotFound: true);
+        m_playerControls_GrappleGun = m_playerControls.FindAction("Grapple Gun", throwIfNotFound: true);
         m_playerControls_jump = m_playerControls.FindAction("jump", throwIfNotFound: true);
     }
 
@@ -392,7 +392,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_playerControls_Movement;
     private readonly InputAction m_playerControls_talk;
     private readonly InputAction m_playerControls_DialogueSystem;
-    private readonly InputAction m_playerControls_GrappleHook;
+    private readonly InputAction m_playerControls_GrappleGun;
     private readonly InputAction m_playerControls_jump;
     public struct PlayerControlsActions
     {
@@ -401,7 +401,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_playerControls_Movement;
         public InputAction @talk => m_Wrapper.m_playerControls_talk;
         public InputAction @DialogueSystem => m_Wrapper.m_playerControls_DialogueSystem;
-        public InputAction @GrappleHook => m_Wrapper.m_playerControls_GrappleHook;
+        public InputAction @GrappleGun => m_Wrapper.m_playerControls_GrappleGun;
         public InputAction @jump => m_Wrapper.m_playerControls_jump;
         public InputActionMap Get() { return m_Wrapper.m_playerControls; }
         public void Enable() { Get().Enable(); }
@@ -421,9 +421,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @DialogueSystem.started += instance.OnDialogueSystem;
             @DialogueSystem.performed += instance.OnDialogueSystem;
             @DialogueSystem.canceled += instance.OnDialogueSystem;
-            @GrappleHook.started += instance.OnGrappleHook;
-            @GrappleHook.performed += instance.OnGrappleHook;
-            @GrappleHook.canceled += instance.OnGrappleHook;
+            @GrappleGun.started += instance.OnGrappleGun;
+            @GrappleGun.performed += instance.OnGrappleGun;
+            @GrappleGun.canceled += instance.OnGrappleGun;
             @jump.started += instance.OnJump;
             @jump.performed += instance.OnJump;
             @jump.canceled += instance.OnJump;
@@ -440,9 +440,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @DialogueSystem.started -= instance.OnDialogueSystem;
             @DialogueSystem.performed -= instance.OnDialogueSystem;
             @DialogueSystem.canceled -= instance.OnDialogueSystem;
-            @GrappleHook.started -= instance.OnGrappleHook;
-            @GrappleHook.performed -= instance.OnGrappleHook;
-            @GrappleHook.canceled -= instance.OnGrappleHook;
+            @GrappleGun.started -= instance.OnGrappleGun;
+            @GrappleGun.performed -= instance.OnGrappleGun;
+            @GrappleGun.canceled -= instance.OnGrappleGun;
             @jump.started -= instance.OnJump;
             @jump.performed -= instance.OnJump;
             @jump.canceled -= instance.OnJump;
@@ -468,7 +468,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnTalk(InputAction.CallbackContext context);
         void OnDialogueSystem(InputAction.CallbackContext context);
-        void OnGrappleHook(InputAction.CallbackContext context);
+        void OnGrappleGun(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
     }
 }

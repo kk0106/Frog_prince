@@ -14,7 +14,7 @@ public class GrapplingGun : MonoBehaviour
     public float damageAmount = 5f;
 
     int numberOfRays = 10; // Adjust the number of rays as needed
-    float coneAngle = 30f; // Adjust the cone angle as needed
+    float coneAngle = 0f; // Adjust the cone angle as needed
 
     void Awake()
     {
@@ -23,11 +23,11 @@ public class GrapplingGun : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (UserInput.instance.controls.playerControls.GrappleGun.WasPressedThisFrame())
         {
             StartGrapple();
         }
-        else if (Input.GetMouseButtonUp(0))
+        else if (UserInput.instance.controls.playerControls.GrappleGun.WasReleasedThisFrame())
         {
             StopGrapple();
         }
@@ -42,7 +42,7 @@ public class GrapplingGun : MonoBehaviour
         DrawRope();
 
         // Check if the player is retracting the grapple
-        if (Input.GetMouseButtonUp(0) && IsGrappling())
+        if (UserInput.instance.controls.playerControls.GrappleGun.WasReleasedThisFrame() && IsGrappling())
         {
             ApplyDamageToBreakableObject();
         }
@@ -113,7 +113,7 @@ public class GrapplingGun : MonoBehaviour
             // Set up SpringJoint properties (adjust these as needed)
             joint.maxDistance = Vector3.Distance(player.position, grapplePoint) * 0.8f;
             joint.minDistance = Vector3.Distance(player.position, grapplePoint) * 0.25f;
-            joint.spring = 4.5f;
+            joint.spring = 2f;
             joint.damper = 7f;
             joint.massScale = 4.5f;
 
