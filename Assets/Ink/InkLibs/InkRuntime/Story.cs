@@ -2826,6 +2826,7 @@ namespace Ink.Runtime
                     
                 throw new System.Exception (message + " " + currentDebugMetadata);
             }
+
         }
 
         DebugMetadata currentDebugMetadata
