@@ -1,17 +1,22 @@
+//THIS IS FIRST LINE
+
+hihihhihihh#speaker:Frog#portrait:normal#layout:left
+
+how are you#speaker:ArLeeBaBa#portrait:normal#layout:right
 
 
 
-what up#speaker:ArLeeBaBa#portrait:normal#layout:right
-yoooooooooo#speaker:Frog#portrait:normal#layout:left
-what up#speaker:ArLeeBaBa#portrait:normal#layout:right
 
 ->main
 
 ===main===
-who are you#speaker:ArLeeBaBa#portrait:normal#layout:right
-+[kevin]
-yes#speaker:ArLeeBaBa#portrait:happy#layout:right
+what your name#speaker:ArLeeBaBa#portrait:normal#layout:right
+*[yes]
+wtf
+
 ->END
-+[john]
-nooo#speaker:ArLeeBaBa#portrait:mad#layout:right
+*[no]
+.....
+
+
 ->END

@@ -76,7 +76,8 @@ public class DialogueManger : MonoBehaviour
             return;
         }
 
-        if (UserInput.instance.controls.playerControls.talk.WasPressedThisFrame())
+        if (currentStory.currentChoices.Count==0
+            &&UserInput.instance.controls.playerControls.talk.WasPressedThisFrame())
         {
             ContinueStory();
         }
@@ -154,17 +155,27 @@ public class DialogueManger : MonoBehaviour
 
         if(currentChoices.Count > choices.Length)
         {
-            Debug.LogError("more choices were given than ui can support" + currentChoices.Count);
+            Debug.LogError("more choices were given than ui can support.number of choices can given:" + currentChoices.Count);
         }
-        int index = 0;
+        int index = 0; // 初始化索引
+
         foreach (Choice choice in currentChoices)
         {
-            choices[index].gameObject.SetActive(true);
-            ChoicesText[index].text = choice.text;
-            index++;
+            if (index < choices.Length) // 檢查索引是否在範圍內
+            {
+                choices[index].gameObject.SetActive(true);
+                ChoicesText[index].text = choice.text;
+                index++;
+            }
+            else
+            {
+                // 如果選擇數量超出 choices 數組的長度，可能顯示錯誤消息或執行其他適當的操作
+                Debug.LogError("選擇數量超出範圍");
+                break; // 停止迭代，以免引發索引超出範圍的異常
+            }
         }
 
-        for(int i =index ; i < choices.Length; i++)
+        for (int i =index ; i < choices.Length; i++)
         {
             choices[i].gameObject.SetActive(false);
         }
@@ -182,5 +193,6 @@ public class DialogueManger : MonoBehaviour
     public void MakeChoice(int choiceIndex)
     {
         currentStory.ChooseChoiceIndex(choiceIndex);
+        ContinueStory();
     }
 }
