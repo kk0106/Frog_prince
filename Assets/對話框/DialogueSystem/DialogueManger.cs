@@ -17,6 +17,8 @@ public class DialogueManger : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI displayNameText;
 
+    [SerializeField] private Animator portraitAnimator;
+
 
     [Header("Choices UI")]
 
@@ -137,7 +139,7 @@ public class DialogueManger : MonoBehaviour
                     displayNameText.text = tagValue;
                     break;
                 case PORTRAIT_TAG:
-                    Debug.Log("portrait=" + tagValue);
+                    portraitAnimator.Play(tagValue);
                     break;
                 case LAYOUT_TAG:
                     Debug.Log("layout=" + tagValue);
