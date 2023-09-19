@@ -19,6 +19,8 @@ public class DialogueManger : MonoBehaviour
 
     [SerializeField] private Animator portraitAnimator;
 
+    private Animator LayoutAnimator;
+
 
     [Header("Choices UI")]
 
@@ -58,6 +60,8 @@ public class DialogueManger : MonoBehaviour
 
     private void Start()
     {
+        LayoutAnimator = DialoguePanel.GetComponent<Animator>(); 
+
         DialogueIsPlaying = false;
         DialoguePanel.SetActive(false);
 
@@ -142,7 +146,7 @@ public class DialogueManger : MonoBehaviour
                     portraitAnimator.Play(tagValue);
                     break;
                 case LAYOUT_TAG:
-                    Debug.Log("layout=" + tagValue);
+                   LayoutAnimator.Play(tagValue);   
                     break;
                 default:
                     Debug.LogWarning("tag came in but isn't currently being handle:" + tag);
