@@ -2,31 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeAni : MonoBehaviour
+public class change : MonoBehaviour
 {
-    private Animator ani;
-
+    private Animator _animator;
     // Start is called before the first frame update
     void Start()
     {
-        ani = GetComponent<Animator>();
-        //ani.SetBool("jump", false);
-
-        //StartCoroutine("dosomething");
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-      //  Invoke("change", f);
+        
     }
-
-
-    
-
     private void OnTriggerEnter(Collider other)
     {
-        ani.SetBool("cry", true);
+        _animator.SetBool("cry", true);
     }
-
 }

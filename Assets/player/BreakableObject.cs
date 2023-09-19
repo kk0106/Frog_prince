@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BreakableObject : MonoBehaviour
 {
-    private Animator _animator;
+    //private Animator _animator;
     public float maxHealth = 100f;
     private float currentHealth;
 
@@ -11,7 +11,7 @@ public class BreakableObject : MonoBehaviour
     void Start()
     {
 
-       _animator = GetComponent<Animator>();
+       //_animator = GetComponent<Animator>();
         currentHealth = maxHealth;
     }
 
@@ -32,10 +32,7 @@ public class BreakableObject : MonoBehaviour
         // Add any logic you want for the object breaking (e.g., play animations, destroy object, etc.)
 
         // For example, you can destroy the object when it breaks
-        Destroy(gameObject);
-        if (this.gameObject.activeInHierarchy)
-        {
-            _animator.SetBool("break", true);
-        }
+       this.gameObject .SetActive(false);
+        
     }
 }
