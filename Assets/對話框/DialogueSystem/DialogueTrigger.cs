@@ -12,10 +12,13 @@ public class DialogueTrigger : MonoBehaviour
 
     private bool playerInRange;
 
+    
+
     private void Awake()
     {
         playerInRange = false;
         visualcube.SetActive(false);
+
     }
 
     private void Update()
@@ -33,6 +36,8 @@ public class DialogueTrigger : MonoBehaviour
         {
             DialogueManger.GetInstance().EnterDialogueMode(inkJSON);
         }
+
+       
     }
 
     private void OnTriggerEnter(Collider other)
