@@ -1,4 +1,4 @@
-kkk
+
 嗨寶，是什麼風把你吹過來啦。#speaker:Cinderella#portrait:cindy_normal#layout:right
 
 喔，其實我路ㄍㄨ....#speaker:Frog#portrait:frog#layout:left
