@@ -13,7 +13,7 @@ public class GrapplingGun : MonoBehaviour
     private SpringJoint joint;
     public float damageAmount = 5f;
 
-    int numberOfRays = 10; // Adjust the number of rays as needed
+    int numberOfRays = 18; // Adjust the number of rays as needed
     float coneAngle = 0f; // Adjust the cone angle as needed
 
     void Awake()
