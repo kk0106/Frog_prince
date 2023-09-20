@@ -6,7 +6,7 @@ using UnityEngine;
 public class player : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] private float MoveSpeed = 7.5f;
+    [SerializeField] public static float MoveSpeed = 7.5f;
     [SerializeField] private float MoveSpeed1 = 7.5f;
     [SerializeField] public bool FaceRight;
     [SerializeField] public bool FaceBack;
@@ -15,7 +15,7 @@ public class player : MonoBehaviour
     
 
     [Header("Jump")]
-    [SerializeField] private float JumpForce = 5f;
+    [SerializeField] public static float JumpForce = 5f;
     [SerializeField] private float JumpTime = 0.5f;
     public bool Jumping;
     public bool Falling;
@@ -31,6 +31,8 @@ public class player : MonoBehaviour
     private float moveInput;
     private float moveInput1;
     private Rigidbody rb;
+
+    public GameObject GamePenal;
 
 
 
@@ -54,6 +56,18 @@ public class player : MonoBehaviour
         Move();
         Jump();
         
+        if(GamePenal.activeInHierarchy)
+        {
+            MoveSpeed = 0f;
+            MoveSpeed1 = 0f;
+            JumpForce = 0f;
+        }
+        else
+        {
+            MoveSpeed = 1.5f;
+            MoveSpeed1 = 1.5f;
+            JumpForce = 3f;
+        }
         
     }
 

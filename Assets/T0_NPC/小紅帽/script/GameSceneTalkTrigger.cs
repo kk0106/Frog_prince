@@ -21,6 +21,17 @@ public class GameSceneTalkTrigger : MonoBehaviour
         {
             this.gameObject.SetActive(false);
         }
+
+        if (TalkBox_girl.activeInHierarchy)
+        {
+            player.MoveSpeed = 0f;
+            player.JumpForce = 0f;
+        }
+        else
+        {
+            player.MoveSpeed = 1.5f;  
+            player.JumpForce = 3f;
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
