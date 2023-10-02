@@ -140,7 +140,7 @@ public class DialogueManger : MonoBehaviour
             switch(tagKey)
             {
                 case SPEAKER_TAG:
-                    displayNameText.text = tagValue;
+                    Debug.Log("tag");
                     break;
                 case PORTRAIT_TAG:
                     portraitAnimator.Play(tagValue);
