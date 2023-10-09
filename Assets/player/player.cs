@@ -33,7 +33,12 @@ public class player : MonoBehaviour
     private Rigidbody rb;
 
     public GameObject GamePenal;
+    
+    [SerializeField] private DialogueUI dialogueUI;
 
+    public DialogueUI DialogueUI => dialogueUI;
+
+    public IInteractable Interactable { get; set; }
 
 
     // Start is called before the first frame update
@@ -53,6 +58,8 @@ public class player : MonoBehaviour
 
     private void Update()
     {
+        if (dialogueUI.IsOpen) return;
+
         Move();
         Jump();
         
@@ -69,6 +76,14 @@ public class player : MonoBehaviour
             JumpForce = 3f;
         }
         
+        if (UserInput.instance.controls.playerControls.talk.WasPressedThisFrame())
+        
+      
+            {
+                Interactable?.Interact(this);
+            }
+        
+
     }
 
 
