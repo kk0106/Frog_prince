@@ -71,6 +71,24 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""uiTouch"",
+                    ""type"": ""Button"",
+                    ""id"": ""af96febc-848f-484e-8458-929badeed848"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BackPack"",
+                    ""type"": ""Button"",
+                    ""id"": ""3713d037-e804-49e0-8714-caa8d3390324"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -315,6 +333,28 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""DialogueSystem"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7838ffdf-b448-4901-a5ad-cfb0f72ea50b"",
+                    ""path"": ""<XInputController>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""uiTouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ffef414c-c2e3-44f0-9163-aa9bdd041990"",
+                    ""path"": ""<XInputController>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BackPack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -328,6 +368,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_playerControls_DialogueSystem = m_playerControls.FindAction("DialogueSystem", throwIfNotFound: true);
         m_playerControls_GrappleGun = m_playerControls.FindAction("Grapple Gun", throwIfNotFound: true);
         m_playerControls_jump = m_playerControls.FindAction("jump", throwIfNotFound: true);
+        m_playerControls_uiTouch = m_playerControls.FindAction("uiTouch", throwIfNotFound: true);
+        m_playerControls_BackPack = m_playerControls.FindAction("BackPack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -394,6 +436,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_playerControls_DialogueSystem;
     private readonly InputAction m_playerControls_GrappleGun;
     private readonly InputAction m_playerControls_jump;
+    private readonly InputAction m_playerControls_uiTouch;
+    private readonly InputAction m_playerControls_BackPack;
     public struct PlayerControlsActions
     {
         private @Controls m_Wrapper;
@@ -403,6 +447,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @DialogueSystem => m_Wrapper.m_playerControls_DialogueSystem;
         public InputAction @GrappleGun => m_Wrapper.m_playerControls_GrappleGun;
         public InputAction @jump => m_Wrapper.m_playerControls_jump;
+        public InputAction @uiTouch => m_Wrapper.m_playerControls_uiTouch;
+        public InputAction @BackPack => m_Wrapper.m_playerControls_BackPack;
         public InputActionMap Get() { return m_Wrapper.m_playerControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -427,6 +473,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @jump.started += instance.OnJump;
             @jump.performed += instance.OnJump;
             @jump.canceled += instance.OnJump;
+            @uiTouch.started += instance.OnUiTouch;
+            @uiTouch.performed += instance.OnUiTouch;
+            @uiTouch.canceled += instance.OnUiTouch;
+            @BackPack.started += instance.OnBackPack;
+            @BackPack.performed += instance.OnBackPack;
+            @BackPack.canceled += instance.OnBackPack;
         }
 
         private void UnregisterCallbacks(IPlayerControlsActions instance)
@@ -446,6 +498,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @jump.started -= instance.OnJump;
             @jump.performed -= instance.OnJump;
             @jump.canceled -= instance.OnJump;
+            @uiTouch.started -= instance.OnUiTouch;
+            @uiTouch.performed -= instance.OnUiTouch;
+            @uiTouch.canceled -= instance.OnUiTouch;
+            @BackPack.started -= instance.OnBackPack;
+            @BackPack.performed -= instance.OnBackPack;
+            @BackPack.canceled -= instance.OnBackPack;
         }
 
         public void RemoveCallbacks(IPlayerControlsActions instance)
@@ -470,5 +528,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnDialogueSystem(InputAction.CallbackContext context);
         void OnGrappleGun(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnUiTouch(InputAction.CallbackContext context);
+        void OnBackPack(InputAction.CallbackContext context);
     }
 }
