@@ -80,7 +80,8 @@ public class player : MonoBehaviour
         
       
             {
-                Interactable?.Interact(this);
+            if (dialogueUI.IsOpen) return;
+            Interactable?.Interact(this);
             }
         
 
