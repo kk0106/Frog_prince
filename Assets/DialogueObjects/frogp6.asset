@@ -10,15 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 379cff3bc00ccec4f8df4cb556b6c741, type: 3}
-  m_Name: Test
+  m_Name: frogp6
   m_EditorClassIdentifier: 
   dialogue:
-  - "This is my dialogue!\nHello.\t"
-  - 'This is our second dialogue
-
-    Goodbye!'
+  - "\u53EA\u8981\u4F60\u9858\u610F\u628A\u6211\u7684\u91D1\u7403\u627E\u51FA\u4F86\uFF0C\u4F60\u7684\u4E00\u5207\u8981\u6C42\u6211\u90FD\u7B54\u61C9\u3002\r\n"
   responses:
-  - responseText: Yes
-    dialogueObject: {fileID: 11400000, guid: 6f0e7baf5335ddd47b5451c6b47de8e8, type: 2}
-  - responseText: No
-    dialogueObject: {fileID: 11400000, guid: e0c9c6784f2fe2b4ab2eefce896553f7, type: 2}
+  - responseText: "\u6210\u4EA4\u3002"
+    dialogueObject: {fileID: 0}

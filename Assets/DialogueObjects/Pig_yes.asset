@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 379cff3bc00ccec4f8df4cb556b6c741, type: 3}
-  m_Name: Done
+  m_Name: Pig_yes
   m_EditorClassIdentifier: 
   dialogue:
-  - "\u73FE\u5728\u7D66\u6211\u8D70\u958B!"
-  responses: []
+  - "\u5144\u5F1F\uFF0C\u592A\u68D2\u4E86\u4F60\u5E6B\u4E86\u6211\u5011\u4E00\u500B\u5927\u5FD9\u3002"
+  responses:
+  - responseText: "\u90A3\u500B\uFF0C\u4F60\u5011\u7528\u4E0D\u8B8A\u8EAB\u4E4B\u985E\u7684\u55CE?\u56E0\u70BA\u525B\u525B\u90A3\u908A...\u4F60\u77E5\u9053\u7684 "
+    dialogueObject: {fileID: 11400000, guid: eb76577738a28a04599a0465d8fa83a6, type: 2}

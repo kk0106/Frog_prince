@@ -3389,7 +3389,9 @@ GameObject:
   m_Component:
   - component: {fileID: 300571174}
   - component: {fileID: 300571176}
-  - component: {fileID: 300571175}
+  - component: {fileID: 300571177}
+  - component: {fileID: 300571179}
+  - component: {fileID: 300571178}
   m_Layer: 0
   m_Name: trigger
   m_TagString: Untagged
@@ -3412,18 +3414,6 @@ Transform:
   m_Father: {fileID: 1842525893}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &300571175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300571173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13310b969bd6a24499ba9181326183c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &300571176
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3435,8 +3425,113 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.115994, y: 3.389584, z: 22.007273}
-  m_Center: {x: 1.154658, y: 1.1947927, z: 10.503635}
+  m_Size: {x: 3.8730931, y: 3.389584, z: 14.744005}
+  m_Center: {x: 1.2761083, y: 1.1947927, z: 6.872006}
+--- !u!114 &300571177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300571173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7584f17db139e864bbed177e5e9810b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueObject: {fileID: 11400000, guid: c41f85bfb6eaadc40909f52633c96ac2, type: 2}
+--- !u!114 &300571178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300571173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e941cf572d9d3040809dc76219ca1fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueObject: {fileID: 11400000, guid: 27eac72dec98de34da56bd492139f98b, type: 2}
+  events:
+  - name: "\u662F\u9019\u500B\u55CE?"
+    onPickedResponse:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 877922967}
+          m_TargetAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine
+          m_MethodName: set_sprite
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 21300000, guid: de5775e37244ee248991a1d118a03c5f,
+              type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 300571177}
+          m_TargetAssemblyTypeName: DialogueActivator, Assembly-CSharp
+          m_MethodName: UpdateDialogueObject
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: d106ee1cbd23ddc4ab8ea7546d910f28,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: DialogueObject, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - name: "\u62B1\u6B49\uFF0C\u6211\u6C92\u8FA6\u6CD5\u5E6B\u5FD9\uFF0C\u4F46\u4F60\u53EF\u80FD\u5728\u5546\u5E97\u88E1\u6703\u627E\u5230\u4ED6.... "
+    onPickedResponse:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 300571177}
+          m_TargetAssemblyTypeName: DialogueActivator, Assembly-CSharp
+          m_MethodName: UpdateDialogueObject
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: d106ee1cbd23ddc4ab8ea7546d910f28,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: DialogueObject, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &300571179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300571173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e941cf572d9d3040809dc76219ca1fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueObject: {fileID: 11400000, guid: c41f85bfb6eaadc40909f52633c96ac2, type: 2}
+  events:
+  - name: "\u5929\u554A\uFF0C\u4F60\u5011\u9577\u7684\u53EF\u771F\u4E0D\u4E00\u6A23\u3002 "
+    onPickedResponse:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 877922967}
+          m_TargetAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine
+          m_MethodName: set_sprite
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 21300000, guid: 6caf09e5d69e9ee4e8a2490a19603e01,
+              type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &309066060
 GameObject:
   m_ObjectHideFlags: 0
@@ -6367,7 +6462,6 @@ GameObject:
   - component: {fileID: 631258645}
   - component: {fileID: 631258646}
   - component: {fileID: 631258648}
-  - component: {fileID: 631258649}
   m_Layer: 0
   m_Name: ArLeeBaBa
   m_TagString: Untagged
@@ -6422,18 +6516,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &631258649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 631258644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13310b969bd6a24499ba9181326183c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &637830623
 GameObject:
   m_ObjectHideFlags: 0
@@ -7365,6 +7447,7 @@ Transform:
   m_Children:
   - {fileID: 869169279}
   - {fileID: 553768692}
+  - {fileID: 741361233}
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7458,7 +7541,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 870966384}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DialogueManger, Assembly-CSharp
         m_MethodName: MakeChoice
         m_Mode: 3
@@ -7508,6 +7591,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739570787}
   m_CullTransparentMesh: 1
+--- !u!1 &741361232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 741361233}
+  m_Layer: 0
+  m_Name: Speech
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &741361233
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741361232}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 722834739}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &746875454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7997,7 +8111,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 24.15451}
-  m_SizeDelta: {x: 250.3543, y: 62.1545}
+  m_SizeDelta: {x: 350, y: 62.1545}
   m_Pivot: {x: 1, y: 1}
 --- !u!1 &835097049
 GameObject:
@@ -8383,7 +8497,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 870966385}
-  - component: {fileID: 870966384}
   m_Layer: 0
   m_Name: DialogueManger
   m_TagString: Untagged
@@ -8391,18 +8504,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &870966384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 870966383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f8b1bf7d5597c34097615b9d804379f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &870966385
 Transform:
   m_ObjectHideFlags: 0
@@ -10357,7 +10458,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 870966384}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DialogueManger, Assembly-CSharp
         m_MethodName: MakeChoice
         m_Mode: 3
@@ -10680,14 +10781,13 @@ GameObject:
   - component: {fileID: 1071068147}
   - component: {fileID: 1071068149}
   - component: {fileID: 1071068150}
-  - component: {fileID: 1071068151}
   m_Layer: 0
   m_Name: TalkTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1071068147
 Transform:
   m_ObjectHideFlags: 0
@@ -10768,18 +10868,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1071068151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1071068146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1097070076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14175,8 +14263,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 130.17715, y: -31.0775}
-  m_SizeDelta: {x: 240.3543, y: 62.155}
+  m_AnchoredPosition: {x: 180, y: -31.0775}
+  m_SizeDelta: {x: 340, y: 62.155}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1498381947
 MonoBehaviour:
@@ -14244,8 +14332,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: option1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ef72ece38fb158749a5476109e21c3b9, type: 2}
+  m_sharedMaterial: {fileID: -3966154679015746747, guid: ef72ece38fb158749a5476109e21c3b9,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -14269,8 +14358,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -14308,7 +14397,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1498381949
@@ -14414,8 +14503,12 @@ GameObject:
   - component: {fileID: 1506799321}
   - component: {fileID: 1506799320}
   - component: {fileID: 1506799319}
-  - component: {fileID: 1506799323}
   - component: {fileID: 1506799322}
+  - component: {fileID: 1506799323}
+  - component: {fileID: 1506799327}
+  - component: {fileID: 1506799326}
+  - component: {fileID: 1506799325}
+  - component: {fileID: 1506799328}
   m_Layer: 0
   m_Name: FrogPrincess
   m_TagString: Untagged
@@ -14521,8 +14614,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 238.38666, y: 251.40901, z: 1098.4357}
-  m_Center: {x: 36.503197, y: 36.735985, z: 275.98447}
+  m_Size: {x: 249.53893, y: 197.63527, z: 1098.4357}
+  m_Center: {x: -53.66994, y: 63.623146, z: 275.98447}
 --- !u!114 &1506799323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14532,9 +14625,144 @@ MonoBehaviour:
   m_GameObject: {fileID: 1506799318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13310b969bd6a24499ba9181326183c9, type: 3}
+  m_Script: {fileID: 11500000, guid: 7584f17db139e864bbed177e5e9810b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueObject: {fileID: 11400000, guid: ba3ce2450df0a464b92a142e8e5b7834, type: 2}
+--- !u!114 &1506799325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506799318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e941cf572d9d3040809dc76219ca1fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueObject: {fileID: 11400000, guid: 5513e3c60a121f64380794e889347906, type: 2}
+  events:
+  - name: "\u75FE\u7B49\u7B49\uFF0C\u59B3\u4E00\u500B\u6EFF18\u7684\u5927\u4EBA\u5728\u73A9\u4E00\u9846\u91D1\u8272\u7684\u76AE\u7403\u55CE? "
+    onPickedResponse:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1506799320}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+--- !u!114 &1506799326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506799318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e941cf572d9d3040809dc76219ca1fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueObject: {fileID: 11400000, guid: d39a388e265fce04a8081e94f8ab739d, type: 2}
+  events:
+  - name: "\u5225\u54ED\u4E86\uFF0C\u8AAA\u8AAA\u770B\uFF0C\u4E5F\u8A31\u6211\u80FD\u5E6B\u59B3\u3002"
+    onPickedResponse:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1506799319}
+          m_TargetAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine
+          m_MethodName: set_sprite
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 21300000, guid: d7a1e6604954e85459970ea0c9daada6,
+              type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1506799320}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: SetTrigger
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: next
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1506799320}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1506799327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506799318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e941cf572d9d3040809dc76219ca1fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueObject: {fileID: 11400000, guid: ba3ce2450df0a464b92a142e8e5b7834, type: 2}
+  events:
+  - name: "\u75FE\uFF0C\u55E8\u59B3\u597D\uFF0C\u767C\u751F\u4EC0\u9EBC\u4E8B\u55CE? "
+    onPickedResponse:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!114 &1506799328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506799318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e941cf572d9d3040809dc76219ca1fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueObject: {fileID: 11400000, guid: 26ffd7f3282090e4a931090d18af2492, type: 2}
+  events:
+  - name: "\u7E3D\u4E4B\u5305\u5728\u86D9\u8EAB\u4E0A\uFF0C\u4F46\u4F60\u5FC5\u9808\u7D66\u6211\u4E00\u9EDE... "
+    onPickedResponse:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1506799323}
+          m_TargetAssemblyTypeName: DialogueActivator, Assembly-CSharp
+          m_MethodName: UpdateDialogueObject
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: f75e150e56a60e243b92fd06bd75df65,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: DialogueObject, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &1507954624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16486,7 +16714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1692132789
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19085,8 +19313,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.738625, y: 1.2891924, z: 10.046074}
-  m_Center: {x: 0.3693125, y: 0.14459641, z: 4.523036}
+  m_Size: {x: 3.0283444, y: 1.2891924, z: 13.586336}
+  m_Center: {x: 1.0847583, y: 0.14459641, z: 6.2931676}
 --- !u!114 &1899267580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19224,18 +19452,6 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 11400000, guid: ddabe19815cb8bf4d8194ec13b76cce1,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: DialogueObject, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: DialogueActivator, Assembly-CSharp
-          m_MethodName: 
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -19769,8 +19985,8 @@ MonoBehaviour:
 
     New Text'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 37985bbbaa24b7d42972ee3c7e787480, type: 2}
-  m_sharedMaterial: {fileID: -4053932840849271656, guid: 37985bbbaa24b7d42972ee3c7e787480,
+  m_fontAsset: {fileID: 11400000, guid: ef72ece38fb158749a5476109e21c3b9, type: 2}
+  m_sharedMaterial: {fileID: -3966154679015746747, guid: ef72ece38fb158749a5476109e21c3b9,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -20563,8 +20779,6 @@ GameObject:
   - component: {fileID: 1983286039}
   - component: {fileID: 1983286041}
   - component: {fileID: 1983286040}
-  - component: {fileID: 1983286043}
-  - component: {fileID: 1983286042}
   m_Layer: 0
   m_Name: Cinderella
   m_TagString: Untagged
@@ -20619,78 +20833,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.9999999, y: 1, z: 8.029475}
   m_Center: {x: 0, y: 0, z: 4.3316207}
---- !u!212 &1983286042
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1983286038}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!95 &1983286043
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1983286038}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1999205847
 GameObject:
   m_ObjectHideFlags: 0
@@ -21183,7 +21325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2048691849
 RectTransform:
   m_ObjectHideFlags: 0

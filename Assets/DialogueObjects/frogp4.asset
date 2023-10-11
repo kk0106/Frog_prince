@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 379cff3bc00ccec4f8df4cb556b6c741, type: 3}
-  m_Name: Done
+  m_Name: frogp4
   m_EditorClassIdentifier: 
   dialogue:
-  - "\u73FE\u5728\u7D66\u6211\u8D70\u958B!"
-  responses: []
+  - "\u6211\u516B\u6B72\u904E\uFF0C\u4E5F\u5341\u6B72\u904E\u7B97\u55CE?"
+  responses:
+  - responseText: "\u7E3D\u4E4B\u5305\u5728\u86D9\u8EAB\u4E0A\uFF0C\u4F46\u4F60\u5FC5\u9808\u7D66\u6211\u4E00\u9EDE... "
+    dialogueObject: {fileID: 11400000, guid: 0325c1c0cd242f744a803927e31fc15a, type: 2}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379cff3bc00ccec4f8df4cb556b6c741, type: 3}
+  m_Name: Pig2
+  m_EditorClassIdentifier: 
+  dialogue:
+  - "\u6211\u5011\u662F\u8C6C\uFF0C\u4F60\u4E0D\u80FD\u8981\u6C42\u6211\u5011\u592A\u591A\u3002"
+  - "\u53EA\u662F\u8C6C\u5C3C\u628A\u85CD\u5716\u7528\u4E1F\u4E86\uFF0C\u8B93\u6211\u6709\u9EDE\u982D\u75BC\u3002"
+  responses:
+  - responseText: "\u662F\u9019\u500B\u55CE?"
+    dialogueObject: {fileID: 11400000, guid: 9788c5d01fa076d45800b55ee2e9d7bd, type: 2}
+  - responseText: "\u62B1\u6B49\uFF0C\u6211\u6C92\u8FA6\u6CD5\u5E6B\u5FD9\uFF0C\u4F46\u4F60\u53EF\u80FD\u5728\u5546\u5E97\u88E1\u6703\u627E\u5230\u4ED6.... "
+    dialogueObject: {fileID: 11400000, guid: ef853adde6ed75841a6d0e833fca2bc1, type: 2}

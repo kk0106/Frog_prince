@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 379cff3bc00ccec4f8df4cb556b6c741, type: 3}
-  m_Name: No
+  m_Name: frogp1
   m_EditorClassIdentifier: 
   dialogue:
-  - You said No.
-  responses: []
+  - "\u55DA\u55DA\u55DA\u2014\u2014"
+  responses:
+  - responseText: "\u75FE\uFF0C\u55E8\u59B3\u597D\uFF0C\u767C\u751F\u4EC0\u9EBC\u4E8B\u55CE? "
+    dialogueObject: {fileID: 11400000, guid: d39a388e265fce04a8081e94f8ab739d, type: 2}
