@@ -12,10 +12,16 @@ public class hp : MonoBehaviour
     public GameObject die1;
     public GameObject die2;
 
+    public Vector3 pos;
+    public Vector3 pos2;
+
     public int HP;
+
+    public GameObject GGpanel;
     // Start is called before the first frame update
     void Start()
     {
+        GGpanel.SetActive(false);
         blood.SetActive(true);
         blood1 .SetActive(true);
         blood2 .SetActive(true);
@@ -36,6 +42,7 @@ public class hp : MonoBehaviour
             die.SetActive(false);
             die1.SetActive(false);
             die2.SetActive(false);
+            GGpanel .SetActive(false);  
         }
 
         if(HP== 2)
@@ -46,6 +53,7 @@ public class hp : MonoBehaviour
             die.SetActive(true);
             die1.SetActive(false);
             die2.SetActive(false);
+            GGpanel.SetActive (false);
         }
 
         if(HP== 1)
@@ -56,10 +64,13 @@ public class hp : MonoBehaviour
             die.SetActive(true);
             die1.SetActive(true);
             die2.SetActive(false);
+            GGpanel .SetActive(false);
         }
 
         if (HP == 0)
         {
+            GGpanel.SetActive(true);
+
             blood.SetActive(false);
             blood1.SetActive(false);
             blood2.SetActive(false);
@@ -74,10 +85,16 @@ public class hp : MonoBehaviour
         if (other.gameObject.tag == "apple")
         {
             HP -= 1;
+
+            this.gameObject.transform.position = pos;
+            
+            
         }
         if (other.gameObject.tag == "hole")
         {
             HP -= 1;
+
+            this.gameObject.transform.position = pos2;
         }
     }
 }
