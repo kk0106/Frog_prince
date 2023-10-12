@@ -7,7 +7,7 @@ public class change : MonoBehaviour
     private Animator _animator;
     public GameObject nose;
     public GameObject TalkTriggerBox;
-   
+   public GameObject NewRed;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +21,15 @@ public class change : MonoBehaviour
     { 
         if (!nose.activeInHierarchy)
         {
-            _animator.SetBool("happy", true);
-
+        NewRed.SetActive(true);
+        this.gameObject.SetActive(false);
+        
+        
+        _animator.SetBool("happy", true);
+                        
             TalkTriggerBox.SetActive(true);
-        }
+        
+            }
 
     }
     private void OnTriggerEnter(Collider other)
