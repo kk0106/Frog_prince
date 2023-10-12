@@ -347,6 +347,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""6c3b687e-e7e0-43a8-b1bb-22dda4b1b9f5"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""uiTouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""ffef414c-c2e3-44f0-9163-aa9bdd041990"",
                     ""path"": ""<XInputController>/buttonNorth"",
                     ""interactions"": """",
