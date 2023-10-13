@@ -83,7 +83,23 @@ public class player : MonoBehaviour
             if (dialogueUI.IsOpen) return;
             Interactable?.Interact(this);
             }
-        
+
+        if (GrapplingGun.grappleCheck == 1 && FaceRight)
+        {
+            move_ani.SetBool("IsTongueR", true);
+        }
+        if (GrapplingGun.grappleCheck == 0 && FaceRight)
+        {
+            move_ani.SetBool("IsTongueR", false);
+        }
+        if (GrapplingGun.grappleCheck == 1 && !FaceRight)
+        {
+            move_ani.SetBool("IsTongueL", true);
+        }
+        if (GrapplingGun.grappleCheck == 0 && !FaceRight)
+        {
+            move_ani.SetBool("IsTongueL", false);
+        }
 
     }
 
@@ -194,6 +210,7 @@ public class player : MonoBehaviour
         {
             TurnCheck1();
             move_ani.SetBool("IsWalk_Back", true);
+            
         }
         else
         {

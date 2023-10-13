@@ -1,7 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class GrapplingGun : MonoBehaviour
 {
+    public static int grappleCheck;
+
     private LineRenderer lr;
     private Vector3 grapplePoint;
     private BreakableObject breakableObject;
@@ -16,6 +21,11 @@ public class GrapplingGun : MonoBehaviour
     int numberOfRays = 18; // Adjust the number of rays as needed
     float coneAngle = 0f; // Adjust the cone angle as needed
 
+
+    private void Start()
+    {
+      
+    }
     void Awake()
     {
         lr = GetComponent<LineRenderer>();
@@ -25,11 +35,14 @@ public class GrapplingGun : MonoBehaviour
     {
         if (UserInput.instance.controls.playerControls.GrappleGun.WasPressedThisFrame())
         {
+            
             StartGrapple();
+            grappleCheck = 1;
         }
         else if (UserInput.instance.controls.playerControls.GrappleGun.WasReleasedThisFrame())
         {
             StopGrapple();
+            grappleCheck = 0;
         }
         else if (IsGrappling())
         {
@@ -80,6 +93,8 @@ public class GrapplingGun : MonoBehaviour
                 break; // Break out of the loop if a grapple point is found
             }
         }
+        
+       
     }
 
     /// <summary>
