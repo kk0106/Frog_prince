@@ -386,6 +386,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""uiChoose"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""08574bcb-f39d-4c64-a7c9-3ff68b187367"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""uiChoose"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }

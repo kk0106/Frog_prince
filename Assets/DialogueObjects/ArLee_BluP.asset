@@ -12,5 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379cff3bc00ccec4f8df4cb556b6c741, type: 3}
   m_Name: ArLee_BluP
   m_EditorClassIdentifier: 
-  dialogue: []
-  responses: []
+  dialogue:
+  - The Blue Prints of the Greatest Weapon
+  - 'Its a crazy scientist''s design
+
+    as soon as the world knew
+
+    He had to
+    hide...'
+  - 'No one knows where it went.
+
+    But it was 20 years ago so~'
+  responses:
+  - responseText: I have it
+    dialogueObject: {fileID: 0}
+  - responseText: dont sell
+    dialogueObject: {fileID: 0}
