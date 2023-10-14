@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class ResponseHandler : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class ResponseHandler : MonoBehaviour
 
     private DialogueUI dialogueUI;
     private ResponseEvent[] responseEvents;
+
+    private Button firstResponseButton;
+
+    public Button FirstResponseButton => firstResponseButton;
 
     private List<GameObject> tempResponseButtons = new List<GameObject>();
 
@@ -38,14 +43,20 @@ public class ResponseHandler : MonoBehaviour
             responseButton.GetComponent<TMP_Text>().text = response.ResponseText;
             responseButton.GetComponent<Button>().onClick.AddListener(() => OnPickedResponse(response, responseIndex));
 
+            if (i == 0)
+            {
+                firstResponseButton = responseButton.GetComponent<Button>();
+                EventSystem.current.SetSelectedGameObject(firstResponseButton.gameObject);
+            }
+
             tempResponseButtons.Add(responseButton);
 
             responseBoxHeight += responseButtonTemplate.sizeDelta.y;
         }
-
         responseBox.sizeDelta = new Vector2(responseBox.sizeDelta.x, responseBoxHeight);
         responseBox.gameObject.SetActive(true);
     }
+
 
     private void OnPickedResponse(Response response, int responseIndex)
     {
