@@ -36,7 +36,16 @@ public class player : MonoBehaviour
     
     [SerializeField] private DialogueUI dialogueUI;
 
-    public DialogueUI DialogueUI => dialogueUI;
+    public DialogueUI DialogueUI
+    {
+        get { return dialogueUI; }
+        set { dialogueUI = value; }
+    }
+
+    public void SetDialogueUI(DialogueUI newDialogueUI)
+    {
+        dialogueUI = newDialogueUI;
+    }
 
     public IInteractable Interactable { get; set; }
 
