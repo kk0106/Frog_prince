@@ -89,6 +89,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""uiChoose"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""5ce15b51-734f-4bb9-99f1-41b5f76eb816"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -366,6 +375,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""BackPack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""da199ada-4562-4285-be28-8d0085b451f3"",
+                    ""path"": ""<XInputController>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": ""NormalizeVector2"",
+                    ""groups"": """",
+                    ""action"": ""uiChoose"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -381,6 +401,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_playerControls_jump = m_playerControls.FindAction("jump", throwIfNotFound: true);
         m_playerControls_uiTouch = m_playerControls.FindAction("uiTouch", throwIfNotFound: true);
         m_playerControls_BackPack = m_playerControls.FindAction("BackPack", throwIfNotFound: true);
+        m_playerControls_uiChoose = m_playerControls.FindAction("uiChoose", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -449,6 +470,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_playerControls_jump;
     private readonly InputAction m_playerControls_uiTouch;
     private readonly InputAction m_playerControls_BackPack;
+    private readonly InputAction m_playerControls_uiChoose;
     public struct PlayerControlsActions
     {
         private @Controls m_Wrapper;
@@ -460,6 +482,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @jump => m_Wrapper.m_playerControls_jump;
         public InputAction @uiTouch => m_Wrapper.m_playerControls_uiTouch;
         public InputAction @BackPack => m_Wrapper.m_playerControls_BackPack;
+        public InputAction @uiChoose => m_Wrapper.m_playerControls_uiChoose;
         public InputActionMap Get() { return m_Wrapper.m_playerControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -490,6 +513,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @BackPack.started += instance.OnBackPack;
             @BackPack.performed += instance.OnBackPack;
             @BackPack.canceled += instance.OnBackPack;
+            @uiChoose.started += instance.OnUiChoose;
+            @uiChoose.performed += instance.OnUiChoose;
+            @uiChoose.canceled += instance.OnUiChoose;
         }
 
         private void UnregisterCallbacks(IPlayerControlsActions instance)
@@ -515,6 +541,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @BackPack.started -= instance.OnBackPack;
             @BackPack.performed -= instance.OnBackPack;
             @BackPack.canceled -= instance.OnBackPack;
+            @uiChoose.started -= instance.OnUiChoose;
+            @uiChoose.performed -= instance.OnUiChoose;
+            @uiChoose.canceled -= instance.OnUiChoose;
         }
 
         public void RemoveCallbacks(IPlayerControlsActions instance)
@@ -541,5 +570,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnUiTouch(InputAction.CallbackContext context);
         void OnBackPack(InputAction.CallbackContext context);
+        void OnUiChoose(InputAction.CallbackContext context);
     }
 }

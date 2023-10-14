@@ -67,6 +67,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "uiChoose",
+                    "type": "PassThrough",
+                    "id": "5ce15b51-734f-4bb9-99f1-41b5f76eb816",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -342,6 +351,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "BackPack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "da199ada-4562-4285-be28-8d0085b451f3",
+                    "path": "<XInputController>/leftStick",
+                    "interactions": "",
+                    "processors": "NormalizeVector2",
+                    "groups": "",
+                    "action": "uiChoose",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
