@@ -68,7 +68,7 @@ public class ResponseHandler : MonoBehaviour
         }
         tempResponseButtons.Clear();
 
-        if (responseEvents != null && responseIndex <= responseEvents.Length)
+        if (responseEvents != null && responseIndex < responseEvents.Length && responseEvents[responseIndex] != null)
         {
             responseEvents[responseIndex].OnPickedResponse?.Invoke();
         }
@@ -77,7 +77,15 @@ public class ResponseHandler : MonoBehaviour
 
         if (response.DialogueObject)
         {
-            dialogueUI.ShowDialogue(response.DialogueObject);
+            if (response.DialogueObject.IsShopInteraction)
+            {
+                dialogueUI.ShowDialogue(response.DialogueObject);
+                
+            }
+            else
+            {
+                dialogueUI.ShowDialogue(response.DialogueObject);
+            }
         }
         else
         {

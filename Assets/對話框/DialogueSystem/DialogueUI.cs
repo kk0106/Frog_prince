@@ -1,11 +1,14 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DialogueUI : MonoBehaviour
 {
     [SerializeField] private GameObject dialogueBox;
+    [SerializeField] private GameObject ShopBG;
     [SerializeField] private TMP_Text textLabel;
+    [SerializeField] private Button[] buttonsToDisable;
 
     public bool IsOpen { get; private set; }
 
@@ -24,18 +27,38 @@ public class DialogueUI : MonoBehaviour
     {
         IsOpen = true;
 
-        // Display the responses based on saved ResponseEvents
-        foreach (DialogueResponseEvents responseEvents in ResponseEvents)
+        if (dialogueObject.IsShopInteraction)// Logic to handle shop/shopkeeper interaction                                        
         {
-            if (responseEvents.DialogueObject == dialogueObject)
+            ShopBG.gameObject.SetActive(true);
+            foreach (var button in buttonsToDisable)
             {
-                responseHandler.AddResponseEvents(responseEvents.Events);
-                break;
+                button.interactable = false;
+            }
+            
+            foreach (DialogueResponseEvents responseEvents in ResponseEvents)
+            {
+                if (responseEvents.DialogueObject == dialogueObject)
+                {
+                    responseHandler.AddResponseEvents(responseEvents.Events);
+                    break;
+                }
             }
         }
+        else
+        {    // Display the responses based on saved ResponseEvents
+            foreach (DialogueResponseEvents responseEvents in ResponseEvents)
+            {
+                if (responseEvents.DialogueObject == dialogueObject)
+                {
+                    responseHandler.AddResponseEvents(responseEvents.Events);
+                    break;
+                }
+            }
+        }
+            dialogueBox.SetActive(true);
+            StartCoroutine(StepThroughDialogue(dialogueObject));
 
-        dialogueBox.SetActive(true);
-        StartCoroutine(StepThroughDialogue(dialogueObject));
+        
     }
 
     public void AddResponseEvents(ResponseEvent[] responseEvents)
@@ -43,11 +66,30 @@ public class DialogueUI : MonoBehaviour
         responseHandler.AddResponseEvents(responseEvents);
     }
 
+    public void CloseShopDialogueBox()
+    {
+        IsOpen = true;
+        dialogueBox.SetActive(false);
+        textLabel.text = string.Empty;
+
+        foreach (var button in buttonsToDisable)
+        {
+            button.interactable = true;
+        }
+
+        ResponseEvents = null; 
+    }
     public void CloseDialogueBox()
     {
         IsOpen = false;
         dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
+        
+        foreach (var button in buttonsToDisable)
+        {
+            button.interactable = true;
+        }
+        ShopBG.gameObject.SetActive(false);
         ResponseEvents = null;  // Reset response events
     }
 
@@ -71,14 +113,29 @@ public class DialogueUI : MonoBehaviour
             yield return null;
             yield return new WaitUntil(() => UserInput.instance.controls.playerControls.talk.WasPressedThisFrame());
         }
+        if (dialogueObject.IsShopInteraction)
+        {
+            if (dialogueObject.HasResponses)
+            {
+                responseHandler.ShowResponses(dialogueObject.Responses);
+            }
+            else
+            {
+                CloseShopDialogueBox();
+            }
+        }
+        else
+        {
 
-        if (dialogueObject.HasResponses)
+        
+            if (dialogueObject.HasResponses)
         {
             responseHandler.ShowResponses(dialogueObject.Responses);
         }
         else
         {
             CloseDialogueBox();
+        }
         }
     }
 

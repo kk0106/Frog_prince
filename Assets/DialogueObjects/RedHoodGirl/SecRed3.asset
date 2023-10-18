@@ -10,7 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 379cff3bc00ccec4f8df4cb556b6c741, type: 3}
-  m_Name: New Dialogue Object
+  m_Name: SecRed3
   m_EditorClassIdentifier: 
-  dialogue: []
-  responses: []
+  dialogue:
+  - I dont know I stole it from their basement.
+  - it seems to be something important
+  - well~ I am gonna go now~Bye
+  responses:
+  - responseText: byebye
+    dialogueObject: {fileID: 0}
