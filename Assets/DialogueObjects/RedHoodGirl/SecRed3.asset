@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: SecRed3
   m_EditorClassIdentifier: 
   dialogue:
-  - I dont know I stole it from their basement.
-  - it seems to be something important
-  - well~ I am gonna go now~Bye
+  - "\u6211\u4E5F\u4E0D\u77E5\u9053\n\u6211\u5728\u4ED6\u5011\u5730\u4E0B\u5BA4\u62FF\u7684"
+  - "\u4F46\u770B\u8D77\u4F86\u662F\u4EF6\u5F88\u91CD\u8981\u7684\u6771\u897F"
+  - "\u597D~\u73FE\u5728\u6211\u8981\u8D70\u4E86\u62DC\u62DC~"
   responses:
-  - responseText: byebye
+  - responseText: "\u62DC\u62DC"
     dialogueObject: {fileID: 0}
+  isShopInteraction: 0
