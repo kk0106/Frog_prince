@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class hp : MonoBehaviour
 {
+    [Header("blood")]
     public GameObject blood;
     public GameObject blood1;
     public GameObject blood2;
+    public int HP;
 
+
+    [Header("die")]
     public GameObject die;
     public GameObject die1;
     public GameObject die2;
 
+    [Header("POS")]
     public Vector3 pos;
     public Vector3 pos2;
+    public Vector3 pos3;
+    public Vector3 pos4;
 
-    public int HP;
-
+   
     public GameObject GGpanel;
     // Start is called before the first frame update
     void Start()
@@ -95,6 +101,18 @@ public class hp : MonoBehaviour
             HP -= 1;
 
             this.gameObject.transform.position = pos2;
+        }
+        if (other.gameObject.tag == "poison")
+        {
+            HP -= 1;
+
+            this.gameObject.transform.position = pos3;
+        }
+        if (other.gameObject.tag == "egg")
+        {
+            HP -= 1;
+
+            this.gameObject.transform.position = pos4;
         }
     }
 }

@@ -72,19 +72,21 @@ public class player : MonoBehaviour
         Move();
 
         Jump();
-        
-      //  if(GamePenal.activeInHierarchy)
-        //{
-          //  MoveSpeed = 0f;
-            //MoveSpeed1 = 0f;
-            //JumpForce = 0f;
-        //}
-        //else
-       // {
-        //    MoveSpeed = 1.5f;
-        //    MoveSpeed1 = 1.5f;
-        //    JumpForce = 3f;
-       // }
+
+        if (rbcomic.A == 1)
+        {
+            MoveSpeed = 0;
+            MoveSpeed1 = 0;
+            JumpForce = 0;
+            JumpTime = 0;
+        }
+        else
+        {
+            MoveSpeed = 1.5f;
+            MoveSpeed1 = 1.5f;
+            JumpForce = 3f;
+            JumpTime = 0.35f;
+        }
         
         if (UserInput.instance.controls.playerControls.talk.WasPressedThisFrame())
         
