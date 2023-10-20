@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: ArLee_shoe
   m_EditorClassIdentifier: 
   dialogue:
-  - The most beautiful shoe in the world~
-  - Legend saids only one women can wear it
-  - You didnt happen to have it do you?
+  - "\u4E16\u754C\u4E0A\u6700\u6F02\u4EAE\u7684\u978B\u5B50\u3002"
+  - "\u50B3\u8AAA\u4E2D\u53EA\u6709\u4E00\u500B\u5973\u4EBA\u7A7F\u5F97\u4E0B\u5B83\u3002"
+  - "\u4F60\u73FE\u5728\u8A72\u4E0D\u6703\u5E36\u7740\u5427?"
   responses:
-  - responseText: Sell
+  - responseText: "\u8CE3\u7D66\u4F60\u5427\u3002"
     dialogueObject: {fileID: 11400000, guid: 29c6f54f558588d4ba91911afd164068, type: 2}
-  - responseText: Don't sell
+  - responseText: "\u6211\u6C92\u6709~"
     dialogueObject: {fileID: 11400000, guid: ba7d49d0ca9aaa44ea47ff724801a416, type: 2}
   isShopInteraction: 1
