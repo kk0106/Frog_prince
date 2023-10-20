@@ -6,8 +6,8 @@ using UnityEngine;
 public class player : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] public static float MoveSpeed = 7.5f;
-    [SerializeField] private float MoveSpeed1 = 7.5f;
+    [SerializeField] public static float MoveSpeed = 1.5f;
+    [SerializeField] private float MoveSpeed1 = 1.5f;
     [SerializeField] public bool FaceRight;
     [SerializeField] public bool FaceBack;
     private Vector3 player00;
@@ -15,8 +15,8 @@ public class player : MonoBehaviour
     
 
     [Header("Jump")]
-    [SerializeField] public static float JumpForce = 5f;
-    [SerializeField] private float JumpTime = 0.5f;
+    [SerializeField] public static float JumpForce = 3f;
+    [SerializeField] private float JumpTime = 0.35f;
     public bool Jumping;
     public bool Falling;
     private float JumpTimeCounter;
@@ -70,20 +70,21 @@ public class player : MonoBehaviour
         if (dialogueUI.IsOpen) return;
 
         Move();
+
         Jump();
         
-        if(GamePenal.activeInHierarchy)
-        {
-            MoveSpeed = 0f;
-            MoveSpeed1 = 0f;
-            JumpForce = 0f;
-        }
-        else
-        {
-            MoveSpeed = 1.5f;
-            MoveSpeed1 = 1.5f;
-            JumpForce = 3f;
-        }
+      //  if(GamePenal.activeInHierarchy)
+        //{
+          //  MoveSpeed = 0f;
+            //MoveSpeed1 = 0f;
+            //JumpForce = 0f;
+        //}
+        //else
+       // {
+        //    MoveSpeed = 1.5f;
+        //    MoveSpeed1 = 1.5f;
+        //    JumpForce = 3f;
+       // }
         
         if (UserInput.instance.controls.playerControls.talk.WasPressedThisFrame())
         
@@ -306,7 +307,7 @@ public class player : MonoBehaviour
     {
         if (FaceBack)
         {
-            Vector3 rotator = new Vector3(transform.rotation.x, 90f, transform.rotation.z);
+            Vector3 rotator = new Vector3(transform.rotation.x, 25f, transform.rotation.z);
             transform.rotation = Quaternion.Euler(rotator);
             FaceBack = !FaceBack;
 
@@ -314,7 +315,7 @@ public class player : MonoBehaviour
         }
         else
         {
-            Vector3 rotator = new Vector3(transform.rotation.x, -90f, transform.rotation.z);
+            Vector3 rotator = new Vector3(transform.rotation.x, -25f, transform.rotation.z);
             transform.rotation = Quaternion.Euler(rotator);
             FaceBack = !FaceBack;
 
