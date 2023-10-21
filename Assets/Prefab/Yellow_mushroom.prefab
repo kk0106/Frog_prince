@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7917421276902112845}
   - component: {fileID: 789407375189981838}
   - component: {fileID: 1230057588583891767}
-  - component: {fileID: 466476375450314860}
+  - component: {fileID: 5513127251310651144}
   m_Layer: 0
   m_Name: Yellow_mushroom
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8387427494260740097}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.630831, y: -0.026, z: 8.780778}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &466476375450314860
-MeshCollider:
+--- !u!65 &5513127251310651144
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +94,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 5941324417026530474, guid: 6e25cbe6ee1d077479db440db8e5d12b, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.8601972, y: 0.5860802, z: 0.8481716}
+  m_Center: {x: 0.0026566684, y: 0.28843182, z: -0.01991193}

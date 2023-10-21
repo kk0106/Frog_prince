@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4476404624874790495}
   - component: {fileID: 3470586785748814997}
   - component: {fileID: 6771881321376724026}
-  - component: {fileID: 6932240587151009109}
+  - component: {fileID: 1657043857999012612}
   m_Layer: 0
   m_Name: Brown mushroom
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7502196562622154420}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.969, y: -0.00064331293, z: -8.92}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6932240587151009109
-MeshCollider:
+--- !u!65 &1657043857999012612
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +94,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1904015370114471341, guid: 6e25cbe6ee1d077479db440db8e5d12b, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.6031918, y: 0.9939391, z: 0.6053228}
+  m_Center: {x: -0.048670888, y: 0.498697, z: 0.13725924}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4903746846172676623}
   - component: {fileID: 5186346771122570894}
   - component: {fileID: 98674306783939647}
-  - component: {fileID: 4397692961599383026}
+  - component: {fileID: 882375537884168130}
   m_Layer: 0
   m_Name: Origami flower
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3174696479145543750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.861662, y: -0.0015873611, z: 5.0383406}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4397692961599383026
-MeshCollider:
+--- !u!65 &882375537884168130
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +94,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -125435165217083709, guid: 788164bfa4f66d84484824ce7214ce3a, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.61595035, y: 0.3991257, z: 0.41415018}
+  m_Center: {x: 0.11606388, y: 0.19850224, z: 0.027471937}

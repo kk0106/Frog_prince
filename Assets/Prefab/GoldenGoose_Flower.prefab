@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6589248599473707213}
   - component: {fileID: 4849283107050843709}
   - component: {fileID: 802019699072704962}
-  - component: {fileID: 3599396235577034797}
   m_Layer: 0
   m_Name: GooseBody.002
   m_TagString: Untagged
@@ -84,20 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3599396235577034797
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1442319029221648458}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5457902407797276603, guid: 6e25cbe6ee1d077479db440db8e5d12b, type: 3}
 --- !u!1 &1842172963251358467
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +94,6 @@ GameObject:
   - component: {fileID: 1126526180680734049}
   - component: {fileID: 3692109868914550962}
   - component: {fileID: 6587169628515770835}
-  - component: {fileID: 823948553734955348}
   m_Layer: 0
   m_Name: Flower.002
   m_TagString: Untagged
@@ -182,20 +166,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &823948553734955348
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1842172963251358467}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2853758356561523825, guid: 6e25cbe6ee1d077479db440db8e5d12b, type: 3}
 --- !u!1 &2213851672879986354
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,6 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5277861758943110172}
+  - component: {fileID: 6307171065569848853}
   m_Layer: 0
   m_Name: GoldenGoose_Flower
   m_TagString: Untagged
@@ -220,7 +191,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2213851672879986354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.997, y: 0.7206763, z: -6.3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -231,6 +202,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6307171065569848853
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2213851672879986354}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.731079, y: 2.216796, z: 2.5101857}
+  m_Center: {x: 0.029115677, y: 0.033299208, z: 0.027771711}
 --- !u!1 &2962052293858777092
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,7 +226,6 @@ GameObject:
   - component: {fileID: 1796595858239964359}
   - component: {fileID: 3853459229909330355}
   - component: {fileID: 8846718702252159341}
-  - component: {fileID: 1156197164340879333}
   m_Layer: 0
   m_Name: GooseLeg.003
   m_TagString: Untagged
@@ -315,20 +298,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1156197164340879333
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2962052293858777092}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -7075649237574457472, guid: 6e25cbe6ee1d077479db440db8e5d12b, type: 3}
 --- !u!1 &7375806905280867554
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,7 +309,6 @@ GameObject:
   - component: {fileID: 2094504469058644352}
   - component: {fileID: 9079709400268337049}
   - component: {fileID: 7711758033543833861}
-  - component: {fileID: 476073420867616140}
   m_Layer: 0
   m_Name: pendant.002
   m_TagString: Untagged
@@ -413,17 +381,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &476073420867616140
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7375806905280867554}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3069559408541003997, guid: 6e25cbe6ee1d077479db440db8e5d12b, type: 3}

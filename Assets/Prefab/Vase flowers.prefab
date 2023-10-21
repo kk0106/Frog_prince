@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 213296787561496669}
+  - component: {fileID: 6373343867646616506}
   m_Layer: 0
   m_Name: Vase flowers
   m_TagString: Untagged
@@ -24,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 702025945705716455}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.181925, y: 0.8699021, z: -54.42431}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -33,6 +34,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6373343867646616506
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702025945705716455}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.93621254, y: 1.9466665, z: 0.86349106}
+  m_Center: {x: -0.09566593, y: 0.09550607, z: 0.06393242}
 --- !u!1 &1919948043388717493
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,7 +58,6 @@ GameObject:
   - component: {fileID: 1430034358177033066}
   - component: {fileID: 1236046694620353584}
   - component: {fileID: 8222890957355505639}
-  - component: {fileID: 4408791196015195863}
   m_Layer: 0
   m_Name: Little vase flowers
   m_TagString: Untagged
@@ -117,20 +130,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4408791196015195863
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1919948043388717493}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -9179750328670846506, guid: 6cf9a9a0802379940a056bf29df6e5ca, type: 3}
 --- !u!1 &8660456205746980915
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +141,6 @@ GameObject:
   - component: {fileID: 4332438894904088013}
   - component: {fileID: 4097289791120258811}
   - component: {fileID: 3058663944559042932}
-  - component: {fileID: 4129098949925202426}
   m_Layer: 0
   m_Name: Big vase flowers
   m_TagString: Untagged
@@ -215,17 +213,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4129098949925202426
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8660456205746980915}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 163515467529135533, guid: 6cf9a9a0802379940a056bf29df6e5ca, type: 3}

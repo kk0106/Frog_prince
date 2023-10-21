@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8501630725234934623}
   - component: {fileID: 1264099714791944245}
   - component: {fileID: 4798055181762356887}
-  - component: {fileID: 3765811326878221103}
+  - component: {fileID: 6265553226262334472}
   m_Layer: 0
   m_Name: lotus_leaf
   m_TagString: Untagged
@@ -26,8 +26,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3628030389402565069}
-  m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
-  m_LocalPosition: {x: -0.68006366, y: 0.50298524, z: 5.122424}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3765811326878221103
-MeshCollider:
+--- !u!65 &6265553226262334472
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +94,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2586557875953538291, guid: 23a3cc8b5373897429d770b34dff0582, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.6102914, y: 1.1542959, z: 0.47983944}
+  m_Center: {x: 0.05751268, y: 0.07008502, z: -0.00852792}
