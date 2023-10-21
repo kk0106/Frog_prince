@@ -179,6 +179,16 @@ public class player : MonoBehaviour
     {
         grouned = true;
     }
+
+    private void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.tag == "Mushroom")
+        {
+
+
+            rb.AddForce(Vector3.up *150f);
+        }
+    }
     private void OnCollisionExit(Collision collision)
     {
         grouned = false;

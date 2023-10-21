@@ -455,6 +455,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom A (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86004ed8dbe11d24e91146c5c919df33,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushroom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86004ed8dbe11d24e91146c5c919df33, type: 3}
 --- !u!4 &72216606 stripped
@@ -463,103 +468,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 72216605}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &113933236
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 113933240}
-  - component: {fileID: 113933239}
-  - component: {fileID: 113933238}
-  - component: {fileID: 113933237}
-  m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &113933237
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113933236}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &113933238
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113933236}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &113933239
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113933236}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &113933240
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113933236}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.35, y: 9.62956, z: -8.09}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &129546068
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,6 +572,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom A (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86004ed8dbe11d24e91146c5c919df33,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushroom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86004ed8dbe11d24e91146c5c919df33, type: 3}
@@ -836,6 +749,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom A
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86004ed8dbe11d24e91146c5c919df33,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushroom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86004ed8dbe11d24e91146c5c919df33, type: 3}
@@ -1767,6 +1685,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom A (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86004ed8dbe11d24e91146c5c919df33,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushroom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86004ed8dbe11d24e91146c5c919df33, type: 3}
 --- !u!4 &242493884 stripped
@@ -2106,6 +2029,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom A (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86004ed8dbe11d24e91146c5c919df33,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushroom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86004ed8dbe11d24e91146c5c919df33, type: 3}
@@ -2730,6 +2658,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom A (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86004ed8dbe11d24e91146c5c919df33,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushroom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86004ed8dbe11d24e91146c5c919df33, type: 3}
@@ -4075,6 +4008,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom A (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86004ed8dbe11d24e91146c5c919df33,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushroom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86004ed8dbe11d24e91146c5c919df33, type: 3}
 --- !u!4 &631460494 stripped
@@ -4674,6 +4612,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom A (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86004ed8dbe11d24e91146c5c919df33,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushroom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86004ed8dbe11d24e91146c5c919df33, type: 3}
@@ -6283,6 +6226,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom A (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86004ed8dbe11d24e91146c5c919df33,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushroom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86004ed8dbe11d24e91146c5c919df33, type: 3}
 --- !u!4 &1003244583 stripped
@@ -6454,6 +6402,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom A (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86004ed8dbe11d24e91146c5c919df33,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushroom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86004ed8dbe11d24e91146c5c919df33, type: 3}
@@ -7392,7 +7345,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119884606}
   m_LocalRotation: {x: 0.02703086, y: 0.034731418, z: -0.0010007456, w: 0.9990306}
-  m_LocalPosition: {x: -52.82183, y: 1.4749533, z: -17.500742}
+  m_LocalPosition: {x: -47.151833, y: 1.4749533, z: -17.500742}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7496,6 +7449,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom A (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86004ed8dbe11d24e91146c5c919df33,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushroom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86004ed8dbe11d24e91146c5c919df33, type: 3}
@@ -10812,6 +10770,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom A (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86004ed8dbe11d24e91146c5c919df33,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushroom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86004ed8dbe11d24e91146c5c919df33, type: 3}
 --- !u!4 &1193590717 stripped
@@ -11022,6 +10985,7 @@ MonoBehaviour:
   gunTip: {fileID: 2030341162}
   player: {fileID: 1565593218}
   damageAmount: 5
+  IsSwinging: 0
 --- !u!120 &1236977295
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -11432,6 +11396,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom A (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86004ed8dbe11d24e91146c5c919df33,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushroom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86004ed8dbe11d24e91146c5c919df33, type: 3}
 --- !u!4 &1282832707 stripped
@@ -11570,6 +11539,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom A (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86004ed8dbe11d24e91146c5c919df33,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushroom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86004ed8dbe11d24e91146c5c919df33, type: 3}
@@ -12062,6 +12036,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom A (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86004ed8dbe11d24e91146c5c919df33,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushroom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86004ed8dbe11d24e91146c5c919df33, type: 3}
@@ -13072,7 +13051,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375762404}
   m_LocalRotation: {x: 0.02703086, y: 0.034731418, z: -0.0010007456, w: 0.9990306}
-  m_LocalPosition: {x: -52.82183, y: 1.4749533, z: -17.500742}
+  m_LocalPosition: {x: -47.151833, y: 1.4749533, z: -17.500742}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13357,6 +13336,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom A (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86004ed8dbe11d24e91146c5c919df33,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushroom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86004ed8dbe11d24e91146c5c919df33, type: 3}
 --- !u!4 &1414805563 stripped
@@ -13569,6 +13553,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom A (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86004ed8dbe11d24e91146c5c919df33,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushroom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86004ed8dbe11d24e91146c5c919df33, type: 3}
@@ -13831,6 +13820,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom A (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86004ed8dbe11d24e91146c5c919df33,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushroom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86004ed8dbe11d24e91146c5c919df33, type: 3}
 --- !u!4 &1515453362 stripped
@@ -13906,6 +13900,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom A (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86004ed8dbe11d24e91146c5c919df33,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushroom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86004ed8dbe11d24e91146c5c919df33, type: 3}
 --- !u!4 &1560847978 stripped
@@ -13944,7 +13943,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565593217}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -56.3, y: 0.356, z: -3.24}
+  m_LocalPosition: {x: -50.63, y: 0.356, z: -3.24}
   m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -14073,6 +14072,7 @@ MonoBehaviour:
   grouned: 1
   GamePenal: {fileID: 1687667885}
   dialogueUI: {fileID: 1687667888}
+  grapplingGun: {fileID: 1236977294}
 --- !u!54 &1565593223
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14414,8 +14414,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.9601479, y: 5.436426, z: 11.592187}
-  m_Center: {x: 0.12431908, y: 0.6868577, z: -2.6288323}
+  m_Size: {x: 2.4896774, y: 5.436426, z: 11.592187}
+  m_Center: {x: -0.63043594, y: 0.6868577, z: -2.6288323}
 --- !u!1 &1646124022
 GameObject:
   m_ObjectHideFlags: 0
@@ -14845,6 +14845,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mushroom A (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86004ed8dbe11d24e91146c5c919df33,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushroom
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86004ed8dbe11d24e91146c5c919df33, type: 3}
 --- !u!4 &1795633678 stripped
@@ -15163,6 +15168,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom A (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86004ed8dbe11d24e91146c5c919df33,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushroom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86004ed8dbe11d24e91146c5c919df33, type: 3}
@@ -15636,6 +15646,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mushroom A (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86004ed8dbe11d24e91146c5c919df33,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mushroom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86004ed8dbe11d24e91146c5c919df33, type: 3}
