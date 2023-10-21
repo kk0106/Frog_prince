@@ -10,6 +10,7 @@ public class player : MonoBehaviour
     [SerializeField] private float MoveSpeed1 = 1.5f;
     [SerializeField] public bool FaceRight;
     [SerializeField] public bool FaceBack;
+    
     private Vector3 player00;
     private Animator move_ani;
     
@@ -35,6 +36,7 @@ public class player : MonoBehaviour
     public GameObject GamePenal;
     
     [SerializeField] private DialogueUI dialogueUI;
+    [SerializeField] private GrapplingGun grapplingGun;
 
     public DialogueUI DialogueUI
     {
@@ -80,6 +82,13 @@ public class player : MonoBehaviour
             JumpForce = 0;
             JumpTime = 0;
         }
+        else if (grapplingGun.IsSwinging)
+        {
+            MoveSpeed = 2.5f;
+            MoveSpeed1 = 2.5f;
+            JumpForce = 3f;
+            JumpTime = 0.35f;
+        }
         else
         {
             MoveSpeed = 1.5f;
@@ -89,8 +98,7 @@ public class player : MonoBehaviour
         }
         
         if (UserInput.instance.controls.playerControls.talk.WasPressedThisFrame())
-        
-      
+    
             {
             if (dialogueUI.IsOpen) return;
             Interactable?.Interact(this);
@@ -138,12 +146,12 @@ public class player : MonoBehaviour
 
             }
 
-            //else if(JumpTimeCounter==0)
-           // {
-           //     Falling = true;
-           //     Jumping = false;
-          //      JumpTime = 0.36f;
-          //  }
+            else if(JumpTimeCounter==0)
+            {
+                Falling = true;
+                Jumping = false;
+               JumpTime = 0.36f;
+            }
             else
             {
                 Jumping=false;

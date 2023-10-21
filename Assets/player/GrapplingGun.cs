@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using UnityEditor;
 using UnityEngine;
 
@@ -12,19 +13,21 @@ public class GrapplingGun : MonoBehaviour
     private BreakableObject breakableObject;
     public LayerMask whatIsGrappleable;
     public Transform gunTip, player;
+    private Rigidbody playerRigidbody;
+
 
     private float maxDistance = 1.5f;
     private float grappleRadius = 1.0f; // Adjust this radius to your needs
     private SpringJoint joint;
     public float damageAmount = 5f;
-
+    public bool IsSwinging;
     int numberOfRays = 18; // Adjust the number of rays as needed
     float coneAngle = 0f; // Adjust the cone angle as needed
 
 
     private void Start()
     {
-      
+        playerRigidbody = player.GetComponent<Rigidbody>();
     }
     void Awake()
     {
@@ -59,6 +62,12 @@ public class GrapplingGun : MonoBehaviour
         {
             ApplyDamageToBreakableObject();
         }
+        if (IsGrappling())
+        {
+            // Apply gravity to the player's rigidbody while grappling
+            playerRigidbody.velocity += Physics.gravity * Time.deltaTime;
+        }
+
     }
 
     // Call this method to apply damage to the breakable object
@@ -79,7 +88,7 @@ public class GrapplingGun : MonoBehaviour
     /// </summary>
     void StartGrapple()
     {
-        // Perform multiple raycasts in a cone pattern
+       
         for (int i = 0; i < numberOfRays; i++)
         {
             float angle = (-coneAngle / 2f) + (i * (coneAngle / (float)(numberOfRays - 1)));
@@ -90,6 +99,7 @@ public class GrapplingGun : MonoBehaviour
                 grapplePoint = hit.point;
                 // Rest of the grapple logic...
                 SetupGrapple();
+                IsSwinging = true;
                 break; // Break out of the loop if a grapple point is found
             }
         }
@@ -102,6 +112,7 @@ public class GrapplingGun : MonoBehaviour
     /// </summary>
     void SetupGrapple()
     {
+        
         RaycastHit hit;
         // Use your existing SphereCast here
         if (Physics.SphereCast(gunTip.position, grappleRadius, gunTip.forward, out hit, maxDistance, whatIsGrappleable))
@@ -125,12 +136,13 @@ public class GrapplingGun : MonoBehaviour
             joint.autoConfigureConnectedAnchor = false;
             joint.connectedAnchor = grapplePoint;
 
+            
             // Set up SpringJoint properties (adjust these as needed)
-            joint.maxDistance = Vector3.Distance(player.position, grapplePoint) * 0.8f;
-            joint.minDistance = Vector3.Distance(player.position, grapplePoint) * 0.25f;
-            joint.spring = 2f;
+            joint.maxDistance = 1f;
+            joint.minDistance = 0.5f;
+            joint.spring = 3f;
             joint.damper = 7f;
-            joint.massScale = 4.5f;
+            joint.massScale = 50f;
 
             lr.positionCount = 2;
         }
@@ -145,12 +157,14 @@ public class GrapplingGun : MonoBehaviour
     {
         lr.positionCount = 0;
         Destroy(joint);
+        IsSwinging = false;
     }
 
     private Vector3 currentGrapplePosition;
 
     void DrawRope()
     {
+        
         // If not grappling or the joint is null, don't draw rope
         if (!IsGrappling() || joint == null)
         {
