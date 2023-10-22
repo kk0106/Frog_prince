@@ -19,6 +19,9 @@ public class GrapplingGun : MonoBehaviour
     private SpringJoint joint;
     public float damageAmount = 5f;
     public static int IsSwinging;
+    private float grappleExtensionSpeed = 10f;
+    public GameObject rangePrefab;
+    private GameObject currentRangeIndicator;
 
     private void Start()
     {
@@ -32,6 +35,7 @@ public class GrapplingGun : MonoBehaviour
 
     void Update()
     {
+        
         if (UserInput.instance.controls.playerControls.GrappleGun.WasPressedThisFrame())
         {
             StartGrapple();
@@ -41,6 +45,10 @@ public class GrapplingGun : MonoBehaviour
         {
             StopGrapple();
             grappleCheck = 0;
+            if (currentRangeIndicator != null)
+            {
+                Destroy(currentRangeIndicator);
+            }
         }
         else if (IsGrappling())
         {
@@ -74,9 +82,29 @@ public class GrapplingGun : MonoBehaviour
         }
     }
 
+    void SetupGrappleVisualEffect()
+    {
+        // Create a visual effect here (e.g., using the LineRenderer or particle system)
+        // You can simply create a line or particles representing the grapple.
+
+        // For example, using a LineRenderer:
+       
+    }
+
+
+
+
     void StartGrapple()
     {
         Collider[] hitColliders = Physics.OverlapSphere(gunTip.position, grappleRadius, whatIsGrappleable);
+
+
+        if (hitColliders.Length == 0)
+        {
+            currentRangeIndicator = Instantiate(rangePrefab, player.position, Quaternion.identity);
+            currentRangeIndicator.transform.parent = player;
+            SetupGrappleVisualEffect();
+        }
 
         foreach (var hitCollider in hitColliders)
         {
@@ -135,6 +163,7 @@ public class GrapplingGun : MonoBehaviour
         currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, grapplePoint, Time.deltaTime * 8f);
         lr.SetPosition(0, gunTip.position);
         lr.SetPosition(1, currentGrapplePosition);
+        
     }
 
     public bool IsGrappling()

@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class DialogueUI : MonoBehaviour
 {
@@ -77,7 +78,12 @@ public class DialogueUI : MonoBehaviour
             button.interactable = true;
         }
 
-        ResponseEvents = null; 
+        ResponseEvents = null;
+        
+        if (buttonsToDisable.Length > 0)
+        {
+            EventSystem.current.SetSelectedGameObject(buttonsToDisable[0].gameObject);
+        }
     }
     public void CloseDialogueBox()
     {
