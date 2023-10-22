@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Mushroom : MonoBehaviour
 {
-    public float jumpspeed=3f;
-    Rigidbody rb;
+    public GameObject cam;
     // Start is called before the first frame update
     void Start()
     {
-            rb = GetComponent<Rigidbody>();
+           cam.SetActive(false);
     }
 
     // Update is called once per frame
@@ -17,11 +16,10 @@ public class Mushroom : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter(Collision other)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
-        {
-            rb.AddForce(Vector3.up * jumpspeed);
-        }
+        cam.SetActive (true);
     }
+
 }

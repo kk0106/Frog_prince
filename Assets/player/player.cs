@@ -80,18 +80,24 @@ public class player : MonoBehaviour
             MoveSpeed = 0;
             MoveSpeed1 = 0;
             JumpForce = 0;
-            JumpTime = 0;
+            
         }
         else if (GrapplingGun.IsSwinging == 1)
         {
             MoveSpeed = 2.5f;
             MoveSpeed1 = 2.5f;
-  
+
+            JumpForce = 3f;
+             
+
         }
         else
         {
             MoveSpeed = 1.5f;
             MoveSpeed1 = 1.5f;
+
+            JumpForce = 3f;
+            
 
         }
         
@@ -119,6 +125,17 @@ public class player : MonoBehaviour
             move_ani.SetBool("IsTongueL", false);
         }
 
+        
+
+        if (Jumping)
+        {
+            JumpTime -= Time.deltaTime;
+        }
+        if (Falling)
+        {
+            JumpTime = 0.36f;
+        }
+
     }
 
 
@@ -134,27 +151,29 @@ public class player : MonoBehaviour
            // move_ani.SetTrigger("jump");
         }
 
+        
+
         //«ùÄò«öµÛ¸õÁä
         if (UserInput.instance.controls.playerControls.jump.IsPressed())
         {
             if (JumpTime > 0 && Jumping)
             {
                 rb.velocity = new Vector2(rb.velocity.x, JumpForce);
-                JumpTime -= Time.deltaTime;
+                
 
             }
 
-            else if(JumpTimeCounter==0)
-            {
-                Falling = true;
-                Jumping = false;
-               JumpTime = 0.36f;
-            }
-            else
-            {
-                Jumping=false;
-                JumpTime = 0.36f;
-            }
+          //  else if(JumpTimeCounter==0)
+            //{
+            //    Falling = true;
+            //    Jumping = false;
+            //   JumpTime = 0.36f;
+           // }
+         //   else
+          //  {
+          //      Jumping=false;
+           //     JumpTime = 0.36f;
+          //  }
 
         }
 
@@ -185,6 +204,22 @@ public class player : MonoBehaviour
 
 
             rb.AddForce(Vector3.up *150f);
+        }
+
+        if(other.gameObject.tag == "MushroomA")
+        {
+
+            rb.AddForce(Vector3.up * 100f);
+        }
+
+        if(other.gameObject.tag== "MushroomB")
+        {
+            rb.AddForce(Vector3.up * 50f);
+        }
+
+        if(other.gameObject.tag== "MushroomC")
+        {
+            other.gameObject.SetActive(false);
         }
     }
     private void OnCollisionExit(Collision collision)
