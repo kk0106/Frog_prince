@@ -36,7 +36,7 @@ public class player : MonoBehaviour
     public GameObject GamePenal;
     
     [SerializeField] private DialogueUI dialogueUI;
-    [SerializeField] private GrapplingGun grapplingGun;
+    
 
     public DialogueUI DialogueUI
     {
@@ -82,19 +82,17 @@ public class player : MonoBehaviour
             JumpForce = 0;
             JumpTime = 0;
         }
-        else if (grapplingGun.IsSwinging)
+        else if (GrapplingGun.IsSwinging == 1)
         {
             MoveSpeed = 2.5f;
             MoveSpeed1 = 2.5f;
-            JumpForce = 3f;
-            JumpTime = 0.35f;
+  
         }
         else
         {
             MoveSpeed = 1.5f;
             MoveSpeed1 = 1.5f;
-            JumpForce = 3f;
-            JumpTime = 0.35f;
+
         }
         
         if (UserInput.instance.controls.playerControls.talk.WasPressedThisFrame())

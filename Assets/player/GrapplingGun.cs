@@ -20,7 +20,7 @@ public class GrapplingGun : MonoBehaviour
     private float grappleRadius = 1.0f; // Adjust this radius to your needs
     private SpringJoint joint;
     public float damageAmount = 5f;
-    public bool IsSwinging;
+    public static int IsSwinging;
     int numberOfRays = 18; // Adjust the number of rays as needed
     float coneAngle = 0f; // Adjust the cone angle as needed
 
@@ -99,7 +99,7 @@ public class GrapplingGun : MonoBehaviour
                 grapplePoint = hit.point;
                 // Rest of the grapple logic...
                 SetupGrapple();
-                IsSwinging = true;
+                IsSwinging = 1;
                 break; // Break out of the loop if a grapple point is found
             }
         }
@@ -157,7 +157,7 @@ public class GrapplingGun : MonoBehaviour
     {
         lr.positionCount = 0;
         Destroy(joint);
-        IsSwinging = false;
+        IsSwinging = 0;
     }
 
     private Vector3 currentGrapplePosition;
