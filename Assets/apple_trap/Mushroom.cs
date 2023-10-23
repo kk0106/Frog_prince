@@ -19,7 +19,27 @@ public class Mushroom : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        cam.SetActive (true);
+        if (other.gameObject.tag == "Player")
+        {
+            cam.SetActive(true);
+        }
+       
+       
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            cam.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            cam.SetActive(false);
+        }
+    }
 }
