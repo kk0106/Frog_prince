@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: -2924793419467495913}
   - component: {fileID: 3044278332012845767}
   - component: {fileID: 5691269929595689050}
-  m_Layer: 0
+  - component: {fileID: -1934477603001697429}
+  m_Layer: 9
   m_Name: Golden Egg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,8 +124,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1341609544623334922}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26ccb4a6ba01a024db1912129ffa90bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1934477603001697429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341609544623334922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2848fc81b974bd4aa5a4b073185c941, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5

@@ -6,7 +6,7 @@ using UnityEngine;
 public class GrapplingGun : MonoBehaviour
 {
     public static int grappleCheck;
-
+    public ShootGun shootGun;
     private LineRenderer lr;
     private Vector3 grapplePoint;
     private BreakableObject breakableObject;
@@ -38,8 +38,13 @@ public class GrapplingGun : MonoBehaviour
         
         if (UserInput.instance.controls.playerControls.GrappleGun.WasPressedThisFrame())
         {
+            if (shootGun.eggToShoot)
+            {
+            return;
+            }
             StartGrapple();
             grappleCheck = 1;
+            
         }
         else if (UserInput.instance.controls.playerControls.GrappleGun.WasReleasedThisFrame())
         {
@@ -76,9 +81,17 @@ public class GrapplingGun : MonoBehaviour
         {
             return;
         }
-        else
+        else if (breakableObject.CompareTag("egg"))
         {
             breakableObject.ApplyDamage(damageAmount);
+            // Set eggToShoot to true
+            shootGun.eggToShoot = true;
+            breakableObject = null;
+        }
+        else 
+        { 
+            breakableObject.ApplyDamage(damageAmount);
+            breakableObject = null;
         }
     }
 
@@ -108,7 +121,7 @@ public class GrapplingGun : MonoBehaviour
 
         foreach (var hitCollider in hitColliders)
         {
-            
+       
             // Get the closest point on the detected object
             grapplePoint = hitCollider.ClosestPoint(gunTip.position);
 
@@ -149,6 +162,7 @@ public class GrapplingGun : MonoBehaviour
         lr.positionCount = 0;
         Destroy(joint);
         IsSwinging = 0;
+        
     }
 
     private Vector3 currentGrapplePosition;

@@ -98,6 +98,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ShootGun"",
+                    ""type"": ""Button"",
+                    ""id"": ""5e8fcb81-4f6d-423d-8c96-eb13ca88a92e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -397,6 +406,28 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""uiChoose"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""50f2a59d-6ae2-4c04-bade-b4e04f23cb67"",
+                    ""path"": ""<XInputController>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShootGun"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cb39091d-d680-4f86-941f-63663c5a2dc3"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShootGun"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -413,6 +444,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_playerControls_uiTouch = m_playerControls.FindAction("uiTouch", throwIfNotFound: true);
         m_playerControls_BackPack = m_playerControls.FindAction("BackPack", throwIfNotFound: true);
         m_playerControls_uiChoose = m_playerControls.FindAction("uiChoose", throwIfNotFound: true);
+        m_playerControls_ShootGun = m_playerControls.FindAction("ShootGun", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -482,6 +514,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_playerControls_uiTouch;
     private readonly InputAction m_playerControls_BackPack;
     private readonly InputAction m_playerControls_uiChoose;
+    private readonly InputAction m_playerControls_ShootGun;
     public struct PlayerControlsActions
     {
         private @Controls m_Wrapper;
@@ -494,6 +527,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @uiTouch => m_Wrapper.m_playerControls_uiTouch;
         public InputAction @BackPack => m_Wrapper.m_playerControls_BackPack;
         public InputAction @uiChoose => m_Wrapper.m_playerControls_uiChoose;
+        public InputAction @ShootGun => m_Wrapper.m_playerControls_ShootGun;
         public InputActionMap Get() { return m_Wrapper.m_playerControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -527,6 +561,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @uiChoose.started += instance.OnUiChoose;
             @uiChoose.performed += instance.OnUiChoose;
             @uiChoose.canceled += instance.OnUiChoose;
+            @ShootGun.started += instance.OnShootGun;
+            @ShootGun.performed += instance.OnShootGun;
+            @ShootGun.canceled += instance.OnShootGun;
         }
 
         private void UnregisterCallbacks(IPlayerControlsActions instance)
@@ -555,6 +592,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @uiChoose.started -= instance.OnUiChoose;
             @uiChoose.performed -= instance.OnUiChoose;
             @uiChoose.canceled -= instance.OnUiChoose;
+            @ShootGun.started -= instance.OnShootGun;
+            @ShootGun.performed -= instance.OnShootGun;
+            @ShootGun.canceled -= instance.OnShootGun;
         }
 
         public void RemoveCallbacks(IPlayerControlsActions instance)
@@ -582,5 +622,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnUiTouch(InputAction.CallbackContext context);
         void OnBackPack(InputAction.CallbackContext context);
         void OnUiChoose(InputAction.CallbackContext context);
+        void OnShootGun(InputAction.CallbackContext context);
     }
 }
