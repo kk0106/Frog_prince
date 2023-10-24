@@ -35,5 +35,6 @@ public class BreakableObject : MonoBehaviour
         // For example, you can destroy the object when it breaks
        this.gameObject .SetActive(false);
         
+
     }
 }
