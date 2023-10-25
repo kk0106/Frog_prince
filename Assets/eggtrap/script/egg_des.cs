@@ -19,7 +19,11 @@ public class egg_des : MonoBehaviour
     {
         if (other.gameObject.tag == "wall")
         {
-            Destroy(this.gameObject);
+            Invoke("Des", 2f);
         }
+    }
+    private void Des()
+    {
+        Destroy(this.gameObject);
     }
 }

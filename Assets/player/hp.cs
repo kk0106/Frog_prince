@@ -9,6 +9,7 @@ public class hp : MonoBehaviour
     public GameObject blood1;
     public GameObject blood2;
     public int HP;
+    public int a;
 
 
     [Header("die")]
@@ -21,9 +22,11 @@ public class hp : MonoBehaviour
     public Vector3 pos2;
     public Vector3 pos3;
     public Vector3 pos4;
+    public Vector3 pos5;
 
    
     public GameObject GGpanel;
+    public GameObject loading;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,12 +38,24 @@ public class hp : MonoBehaviour
         die1.SetActive(false);
         die2.SetActive(false);
         HP = 3;
+        loading.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(HP== 3)
+        if (a > 0)
+        {
+            loading.SetActive(true);
+            Invoke("GoPos", 2f);
+        }
+        if (a > 0&&HP==0)
+        {
+            loading.SetActive(false);
+           //nvoke("GoPos", 3f);
+        }
+
+        if (HP== 3)
         {
             blood.SetActive(true);
             blood1.SetActive(true);
@@ -92,27 +107,72 @@ public class hp : MonoBehaviour
         {
             HP -= 1;
 
-            this.gameObject.transform.position = pos;
-            
+           // this.gameObject.transform.position = pos;
+            a = 1;
             
         }
         if (other.gameObject.tag == "hole")
         {
             HP -= 1;
-
-            this.gameObject.transform.position = pos2;
+            a = 2;
+           // this.gameObject.transform.position = pos2;
         }
         if (other.gameObject.tag == "poison")
         {
             HP -= 1;
-
-            this.gameObject.transform.position = pos3;
+            a = 3;
+           // this.gameObject.transform.position = pos3;
         }
         if (other.gameObject.tag == "egg")
         {
             HP -= 1;
+            a = 4;
+            //this.gameObject.transform.position = pos4;
+        }
+        if (other.gameObject.tag == "Swamp")
+        {
+            HP -= 1;
+            a = 5;
+            //this.gameObject.transform.position = pos4;
+        }
+    }
 
+
+   private void GoPos()
+    {
+        if(a==1)
+        {
+            this.gameObject.transform.position = pos;
+            a =0;
+            loading.SetActive(false);
+        }
+
+        if (a == 2)
+        {
+            this.gameObject.transform.position = pos2;
+            a = 0;
+            loading.SetActive(false);
+        }
+
+        if (a == 3)
+        {
+            this.gameObject.transform.position = pos3;
+            a = 0;
+            loading.SetActive(false);
+        }
+
+        if (a == 4)
+        {
             this.gameObject.transform.position = pos4;
+            a = 0;
+            loading.SetActive(false);
+        }
+
+        if (a == 5)
+        {
+            this.gameObject.transform.position = pos5;
+            a = 0;
+            loading.SetActive(false);
         }
     }
 }
