@@ -13,6 +13,8 @@ public class GrapplingGun : MonoBehaviour
     public LayerMask whatIsGrappleable;
     public Transform gunTip, player;
     private Rigidbody playerRigidbody;
+    private Transform grappledObject;
+    private float initialDistance;
 
     private float maxDistance = 1.5f;
     public float grappleRadius = 1.0f; // Adjust this radius to your needs
@@ -65,6 +67,20 @@ public class GrapplingGun : MonoBehaviour
     void LateUpdate()
     {
         DrawRope();
+        if (IsGrappling() && grappledObject)
+        {
+            // Calculate the direction vector between the player and grapple point
+            Vector3 grappleDirection = grapplePoint - player.position;
+
+            // Update the player's position based on the grapple point's position while maintaining the initial distance
+            player.position = grapplePoint - grappleDirection.normalized * initialDistance;
+
+            // Update the grapple point's position
+            grapplePoint = grappledObject.position;
+
+            // Set the connected anchor of the spring joint to the updated grapple point
+            joint.connectedAnchor = grapplePoint;
+        }
         if (UserInput.instance.controls.playerControls.GrappleGun.WasReleasedThisFrame() )
         {
             ApplyDamageToBreakableObject();
@@ -130,7 +146,9 @@ public class GrapplingGun : MonoBehaviour
 
             // Indicate that you are swinging
             IsSwinging = 1;
-            
+            initialDistance = Vector3.Distance(player.position, grapplePoint);
+            grappledObject = hitCollider.transform;
+
             BreakableObject collidedObject = hitCollider.GetComponent<BreakableObject>();
             if (collidedObject != null)
             {

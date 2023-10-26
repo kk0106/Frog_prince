@@ -13,8 +13,8 @@ public class MovingPlatform : MonoBehaviour
     [Header("BasicValue")]
     [SerializeField]
     private float speed;
-    [SerializeField]
-    private bool Trigger;
+
+    public bool Trigger;
     private void Start()
     {
         Target = position[targetNumber];
