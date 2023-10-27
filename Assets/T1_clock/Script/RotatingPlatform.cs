@@ -3,14 +3,14 @@ using UnityEngine;
 public class RotatingPlatform : MonoBehaviour
 {
     public float rotationSpeed = 30f; // Adjust the speed as needed
+    public float upAngleThreshold = 10f; // Adjust the angle threshold
 
     private void Update()
     {
-        // Calculate the target rotation to keep the platform's up vector aligned with the world up vector
-        Vector3 worldUp = Vector3.up;
-        Quaternion targetRotation = Quaternion.LookRotation(transform.forward, worldUp);
-
-        // Smoothly rotate the platform towards the target rotation
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        if (Vector3.Angle(transform.up, Vector3.up) < upAngleThreshold)
+        {
+            // Rotate around the local Y-axis
+            transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime, Space.Self);
+        }
     }
 }
