@@ -15,19 +15,21 @@ public class GrapplingGun : MonoBehaviour
     private Rigidbody playerRigidbody;
     private Transform grappledObject;
     private float initialDistance;
+    private Animator _animator;
 
-    private float maxDistance = 1.5f;
+    
     public float grappleRadius = 1.0f; // Adjust this radius to your needs
     private SpringJoint joint;
     public float damageAmount = 5f;
     public static int IsSwinging;
-    private float grappleExtensionSpeed = 10f;
+    private float maxAllowedDistance = 1.5f;
     public GameObject rangePrefab;
     private GameObject currentRangeIndicator;
 
     private void Start()
     {
         playerRigidbody = player.GetComponent<Rigidbody>();
+        _animator = GetComponent<Animator>();
     }
 
     void Awake()
@@ -67,13 +69,17 @@ public class GrapplingGun : MonoBehaviour
     void LateUpdate()
     {
         DrawRope();
+
         if (IsGrappling() && grappledObject)
         {
             // Calculate the direction vector between the player and grapple point
             Vector3 grappleDirection = grapplePoint - player.position;
 
-            // Update the player's position based on the grapple point's position while maintaining the initial distance
-            player.position = grapplePoint - grappleDirection.normalized * initialDistance;
+            // Maintain a fixed distance from the grapple point, if needed
+            if (grappleDirection.magnitude > maxAllowedDistance)
+            {
+                player.position = grapplePoint - grappleDirection.normalized * maxAllowedDistance;
+            }
 
             // Update the grapple point's position
             grapplePoint = grappledObject.position;
@@ -87,7 +93,7 @@ public class GrapplingGun : MonoBehaviour
         }
         if (IsGrappling())
         {
-            playerRigidbody.velocity += Physics.gravity * Time.deltaTime;
+          //  playerRigidbody.velocity += Physics.gravity * Time.deltaTime;
         }
     }
 
@@ -113,11 +119,8 @@ public class GrapplingGun : MonoBehaviour
 
     void SetupGrappleVisualEffect()
     {
-        // Create a visual effect here (e.g., using the LineRenderer or particle system)
-        // You can simply create a line or particles representing the grapple.
+        _animator.SetTrigger("start");
 
-        // For example, using a LineRenderer:
-       
     }
 
 
@@ -180,7 +183,8 @@ public class GrapplingGun : MonoBehaviour
         lr.positionCount = 0;
         Destroy(joint);
         IsSwinging = 0;
-        
+
+        _animator.SetTrigger("exit");
     }
 
     private Vector3 currentGrapplePosition;
