@@ -1,3 +1,4 @@
+using Ink.Parsed;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -219,9 +220,16 @@ public class player : MonoBehaviour
 
         if(other.gameObject.tag== "MushroomC")
         {
+            
+
+            rb.AddForce(Vector3.up * 150f);
+            rb.AddForce(Vector3.up * 150f);
+
             other.gameObject.SetActive(false);
         }
     }
+
+    
     private void OnCollisionExit(Collision collision)
     {
         grouned = false;
