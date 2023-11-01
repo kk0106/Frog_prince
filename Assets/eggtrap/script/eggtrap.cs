@@ -25,8 +25,8 @@ public class eggtrap : MonoBehaviour
     {
         CountTime += Time.deltaTime;
         SpwanPosition = transform.position;
-        SpwanPosition.x = Random.Range(-25f, -12f);
-        SpwanPosition.z = Random.Range(-1f,-8f);
+        SpwanPosition.x = Random.Range(-265f, -18f);
+        SpwanPosition.z = Random.Range(0f,-8f);
 
         if (CountTime > spwanTime)
         {

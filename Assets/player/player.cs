@@ -70,6 +70,7 @@ public class player : MonoBehaviour
 
     private void Update()
     {
+        Invoke("alife", 1f);
         if (dialogueUI.IsOpen) return;
 
         Move();
@@ -219,20 +220,32 @@ public class player : MonoBehaviour
         }
 
         if(other.gameObject.tag== "MushroomC")
+        {        
+            rb.AddForce(Vector3.up * 150f);         
+        }
+    }
+    
+
+    private void alife()
+    {
+        if (gameObject.tag == "MushroomC")
         {
-            
-
-            rb.AddForce(Vector3.up * 150f);
-            rb.AddForce(Vector3.up * 150f);
-
-            other.gameObject.SetActive(false);
+            gameObject.SetActive(true);
         }
     }
 
-    
-    private void OnCollisionExit(Collision collision)
+    private void OnCollisionExit(Collision other)
     {
         grouned = false;
+
+        if (other.gameObject.tag == "MushroomC")
+        {
+           other.gameObject.SetActive(false);
+
+            
+        }
+
+        
     }
     private bool CheckForLand()
     {
