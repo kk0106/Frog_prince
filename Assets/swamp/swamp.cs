@@ -7,17 +7,24 @@ public class swamp : MonoBehaviour
     public GameObject plan;
     public float time;
     public int a;
+    Animator ani;
     // Start is called before the first frame update
     void Start()
     {
+        ani= GetComponent<Animator>();
        //lan.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (time == 1.7f)
+        {
+            ani.SetBool("down", true);
+        }
         if (time <0)
         {
+           
             plan.SetActive (false);
             Invoke("Re", 1f);
         }
