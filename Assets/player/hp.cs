@@ -23,6 +23,7 @@ public class hp : MonoBehaviour
     public Vector3 pos3;
     public Vector3 pos4;
     public Vector3 pos5;
+    public Vector3 pos6;
 
    
     public GameObject GGpanel;
@@ -135,6 +136,12 @@ public class hp : MonoBehaviour
             a = 5;
             //this.gameObject.transform.position = pos4;
         }
+
+        if(other.gameObject.tag == "Trident")
+        {
+            HP -= 1;
+            a = 6;
+        }
     }
 
 
@@ -171,6 +178,13 @@ public class hp : MonoBehaviour
         if (a == 5)
         {
             this.gameObject.transform.position = pos5;
+            a = 0;
+            loading.SetActive(false);
+        }
+
+        if(a == 6)
+        {
+            this.gameObject.transform.position = pos6;
             a = 0;
             loading.SetActive(false);
         }

@@ -4,24 +4,23 @@ using UnityEngine;
 
 public class swamp : MonoBehaviour
 {
+    
     public GameObject plan;
     public float time;
     public int a;
-    Animator ani;
+   //public Animator ani;
     // Start is called before the first frame update
     void Start()
     {
-        ani= GetComponent<Animator>();
-       //lan.SetActive(true);
+        
+      
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (time == 1.7f)
-        {
-            ani.SetBool("down", true);
-        }
+       
+
         if (time <0)
         {
            
@@ -31,6 +30,7 @@ public class swamp : MonoBehaviour
         if(a==1)
         {
             time -= Time.deltaTime;
+           
         }
         
     }
@@ -40,11 +40,12 @@ public class swamp : MonoBehaviour
         {
             a = 1;
             
+            
         }
     }
     private void Re()
     {
-        plan.SetActive(true );
+       plan.SetActive(true );
         a = 0;
         time = 2;
     }
