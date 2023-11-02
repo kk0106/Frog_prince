@@ -126,7 +126,7 @@ public class hp : MonoBehaviour
         if (other.gameObject.tag == "egg")
         {
             HP -= 1;
-            a = 4;
+          //  a = 4;
             //this.gameObject.transform.position = pos4;
         }
         if (other.gameObject.tag == "Swamp")

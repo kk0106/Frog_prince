@@ -17,6 +17,12 @@ public class rbControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(rbcomic.A==1)
+        {
+            ani.SetBool("look", true);
+           
+        }
+
         if (!trigger.activeInHierarchy)
         {
             ani.SetBool("run", true);

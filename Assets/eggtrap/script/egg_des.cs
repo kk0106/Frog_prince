@@ -17,9 +17,13 @@ public class egg_des : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "wall")
+        if (other.gameObject.tag == "wall"||  other.gameObject.tag == "poison")
         {
             Invoke("Des", 2f);
+        }
+        if ( other.gameObject.tag == "Mushroom" || other.gameObject.tag == "MushroomA" || other.gameObject.tag == "MushroomB" || other.gameObject.tag == "MushroomC" )
+        {
+            Invoke("Des", 4f);
         }
     }
     private void Des()

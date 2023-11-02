@@ -11,6 +11,7 @@ public class rbcomic : MonoBehaviour
 
     public static int A = 0;
 
+  
     [Header("timer")]
     [SerializeField] public float time_f=0;
     [SerializeField] public int time_i=0;
@@ -28,6 +29,7 @@ public class rbcomic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
        // comicPanel.SetActive(false);
         com1.SetActive(false);
         com2.SetActive(false);
@@ -157,6 +159,7 @@ public class rbcomic : MonoBehaviour
                      if (other.gameObject.tag == "Player")
                      {
                         A = 1;
+                        
                        //  comicPanel.SetActive(true);
            
                      }

@@ -25,7 +25,7 @@ public class cam : MonoBehaviour
 
             x = playerPos.x;
             playerPos = player.transform.position;
-            this.gameObject.transform.position = new(x, 2, -4.06f);
+            this.gameObject.transform.position = new(x, 20f, -4.06f);
             this.gameObject.transform.rotation = Quaternion.Euler(12.26f,0.06f,0);
         
        
