@@ -46,7 +46,7 @@ public class ResponseHandler : MonoBehaviour
             if (i == 0)
             {
                 firstResponseButton = responseButton.GetComponent<Button>();
-                EventSystem.current.SetSelectedGameObject(firstResponseButton.gameObject);
+                firstResponseButton.Select(); // Highlight the first response button
             }
 
             tempResponseButtons.Add(responseButton);
@@ -56,7 +56,6 @@ public class ResponseHandler : MonoBehaviour
         responseBox.sizeDelta = new Vector2(responseBox.sizeDelta.x, responseBoxHeight);
         responseBox.gameObject.SetActive(true);
     }
-
 
     private void OnPickedResponse(Response response, int responseIndex)
     {
@@ -80,7 +79,6 @@ public class ResponseHandler : MonoBehaviour
             if (response.DialogueObject.IsShopInteraction)
             {
                 dialogueUI.ShowDialogue(response.DialogueObject);
-                
             }
             else
             {
