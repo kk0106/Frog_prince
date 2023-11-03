@@ -56,6 +56,7 @@ public class comic : MonoBehaviour
 
     [Header("6")]
     public GameObject f;
+    public GameObject g;
     // Start is called before the first frame update
     void Start()
     {
@@ -98,8 +99,9 @@ public class comic : MonoBehaviour
         e4.SetActive(false);
         e5.SetActive(false);
         e6.SetActive(false);
-       // f.SetActive(false);
+        f.SetActive(false);
        
+        g.SetActive(false);
 
 
     }
@@ -253,7 +255,15 @@ public class comic : MonoBehaviour
         }
         if (time > 25.5)
         {
+            f.SetActive(true);
             a = 5;
+
+        }
+
+        if (time > 26.5)
+        {
+            g.SetActive(true);
+           
 
         }
     }

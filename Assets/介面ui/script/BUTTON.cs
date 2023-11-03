@@ -34,4 +34,9 @@ public class BUTTON : MonoBehaviour
     {
         howplay.SetActive(false);
     }
+
+    public void next()
+    {
+        SceneManager.LoadScene("T1");
+    }
 }
