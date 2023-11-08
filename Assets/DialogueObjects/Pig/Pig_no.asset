@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379cff3bc00ccec4f8df4cb556b6c741, type: 3}
   m_Name: Pig_no
   m_EditorClassIdentifier: 
+  characterName: "\u8C6C3"
   dialogue:
   - "\u597D\u4E86\u4F19\u4F34\u5011\uFF0C\u6211\u5011\u9084\u6709\u4E8B\u60C5\u8981\u505A\u8A18\u5F97\u55CE? "
   - "\u73FE\u5728\u6211\u5011\u8981\u53BB\u586B\u6EFF\u53E6\u4E00\u500B\u6D1E"
   responses:
   - responseText: "\u6211\u4E5F\u9019\u9EBC\u60F3\u3002"
     dialogueObject: {fileID: 0}
+  isShopInteraction: 0

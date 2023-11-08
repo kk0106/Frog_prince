@@ -8,6 +8,7 @@ public class DialogueUI : MonoBehaviour
 {
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private GameObject ShopBG;
+    [SerializeField] private TMP_Text characterNameText;
     [SerializeField] private TMP_Text textLabel;
     [SerializeField] private Button[] buttonsToDisable;
 
@@ -56,7 +57,8 @@ public class DialogueUI : MonoBehaviour
                 }
             }
         }
-            dialogueBox.SetActive(true);
+        characterNameText.text = dialogueObject.CharacterName;
+        dialogueBox.SetActive(true);
             StartCoroutine(StepThroughDialogue(dialogueObject));
 
         
@@ -72,6 +74,7 @@ public class DialogueUI : MonoBehaviour
         IsOpen = true;
         dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
+       // characterNameText.text = string.Empty;
 
         foreach (var button in buttonsToDisable)
         {
@@ -90,7 +93,9 @@ public class DialogueUI : MonoBehaviour
         IsOpen = false;
         dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
-        
+       // characterNameText.text = string.Empty;
+
+
         foreach (var button in buttonsToDisable)
         {
             button.interactable = true;
@@ -106,9 +111,20 @@ public class DialogueUI : MonoBehaviour
 
     private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
     {
+        string currentCharacterName = dialogueObject.CharacterName;
+
         for (int i = 0; i < dialogueObject.Dialogue.Length; i++)
         {
             string dialogue = dialogueObject.Dialogue[i];
+
+            
+            // Check if the character name has changed
+            if (dialogueObject.CharacterName != currentCharacterName)
+            {
+                currentCharacterName = dialogueObject.CharacterName;
+                characterNameText.text = currentCharacterName; // Update the displayed character name
+            }
+            
 
             yield return RunTypingEffect(dialogue);
 
