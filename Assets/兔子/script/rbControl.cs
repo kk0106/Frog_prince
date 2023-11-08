@@ -22,12 +22,22 @@ public class rbControl : MonoBehaviour
             ani.SetBool("look", true);
            
         }
+        if (rbcomic.A ==2)
+        {
+            ani.SetBool("look", false);
+
+        }
 
         if (!trigger.activeInHierarchy)
         {
             ani.SetBool("run", true);
-            transform.position += transform.right * speed;
 
+            Invoke("run", 0.3f);
         }
+    }
+
+    private void run()
+    {
+        transform.position += transform.right * speed;
     }
 }

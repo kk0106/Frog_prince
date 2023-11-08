@@ -43,7 +43,10 @@ public class rbcomic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        if (!trigger.activeInHierarchy)
+        {
+            A = 2;
+        }
 
         if (A == 1 )
         {
