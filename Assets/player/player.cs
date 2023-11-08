@@ -28,7 +28,11 @@ public class player : MonoBehaviour
     [SerializeField] private CameraFollowObject _CamerafollowObject;
 
     [Header("ground check")]
-     public bool grouned=false;
+    public LayerMask WhatIsGround;
+    public Transform GroundPoint;
+    private bool IsGrounded;
+
+
 
     private float moveInput;
     private float moveInput1;
@@ -58,7 +62,7 @@ public class player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         move_ani = GetComponent<Animator>();
-        //coll = GetComponent<Collider>();
+     
 
         StartDirectionCheck();
         StartDirectionCheck1();
@@ -129,13 +133,25 @@ public class player : MonoBehaviour
 
         
 
-        if (Jumping)
+        if (!IsGrounded)
         {
             JumpTime -= Time.deltaTime;
         }
-        if (Falling)
+        if (IsGrounded)
         {
             JumpTime = 0.36f;
+        }
+
+
+
+        RaycastHit hit;
+        if(Physics.Raycast(GroundPoint.position,Vector3.down,out hit,.3f,WhatIsGround))
+        {
+            IsGrounded = true;
+        }
+        else
+        {
+            IsGrounded = false;
         }
 
     }
@@ -145,12 +161,12 @@ public class player : MonoBehaviour
     private void Jump()
     {
         //按一次跳鍵
-        if (UserInput.instance.controls.playerControls.jump.WasPressedThisFrame()&&grouned)
+        if (UserInput.instance.controls.playerControls.jump.WasPressedThisFrame()&&IsGrounded)
         {
             JumpTimeCounter = JumpTime;
             Jumping = true;
             rb.velocity = new Vector2(rb.velocity.x, JumpForce);
-           // move_ani.SetTrigger("jump");
+           
         }
 
         
@@ -165,17 +181,6 @@ public class player : MonoBehaviour
 
             }
 
-          //  else if(JumpTimeCounter==0)
-            //{
-            //    Falling = true;
-            //    Jumping = false;
-            //   JumpTime = 0.36f;
-           // }
-         //   else
-          //  {
-          //      Jumping=false;
-           //     JumpTime = 0.36f;
-          //  }
 
         }
 
@@ -185,19 +190,10 @@ public class player : MonoBehaviour
             Jumping = false;
             Falling = true;
         }
-        
-        if(!Jumping && CheckForLand())
-        {
-         //   move_ani.SetTrigger("land");
-        }
+      
     }
 
 
-    //腳色是否在地面上
-    private void OnCollisionEnter(Collision collision)
-    {
-        grouned = true;
-    }
 
     private void OnCollisionStay(Collision other)
     {
@@ -236,37 +232,14 @@ public class player : MonoBehaviour
 
     private void OnCollisionExit(Collision other)
     {
-        grouned = false;
 
         if (other.gameObject.tag == "MushroomC")
         {
-           other.gameObject.SetActive(false);
-
-            
+           other.gameObject.SetActive(false);       
         }
 
-        
     }
-    private bool CheckForLand()
-    {
-        if (Falling)
-        {
-            if (grouned)
-            {
-                Falling = false;
-
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        else
-        {
-            return false;
-        }
-    }
+  
 
 
 
