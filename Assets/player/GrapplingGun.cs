@@ -26,6 +26,7 @@ public class GrapplingGun : MonoBehaviour
     public GameObject rangePrefab;
     private GameObject currentRangeIndicator;
 
+
     private void Start()
     {
         playerRigidbody = player.GetComponent<Rigidbody>();
