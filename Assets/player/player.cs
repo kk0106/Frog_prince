@@ -39,7 +39,8 @@ public class player : MonoBehaviour
     private Rigidbody rb;
 
     public GameObject GamePenal;
-    
+    public GameObject BackPack;
+    bool areOpen;
     [SerializeField] private DialogueUI dialogueUI;
     
 
@@ -76,11 +77,13 @@ public class player : MonoBehaviour
     {
         Invoke("alife", 1f);
         if (dialogueUI.IsOpen) return;
-
+        OpenBackPack();
+        if (areOpen == true) return;
         Move();
 
         Jump();
-
+        
+        
         if (rbcomic.A == 1)
         {
             MoveSpeed = 0;
@@ -369,7 +372,14 @@ public class player : MonoBehaviour
         }
     }
 
-
+    void OpenBackPack()
+    {
+        if (UserInput.instance.controls.playerControls.BackPack.WasPressedThisFrame())
+        {
+            areOpen = !areOpen;
+            BackPack.SetActive(areOpen);
+        }
+    }
 
 
 }

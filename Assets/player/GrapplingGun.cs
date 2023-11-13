@@ -158,9 +158,10 @@ public class GrapplingGun : MonoBehaviour
             {
                 breakableObject = collidedObject;
             }
+       
 
-                // Break out of the loop after grappling to the first valid object
-           break;
+            // Break out of the loop after grappling to the first valid object
+            break;
         }
     }
     void SetupGrapple()
@@ -170,11 +171,11 @@ public class GrapplingGun : MonoBehaviour
         joint.connectedAnchor = grapplePoint;
 
         // Set up SpringJoint properties (adjust these as needed)
-        joint.maxDistance = 1f;
+        joint.maxDistance = 1.2f;
         joint.minDistance = 0.5f;
         joint.spring = 3f;
         joint.damper = 7f;
-        joint.massScale = 50f;
+        joint.massScale = 10f;
 
         lr.positionCount = 2;
     }
@@ -197,7 +198,7 @@ public class GrapplingGun : MonoBehaviour
             return;
         }
 
-        currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, grapplePoint, Time.deltaTime * 8f);
+        currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, grapplePoint, Time.deltaTime * 6f);
         lr.SetPosition(0, gunTip.position);
         lr.SetPosition(1, currentGrapplePosition);
         

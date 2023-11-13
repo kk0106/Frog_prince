@@ -1,13 +1,12 @@
 using System.Diagnostics;
 using UnityEngine;
 
-public class BreakableObject : MonoBehaviour
+public class GrappleItem : MonoBehaviour
 {
     //private Animator _animator;
     public float maxHealth = 100f;
     private float currentHealth;
 
-    public bool Item;
     public item thisItem;
     public Inventory playerInventory;
     // Add any additional variables and references as needed
@@ -34,13 +33,10 @@ public class BreakableObject : MonoBehaviour
     private void Break()
     {
         // Add any logic you want for the object breaking (e.g., play animations, destroy object, etc.)
-
+       
         // For example, you can destroy the object when it breaks
         this.gameObject.SetActive(false);
-        if(Item == true)
-        { 
-            playerInventory.itemList.Add(thisItem);
-        }
+        playerInventory.itemList.Add(thisItem);
 
     }
 }
