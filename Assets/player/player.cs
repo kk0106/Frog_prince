@@ -23,6 +23,7 @@ public class player : MonoBehaviour
     public bool Jumping;
     public bool Falling;
     private float JumpTimeCounter;
+    public float y;
 
     [Header("camera")]
     [SerializeField] private GameObject _cameraGo;
@@ -73,12 +74,24 @@ public class player : MonoBehaviour
         StartDirectionCheck1();
 
         _CamerafollowObject = _cameraGo.GetComponent<CameraFollowObject>();
+
+        y = rb.velocity.y;
     }
 
     // Update is called once per frame
 
     private void Update()
     {
+       
+        if (y > 3.9f)
+        {
+            y = 3f;
+        }
+        else
+        {
+            y = this.gameObject.transform.position.y;
+        }
+
         Invoke("alife", 1f);
         if (dialogueUI.IsOpen) return;
         OpenBackPack();
@@ -87,6 +100,8 @@ public class player : MonoBehaviour
 
         Jump();
         
+
+     
         
         if (rbcomic.A == 1)
         {
@@ -206,9 +221,12 @@ public class player : MonoBehaviour
     {
         if (other.gameObject.tag == "Mushroom")
         {
+            
+           
+                rb.AddForce(Vector3.up * 200f);
+            
 
-
-            rb.AddForce(Vector3.up * 150f);
+          //  rb.AddForce(Vector3.up * 150f);
 
             B = 1;
         }

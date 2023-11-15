@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3513303195969361416}
   - component: {fileID: 5015761709672354545}
   - component: {fileID: 4062705401692762795}
+  - component: {fileID: 3428485509100860058}
   m_Layer: 0
   m_Name: White Russula.001
   m_TagString: Untagged
@@ -83,6 +84,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3428485509100860058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84142684104084584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b9e8d58eb5cbc42b4738e913baed0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotSpeed: 6
+  a: 0
 --- !u!1 &2065144214370891978
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2794188142308726690}
   - component: {fileID: 2811600350596821615}
-  - component: {fileID: 3356275719954942841}
+  - component: {fileID: 5625879033702746456}
   m_Layer: 0
   m_Name: MushroomB
   m_TagString: Untagged
@@ -215,7 +230,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2968864096587971302, guid: 5be434b1ab8e24b408fef25bc99ea699, type: 3}
---- !u!114 &3356275719954942841
+--- !u!114 &5625879033702746456
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

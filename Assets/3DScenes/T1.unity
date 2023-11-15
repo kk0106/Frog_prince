@@ -1536,6 +1536,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Mushroom
       objectReference: {fileID: 0}
+    - target: {fileID: 6405418920298606992, guid: bd09bbfd29a9e34419260cb2aee1e356,
+        type: 3}
+      propertyPath: speed
+      value: 150
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd09bbfd29a9e34419260cb2aee1e356, type: 3}
 --- !u!1 &149206976
@@ -13665,7 +13670,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119884606}
   m_LocalRotation: {x: 0.02703086, y: 0.034731418, z: -0.0010007456, w: 0.9990306}
-  m_LocalPosition: {x: -67.121826, y: 1.4109087, z: -59.510925}
+  m_LocalPosition: {x: -67.121826, y: 2.8411107, z: -59.510925}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17162,7 +17167,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375762404}
   m_LocalRotation: {x: 0.02703086, y: 0.034731418, z: -0.0010007456, w: 0.9990306}
-  m_LocalPosition: {x: -67.121826, y: 1.4109087, z: -59.510925}
+  m_LocalPosition: {x: -67.121826, y: 3.1189532, z: -59.510925}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19925,7 +19930,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565593217}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -70.6, y: 0.29195526, z: -45.250183}
+  m_LocalPosition: {x: -70.6, y: 2, z: -45.250183}
   m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -20053,6 +20058,7 @@ MonoBehaviour:
   JumpTime: 0.35
   Jumping: 0
   Falling: 0
+  y: 0
   _cameraGo: {fileID: 6926177}
   _CamerafollowObject: {fileID: 6926179}
   WhatIsGround:
@@ -27364,8 +27370,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1074.6521, y: 10.317822, z: 519.9219}
-  m_Center: {x: 446.62384, y: 20.73695, z: 7.1455274}
+  m_Size: {x: 1570.163, y: 10.317822, z: 519.9219}
+  m_Center: {x: 198.86823, y: 20.73695, z: 7.1455274}
 --- !u!4 &1966667370
 Transform:
   m_ObjectHideFlags: 0
