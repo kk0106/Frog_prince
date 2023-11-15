@@ -16,6 +16,7 @@ public class player : MonoBehaviour
     private Animator move_ani;
     
 
+
     [Header("Jump")]
     [SerializeField] public static float JumpForce = 3f;
     [SerializeField] private float JumpTime = 0.35f;
@@ -32,6 +33,8 @@ public class player : MonoBehaviour
     public Transform GroundPoint;
     private bool IsGrounded;
 
+    [Header("Mushroom")]
+    public static int B;
 
 
     private float moveInput;
@@ -63,7 +66,8 @@ public class player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         move_ani = GetComponent<Animator>();
-     
+
+        
 
         StartDirectionCheck();
         StartDirectionCheck1();
@@ -204,18 +208,22 @@ public class player : MonoBehaviour
         {
 
 
-            rb.AddForce(Vector3.up *150f);
+            rb.AddForce(Vector3.up * 150f);
+
+            B = 1;
         }
 
-        if(other.gameObject.tag == "MushroomA")
+        if (other.gameObject.tag == "MushroomA")
         {
 
             rb.AddForce(Vector3.up * 100f);
+           
         }
 
         if(other.gameObject.tag== "MushroomB")
         {
             rb.AddForce(Vector3.up * 50f);
+            B = 2;
         }
 
         if(other.gameObject.tag== "MushroomC")
