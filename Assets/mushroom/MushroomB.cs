@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Data;
 using UnityEngine;
 
-public class MushroomA : MonoBehaviour
+public class MushroomB : MonoBehaviour
 {
-    public float rotSpeed;
     public int a;
+
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +16,10 @@ public class MushroomA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(a==1)
+     if(a==1)
         {
-            transform.Rotate(Vector3.down * rotSpeed, Space.Self);
-          
+            Vector3 objectScale = transform.localScale;
+            transform.localScale = new Vector3(objectScale.x * 2, objectScale.y * 2, objectScale.z * 2);
         }
     }
 

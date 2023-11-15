@@ -176,6 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2794188142308726690}
   - component: {fileID: 2811600350596821615}
+  - component: {fileID: 3356275719954942841}
   m_Layer: 0
   m_Name: MushroomB
   m_TagString: Untagged
@@ -214,3 +215,17 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2968864096587971302, guid: 5be434b1ab8e24b408fef25bc99ea699, type: 3}
+--- !u!114 &3356275719954942841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3282319162149162264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60b9e8d58eb5cbc42b4738e913baed0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotSpeed: 6
+  a: 0
