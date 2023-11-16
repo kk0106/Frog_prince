@@ -1536,11 +1536,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Mushroom
       objectReference: {fileID: 0}
-    - target: {fileID: 6405418920298606992, guid: bd09bbfd29a9e34419260cb2aee1e356,
-        type: 3}
-      propertyPath: speed
-      value: 150
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd09bbfd29a9e34419260cb2aee1e356, type: 3}
 --- !u!1 &149206976
@@ -3290,6 +3285,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Mushroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567452819705474467, guid: bd09bbfd29a9e34419260cb2aee1e356,
+        type: 3}
+      propertyPath: a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567452819705474467, guid: bd09bbfd29a9e34419260cb2aee1e356,
+        type: 3}
+      propertyPath: timer
+      value: 1.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd09bbfd29a9e34419260cb2aee1e356, type: 3}
@@ -20065,6 +20070,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   GroundPoint: {fileID: 336522325}
+  MushJumpForce: 7
+  MushJumpForce1: 5
+  MushJumpForce2: 3
+  m: {fileID: 1339070177002564874, guid: b9928480443744b4b9392eeccbc90ce6, type: 3}
   GamePenal: {fileID: 1687667885}
   BackPack: {fileID: 1752134133}
   dialogueUI: {fileID: 1687667888}

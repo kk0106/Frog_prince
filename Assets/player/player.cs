@@ -35,6 +35,10 @@ public class player : MonoBehaviour
     private bool IsGrounded;
 
     [Header("Mushroom")]
+    public float MushJumpForce;
+    public float MushJumpForce1;
+    public float MushJumpForce2;
+    public GameObject m;
     public static int B;
 
 
@@ -176,6 +180,12 @@ public class player : MonoBehaviour
             IsGrounded = false;
         }
 
+
+      if(!m.activeInHierarchy )
+        {
+            Invoke("mre", 5);
+        }
+        
     }
 
 
@@ -221,32 +231,29 @@ public class player : MonoBehaviour
     {
         if (other.gameObject.tag == "Mushroom")
         {
-            
-           
-                rb.AddForce(Vector3.up * 200f);
+
+            rb.velocity = new Vector3(rb.velocity.y, MushJumpForce);
             
 
           //  rb.AddForce(Vector3.up * 150f);
 
-            B = 1;
         }
 
         if (other.gameObject.tag == "MushroomA")
         {
 
-            rb.AddForce(Vector3.up * 100f);
-           
+            rb.velocity = new Vector3(rb.velocity.y, MushJumpForce1);
+
         }
 
         if(other.gameObject.tag== "MushroomB")
         {
-            rb.AddForce(Vector3.up * 50f);
-            B = 2;
+            rb.velocity = new Vector3(rb.velocity.y, MushJumpForce2);
         }
 
         if(other.gameObject.tag== "MushroomC")
-        {        
-            rb.AddForce(Vector3.up * 150f);         
+        {
+            rb.velocity = new Vector3(rb.velocity.y, MushJumpForce);
         }
     }
     
@@ -264,13 +271,17 @@ public class player : MonoBehaviour
 
         if (other.gameObject.tag == "MushroomC")
         {
-           other.gameObject.SetActive(false);       
+         other.gameObject.SetActive(false);
+            
         }
 
     }
   
 
-
+    private void mre()
+    {
+        m.gameObject.SetActive(true);
+    }
 
     //腳色移動設定
 

@@ -4,79 +4,76 @@ using UnityEngine;
 
 public class MushroomB : MonoBehaviour
 {
-    public  int a;
-    public float scale;
-   // public float timer;
-    public float speed;
-    public float x;
-    public float y;
-    public float z;
+    public float timer;
+    
+   
     
     
    
     // Start is called before the first frame update
     void Start()
     {
-     
     }
 
     // Update is called once per frame
     void Update()
     {
+        // timer-=Time.deltaTime;
+
+
+        Vector3 objectScale = transform.localScale;
 
        
 
-        if (a==1)
+        if (timer > 1.5 && timer < 1.6)
         {
-            
-            Vector3 objectScale = transform.localScale;
-            x = objectScale.x=1.8f;
-            y = objectScale.y=1.8f;
-            z = objectScale.z = 1.8f;
-            transform.localScale = new Vector3(x * scale, y * scale, z * scale);
 
-            
+            transform.localScale = new Vector3(1.89326632f, 1.89326632f, 1.89326632f);
         }
 
-
-        if (x < 0.4&&y<0.4&&z<0.4)
+        if (timer > 1.3 && timer < 1.4)
         {
-         // this.gameObject.SetActive(false);
+
+            transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
         }
-        
-     
-    }
+
+        if (timer > 1.1 && timer < 1.2)
+        {
+
+            transform.localScale = new Vector3(0.8f, 0.8f, 0.8f);
+        }
+
+        if (timer < 0.9)
+        {
+            Invoke("re", 2f);
+            gameObject.SetActive(false);
+           
+        } 
+
+    }   
+
 
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Player")
         {
-            a = 1;
-           
-            other.rigidbody.AddForce(Vector3.up * speed);
-        }    
+            timer -= Time.deltaTime*3;
+        }
     }
-
 
     private void OnCollisionStay(Collision other)
     {
         if (other.gameObject.tag == "Player")
         {
-            a = 1;
-            //  timer -= Time.deltaTime;
-            other.rigidbody.AddForce(Vector3.up * speed);
+            timer -= Time.deltaTime*3;
         }
     }
 
-
-    private void OnCollisionExit(Collision other)
+    private void re()
     {
-        if(other.gameObject.tag == "Player")
-        {
-            a = 0;
-           
-        }
+        timer = 1.7f;
+        transform.localScale = new Vector3(1.89326632f, 1.89326632f, 1.89326632f);
+       
+        gameObject.SetActive(true);
     }
-
-   
 }
