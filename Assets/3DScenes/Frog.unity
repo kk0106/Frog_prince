@@ -1485,6 +1485,7 @@ MonoBehaviour:
   responseBox: {fileID: 1168096281}
   responseButtonTemplate: {fileID: 876894213}
   responseContainer: {fileID: 501500519}
+  inventoryManager: {fileID: 0}
 --- !u!114 &39529839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5025,7 +5026,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   Item: 1
-  thisItem: {fileID: 11400000, guid: 33ef3c53aeac4c14fb8365b193e4b4ed, type: 2}
+  thisItems:
+  - {fileID: 11400000, guid: 33ef3c53aeac4c14fb8365b193e4b4ed, type: 2}
+  - {fileID: 11400000, guid: b1fe28875d8251247930d0fdedf4064b, type: 2}
   playerInventory: {fileID: 11400000, guid: f8d16cf6ccf9c334c9546f3cad16e902, type: 2}
 --- !u!65 &245126074
 BoxCollider:
@@ -14092,6 +14095,19 @@ MonoBehaviour:
             m_StringArgument: wear
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 2048691856}
+          m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
+          m_MethodName: CreateNewItem
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: ce37fce9f3ddb2c44af8df9a6ac325af,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: item, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 2
+            m_BoolArgument: 0
+          m_CallState: 2
   - name: (give woodnose)
     onPickedResponse:
       m_PersistentCalls:
@@ -21019,7 +21035,6 @@ GameObject:
   - component: {fileID: 1018409514}
   - component: {fileID: 1018409516}
   - component: {fileID: 1018409515}
-  - component: {fileID: 1018409517}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -21085,51 +21100,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018409513}
   m_CullTransparentMesh: 1
---- !u!114 &1018409517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1018409513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: f013291a791f84a4392ce4ea14405d0d,
-      type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: f013291a791f84a4392ce4ea14405d0d, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: f013291a791f84a4392ce4ea14405d0d, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: f013291a791f84a4392ce4ea14405d0d, type: 3}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1018409515}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1019160095
 GameObject:
   m_ObjectHideFlags: 0
@@ -28611,7 +28581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   Item: 1
-  thisItem: {fileID: 11400000, guid: be4b1e730da9ef04b92cdc174a0c39b9, type: 2}
+  thisItems: []
   playerInventory: {fileID: 11400000, guid: f8d16cf6ccf9c334c9546f3cad16e902, type: 2}
 --- !u!1 &1380089736
 GameObject:
@@ -44365,7 +44335,7 @@ MonoBehaviour:
       type: 3}
     m_PressedSprite: {fileID: 21300000, guid: f013291a791f84a4392ce4ea14405d0d, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: f013291a791f84a4392ce4ea14405d0d, type: 3}
-    m_DisabledSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 21300000, guid: bdfb14f5b7275ad428bdf92bdbe624f6, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -46983,6 +46953,7 @@ MonoBehaviour:
   responseBox: {fileID: 830658316}
   responseButtonTemplate: {fileID: 1916368701}
   responseContainer: {fileID: 175583139}
+  inventoryManager: {fileID: 2048691856}
 --- !u!114 &2048691854
 MonoBehaviour:
   m_ObjectHideFlags: 0

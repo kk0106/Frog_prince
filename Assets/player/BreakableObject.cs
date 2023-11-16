@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ public class BreakableObject : MonoBehaviour
     private float currentHealth;
 
     public bool Item;
-    public item thisItem;
+    public List<item> thisItems = new List<item>();
     public Inventory playerInventory;
     // Add any additional variables and references as needed
 
@@ -33,15 +34,21 @@ public class BreakableObject : MonoBehaviour
     // Implement breaking behavior here
     private void Break()
     {
-        // Add any logic you want for the object breaking (e.g., play animations, destroy object, etc.)
-
-        // For example, you can destroy the object when it breaks
         this.gameObject.SetActive(false);
-        if(Item == true)
-        { 
-            playerInventory.itemList.Add(thisItem);
-            InventoryManager.CreateNewItem(thisItem);
-        }
 
+        if (Item && playerInventory != null)
+        {
+            if (playerInventory.itemList == null)
+            {
+                playerInventory.itemList = new List<item>();
+            }
+
+            // Iterate through thisItems and add each item to the inventory
+            foreach (item newItem in thisItems)
+            {
+                playerInventory.itemList.Add(newItem);
+                InventoryManager.CreateNewItem(newItem);
+            }
+        }
     }
 }

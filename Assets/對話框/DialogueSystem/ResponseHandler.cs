@@ -9,6 +9,7 @@ public class ResponseHandler : MonoBehaviour
     [SerializeField] private RectTransform responseBox;
     [SerializeField] private RectTransform responseButtonTemplate;
     [SerializeField] private RectTransform responseContainer;
+    [SerializeField] private InventoryManager inventoryManager;
 
     private DialogueUI dialogueUI;
     private ResponseEvent[] responseEvents;
@@ -41,6 +42,23 @@ public class ResponseHandler : MonoBehaviour
             GameObject responseButton = Instantiate(responseButtonTemplate.gameObject, responseContainer);
             responseButton.gameObject.SetActive(true);
             responseButton.GetComponent<TMP_Text>().text = response.ResponseText;
+
+            // Check if the response requires an item
+            if (response.NeedItem)
+            {
+                // Check if the required item with a specific itemID is present in the inventory
+                if (InventoryManager.HasItem(response.itemID))
+                {
+                    // Enable the button
+                    responseButton.GetComponent<Button>().interactable = true;
+                }
+                else
+                {
+                    // Disable the button
+                    responseButton.GetComponent<Button>().interactable = false;
+                }
+            }
+
             responseButton.GetComponent<Button>().onClick.AddListener(() => OnPickedResponse(response, responseIndex));
 
             if (i == 0)
