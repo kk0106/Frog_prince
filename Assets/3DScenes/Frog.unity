@@ -5020,13 +5020,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 245126071}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2848fc81b974bd4aa5a4b073185c941, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c56273ad54dad7408cc57097b2c1f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
-  Item: 0
-  thisItem: {fileID: 0}
-  playerInventory: {fileID: 0}
+  Item: 1
+  thisItem: {fileID: 11400000, guid: 33ef3c53aeac4c14fb8365b193e4b4ed, type: 2}
+  playerInventory: {fileID: 11400000, guid: f8d16cf6ccf9c334c9546f3cad16e902, type: 2}
 --- !u!65 &245126074
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28606,7 +28606,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1377878700}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2848fc81b974bd4aa5a4b073185c941, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c56273ad54dad7408cc57097b2c1f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
@@ -41374,7 +41374,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: a3954e12d298d4145b0fbd83e06249ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -44051,12 +44051,17 @@ MonoBehaviour:
   JumpTime: 0.35
   Jumping: 0
   Falling: 0
+  y: 0
   _cameraGo: {fileID: 752845203}
   _CamerafollowObject: {fileID: 752845205}
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 256
   GroundPoint: {fileID: 1205904384}
+  MushJumpForce: 0
+  MushJumpForce1: 0
+  MushJumpForce2: 0
+  m: {fileID: 1339070177002564874, guid: b9928480443744b4b9392eeccbc90ce6, type: 3}
   GamePenal: {fileID: 714889256}
   BackPack: {fileID: 644865949}
   dialogueUI: {fileID: 2048691855}
@@ -46856,6 +46861,7 @@ GameObject:
   - component: {fileID: 2048691855}
   - component: {fileID: 2048691854}
   - component: {fileID: 2048691853}
+  - component: {fileID: 2048691856}
   m_Layer: 5
   m_Name: Normal_Canvas
   m_TagString: Untagged
@@ -47007,6 +47013,23 @@ MonoBehaviour:
   characterNameText: {fileID: 1603141373}
   textLabel: {fileID: 1918249701}
   buttonsToDisable: []
+--- !u!114 &2048691856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048691848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55a972be1c1058d41820acf1b67cda92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BackPack: {fileID: 11400000, guid: f8d16cf6ccf9c334c9546f3cad16e902, type: 2}
+  slotGrid: {fileID: 1372754450}
+  slotPrefab: {fileID: -41250052250573754, guid: 6d9354e1cc7e12047a33177c6a58e0d6,
+    type: 3}
+  itemInformation: {fileID: 1573306411}
 --- !u!1 &2049050076
 GameObject:
   m_ObjectHideFlags: 0

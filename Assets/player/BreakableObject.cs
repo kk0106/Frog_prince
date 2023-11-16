@@ -40,6 +40,7 @@ public class BreakableObject : MonoBehaviour
         if(Item == true)
         { 
             playerInventory.itemList.Add(thisItem);
+            InventoryManager.CreateNewItem(thisItem);
         }
 
     }

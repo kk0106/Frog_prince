@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using UnityEngine;
 
 [System.Serializable]
@@ -9,4 +10,8 @@ public class Response
     public string ResponseText => responseText;
 
     public DialogueObject DialogueObject => dialogueObject;
+
+    public bool NeedItem;
+    public string itemID;
+ 
 }
