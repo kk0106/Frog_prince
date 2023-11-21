@@ -38,7 +38,6 @@ public class player : MonoBehaviour
     public float MushJumpForce;
     public float MushJumpForce1;
     public float MushJumpForce2;
-    public GameObject m;
     public static int B;
 
 
@@ -79,7 +78,7 @@ public class player : MonoBehaviour
 
         _CamerafollowObject = _cameraGo.GetComponent<CameraFollowObject>();
 
-        y = rb.velocity.y;
+        
     }
 
     // Update is called once per frame
@@ -87,14 +86,7 @@ public class player : MonoBehaviour
     private void Update()
     {
        
-        if (y > 3.9f)
-        {
-            y = 3f;
-        }
-        else
-        {
-            y = this.gameObject.transform.position.y;
-        }
+       
 
         Invoke("alife", 1f);
         if (dialogueUI.IsOpen) return;
@@ -181,10 +173,7 @@ public class player : MonoBehaviour
         }
 
 
-      if(!m.activeInHierarchy )
-        {
-            Invoke("mre", 5);
-        }
+      
         
     }
 
@@ -276,12 +265,16 @@ public class player : MonoBehaviour
         }
 
     }
-  
 
-    private void mre()
+    private void OnTriggerEnter(Collider other)
     {
-        m.gameObject.SetActive(true);
+        if(other.gameObject.tag == "Finsh")
+        {
+            gameObject.transform.Rotate(0, 90, 0);
+        }
     }
+
+  
 
     //腳色移動設定
 
