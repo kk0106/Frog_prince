@@ -48,7 +48,7 @@ public class hp : MonoBehaviour
         if (a > 0)
         {
             loading.SetActive(true);
-            Invoke("GoPos", 2f);
+            Invoke("GoPos", 0.5f);
         }
         if (a > 0&&HP==0)
         {
