@@ -28,7 +28,7 @@ public class MushroomB : MonoBehaviour
         if (timer > 1.5 && timer < 1.6)
         {
 
-            transform.localScale = new Vector3(1.89326632f, 1.89326632f, 1.89326632f);
+            transform.localScale = new Vector3(1.6f, 1.6f, 1.6f);
         }
 
         if (timer > 1.3 && timer < 1.4)
