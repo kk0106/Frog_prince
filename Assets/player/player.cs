@@ -268,9 +268,9 @@ public class player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Finsh")
+        if(other.gameObject.tag == "Trident")
         {
-            gameObject.transform.Rotate(0, 90, 0);
+            print("1");
         }
     }
 
