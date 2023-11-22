@@ -45,11 +45,12 @@ public class player : MonoBehaviour
     private float moveInput1;
     private Rigidbody rb;
 
-    public GameObject GamePenal;
+    public uiMenu uiMenu;
+
     public GameObject BackPack;
     bool areOpen;
     [SerializeField] private DialogueUI dialogueUI;
-    
+
 
     public DialogueUI DialogueUI
     {
@@ -85,10 +86,11 @@ public class player : MonoBehaviour
 
     private void Update()
     {
-       
-       
 
+
+       
         Invoke("alife", 1f);
+        if (uiMenu.Opened) return;
         if (dialogueUI.IsOpen) return;
         OpenBackPack();
         if (areOpen == true) return;

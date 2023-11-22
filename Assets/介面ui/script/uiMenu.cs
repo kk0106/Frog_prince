@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class uiMenu : MonoBehaviour
 {
     public GameObject menu;
-    bool A = true;
+    public bool Opened;
+    public Button firstResponseButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +17,11 @@ public class uiMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (UserInput.instance.controls.playerControls.uiTouch.WasPressedThisFrame()&&A)
+        if (UserInput.instance.controls.playerControls.uiTouch.WasPressedThisFrame())
         {
-            menu.SetActive(true);
-            A=false;
-            
+            Opened=!Opened;
+            menu.SetActive(Opened);
+            firstResponseButton.Select();
         }
        
           

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using UnityEngine;
 
@@ -8,8 +9,8 @@ public class BreakableObject : MonoBehaviour
     public float maxHealth = 100f;
     private float currentHealth;
 
-    public bool Item;
-    public List<item> thisItems = new List<item>();
+    public bool IsItem;
+    public item thisItem;
     public Inventory playerInventory;
     // Add any additional variables and references as needed
 
@@ -36,18 +37,15 @@ public class BreakableObject : MonoBehaviour
     {
         this.gameObject.SetActive(false);
 
-        if (Item && playerInventory != null)
+        if (IsItem == true)
         {
-            if (playerInventory.itemList == null)
+            for (int i = 0; i < playerInventory.itemList.Count; i++)
             {
-                playerInventory.itemList = new List<item>();
-            }
-
-            // Iterate through thisItems and add each item to the inventory
-            foreach (item newItem in thisItems)
-            {
-                playerInventory.itemList.Add(newItem);
-                InventoryManager.CreateNewItem(newItem);
+                if (playerInventory.itemList[i] == null)
+                {
+                    playerInventory.itemList[i] = thisItem;
+                    break;
+                }
             }
         }
     }
