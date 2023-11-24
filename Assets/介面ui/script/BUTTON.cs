@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 public class BUTTON : MonoBehaviour
 {
     public GameObject howplay;
+    public static int A;
     // Start is called before the first frame update
     void Start()
     {
+        A = 0;
         howplay.SetActive(false);
     }
 
@@ -38,5 +40,14 @@ public class BUTTON : MonoBehaviour
     public void next()
     {
         SceneManager.LoadScene("T1");
+    }
+
+    public void GoStartAni()
+    {
+        if (UserInput.instance.controls.playerControls.startAni.WasReleasedThisFrame())
+        {
+            SceneManager.LoadScene("StartAni");
+            A = 1;
+        }
     }
 }

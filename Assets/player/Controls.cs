@@ -459,6 +459,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""startAni"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""50cdeae6-45b5-4bd2-b1d3-31d9ac9f8148"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""startAni"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
