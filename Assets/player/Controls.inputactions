@@ -85,6 +85,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "startAni",
+                    "type": "Button",
+                    "id": "afc95239-0db2-4455-a34a-21438766dd1e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -415,6 +424,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "ShootGun",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "64ffbdcc-5905-43ac-9045-56b760a47976",
+                    "path": "<XInputController>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "startAni",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

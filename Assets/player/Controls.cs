@@ -107,6 +107,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""startAni"",
+                    ""type"": ""Button"",
+                    ""id"": ""afc95239-0db2-4455-a34a-21438766dd1e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -439,6 +448,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""ShootGun"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""64ffbdcc-5905-43ac-9045-56b760a47976"",
+                    ""path"": ""<XInputController>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""startAni"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -456,6 +476,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_playerControls_BackPack = m_playerControls.FindAction("BackPack", throwIfNotFound: true);
         m_playerControls_uiChoose = m_playerControls.FindAction("uiChoose", throwIfNotFound: true);
         m_playerControls_ShootGun = m_playerControls.FindAction("ShootGun", throwIfNotFound: true);
+        m_playerControls_startAni = m_playerControls.FindAction("startAni", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -526,6 +547,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_playerControls_BackPack;
     private readonly InputAction m_playerControls_uiChoose;
     private readonly InputAction m_playerControls_ShootGun;
+    private readonly InputAction m_playerControls_startAni;
     public struct PlayerControlsActions
     {
         private @Controls m_Wrapper;
@@ -539,6 +561,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @BackPack => m_Wrapper.m_playerControls_BackPack;
         public InputAction @uiChoose => m_Wrapper.m_playerControls_uiChoose;
         public InputAction @ShootGun => m_Wrapper.m_playerControls_ShootGun;
+        public InputAction @startAni => m_Wrapper.m_playerControls_startAni;
         public InputActionMap Get() { return m_Wrapper.m_playerControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -575,6 +598,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @ShootGun.started += instance.OnShootGun;
             @ShootGun.performed += instance.OnShootGun;
             @ShootGun.canceled += instance.OnShootGun;
+            @startAni.started += instance.OnStartAni;
+            @startAni.performed += instance.OnStartAni;
+            @startAni.canceled += instance.OnStartAni;
         }
 
         private void UnregisterCallbacks(IPlayerControlsActions instance)
@@ -606,6 +632,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @ShootGun.started -= instance.OnShootGun;
             @ShootGun.performed -= instance.OnShootGun;
             @ShootGun.canceled -= instance.OnShootGun;
+            @startAni.started -= instance.OnStartAni;
+            @startAni.performed -= instance.OnStartAni;
+            @startAni.canceled -= instance.OnStartAni;
         }
 
         public void RemoveCallbacks(IPlayerControlsActions instance)
@@ -634,5 +663,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnBackPack(InputAction.CallbackContext context);
         void OnUiChoose(InputAction.CallbackContext context);
         void OnShootGun(InputAction.CallbackContext context);
+        void OnStartAni(InputAction.CallbackContext context);
     }
 }
