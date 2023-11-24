@@ -79,7 +79,7 @@ public class player : MonoBehaviour
 
         _CamerafollowObject = _cameraGo.GetComponent<CameraFollowObject>();
 
-        
+        BackPack.SetActive(false);
     }
 
     // Update is called once per frame
