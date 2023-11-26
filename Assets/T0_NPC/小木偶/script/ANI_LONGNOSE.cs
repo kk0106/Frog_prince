@@ -5,6 +5,7 @@ using UnityEngine;
 public class ANI_LONGNOSE : MonoBehaviour
 {
     public GameObject a;
+    public GameObject papa;
     private Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class ANI_LONGNOSE : MonoBehaviour
         if(!a.activeInHierarchy)
         {
             animator.SetBool("break", true);
+            papa.SetActive(true);
         }
     }
 }

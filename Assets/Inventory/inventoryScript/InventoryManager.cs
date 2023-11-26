@@ -78,14 +78,20 @@ public class InventoryManager : MonoBehaviour
             Destroy(instance.slotGrid.transform.GetChild(i).gameObject);
             instance.slots.Clear();
         }
-        for (int i = 0; i< instance.BackPack.itemList.Count; i++)
+        for (int i = 0; i < instance.BackPack.itemList.Count; i++)
         {
-            
-            instance.slots.Add(Instantiate(instance.emptySlot));
-            instance.slots[i].transform.SetParent(instance.slotGrid.transform);
-            instance.slots[i].GetComponent<slot>().slotID = i;
-            instance.slots[i].GetComponent<slot>().SetupSlot(instance.BackPack.itemList[i]);
-            
+            // Instantiate the empty slot prefab
+            GameObject emptySlotGameObject = Instantiate(instance.emptySlot);
+
+            // Access the slot component of the instantiated object
+            slot emptySlotComponent = emptySlotGameObject.GetComponent<slot>();
+
+            // Add the empty slot game object to the slots list
+            instance.slots.Add(emptySlotGameObject);
+
+            // Set the slot ID and setup the slot with item information
+            emptySlotComponent.slotID = i;
+            emptySlotComponent.SetupSlot(instance.BackPack.itemList[i]);
         }
     }
 }
