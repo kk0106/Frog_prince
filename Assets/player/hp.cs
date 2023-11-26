@@ -142,6 +142,11 @@ public class hp : MonoBehaviour
             HP -= 1;
             a = 6;
         }
+        if (other.gameObject.tag == "spring")
+        {
+            HP -= 1;
+            a = 7;
+        }
     }
 
 
