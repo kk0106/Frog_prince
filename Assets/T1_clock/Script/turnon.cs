@@ -7,9 +7,12 @@ public class turnon : MonoBehaviour
     public GameObject A;
     public GameObject clockwork;
 
+    public GameObject key;
     // Start is called before the first frame update
     void Start()
     {
+       // key.SetActive(true);
+
         // You should use FindObjectsOfType to find all instances of the MovingPlatform script.
         // You need to store these in an array to loop through them later.
         MovingPlatform[] objectsWithMyScript = FindObjectsOfType<MovingPlatform>();
@@ -22,6 +25,8 @@ public class turnon : MonoBehaviour
     {
         if (!A.activeInHierarchy)
         {
+
+            key.SetActive(false);
             clockwork.SetActive(true);
             
 
@@ -32,6 +37,8 @@ public class turnon : MonoBehaviour
             {
                 objectsWithMyScript[i].Trigger = true;
             }
+
+        
         }
     }
 }

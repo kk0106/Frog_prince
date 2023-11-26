@@ -8,6 +8,8 @@ public class plan : MonoBehaviour
     private float y;
     private float z;
     public float rotateSpeed;
+
+    public GameObject key;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,11 @@ public class plan : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.eulerAngles = new Vector3(0,90,z);
-        this.transform.RotateAround(axis.transform.position,new Vector3(0,0,-1),rotateSpeed);
+        if(!key.activeInHierarchy)
+        {
+            this.transform.eulerAngles = new Vector3(0, 90, z);
+            this.transform.RotateAround(axis.transform.position, new Vector3(0, 0, -1), rotateSpeed);
+        }
+      
     }
 }
