@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class apple_trap : MonoBehaviour
 {
+
+   
+
+   
+
     public float spwanTime;
     public float CountTime;
 
     public Vector3 SpwanPosition;
+
     public GameObject apple;
+    
     // Start is called before the first frame update
     void Start()
     {
        //estroy(apple, 1f);
+     
     }
 
     // Update is called once per frame
@@ -23,6 +31,9 @@ public class apple_trap : MonoBehaviour
     }
     private void OnMouseDown()
     {
+
+   
+
         CountTime += Time.deltaTime;
         SpwanPosition=transform.position;
         SpwanPosition.x = Random.Range(16f, 21f);
@@ -31,9 +42,15 @@ public class apple_trap : MonoBehaviour
         if (CountTime > spwanTime)
         {
             ccreate();
-            CountTime = 0;
-        }
 
+            CountTime = 0;
+          
+        }
+        
+       
+
+
+        
       //float posx = transform.position.x + Random.Range(-RandomPos + 3, RandomPos - 3);//获取随机X轴坐标
 
      // float posz = transform.position.z + Random.Range(-RandomPos + 3, RandomPos - 3);//获取随机Z轴坐标
@@ -45,8 +62,9 @@ public class apple_trap : MonoBehaviour
    private void ccreate()
     {
          Instantiate(apple, SpwanPosition, Quaternion.identity);
+        
     }
-
+    
     
 
 }
