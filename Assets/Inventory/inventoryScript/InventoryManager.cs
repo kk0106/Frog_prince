@@ -12,6 +12,11 @@ public class InventoryManager : MonoBehaviour
     public int slotID;
     public Inventory BackPack;
     public GameObject slotGrid;
+    public GameObject slotPos0;
+    public GameObject slotPos1;
+    public GameObject slotPos2;
+    public GameObject slotPos3;
+    public GameObject slotPos4;
     public GameObject emptySlot;
     public TMP_Text itemInformation;
 
@@ -70,28 +75,45 @@ public class InventoryManager : MonoBehaviour
     }
 
     public static void RefreshItem()
+{
+    // Clear the list of slots before creating new ones
+    instance.slots.Clear();
+
+    // Define an array of slot positions
+    GameObject[] slotPositions = { instance.slotPos0, instance.slotPos1, instance.slotPos2, instance.slotPos3, instance.slotPos4 };
+    
+    foreach (var slotPos in slotPositions)
     {
-        for(int i = 0;i < instance.slotGrid.transform.childCount; i++)
+        foreach (Transform child in slotPos.transform)
         {
-            if (instance.slotGrid.transform.childCount == 0)
-                break;
-            Destroy(instance.slotGrid.transform.GetChild(i).gameObject);
-            instance.slots.Clear();
-        }
-        for (int i = 0; i < instance.BackPack.itemList.Count; i++)
-        {
-            // Instantiate the empty slot prefab
-            GameObject emptySlotGameObject = Instantiate(instance.emptySlot);
-
-            // Access the slot component of the instantiated object
-            slot emptySlotComponent = emptySlotGameObject.GetComponent<slot>();
-
-            // Add the empty slot game object to the slots list
-            instance.slots.Add(emptySlotGameObject);
-
-            // Set the slot ID and setup the slot with item information
-            emptySlotComponent.slotID = i;
-            emptySlotComponent.SetupSlot(instance.BackPack.itemList[i]);
+            Destroy(child.gameObject);
         }
     }
+
+    for (int i = 0; i < instance.BackPack.itemList.Count; i++)
+    {
+        // Instantiate the empty slot prefab
+        GameObject emptySlotGameObject = Instantiate(instance.emptySlot);
+
+        // Set the parent to the corresponding slot position based on the index
+        if (i < slotPositions.Length)
+        {
+            // Set the position to the position of the slotPos GameObject
+            emptySlotGameObject.transform.position = slotPositions[i].transform.position;
+
+            // Set the parent to the slotPos GameObject
+            emptySlotGameObject.transform.SetParent(slotPositions[i].transform);
+        }
+
+        // Add the empty slot game object to the slots list
+        instance.slots.Add(emptySlotGameObject);
+
+        // Access the slot component of the instantiated object
+        slot emptySlotComponent = emptySlotGameObject.GetComponent<slot>();
+
+        // Set the slot ID and setup the slot with item information
+        emptySlotComponent.slotID = i;
+        emptySlotComponent.SetupSlot(instance.BackPack.itemList[i]);
+    }
+}
 }
