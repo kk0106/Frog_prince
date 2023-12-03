@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -40,6 +41,7 @@ public class InventoryManager : MonoBehaviour
         if (instance != null)
             Destroy(this);
         instance= this;
+
     }
 
     public static bool HasItem(string itemID)
@@ -61,18 +63,59 @@ public class InventoryManager : MonoBehaviour
         // Check if the inventory contains an item with the specified itemID
         if (instance.BackPack.HasItem(itemID))
         {
-            // Remove the item from the inventory
-            item removedItem = instance.BackPack.RemoveItem(itemID);
+            // Find the index of the item with the specified itemID
+            int index = instance.BackPack.GetItemIndex(itemID);
 
-            // Add any additional logic you need (e.g., update UI, play sound, etc.)
+            if (index != -1)
+            {
+                // Clear the slot at the found index
+                instance.BackPack.itemList[index] = null;
 
-           // Debug.Log("Removed item: " + removedItem.itemName);
+                // Rearrange the items to remove empty gaps
+                RearrangeItems(instance.BackPack);
+            }
         }
         else
         {
-           // Debug.LogWarning("Item with ID " + itemID + " not found in the inventory.");
+            // Debug.LogWarning("Item with ID " + itemID + " not found in the inventory.");
         }
     }
+
+
+    private static void ClearItemSlot(int index)
+    {
+        // Check if the index is valid
+        if (index >= 0 && index < instance.slots.Count)
+        {
+            // Clear the item slot
+            instance.slots[index].GetComponent<slot>().SetupSlot(null);
+        }
+    }
+
+    private static void RearrangeItems(Inventory inventory)
+    {
+        // Create a new list to hold the rearranged items without nulls
+        List<item> rearrangedItems = new List<item>();
+
+        // Add non-null items to the new list
+        rearrangedItems.AddRange(inventory.itemList.Where(item => item != null));
+
+        // Clear the original list
+        inventory.itemList.Clear();
+
+        // Calculate the number of empty slots needed to fill the remaining space
+        int emptySlots = 5 - rearrangedItems.Count;
+
+        // Add the rearranged items back to the original list
+        inventory.itemList.AddRange(rearrangedItems);
+
+        // Add empty slots to ensure there are always 5 slots
+        for (int i = 0; i < emptySlots; i++)
+        {
+            inventory.itemList.Add(null);
+        }
+    }
+
 
     public static void RefreshItem()
 {
@@ -116,4 +159,5 @@ public class InventoryManager : MonoBehaviour
         emptySlotComponent.SetupSlot(instance.BackPack.itemList[i]);
     }
 }
+
 }

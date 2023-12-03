@@ -9057,7 +9057,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &480753124
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9094,11 +9094,11 @@ MonoBehaviour:
   slotID: 0
   BackPack: {fileID: 11400000, guid: f8d16cf6ccf9c334c9546f3cad16e902, type: 2}
   slotGrid: {fileID: 1372754450}
-  slotPos0: {fileID: 0}
-  slotPos1: {fileID: 0}
-  slotPos2: {fileID: 0}
-  slotPos3: {fileID: 0}
-  slotPos4: {fileID: 0}
+  slotPos0: {fileID: 393358082}
+  slotPos1: {fileID: 239007881}
+  slotPos2: {fileID: 128949703}
+  slotPos3: {fileID: 814031699}
+  slotPos4: {fileID: 1739575131}
   emptySlot: {fileID: 7483963648337837547, guid: 6d9354e1cc7e12047a33177c6a58e0d6,
     type: 3}
   itemInformation: {fileID: 1573306411}
@@ -14028,14 +14028,13 @@ MonoBehaviour:
             m_StringArgument: wear
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 480753125}
           m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
-          m_MethodName: CreateNewItem
-          m_Mode: 2
+          m_MethodName: RemoveItem
+          m_Mode: 5
           m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: ce37fce9f3ddb2c44af8df9a6ac325af,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: item, Assembly-CSharp
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 2
@@ -45996,7 +45995,7 @@ MonoBehaviour:
   responseBox: {fileID: 830658316}
   responseButtonTemplate: {fileID: 1916368701}
   responseContainer: {fileID: 175583139}
-  inventoryManager: {fileID: 0}
+  inventoryManager: {fileID: 480753125}
 --- !u!114 &2048691854
 MonoBehaviour:
   m_ObjectHideFlags: 0

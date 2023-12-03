@@ -17,13 +17,16 @@ public class Inventory : ScriptableObject
     public item RemoveItem(string itemID)
     {
         // Find the index of the item with the specified itemID
-        int index = itemList.FindIndex(item => itemID == itemID);
+        int index = itemList.FindIndex(item => itemID == item.itemID);
 
         if (index != -1)
         {
-            // Remove the item from the list and return it
+            // Retrieve the item at the specified index
             item removedItem = itemList[index];
-            itemList.RemoveAt(index);
+
+            // Set the item at the specified index to null (clear the slot)
+            itemList[index] = null;
+
             return removedItem;
         }
         else
@@ -31,5 +34,10 @@ public class Inventory : ScriptableObject
             // If the item with the specified itemID is not found, return null
             return null;
         }
+    }
+    public int GetItemIndex(string itemID)
+    {
+        // Find the index of the item with the specified itemID
+        return itemList.FindIndex(item => itemID == item.itemID);
     }
 }
