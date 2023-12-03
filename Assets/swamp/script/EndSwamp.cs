@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
-public class shadow : MonoBehaviour
+public class EndSwamp : MonoBehaviour
 {
-    public GameObject shadows;
     // Start is called before the first frame update
     void Start()
     {
-     
+        
     }
 
     // Update is called once per frame
@@ -16,12 +17,13 @@ public class shadow : MonoBehaviour
     {
         
     }
+   
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "apple")
+        if (other.gameObject.tag == "Player")
         {
-            Instantiate(shadows, new Vector3(other.transform.position.x,0.3f,other.transform.position.z),Quaternion.Euler(90,0,0));
+            SceneManager.LoadScene("T1_Mermaid");
         }
     }
 }
