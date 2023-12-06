@@ -2,21 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GroundPointMove : MonoBehaviour
+public class movecam : MonoBehaviour
 {
-    public GameObject player;
-    public Vector3 pos;
+    public GameObject player_a;
+    private Vector3 player_pos;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        pos = player.transform.position;
+        player_pos = player_a.transform.position;
 
-        this.gameObject.transform.position = new Vector3(pos.x, pos.y -0.77f, pos.z) ;
+        this.transform.position = new Vector3(7.7f,8.28f,player_pos.z);
     }
 }

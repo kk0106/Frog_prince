@@ -16,6 +16,7 @@ public class player : MonoBehaviour
     private Animator move_ani;
 
     public GameObject InMermaid;
+    public float InMermaidSpeed;
 
 
     [Header("Jump")]
@@ -99,11 +100,7 @@ public class player : MonoBehaviour
 
         Jump();
 
-        if (InMermaid.activeInHierarchy)
-        {
-            MoveSpeed = 5f;
-            MoveSpeed1 = MoveSpeed;
-        }
+       
 
      
         
@@ -130,7 +127,16 @@ public class player : MonoBehaviour
             
 
             JumpForce = 3f;
+
+            if (InMermaid.activeInHierarchy)
+            {
+                MoveSpeed = InMermaidSpeed;
+                MoveSpeed1 = MoveSpeed;
+
+                JumpForce = 10f;
+
             
+            }
 
         }
         
