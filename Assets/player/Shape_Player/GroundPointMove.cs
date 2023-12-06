@@ -17,6 +17,6 @@ public class GroundPointMove : MonoBehaviour
     {
         pos = player.transform.position;
 
-        this.gameObject.transform.position = new Vector3(pos.x, pos.y - 0.4f, pos.z) ;
+        this.gameObject.transform.position = new Vector3(pos.x, pos.y - 0.2f, pos.z) ;
     }
 }

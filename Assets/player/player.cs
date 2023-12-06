@@ -7,14 +7,15 @@ using UnityEngine;
 public class player : MonoBehaviour
 {
     [Header("Movement")]
-    [SerializeField] public static float MoveSpeed = 1.5f;
-    [SerializeField] private float MoveSpeed1 = 1.5f;
+    [SerializeField] public static float MoveSpeed ;
+    [SerializeField] private float MoveSpeed1 ;
     [SerializeField] public bool FaceRight;
     [SerializeField] public bool FaceBack;
     
     private Vector3 player00;
     private Animator move_ani;
-    
+
+    public GameObject InMermaid;
 
 
     [Header("Jump")]
@@ -97,7 +98,12 @@ public class player : MonoBehaviour
         Move();
 
         Jump();
-        
+
+        if (InMermaid.activeInHierarchy)
+        {
+            MoveSpeed = 5f;
+            MoveSpeed1 = MoveSpeed;
+        }
 
      
         
@@ -119,8 +125,9 @@ public class player : MonoBehaviour
         }
         else
         {
-            MoveSpeed = 1.5f;
-            MoveSpeed1 = 1.5f;
+            MoveSpeed=2f;
+            MoveSpeed1 = MoveSpeed;
+            
 
             JumpForce = 3f;
             

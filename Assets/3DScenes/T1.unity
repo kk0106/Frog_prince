@@ -25990,6 +25990,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492159879}
   m_CullTransparentMesh: 1
+--- !u!1 &1497900950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1497900951}
+  m_Layer: 0
+  m_Name: InMermaid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1497900951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497900950}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.564269, y: 2.6332707, z: -48.09612}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 34
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1504665067 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1864074182304659376, guid: b9928480443744b4b9392eeccbc90ce6,
@@ -26850,6 +26881,7 @@ MonoBehaviour:
   MoveSpeed1: 1.5
   FaceRight: 0
   FaceBack: 0
+  InMermaid: {fileID: 1497900950}
   JumpTime: 0.35
   Jumping: 0
   Falling: 0
