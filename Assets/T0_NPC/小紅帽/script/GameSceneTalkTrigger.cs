@@ -7,11 +7,21 @@ public class GameSceneTalkTrigger : MonoBehaviour
     public GameObject TalkBox_girl;
     public GameObject TalkBox_boy;
     public GameObject nose;
+    
+    AudioManager audioManager;
+
     // Start is called before the first frame update
+   private void awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+    
     void Start()
     {
         TalkBox_boy.SetActive(false);
         TalkBox_girl.SetActive(false);
+      
+
     }
 
     // Update is called once per frame
@@ -33,13 +43,15 @@ public class GameSceneTalkTrigger : MonoBehaviour
        //     player.JumpForce = 3f;
        // }
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider player)
     {
 
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.RedCry);
         TalkBox_boy.SetActive(true);
         TalkBox_girl.SetActive(true);
 
         Invoke("outt", 2f);
+
     }
     private void outt()
     {
