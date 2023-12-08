@@ -39,7 +39,11 @@ public class BUTTON : MonoBehaviour
 
     public void next()
     {
-        SceneManager.LoadScene("T1");
+        if (UserInput.instance.controls.playerControls.IngameAni.WasReleasedThisFrame())
+        {
+            SceneManager.LoadScene("T1");
+        }
+       
     }
 
     public void GoStartAni()

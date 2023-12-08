@@ -39,6 +39,8 @@ public class comic : MonoBehaviour
 
     public GameObject e1;
 
+    public GameObject button;
+
     void Start()
     {
        
@@ -72,7 +74,7 @@ public class comic : MonoBehaviour
 
         e1.SetActive(false);
 
-
+        button.SetActive(false);
     }
 
     // Update is called once per frame
@@ -151,5 +153,41 @@ public class comic : MonoBehaviour
         {
             d6.SetActive(true);
         }
+        if (time > 14.5)
+        {
+            d7.SetActive(true);
+
+        }
+
+        if (time > 15.5)
+        {
+            d8.SetActive(true);
+        }
+        if (time > 16)
+        {
+            d9.SetActive(true);
+        }
+        if (time > 16.5)
+        {
+            d10.SetActive(true);
+        }
+        if(time > 17.5)
+        {
+            d11.SetActive(true);
+        }
+        if (time > 20.5)
+        {
+            d12.SetActive(true);
+        }
+        if (time > 21.5)
+        {
+            e1.SetActive(true);
+        }
+        if(time > 22.5)
+        {
+            button.SetActive(true);
+        }
+
+        
     }
 }

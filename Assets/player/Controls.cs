@@ -116,6 +116,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""IngameAni"",
+                    ""type"": ""Button"",
+                    ""id"": ""2d6f4de2-30fe-4eb0-951a-4d1c39057e8e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -462,12 +471,67 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""50cdeae6-45b5-4bd2-b1d3-31d9ac9f8148"",
+                    ""id"": ""ad7ee706-22e3-4f80-b7b8-e71138e48e22"",
+                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""startAni"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""63b4f397-49ca-472f-b1bb-81c1c34f056a"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""startAni"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f136f9e1-bb82-43cc-826b-23342f6fc1ea"",
+                    ""path"": ""<XInputController>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""startAni"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""44b8d64d-ac21-499e-885c-79682b8fce32"",
+                    ""path"": ""<XInputController>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""startAni"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4f4d677e-41df-441a-8d6f-f08155fb04ab"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""IngameAni"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d2dce9ed-c6df-4c09-9b6a-a241a8d12ffc"",
+                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""IngameAni"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -488,6 +552,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_playerControls_uiChoose = m_playerControls.FindAction("uiChoose", throwIfNotFound: true);
         m_playerControls_ShootGun = m_playerControls.FindAction("ShootGun", throwIfNotFound: true);
         m_playerControls_startAni = m_playerControls.FindAction("startAni", throwIfNotFound: true);
+        m_playerControls_IngameAni = m_playerControls.FindAction("IngameAni", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -559,6 +624,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_playerControls_uiChoose;
     private readonly InputAction m_playerControls_ShootGun;
     private readonly InputAction m_playerControls_startAni;
+    private readonly InputAction m_playerControls_IngameAni;
     public struct PlayerControlsActions
     {
         private @Controls m_Wrapper;
@@ -573,6 +639,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @uiChoose => m_Wrapper.m_playerControls_uiChoose;
         public InputAction @ShootGun => m_Wrapper.m_playerControls_ShootGun;
         public InputAction @startAni => m_Wrapper.m_playerControls_startAni;
+        public InputAction @IngameAni => m_Wrapper.m_playerControls_IngameAni;
         public InputActionMap Get() { return m_Wrapper.m_playerControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -612,6 +679,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @startAni.started += instance.OnStartAni;
             @startAni.performed += instance.OnStartAni;
             @startAni.canceled += instance.OnStartAni;
+            @IngameAni.started += instance.OnIngameAni;
+            @IngameAni.performed += instance.OnIngameAni;
+            @IngameAni.canceled += instance.OnIngameAni;
         }
 
         private void UnregisterCallbacks(IPlayerControlsActions instance)
@@ -646,6 +716,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @startAni.started -= instance.OnStartAni;
             @startAni.performed -= instance.OnStartAni;
             @startAni.canceled -= instance.OnStartAni;
+            @IngameAni.started -= instance.OnIngameAni;
+            @IngameAni.performed -= instance.OnIngameAni;
+            @IngameAni.canceled -= instance.OnIngameAni;
         }
 
         public void RemoveCallbacks(IPlayerControlsActions instance)
@@ -675,5 +748,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnUiChoose(InputAction.CallbackContext context);
         void OnShootGun(InputAction.CallbackContext context);
         void OnStartAni(InputAction.CallbackContext context);
+        void OnIngameAni(InputAction.CallbackContext context);
     }
 }
