@@ -19,27 +19,73 @@ public class BUTTON : MonoBehaviour
     {
 
     }
-    public void restart()
+    public void restartT0()
     {
-        SceneManager.LoadScene("Frog");
+        if (UserInput.instance.controls.playerControls.uiback.WasReleasedThisFrame())
+        {
+            SceneManager.LoadScene("Frog");
+        }  
+    }
+
+    public void restartT11()
+    {
+        if (UserInput.instance.controls.playerControls.uiback.WasReleasedThisFrame())
+        {
+            SceneManager.LoadScene("T1");
+        }
+    }
+
+    public void restartT12()
+    {
+        if (UserInput.instance.controls.playerControls.uiback.WasReleasedThisFrame())
+        {
+            SceneManager.LoadScene("T1_Mermaid");
+        }
+    }
+
+    public void restartT13()
+    {
+        if (UserInput.instance.controls.playerControls.uiback.WasReleasedThisFrame())
+        {
+            SceneManager.LoadScene("T1_Clock");
+        }
+    }
+
+    public void restartT21()
+    {
+        if (UserInput.instance.controls.playerControls.uiback.WasReleasedThisFrame())
+        {
+            SceneManager.LoadScene("T2_WOLF");
+        }
     }
     public void HOME()
     {
-        SceneManager.LoadScene("Start");
+        if (UserInput.instance.controls.playerControls.uiback.WasReleasedThisFrame())
+        {
+            SceneManager.LoadScene("Start");
+        }
+       
     }
 
     public void HowToPlay()
     {
-        
+        if (UserInput.instance.controls.playerControls.uiback.WasReleasedThisFrame())
+        {
             howplay.SetActive(true);
+        }
+        
         
         
     }
     public void close()
     {
-        
+
+        if (UserInput.instance.controls.playerControls.uiback.WasReleasedThisFrame())
+        {
             howplay.SetActive(false);
-        
+        }
+
+
     }
 
     public void next()
