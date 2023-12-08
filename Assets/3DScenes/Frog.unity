@@ -42577,6 +42577,7 @@ GameObject:
   - component: {fileID: 1889389522}
   - component: {fileID: 1889389521}
   - component: {fileID: 1889389520}
+  - component: {fileID: 1889389526}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -42750,6 +42751,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 249.53893, y: 98.16023, z: 840.52875}
   m_Center: {x: -53.66994, y: 13.885512, z: 404.93842}
+--- !u!114 &1889389526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889389518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e941cf572d9d3040809dc76219ca1fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueObject: {fileID: 11400000, guid: f75e150e56a60e243b92fd06bd75df65, type: 2}
+  events:
+  - name: "\u6210\u4EA4\u3002"
+    onPickedResponse:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1889389524}
+          m_TargetAssemblyTypeName: DialogueActivator, Assembly-CSharp
+          m_MethodName: UpdateDialogueObject
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 11400000, guid: 9544115571ed70145a8ff651718753ce,
+              type: 2}
+            m_ObjectArgumentAssemblyTypeName: DialogueObject, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1892020268
 GameObject:
   m_ObjectHideFlags: 0
