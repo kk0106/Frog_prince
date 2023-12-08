@@ -100,18 +100,18 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""ShootGun"",
+                    ""name"": ""startAni"",
                     ""type"": ""Button"",
-                    ""id"": ""5e8fcb81-4f6d-423d-8c96-eb13ca88a92e"",
+                    ""id"": ""afc95239-0db2-4455-a34a-21438766dd1e"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""startAni"",
+                    ""name"": ""ShootGun"",
                     ""type"": ""Button"",
-                    ""id"": ""afc95239-0db2-4455-a34a-21438766dd1e"",
+                    ""id"": ""5e8fcb81-4f6d-423d-8c96-eb13ca88a92e"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -427,39 +427,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""08574bcb-f39d-4c64-a7c9-3ff68b187367"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""uiChoose"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""50f2a59d-6ae2-4c04-bade-b4e04f23cb67"",
-                    ""path"": ""<XInputController>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ShootGun"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""cb39091d-d680-4f86-941f-63663c5a2dc3"",
-                    ""path"": ""<Mouse>/rightButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ShootGun"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""64ffbdcc-5905-43ac-9045-56b760a47976"",
                     ""path"": ""<XInputController>/buttonEast"",
                     ""interactions"": """",
@@ -534,6 +501,39 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""IngameAni"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""50f2a59d-6ae2-4c04-bade-b4e04f23cb67"",
+                    ""path"": ""<XInputController>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShootGun"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cb39091d-d680-4f86-941f-63663c5a2dc3"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShootGun"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""02c3ad4a-a090-4cd4-8014-137e13d42cd3"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""uiChoose"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -550,8 +550,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_playerControls_uiTouch = m_playerControls.FindAction("uiTouch", throwIfNotFound: true);
         m_playerControls_BackPack = m_playerControls.FindAction("BackPack", throwIfNotFound: true);
         m_playerControls_uiChoose = m_playerControls.FindAction("uiChoose", throwIfNotFound: true);
-        m_playerControls_ShootGun = m_playerControls.FindAction("ShootGun", throwIfNotFound: true);
         m_playerControls_startAni = m_playerControls.FindAction("startAni", throwIfNotFound: true);
+        m_playerControls_ShootGun = m_playerControls.FindAction("ShootGun", throwIfNotFound: true);
         m_playerControls_IngameAni = m_playerControls.FindAction("IngameAni", throwIfNotFound: true);
     }
 
@@ -622,8 +622,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_playerControls_uiTouch;
     private readonly InputAction m_playerControls_BackPack;
     private readonly InputAction m_playerControls_uiChoose;
-    private readonly InputAction m_playerControls_ShootGun;
     private readonly InputAction m_playerControls_startAni;
+    private readonly InputAction m_playerControls_ShootGun;
     private readonly InputAction m_playerControls_IngameAni;
     public struct PlayerControlsActions
     {
@@ -637,8 +637,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @uiTouch => m_Wrapper.m_playerControls_uiTouch;
         public InputAction @BackPack => m_Wrapper.m_playerControls_BackPack;
         public InputAction @uiChoose => m_Wrapper.m_playerControls_uiChoose;
-        public InputAction @ShootGun => m_Wrapper.m_playerControls_ShootGun;
         public InputAction @startAni => m_Wrapper.m_playerControls_startAni;
+        public InputAction @ShootGun => m_Wrapper.m_playerControls_ShootGun;
         public InputAction @IngameAni => m_Wrapper.m_playerControls_IngameAni;
         public InputActionMap Get() { return m_Wrapper.m_playerControls; }
         public void Enable() { Get().Enable(); }
@@ -673,12 +673,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @uiChoose.started += instance.OnUiChoose;
             @uiChoose.performed += instance.OnUiChoose;
             @uiChoose.canceled += instance.OnUiChoose;
-            @ShootGun.started += instance.OnShootGun;
-            @ShootGun.performed += instance.OnShootGun;
-            @ShootGun.canceled += instance.OnShootGun;
             @startAni.started += instance.OnStartAni;
             @startAni.performed += instance.OnStartAni;
             @startAni.canceled += instance.OnStartAni;
+            @ShootGun.started += instance.OnShootGun;
+            @ShootGun.performed += instance.OnShootGun;
+            @ShootGun.canceled += instance.OnShootGun;
             @IngameAni.started += instance.OnIngameAni;
             @IngameAni.performed += instance.OnIngameAni;
             @IngameAni.canceled += instance.OnIngameAni;
@@ -710,12 +710,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @uiChoose.started -= instance.OnUiChoose;
             @uiChoose.performed -= instance.OnUiChoose;
             @uiChoose.canceled -= instance.OnUiChoose;
-            @ShootGun.started -= instance.OnShootGun;
-            @ShootGun.performed -= instance.OnShootGun;
-            @ShootGun.canceled -= instance.OnShootGun;
             @startAni.started -= instance.OnStartAni;
             @startAni.performed -= instance.OnStartAni;
             @startAni.canceled -= instance.OnStartAni;
+            @ShootGun.started -= instance.OnShootGun;
+            @ShootGun.performed -= instance.OnShootGun;
+            @ShootGun.canceled -= instance.OnShootGun;
             @IngameAni.started -= instance.OnIngameAni;
             @IngameAni.performed -= instance.OnIngameAni;
             @IngameAni.canceled -= instance.OnIngameAni;
@@ -746,8 +746,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnUiTouch(InputAction.CallbackContext context);
         void OnBackPack(InputAction.CallbackContext context);
         void OnUiChoose(InputAction.CallbackContext context);
-        void OnShootGun(InputAction.CallbackContext context);
         void OnStartAni(InputAction.CallbackContext context);
+        void OnShootGun(InputAction.CallbackContext context);
         void OnIngameAni(InputAction.CallbackContext context);
     }
 }

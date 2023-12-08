@@ -25,16 +25,21 @@ public class BUTTON : MonoBehaviour
     }
     public void HOME()
     {
-
+        SceneManager.LoadScene("Start");
     }
 
     public void HowToPlay()
     {
-        howplay.SetActive(true);
+        
+            howplay.SetActive(true);
+        
+        
     }
     public void close()
     {
-        howplay.SetActive(false);
+        
+            howplay.SetActive(false);
+        
     }
 
     public void next()

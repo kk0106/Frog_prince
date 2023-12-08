@@ -78,18 +78,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ShootGun",
+                    "name": "startAni",
                     "type": "Button",
-                    "id": "5e8fcb81-4f6d-423d-8c96-eb13ca88a92e",
+                    "id": "afc95239-0db2-4455-a34a-21438766dd1e",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "startAni",
+                    "name": "ShootGun",
                     "type": "Button",
-                    "id": "afc95239-0db2-4455-a34a-21438766dd1e",
+                    "id": "5e8fcb81-4f6d-423d-8c96-eb13ca88a92e",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -405,39 +405,6 @@
                 },
                 {
                     "name": "",
-                    "id": "08574bcb-f39d-4c64-a7c9-3ff68b187367",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "uiChoose",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "50f2a59d-6ae2-4c04-bade-b4e04f23cb67",
-                    "path": "<XInputController>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ShootGun",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cb39091d-d680-4f86-941f-63663c5a2dc3",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ShootGun",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "64ffbdcc-5905-43ac-9045-56b760a47976",
                     "path": "<XInputController>/buttonEast",
                     "interactions": "",
@@ -510,6 +477,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "IngameAni",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "50f2a59d-6ae2-4c04-bade-b4e04f23cb67",
+                    "path": "<XInputController>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShootGun",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cb39091d-d680-4f86-941f-63663c5a2dc3",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShootGun",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "02c3ad4a-a090-4cd4-8014-137e13d42cd3",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "uiChoose",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
