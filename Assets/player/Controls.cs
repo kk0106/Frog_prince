@@ -125,15 +125,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""uiback"",
-                    ""type"": ""Button"",
-                    ""id"": ""c96f7c34-7554-4061-b2da-31eb7cc76861"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -543,28 +534,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""uiChoose"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""0ccb792a-3b84-4437-9222-49b2b688694f"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""uiback"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d6b41903-1949-466e-9798-6820796965f7"",
-                    ""path"": ""<XInputController>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""uiback"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -584,7 +553,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_playerControls_startAni = m_playerControls.FindAction("startAni", throwIfNotFound: true);
         m_playerControls_ShootGun = m_playerControls.FindAction("ShootGun", throwIfNotFound: true);
         m_playerControls_IngameAni = m_playerControls.FindAction("IngameAni", throwIfNotFound: true);
-        m_playerControls_uiback = m_playerControls.FindAction("uiback", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -657,7 +625,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_playerControls_startAni;
     private readonly InputAction m_playerControls_ShootGun;
     private readonly InputAction m_playerControls_IngameAni;
-    private readonly InputAction m_playerControls_uiback;
     public struct PlayerControlsActions
     {
         private @Controls m_Wrapper;
@@ -673,7 +640,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @startAni => m_Wrapper.m_playerControls_startAni;
         public InputAction @ShootGun => m_Wrapper.m_playerControls_ShootGun;
         public InputAction @IngameAni => m_Wrapper.m_playerControls_IngameAni;
-        public InputAction @uiback => m_Wrapper.m_playerControls_uiback;
         public InputActionMap Get() { return m_Wrapper.m_playerControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -716,9 +682,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @IngameAni.started += instance.OnIngameAni;
             @IngameAni.performed += instance.OnIngameAni;
             @IngameAni.canceled += instance.OnIngameAni;
-            @uiback.started += instance.OnUiback;
-            @uiback.performed += instance.OnUiback;
-            @uiback.canceled += instance.OnUiback;
         }
 
         private void UnregisterCallbacks(IPlayerControlsActions instance)
@@ -756,9 +719,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @IngameAni.started -= instance.OnIngameAni;
             @IngameAni.performed -= instance.OnIngameAni;
             @IngameAni.canceled -= instance.OnIngameAni;
-            @uiback.started -= instance.OnUiback;
-            @uiback.performed -= instance.OnUiback;
-            @uiback.canceled -= instance.OnUiback;
         }
 
         public void RemoveCallbacks(IPlayerControlsActions instance)
@@ -789,6 +749,5 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnStartAni(InputAction.CallbackContext context);
         void OnShootGun(InputAction.CallbackContext context);
         void OnIngameAni(InputAction.CallbackContext context);
-        void OnUiback(InputAction.CallbackContext context);
     }
 }
