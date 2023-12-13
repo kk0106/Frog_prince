@@ -20,6 +20,7 @@ public class setAni : MonoBehaviour
       if(Attack.anifloat==1)
         {
            time-=Time.deltaTime;
+            ani.speed = 1;
         }
 
 
@@ -35,12 +36,16 @@ public class setAni : MonoBehaviour
         {
             ani.SetBool("normal", true);
 
-           
-            
+          
         }
+        if (time < -0.3)
+        {
+            ani.speed = 0;
+        }
+       
         if (time < -2)
         {
-
+         
             Attack.anifloat = 2;
             time = 5;
         }

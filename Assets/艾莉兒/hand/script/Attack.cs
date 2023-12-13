@@ -15,7 +15,7 @@ public class Attack : MonoBehaviour
 
     [Header("HandAttackArea")]
     public int a;
-    private int b;
+    public int b;
     
 
     [Header("hand")]
@@ -31,9 +31,7 @@ public class Attack : MonoBehaviour
     public GameObject bhand3;
     public GameObject bhand4;
     public GameObject bhand5;
-    public GameObject handL1;
-    public GameObject bhandL2;
-
+    
 
     public static int anifloat;
     // Start is called before the first frame update
@@ -53,9 +51,9 @@ public class Attack : MonoBehaviour
         bhand3.SetActive(false);
         bhand4.SetActive(false);
         bhand5.SetActive(false);
-       
-        handL1.SetActive(false);
-        bhandL2.SetActive(false);
+
+        a = 1;
+        b = 0;
     }
 
     // Update is called once per frame
@@ -65,6 +63,7 @@ public class Attack : MonoBehaviour
         if (time == 5)
         {
             anifloat = 0;
+            
         }
 
         if (anifloat==0)
@@ -88,8 +87,7 @@ public class Attack : MonoBehaviour
             bhand4.SetActive(false);
             bhand5.SetActive(false);
 
-            handL1.SetActive(false);
-            bhandL2.SetActive(false);
+          
 
             time = 5;
         }
@@ -98,7 +96,7 @@ public class Attack : MonoBehaviour
 
         if (a == 1)
         {
-           ahand1.SetActive(true);
+         
            ahand2.SetActive(true);
             
             anifloat = 1;
@@ -116,15 +114,16 @@ public class Attack : MonoBehaviour
         {
 
             ahand5.SetActive(true);
-            ahand2.SetActive(true);
+            ahand6.SetActive(true);
 
             anifloat = 1;
         }
         if (a == 4)
         {
 
-            ahand1.SetActive(true);
-            ahand6.SetActive(true);
+            
+           
+            ahand5.SetActive(true) ;
 
             anifloat = 1;
         }
@@ -132,15 +131,17 @@ public class Attack : MonoBehaviour
         {
             handd.SetActive(true);
             ahand2.SetActive(true);
+            ahand3.SetActive(true);
 
             anifloat = 1;
 
         }
         if (a == 6)
         {
-            handL1.SetActive(true);
-            ahand2.SetActive(true);
-
+           
+          
+            handd.SetActive(true);
+            ahand1.SetActive(true);
             anifloat = 1;
 
         }
@@ -148,52 +149,71 @@ public class Attack : MonoBehaviour
 
         if (b == 1)
         {
-            
 
+        
+            bhand4.SetActive(true);
+
+            anifloat = 1;
         }
         if (b == 2)
         {
-            
+          
+            bhand4.SetActive(true);
+
+            anifloat = 1;
 
         }
         if (b == 3)
         {
-            
+          
+            bhand2.SetActive(true);
+
+            anifloat = 1;
 
         }
         if (b == 4)
         {
-          
+            handd.SetActive(true);
+            bhand2.SetActive(true);
+            bhand5.SetActive(true);
+
+            anifloat = 1;
 
         }
         if (b == 5)
         {
-           
+            handd.SetActive(true);
+          
+            bhand2.SetActive(true);
+
+            anifloat = 1;
 
         }
         if (b == 6)
         {
-            
 
+            
+            handd.SetActive(true);
+            bhand2.SetActive(true);
+            anifloat = 1;
         }
 
 
-        if (player_pos.x >10)
+        if (player_pos.x >10&&time==5)
         {
-            if (time < 0)
-            {
-                a = 2;
-                        
-            }
+           
+                a = UnityEngine.Random.Range(1, 7);
+
+            
             
         }
-        else
+       if(player_pos.x <10&&time==5)
         {
-            if(time < 0)
-              {
-                b= Random.Range(1, 6);  
-               
-              }
+           
+              
+                b= UnityEngine.Random.Range(1, 7);
+
+            
         }
         
     }
