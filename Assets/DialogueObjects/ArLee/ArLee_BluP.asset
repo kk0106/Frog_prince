@@ -21,8 +21,12 @@ MonoBehaviour:
   - "\u79D1\u5B78\u5BB6\u5F9E\u6B64\u96B1\u59D3\u57CB\u540D\uFF0C\n\u6C92\u6709\u4EBA\u518D\u898B\u904E\u4ED6\u4E86\u3002"
   - "\u85CD\u5716\u4E5F\u8DDF\u7740\u77F3\u6C89\u5927\u6D77\u4E86..."
   responses:
-  - responseText: "\u5728\u6211\u9019!"
+  - responseText: yes
     dialogueObject: {fileID: 11400000, guid: 29c6f54f558588d4ba91911afd164068, type: 2}
-  - responseText: "\u6211\u518D\u770B\u770B\u3002"
-    dialogueObject: {fileID: 11400000, guid: ba7d49d0ca9aaa44ea47ff724801a416, type: 2}
+    NeedItem: 0
+    itemID: 
+  - responseText: no
+    dialogueObject: {fileID: 11400000, guid: 29c6f54f558588d4ba91911afd164068, type: 2}
+    NeedItem: 0
+    itemID: 
   isShopInteraction: 1
