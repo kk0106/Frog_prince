@@ -14,9 +14,9 @@ public class Attack : MonoBehaviour
     public Vector3 player_pos;
 
     [Header("HandAttackArea")]
-    public int a;
-    public int b;
-    
+    public static int a;
+    public static int b;
+    public static int Mark;
 
     [Header("hand")]
     public GameObject ahand1;
@@ -37,7 +37,8 @@ public class Attack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ahand1.SetActive(false);
+
+    ahand1.SetActive(false);
         ahand2.SetActive(false);
         ahand3.SetActive(false);
         ahand4.SetActive(false);
@@ -52,8 +53,7 @@ public class Attack : MonoBehaviour
         bhand4.SetActive(false);
         bhand5.SetActive(false);
 
-        a = 1;
-        b = 0;
+       
     }
 
     // Update is called once per frame
@@ -87,8 +87,8 @@ public class Attack : MonoBehaviour
             bhand4.SetActive(false);
             bhand5.SetActive(false);
 
-          
 
+            Mark = 0;
             time = 5;
         }
 
@@ -100,6 +100,7 @@ public class Attack : MonoBehaviour
            ahand2.SetActive(true);
             
             anifloat = 1;
+          //  Mark = 1;
 
         }
         if (a == 2)
@@ -108,6 +109,7 @@ public class Attack : MonoBehaviour
             ahand3.SetActive(true);
             ahand4.SetActive(true);
 
+            Mark = 2;
             anifloat = 1;
         }
         if (a == 3)
@@ -116,6 +118,7 @@ public class Attack : MonoBehaviour
             ahand5.SetActive(true);
             ahand6.SetActive(true);
 
+            Mark=3;
             anifloat = 1;
         }
         if (a == 4)
@@ -125,6 +128,7 @@ public class Attack : MonoBehaviour
            
             ahand5.SetActive(true) ;
 
+            Mark = 4;
             anifloat = 1;
         }
         if (a == 5)
@@ -133,6 +137,7 @@ public class Attack : MonoBehaviour
             ahand2.SetActive(true);
             ahand3.SetActive(true);
 
+            Mark = 5;
             anifloat = 1;
 
         }
@@ -142,6 +147,8 @@ public class Attack : MonoBehaviour
           
             handd.SetActive(true);
             ahand1.SetActive(true);
+
+            Mark = 6;
             anifloat = 1;
 
         }
@@ -153,6 +160,7 @@ public class Attack : MonoBehaviour
         
             bhand4.SetActive(true);
 
+            Mark = 7;
             anifloat = 1;
         }
         if (b == 2)
@@ -160,6 +168,7 @@ public class Attack : MonoBehaviour
           
             bhand4.SetActive(true);
 
+            Mark = 8;
             anifloat = 1;
 
         }
@@ -168,6 +177,7 @@ public class Attack : MonoBehaviour
           
             bhand2.SetActive(true);
 
+            Mark = 9;
             anifloat = 1;
 
         }
@@ -178,7 +188,7 @@ public class Attack : MonoBehaviour
             bhand5.SetActive(true);
 
             anifloat = 1;
-
+            Mark = 10;
         }
         if (b == 5)
         {
@@ -187,7 +197,7 @@ public class Attack : MonoBehaviour
             bhand2.SetActive(true);
 
             anifloat = 1;
-
+            Mark= 11;
         }
         if (b == 6)
         {
@@ -195,6 +205,8 @@ public class Attack : MonoBehaviour
             
             handd.SetActive(true);
             bhand2.SetActive(true);
+            
+            Mark= 12;
             anifloat = 1;
         }
 

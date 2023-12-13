@@ -49,7 +49,7 @@ public class IceBack : MonoBehaviour
     public GameObject ice35;
     public GameObject ice36;
     public GameObject ice37;
-    public GameObject ice38;
+   
         
 
     // Start is called before the first frame update
@@ -61,37 +61,33 @@ public class IceBack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Attack.anifloat==0)
+       // if (Attack.anifloat == 2)
+      //  {
+      //      time -= Time.deltaTime;
+       // }
+        if (Attack.anifloat == 2)
         {
             ice.SetActive(true);
-
             ice1.SetActive(true);
-            ice2.SetActive(true);
-                
+            ice2.SetActive(true);                
             ice3.SetActive(true);
-            ice4.SetActive(true);
-                
+            ice4.SetActive(true);             
             ice5.SetActive(true);
             ice6.SetActive(true);
             ice7.SetActive(true);
-                ice8.SetActive(true);
+            ice8.SetActive(true);
             ice9.SetActive(true);
             ice10.SetActive(true);
             ice11.SetActive(true);
-                
-            ice12.SetActive(true);
-                
+            ice12.SetActive(true);     
             ice13.SetActive(true);
-            ice14.SetActive(true);
-                
+            ice14.SetActive(true);               
             ice15.SetActive(true);
             ice16.SetActive(true);
             ice17.SetActive(true);
-            ice18.SetActive(true);
-                
+            ice18.SetActive(true);              
             ice19.SetActive(true);
-            ice20.SetActive(true);
-                
+            ice20.SetActive(true);               
             ice21.SetActive(true);
             ice22.SetActive(true);
             ice23.SetActive(true);
@@ -99,9 +95,6 @@ public class IceBack : MonoBehaviour
             ice25.SetActive(true);
             ice26.SetActive(true);
             ice27.SetActive(true);
-                
-
-
             ice28.SetActive(true);
             ice29.SetActive(true);
             ice30.SetActive(true);
@@ -111,8 +104,27 @@ public class IceBack : MonoBehaviour
             ice34.SetActive(true);
             ice35.SetActive(true);
             ice36.SetActive(true);
-                ice37.SetActive(true);
-            ice38.SetActive(true);
+            ice37.SetActive(true);
+           
+        }
+        //  if (time < 0)
+        //   {
+        //     time = 3;
+
+        //  }
+
+        if (Attack.Mark == 0)
+        {
+            ice16.GetComponent<MeshRenderer>().material.color = Color.white;
+            ice17.GetComponent<MeshRenderer>().material.color = Color.white;
+            ice18.GetComponent<MeshRenderer>().material.color = Color.white;
+        }
+
+        if (Attack.Mark == 1)
+        {
+           ice16.GetComponent<MeshRenderer>().material.color = Color.red;
+           ice17.GetComponent<MeshRenderer>().material.color = Color.red;
+           ice18.GetComponent<MeshRenderer>().material.color = Color.red;         
         }
 
        

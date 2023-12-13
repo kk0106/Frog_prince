@@ -27,6 +27,15 @@ public class setAni : MonoBehaviour
       if(time<4)
         {
             ani.SetBool("up", true);
+
+           
+        }
+      if(time<2.5f)
+        {
+            if (Attack.a == 1)
+            {
+                Attack.Mark = 1;
+            }
         }
       if(time<2)
         {

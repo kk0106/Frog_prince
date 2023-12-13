@@ -24,6 +24,7 @@ public class hp : MonoBehaviour
     public Vector3 pos4;
     public Vector3 pos5;
     public Vector3 pos6;
+    public Vector3 pos8;
 
    
     public GameObject GGpanel;
@@ -147,6 +148,16 @@ public class hp : MonoBehaviour
             HP -= 1;
             a = 7;
         }
+        if (other.gameObject.tag == "hand")
+        {
+            HP -= 1;
+           a = 8;
+        }
+        if (other.gameObject.tag == "aa")
+        {
+            HP -= 1;
+            a = 8;
+        }
     }
 
 
@@ -190,6 +201,12 @@ public class hp : MonoBehaviour
         if(a == 6)
         {
             this.gameObject.transform.position = pos6;
+            a = 0;
+            loading.SetActive(false);
+        }
+        if (a == 8)
+        {
+            this.gameObject.transform.position = pos8;
             a = 0;
             loading.SetActive(false);
         }
