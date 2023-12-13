@@ -12637,38 +12637,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueObject: {fileID: 11400000, guid: 5c45ceed9ca8e0c4a84ef4573f321894, type: 2}
   events:
-  - name: Sell
+  - name: yes
     onPickedResponse:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1150263711}
-          m_TargetAssemblyTypeName: ObjectCloser, Assembly-CSharp
-          m_MethodName: OnHappyArleeClick
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - name: Don't sell
+        m_Calls: []
+  - name: no
     onPickedResponse:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1150263711}
-          m_TargetAssemblyTypeName: ObjectCloser, Assembly-CSharp
-          m_MethodName: OnSadArleeClick
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
 --- !u!114 &687764120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17780,6 +17756,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: empty
       objectReference: {fileID: 0}
+    - target: {fileID: 4342664046942593454, guid: 90c9257c047b19d4c81ffccbf6c9b7e2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4342664046942593455, guid: 90c9257c047b19d4c81ffccbf6c9b7e2,
         type: 3}
       propertyPath: m_Pivot.x
@@ -20998,7 +20979,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119884606}
   m_LocalRotation: {x: 0.02703086, y: 0.034731418, z: -0.0010007456, w: 0.9990306}
-  m_LocalPosition: {x: 17.279972, y: 1.3889532, z: -59.510925}
+  m_LocalPosition: {x: -46.121834, y: 1.3889534, z: -59.510925}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25692,7 +25673,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375762404}
   m_LocalRotation: {x: 0.02703086, y: 0.034731418, z: -0.0010007456, w: 0.9990306}
-  m_LocalPosition: {x: 20.178167, y: 1.3889532, z: -59.510925}
+  m_LocalPosition: {x: -46.121834, y: 1.3889534, z: -59.510925}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -28950,7 +28931,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565593217}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.7, y: 0.27, z: -45.250183}
+  m_LocalPosition: {x: -49.6, y: 0.27, z: -45.250183}
   m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -31762,38 +31743,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueObject: {fileID: 11400000, guid: a337613db41d3ce4fbf5058099ca9f57, type: 2}
   events:
-  - name: I have it
+  - name: yes
     onPickedResponse:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1150263711}
-          m_TargetAssemblyTypeName: ObjectCloser, Assembly-CSharp
-          m_MethodName: OnHappyArleeClick
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - name: dont sell
+        m_Calls: []
+  - name: no
     onPickedResponse:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1150263711}
-          m_TargetAssemblyTypeName: ObjectCloser, Assembly-CSharp
-          m_MethodName: OnSadArleeClick
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
 --- !u!114 &1679188976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34685,6 +34642,7 @@ GameObject:
   - component: {fileID: 1789161092}
   - component: {fileID: 1789161096}
   - component: {fileID: 1789161095}
+  - component: {fileID: 1789161097}
   m_Layer: 0
   m_Name: trigger
   m_TagString: Untagged
@@ -34733,6 +34691,40 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.0283444, y: 1.2891924, z: 13.586336}
   m_Center: {x: 1.0847583, y: 0.14459641, z: 6.2931676}
+--- !u!114 &1789161097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789161091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e941cf572d9d3040809dc76219ca1fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueObject: {fileID: 11400000, guid: 969b875556edd034a8e69807aee65b11, type: 2}
+  events:
+  - name: "\u597D"
+    onPickedResponse:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - name: "\u4F60\u81EA\u5DF1\u600E\u9EBC\u4E0D\u53BB?"
+    onPickedResponse:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1789549970
 GameObject:
   m_ObjectHideFlags: 0
