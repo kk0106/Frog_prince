@@ -37,8 +37,9 @@ public class Attack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anifloat = -1;
 
-    ahand1.SetActive(false);
+        ahand1.SetActive(false);
         ahand2.SetActive(false);
         ahand3.SetActive(false);
         ahand4.SetActive(false);
@@ -89,9 +90,12 @@ public class Attack : MonoBehaviour
 
 
             Mark = 0;
-            time = 5;
+            if (PlayerAttack.PlayerCanAttack==false)
+            {
+                time = 5;
+            }
         }
-
+        
         player_pos =player.transform.position;
 
         if (a == 1)
@@ -211,7 +215,7 @@ public class Attack : MonoBehaviour
         }
 
 
-        if (player_pos.x >10&&time==5)
+        if (player_pos.x >10&&time ==5)
         {
            
                 a = UnityEngine.Random.Range(1, 7);

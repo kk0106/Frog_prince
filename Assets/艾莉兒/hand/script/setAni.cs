@@ -36,6 +36,50 @@ public class setAni : MonoBehaviour
             {
                 Attack.Mark = 1;
             }
+            if (Attack.a == 2)
+            {
+                Attack.Mark = 2;
+            }
+            if (Attack.a == 3)
+            {
+                Attack.Mark = 3;
+            }
+            if (Attack.a == 4)
+            {
+                Attack.Mark = 4;
+            }
+            if (Attack.a == 5)
+            {
+                Attack.Mark = 5;
+            }
+            if (Attack.a == 6)
+            {
+                Attack.Mark = 6;
+            }
+            if (Attack.b == 1)
+            {
+                Attack.Mark = 7;
+            }
+            if (Attack.b == 2)
+            {
+                Attack.Mark = 8;
+            }
+            if (Attack.b == 3)
+            {
+                Attack.Mark = 9;
+            }
+            if (Attack.b == 4)
+            {
+                Attack.Mark = 10;
+            }
+            if (Attack.b == 5)
+            {
+                Attack.Mark = 11;
+            }
+            if (Attack.b == 6)
+            {
+                Attack.Mark = 12;
+            }
         }
       if(time<2)
         {
