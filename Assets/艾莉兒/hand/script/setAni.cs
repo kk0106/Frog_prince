@@ -63,8 +63,8 @@ public class setAni : MonoBehaviour
         if (time < 0)
         {
             ani.SetBool("normal", true);
+            Attacked = 0;
 
-          
         }
         if (time < -0.3)
         {
@@ -76,8 +76,9 @@ public class setAni : MonoBehaviour
 
             attack1.SetAni = 2;
             attack1.WhichAttack = 0;
-            time = 5;
-            Attacked = 0;
+          //  attack1.AttackValue = 2;
+            time = 4.1f;
+        
         }
       
     }

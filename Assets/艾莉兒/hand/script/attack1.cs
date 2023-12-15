@@ -53,21 +53,23 @@ public class attack1 : MonoBehaviour
         {
             hand1 .SetActive(true);
 
-            AttackValue = 2;
+           // AttackValue = 2;
             SetAni = 1;
         }
+
         if(WhichAttack == 2)
         {
             hand3 .SetActive(true);
 
-            AttackValue= 3;
+          //  AttackValue= 3;
             SetAni = 1;
         }
+
         if(WhichAttack == 3)
         {
             hand5 .SetActive(true);
 
-            AttackValue = 4;
+          //  AttackValue = 4;
             SetAni = 1;
         }
         if(WhichAttack == 4)
@@ -75,7 +77,7 @@ public class attack1 : MonoBehaviour
             hand2 .SetActive(true);
             hand4 .SetActive(true);
 
-            AttackValue = 0;
+           // AttackValue = 0;
             SetAni = 1;
         }
 
@@ -83,12 +85,12 @@ public class attack1 : MonoBehaviour
         {
             Mark = 0;
 
-            time = 5;
+            time = 3;
         }
 
        
        
-       if(time==5&&IceBack.IceGoBack==1)
+       if(time==3&&IceBack.IceGoBack==1)
         {
             SetAni = 0;
         }
@@ -105,6 +107,18 @@ public class attack1 : MonoBehaviour
             if (AttackValue == 1)
             {
                 WhichAttack = 1;
+            }
+            if(AttackValue == 2)
+            {
+                WhichAttack = 2;
+            }
+            if (AttackValue == 3)
+            {
+                WhichAttack = 3;
+            }
+            if (AttackValue == 4)
+            {
+                WhichAttack = 4;
             }
         }
 

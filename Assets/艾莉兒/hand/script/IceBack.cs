@@ -77,7 +77,40 @@ public class IceBack : MonoBehaviour
             ice2.SetActive(false);
             ice3.SetActive(false);
             ice4.SetActive(false);
-          
+
+        }
+
+        if(setAni.Attacked == 1&& attack1.WhichAttack == 2)
+        {
+            ice10.SetActive(false);
+            ice11.SetActive(false);
+            ice12.SetActive(false);
+            ice13.SetActive(false);
+            ice14.SetActive(false);
+
+        }
+
+        if (setAni.Attacked == 1 && attack1.WhichAttack == 3)
+        {
+            ice20.SetActive(false);
+            ice21.SetActive(false);
+            ice22.SetActive(false);
+            ice23.SetActive(false);
+            ice24.SetActive(false);
+
+        }
+        if (setAni.Attacked == 1 && attack1.WhichAttack == 4)
+        {
+            ice5.SetActive(false);
+            ice6.SetActive(false);
+            ice7.SetActive(false);
+            ice8.SetActive(false);
+            ice9.SetActive(false);
+            ice15.SetActive(false);
+            ice16.SetActive(false);
+            ice17.SetActive(false);
+            ice18.SetActive(false);
+            ice19.SetActive(false);
         }
 
         if (attack1.SetAni == 2)
