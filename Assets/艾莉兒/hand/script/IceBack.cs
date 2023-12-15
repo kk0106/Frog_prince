@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class IceBack : MonoBehaviour
 {
+    [Header("ChangeMaterial")]
+    public Material[] material;
+    public int x;
+
     public float time;
     public GameObject ice;
     public GameObject ice1;
@@ -46,9 +51,7 @@ public class IceBack : MonoBehaviour
     public GameObject ice32;
     public GameObject ice33;
     public GameObject ice34;
-    public GameObject ice35;
-    public GameObject ice36;
-    public GameObject ice37;
+  
    
         
 
@@ -61,11 +64,22 @@ public class IceBack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // if (Attack.anifloat == 2)
-      //  {
-      //      time -= Time.deltaTime;
-       // }
-        if (Attack.anifloat == 2)
+        // if (Attack.anifloat == 2)
+        //  {
+        //      time -= Time.deltaTime;
+        // }
+
+        if (setAni.Attacked == 1 && attack1.WhichAttack == 1)
+        {
+            ice.SetActive(false);
+            ice1.SetActive(false);
+            ice2.SetActive(false);
+            ice3.SetActive(false);
+            ice4.SetActive(false);
+          
+        }
+
+        if (attack1.SetAni == 2)
         {
             ice.SetActive(true);
             ice1.SetActive(true);
@@ -102,9 +116,7 @@ public class IceBack : MonoBehaviour
             ice32.SetActive(true);
             ice33.SetActive(true);
             ice34.SetActive(true);
-            ice35.SetActive(true);
-            ice36.SetActive(true);
-            ice37.SetActive(true);
+            
            
         }
         //  if (time < 0)
@@ -113,206 +125,82 @@ public class IceBack : MonoBehaviour
 
         //  }
 
-        if (Attack.Mark == 0)
+        if (attack1.Mark == 0)
         {
-            ice1.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice2.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice3.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice5.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice6.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice7.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice8.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice9.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice11.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice12.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice13.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice15.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice16.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice17.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice18.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice19.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice22.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice23.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice24.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice25.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice27.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice28.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice29.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice30.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice31.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice33.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice34.GetComponent<MeshRenderer>().material.color = Color.white;
-            ice35.GetComponent<MeshRenderer>().material.color = Color.white;
-          
+            ice.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice1.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice2.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice3.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice4.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice5.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice6.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice7.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice8.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice9.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice10.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice11.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice12.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice13.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice14.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice15.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice16.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice17.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice18.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice19.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice20.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice21.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice22.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice23.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice24.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice25.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice26.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice27.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice28.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice29.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice30.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice31.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice32.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice33.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice34.GetComponent<Renderer>().sharedMaterial = material[0];
         }
 
-        if (Attack.Mark == 1)
+        if (attack1.Mark == 1)
         {
-           ice16.GetComponent<MeshRenderer>().material.color = Color.red;
-           ice17.GetComponent<MeshRenderer>().material.color = Color.red;
-           ice18.GetComponent<MeshRenderer>().material.color = Color.red;         
+            ice1.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice2.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice3.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice4.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice.GetComponent<Renderer>().sharedMaterial = material[1];
         }
-        if (Attack.Mark == 2)
+        if (attack1.Mark == 2)
         {
-            ice22.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice23.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice24.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice25.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice17.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice18.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice12.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice13.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice7.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice8.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice2.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice3.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice30.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice31.GetComponent<MeshRenderer>().material.color = Color.red;
-  
-        }
-
-        if (Attack.Mark == 3)
-        {
-            ice22.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice23.GetComponent<MeshRenderer>().material.color = Color.red;
-            
-            ice17.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice18.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice12.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice13.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice7.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice8.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice2.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice3.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice30.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice31.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice24.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice19.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice15.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice9.GetComponent<MeshRenderer>().material.color = Color.red;
-        }
-        if (Attack.Mark == 4)
-        {
-            ice22.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice23.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice17.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice18.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice12.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice13.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice7.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice8.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice2.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice3.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice30.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice31.GetComponent<MeshRenderer>().material.color = Color.red;
-        }
-
-        if (Attack.Mark == 5)
-        {
-            ice5.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice6.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice7.GetComponent<MeshRenderer>().material.color = Color.red;
-
-            ice16.GetComponent<MeshRenderer>().material.color = Color.red;           
-            ice17.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice18.GetComponent<MeshRenderer>().material.color = Color.red;
-
-            ice22.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice23.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice24.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice25.GetComponent<MeshRenderer>().material.color = Color.red;
-           
-        }
-        if (Attack.Mark == 6)
-        {
-            ice5.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice6.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice7.GetComponent<MeshRenderer>().material.color = Color.red;
-
-            ice11.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice12.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice13.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice15.GetComponent<MeshRenderer>().material.color = Color.red;
-        }
-
-        if (Attack.Mark == 7)
-        {
-            ice33.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice34.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice28.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice29.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice1.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice2.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice7.GetComponent<MeshRenderer>().material.color = Color.red;
-        }
-        if (Attack.Mark == 8)
-        {
-            ice33.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice34.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice28.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice29.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice1.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice2.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice7.GetComponent<MeshRenderer>().material.color = Color.red;
-        }
-
-        if (Attack.Mark == 9)
-        {
-            ice27.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice28.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice29.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice30.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice31.GetComponent<MeshRenderer>().material.color = Color.red;
-          
-        }
-        if (Attack.Mark == 10)
-        {
-            ice5.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice6.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice7.GetComponent<MeshRenderer>().material.color = Color.red;
-
-            ice27.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice28.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice29.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice30.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice31.GetComponent<MeshRenderer>().material.color = Color.red;
-
-            ice34.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice35.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice29.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice30.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice2.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice3.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice8.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice9.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice15.GetComponent<MeshRenderer>().material.color = Color.red;
-        }
-
-        if (Attack.Mark == 11)
-        {
-            ice5.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice6.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice7.GetComponent<MeshRenderer>().material.color = Color.red;
-
-            ice27.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice28.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice29.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice30.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice31.GetComponent<MeshRenderer>().material.color = Color.red;
+            ice11.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice12.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice13.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice14.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice10.GetComponent<Renderer>().sharedMaterial = material[1];
 
         }
-        if (Attack.Mark == 12)
+        if (attack1.Mark == 3)
         {
-            ice5.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice6.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice7.GetComponent<MeshRenderer>().material.color = Color.red;
-
-            ice27.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice28.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice29.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice30.GetComponent<MeshRenderer>().material.color = Color.red;
-            ice31.GetComponent<MeshRenderer>().material.color = Color.red;
+            ice21.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice22.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice23.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice24.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice20.GetComponent<Renderer>().sharedMaterial = material[1];
         }
-
+        if (attack1.Mark == 4)
+        {
+            ice6.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice7.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice8.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice9.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice5.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice16.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice17.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice18.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice19.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice15.GetComponent<Renderer>().sharedMaterial = material[1];
+        }
     }
 }

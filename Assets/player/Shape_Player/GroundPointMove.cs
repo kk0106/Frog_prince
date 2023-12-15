@@ -6,6 +6,7 @@ public class GroundPointMove : MonoBehaviour
 {
     public GameObject player;
     public Vector3 pos;
+    public float a;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,6 @@ public class GroundPointMove : MonoBehaviour
     {
         pos = player.transform.position;
 
-        this.gameObject.transform.position = new Vector3(pos.x, pos.y -0.77f, pos.z) ;
+        this.gameObject.transform.position = new Vector3(pos.x, pos.y -a, pos.z) ;
     }
 }

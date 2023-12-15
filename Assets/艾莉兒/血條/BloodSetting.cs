@@ -25,7 +25,7 @@ public class BloodSetting : MonoBehaviour
 
         if (time ==5)
         {
-            Attack.anifloat = -1;
+            attack1.SetAni = -1;
         }
 
         if (time < 3)
@@ -52,9 +52,7 @@ public class BloodSetting : MonoBehaviour
         }
         if(time < 0)
         {
-            Attack.anifloat = 0;
-            Attack.a = 1;
-            Attack.b = 0;
+            attack1.SetAni = 0;
             time = 0.5f;
         }
     }
