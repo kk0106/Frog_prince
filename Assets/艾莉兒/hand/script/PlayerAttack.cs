@@ -4,42 +4,43 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public static bool PlayerCanAttack;
+    public static int PlayerCanAttack;
     public GameObject fort;
-    private Vector3 FortPos;
-    private float x;
-    private float z;
+    
     public float time;
+    public  int PlanX;
+    public int PlanZ;
     // Start is called before the first frame update
     void Start()
     {
         fort.SetActive(false);
-        PlayerCanAttack = false;
+        PlayerCanAttack = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        FortPos=fort.transform.position;
-       
+        
 
+      
 
         if (Attack.anifloat == 2)
         {
-            PlayerCanAttack = true;
-            x = Random.Range(-6, 27);
-            z = Random.Range(-47, -68.5f);
+            PlayerCanAttack =1 ;
+            PlanX = Random.Range(0, 7);
+            PlanZ = Random.Range(0, 4);
         }
-        if(PlayerCanAttack==true)
+        if(PlayerCanAttack==1)
         {
             fort.SetActive(true);
-            FortPos=new Vector3(x, 0.8843641f, z);
-            time-=Time.deltaTime;
+            fort.transform.position = new Vector3(27 - 5.5f * PlanX, 0.8843641f, -48 - 6.5f * PlanZ);
+            time -=Time.deltaTime;
         }
         if (time < 0)
         {
             fort.SetActive (false);
-           PlayerCanAttack=false;
+           PlayerCanAttack=0;
+            fort.transform.position = new Vector3(27 , 0.8843641f, -48 );
             time = 5;
         }
     }

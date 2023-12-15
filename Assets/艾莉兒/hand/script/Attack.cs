@@ -90,10 +90,10 @@ public class Attack : MonoBehaviour
 
 
             Mark = 0;
-            if (PlayerAttack.PlayerCanAttack==false)
-            {
+          // if (PlayerAttack.PlayerCanAttack==0)
+        //   {
                 time = 5;
-            }
+         //  }
         }
         
         player_pos =player.transform.position;
