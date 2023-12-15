@@ -10,6 +10,7 @@ public class IceBack : MonoBehaviour
     public int x;
 
     public float time;
+    public static int IceGoBack;
     public GameObject ice;
     public GameObject ice1;
     public GameObject ice2;
@@ -58,7 +59,7 @@ public class IceBack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        IceGoBack= 0;
     }
 
     // Update is called once per frame
@@ -116,8 +117,8 @@ public class IceBack : MonoBehaviour
             ice32.SetActive(true);
             ice33.SetActive(true);
             ice34.SetActive(true);
-            
-           
+
+            IceGoBack = 1;
         }
         //  if (time < 0)
         //   {

@@ -81,7 +81,6 @@ public class attack1 : MonoBehaviour
 
         if (SetAni == 2 )
         {
-            
             Mark = 0;
 
             time = 5;
@@ -89,18 +88,20 @@ public class attack1 : MonoBehaviour
 
        
        
-       if(time==5)
+       if(time==5&&IceBack.IceGoBack==1)
         {
             SetAni = 0;
         }
 
-        if (SetAni == 0)
+        if (SetAni == 0&&AttackValue!=0)
         {
             time-=Time.deltaTime;
+
         }
 
         if (time < 0)
         {
+            IceBack.IceGoBack = 0;
             if (AttackValue == 1)
             {
                 WhichAttack = 1;
