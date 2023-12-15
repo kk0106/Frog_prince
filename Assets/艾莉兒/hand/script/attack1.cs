@@ -16,7 +16,7 @@ public class attack1 : MonoBehaviour
     public float time;
     public static int WhichAttack;
     public static int Mark;
-
+    public static int AttackValue;
    
 
   
@@ -26,7 +26,7 @@ public class attack1 : MonoBehaviour
     {
  
    
-       
+        AttackValue = 1;
 
         hand1.SetActive(false);
         hand2.SetActive(false);
@@ -52,22 +52,30 @@ public class attack1 : MonoBehaviour
         if(WhichAttack == 1)
         {
             hand1 .SetActive(true);
+
+            AttackValue = 2;
             SetAni = 1;
         }
         if(WhichAttack == 2)
         {
             hand3 .SetActive(true);
+
+            AttackValue= 3;
             SetAni = 1;
         }
         if(WhichAttack == 3)
         {
             hand5 .SetActive(true);
+
+            AttackValue = 4;
             SetAni = 1;
         }
         if(WhichAttack == 4)
         {
             hand2 .SetActive(true);
             hand4 .SetActive(true);
+
+            AttackValue = 0;
             SetAni = 1;
         }
 
@@ -93,7 +101,12 @@ public class attack1 : MonoBehaviour
 
         if (time < 0)
         {
-            WhichAttack = 1;
+            if (AttackValue == 1)
+            {
+                WhichAttack = 1;
+            }
         }
+
+        
     }
 }
