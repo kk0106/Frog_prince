@@ -33,9 +33,14 @@ public class BloodSetting : MonoBehaviour
            bloom.SetActive(true);
         }
 
-        if (time < 1.6)
+        if (time < 2.5)
         {
             boss.SetActive(true);
+        }
+
+        if (time < 1.6)
+        {
+          
             bloom.SetActive(false);
         }
 

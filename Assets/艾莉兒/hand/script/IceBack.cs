@@ -9,6 +9,8 @@ public class IceBack : MonoBehaviour
     public Material[] material;
     public int x;
 
+    
+
     public float time;
     public static int IceGoBack;
     public GameObject ice;
@@ -53,6 +55,7 @@ public class IceBack : MonoBehaviour
     public GameObject ice33;
     public GameObject ice34;
   
+    public GameObject fort;
    
         
 
@@ -60,6 +63,7 @@ public class IceBack : MonoBehaviour
     void Start()
     {
         IceGoBack= 0;
+        fort.SetActive(false);
     }
 
     // Update is called once per frame
@@ -69,8 +73,8 @@ public class IceBack : MonoBehaviour
         //  {
         //      time -= Time.deltaTime;
         // }
-
-        if (setAni.Attacked == 1 && attack1.WhichAttack == 1)
+        
+        if (setAni.Attacked == 1 && attack1.AttackValue == 1)
         {
             ice.SetActive(false);
             ice1.SetActive(false);
@@ -79,18 +83,46 @@ public class IceBack : MonoBehaviour
             ice4.SetActive(false);
 
         }
+        else
+        {
+            ice.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice1.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice2.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice3.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice4.GetComponent<Renderer>().sharedMaterial = material[0];
+            //attack1.Mark = 0;
+            ice.SetActive(true);
+            ice1.SetActive(true);
+            ice2.SetActive(true);
+            ice3.SetActive(true);
+            ice4.SetActive(true);
+        }
 
-        if(setAni.Attacked == 1&& attack1.WhichAttack == 2)
+        if (setAni.Attacked == 1&& attack1.AttackValue == 2)
         {
             ice10.SetActive(false);
             ice11.SetActive(false);
             ice12.SetActive(false);
             ice13.SetActive(false);
             ice14.SetActive(false);
-
+            
+        }
+        else
+        {
+            ice10.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice11.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice12.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice13.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice14.GetComponent<Renderer>().sharedMaterial = material[0];
+            //attack1.Mark = 0;
+            ice10.SetActive(true);
+            ice11.SetActive(true);
+            ice12.SetActive(true);
+            ice13.SetActive(true);
+            ice14.SetActive(true);
         }
 
-        if (setAni.Attacked == 1 && attack1.WhichAttack == 3)
+        if (setAni.Attacked == 1 && attack1.AttackValue == 3)
         {
             ice20.SetActive(false);
             ice21.SetActive(false);
@@ -99,7 +131,22 @@ public class IceBack : MonoBehaviour
             ice24.SetActive(false);
 
         }
-        if (setAni.Attacked == 1 && attack1.WhichAttack == 4)
+        else
+        {
+           
+            // attack1.Mark = 0;
+            ice20.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice21.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice22.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice23.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice24.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice20.SetActive(true);
+            ice21.SetActive(true);
+            ice22.SetActive(true);
+            ice23.SetActive(true);
+            ice24.SetActive(true);
+        }
+        if (setAni.Attacked == 1 && attack1.AttackValue  == 4)
         {
             ice5.SetActive(false);
             ice6.SetActive(false);
@@ -112,8 +159,33 @@ public class IceBack : MonoBehaviour
             ice18.SetActive(false);
             ice19.SetActive(false);
         }
+        else
+        {
+            
+            // attack1.Mark = 0;
+            ice5.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice6.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice7.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice8.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice9.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice15.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice16.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice17.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice18.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice19.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice5.SetActive(true);
+            ice6.SetActive(true);
+            ice7.SetActive(true);
+            ice8.SetActive(true);
+            ice9.SetActive(true);
+            ice15.SetActive(true);
+            ice16.SetActive(true);
+            ice17.SetActive(true);
+            ice18.SetActive(true);
+            ice19.SetActive(true);
+        }
 
-        if (attack1.SetAni == 2)
+        if (attack1.SetAni==3)
         {
             ice.SetActive(true);
             ice1.SetActive(true);
@@ -151,13 +223,31 @@ public class IceBack : MonoBehaviour
             ice33.SetActive(true);
             ice34.SetActive(true);
 
+            attack1.Mark = 0;
+            attack1.SetAni = 2;
             IceGoBack = 1;
-        }
-        //  if (time < 0)
-        //   {
-        //     time = 3;
 
-        //  }
+            
+        }
+        if (attack1.AttackValue == 0)
+        {
+            fort.transform.position = new Vector3(ice7.transform.position.x, 1.86f, ice7.transform.position.z);
+            fort.SetActive(true);
+            time -= Time.deltaTime;
+        }
+        if (!fort.activeInHierarchy)
+        {
+            time = 10;
+        }
+        if (time < 3)
+        {
+            attack1.AttackValue = 5;
+        }
+        if (time < 0)
+         {
+            fort.SetActive(false);
+       
+         }
 
         if (attack1.Mark == 0)
         {

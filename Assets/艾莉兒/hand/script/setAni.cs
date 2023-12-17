@@ -63,22 +63,27 @@ public class setAni : MonoBehaviour
         if (time < 0)
         {
             ani.SetBool("normal", true);
-            Attacked = 0;
 
+        }
+        if(time< 0.5)
+        {
+            Attacked = 0;
         }
         if (time < -0.3)
         {
             ani.speed = 0;
+        //    Attacked = 0;
         }
        
-        if (time < -2)
+        if (time <-1)
         {
-
-            attack1.SetAni = 2;
+             
+            attack1.SetAni = 3;
             attack1.WhichAttack = 0;
           //  attack1.AttackValue = 2;
             time = 4.1f;
-        
+
+            Debug.Log(attack1.SetAni);
         }
       
     }
