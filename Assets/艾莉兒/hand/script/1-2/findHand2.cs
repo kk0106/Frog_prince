@@ -20,7 +20,7 @@ public class findHand2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (hand.activeInHierarchy || hand1.activeInHierarchy || hand2.activeInHierarchy || attack1.AttackValue == 4 || attack1.WhichAttack == 5)
+        if (hand.activeInHierarchy || hand1.activeInHierarchy || hand2.activeInHierarchy ||  attack2.WhichAttack == 5)
         {
             time -= Time.deltaTime;
         }
@@ -28,20 +28,20 @@ public class findHand2 : MonoBehaviour
         if (time < 3.8)
         {
 
-            attack1.AttackValue = 7;
+            attack2.AttackValue = 7;
             // time = 7;
         }
         if (time < 0.6)
         {
-            attack1.AttackValue = 8;
+            attack2.AttackValue = 8;
         }
-        if (time < -5.2)
+        if (time < -2.2)
         {
-            attack1.AttackValue = -1;
+            attack2.AttackValue = -1;
         }
-        if (time < -9.5f)
+        if (time < -6.8f)
         {
-            attack1.AttackValue = 0;
+            attack2.AttackValue = 0;
 
             EndInt = 1;
             Debug.Log(EndInt);

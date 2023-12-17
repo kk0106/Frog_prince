@@ -8,6 +8,7 @@ public class BloodSetting : MonoBehaviour
     public GameObject boss;
     public GameObject playerblood;
     public GameObject bossblood;
+  
     public float time;
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class BloodSetting : MonoBehaviour
         boss.SetActive(false);
         playerblood.SetActive(false);
         bossblood.SetActive(false);
+      
     }
 
     // Update is called once per frame
@@ -53,7 +55,8 @@ public class BloodSetting : MonoBehaviour
 
         if(time < 0.5)
         {
-            bossblood.SetActive(true) ;
+            bossblood.SetActive(false) ;
+         
         }
         if(time < 0)
         {

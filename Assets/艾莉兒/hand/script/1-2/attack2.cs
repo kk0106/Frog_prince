@@ -88,7 +88,17 @@ public class attack2 : MonoBehaviour
             hand3.SetActive(false);
         }
 
-     
+        if (WhichAttack == 5)
+        {
+            handL.SetActive(true);
+
+            SetAni = 1;
+        }
+        else
+        {
+            handL.SetActive(false);
+        }
+
 
         if (SetAni == 2)
         {

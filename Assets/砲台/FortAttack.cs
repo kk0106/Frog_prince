@@ -21,6 +21,7 @@ public class FortAttack : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
+           
             Rigidbody clonel;
             clonel = Instantiate(pp1, transform.position, transform.rotation) as Rigidbody;
             clonel.velocity = transform.TransformDirection(Vector3.left * 100);

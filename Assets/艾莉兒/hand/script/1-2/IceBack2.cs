@@ -125,7 +125,7 @@ public class IceBack2 : MonoBehaviour
         }
         if (attack2.AttackValue == -1)
         {
-            fort.transform.position = new Vector3(ice7.transform.position.x, 1.86f, ice7.transform.position.z);
+            fort.transform.position = new Vector3(ice10.transform.position.x, 1.86f, ice10.transform.position.z);
             fort.SetActive(true);
             time -= Time.deltaTime;
             IceGoBack = 1;
@@ -138,6 +138,7 @@ public class IceBack2 : MonoBehaviour
         {
             attack2.WhichAttack = 5;
         }
+
         if (time < 0)
         {
             fort.SetActive(false);
