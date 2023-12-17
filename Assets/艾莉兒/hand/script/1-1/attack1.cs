@@ -43,6 +43,8 @@ public class attack1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(WhichAttack);
+
         if (WhichAttack == 0)
         {
             hand1.SetActive(false);

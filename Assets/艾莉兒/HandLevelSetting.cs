@@ -9,6 +9,7 @@ public class HandLevelSetting : MonoBehaviour
     public GameObject blood5;
     public GameObject level1;
     public GameObject level2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +37,7 @@ public class HandLevelSetting : MonoBehaviour
         if (whatlevel == 2)
         {
             level2.SetActive(true);
+            findHand.EndInt = 2;
         }
     }
 }

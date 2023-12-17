@@ -73,7 +73,10 @@ public class IceBack : MonoBehaviour
         //  {
         //      time -= Time.deltaTime;
         // }
-        
+        if (findHand.EndInt == 2)
+        {
+            fort.SetActive(false);
+        }
         if (setAni.Attacked == 1 && attack1.AttackValue == 1)
         {
             ice.SetActive(false);
@@ -185,55 +188,24 @@ public class IceBack : MonoBehaviour
             ice19.SetActive(true);
         }
 
+
+
+        
+
         if (attack1.SetAni==3)
         {
-            ice.SetActive(true);
-            ice1.SetActive(true);
-            ice2.SetActive(true);                
-            ice3.SetActive(true);
-            ice4.SetActive(true);             
-            ice5.SetActive(true);
-            ice6.SetActive(true);
-            ice7.SetActive(true);
-            ice8.SetActive(true);
-            ice9.SetActive(true);
-            ice10.SetActive(true);
-            ice11.SetActive(true);
-            ice12.SetActive(true);     
-            ice13.SetActive(true);
-            ice14.SetActive(true);               
-            ice15.SetActive(true);
-            ice16.SetActive(true);
-            ice17.SetActive(true);
-            ice18.SetActive(true);              
-            ice19.SetActive(true);
-            ice20.SetActive(true);               
-            ice21.SetActive(true);
-            ice22.SetActive(true);
-            ice23.SetActive(true);
-            ice24.SetActive(true);
-            ice25.SetActive(true);
-            ice26.SetActive(true);
-            ice27.SetActive(true);
-            ice28.SetActive(true);
-            ice29.SetActive(true);
-            ice30.SetActive(true);
-            ice31.SetActive(true);
-            ice32.SetActive(true);
-            ice33.SetActive(true);
-            ice34.SetActive(true);
-
-            attack1.Mark = 0;
+           
             attack1.SetAni = 2;
             IceGoBack = 1;
 
             
         }
-        if (attack1.AttackValue == 0)
+        if (attack1.AttackValue == -1)
         {
             fort.transform.position = new Vector3(ice7.transform.position.x, 1.86f, ice7.transform.position.z);
             fort.SetActive(true);
             time -= Time.deltaTime;
+            IceGoBack = 1;
         }
         if (!fort.activeInHierarchy)
         {
@@ -241,7 +213,7 @@ public class IceBack : MonoBehaviour
         }
         if (time < 3)
         {
-            attack1.AttackValue = 5;
+            attack1.WhichAttack = 5;
         }
         if (time < 0)
          {
@@ -326,5 +298,7 @@ public class IceBack : MonoBehaviour
             ice19.GetComponent<Renderer>().sharedMaterial = material[1];
             ice15.GetComponent<Renderer>().sharedMaterial = material[1];
         }
+     
+
     }
 }

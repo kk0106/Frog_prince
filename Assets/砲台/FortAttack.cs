@@ -24,6 +24,14 @@ public class FortAttack : MonoBehaviour
             Rigidbody clonel;
             clonel = Instantiate(pp1, transform.position, transform.rotation) as Rigidbody;
             clonel.velocity = transform.TransformDirection(Vector3.left * 100);
+
+            
         }
+        
+    }
+    private void OnCollisionExit(Collision other)
+    {
+       this.gameObject.SetActive(false);
+
     }
 }
