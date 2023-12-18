@@ -9,11 +9,13 @@ public class HandLevelSetting : MonoBehaviour
     public GameObject blood5;
     public GameObject blood4;
     public GameObject blood3;
+    public GameObject blood2;
 
     public GameObject level1;
     public GameObject level2;
     public GameObject level3;
     public GameObject level4;
+    public GameObject level5;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,7 @@ public class HandLevelSetting : MonoBehaviour
         level2.SetActive(false);
         level3.SetActive(false);
         level4.SetActive(false);
+        level5.SetActive(false);
     }
 
     // Update is called once per frame
@@ -88,5 +91,37 @@ public class HandLevelSetting : MonoBehaviour
             findHand3.time = 7;
             findHand3.EndInt = 0;
         }
+
+        // 第三關通關
+        if (blood3.activeInHierarchy)
+        {
+            level3.SetActive(false);
+            whatlevel = 4;
+        }
+        if (whatlevel == 4)
+        {
+            level4.SetActive(true);
+            findHand3.EndInt = 4;
+        }
+
+        //第四關沒過重來
+        if (findHand4.EndInt == 1 && whatlevel == 4)
+        {
+            attack4.WhichAttack = 12;
+            attack4.AttackValue = 12;
+            findHand4.time = 7;
+            findHand4.EndInt = 0;
+        }
+        // 第四關通關
+        /*if (blood2.activeInHierarchy)
+        {
+            level4.SetActive(false);
+            whatlevel = 5;
+        }
+        if (whatlevel == 5)
+        {
+            level5.SetActive(true);
+            findHand4.EndInt = 5;
+        }*/
     }
 }

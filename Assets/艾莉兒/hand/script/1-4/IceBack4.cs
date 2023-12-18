@@ -347,67 +347,67 @@ public class IceBack4 : MonoBehaviour
 
         if (attack4.Mark == 12)
         {
-            ice16.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice12.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice7.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice3.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice18.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice14.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice9.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice16.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice12.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice7.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice3.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice18.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice14.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice9.GetComponent<Renderer>().sharedMaterial = material[1];
 
-            ice5.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice6.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice7.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice8.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice9.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice5.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice6.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice7.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice8.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice9.GetComponent<Renderer>().sharedMaterial = material[1];
         }
         if (attack4.Mark == 13)
         {
-            ice.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice1.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice2.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice3.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice4.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice1.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice2.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice3.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice4.GetComponent<Renderer>().sharedMaterial = material[1];
 
-            ice10.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice11.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice12.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice13.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice14.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice10.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice11.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice12.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice13.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice14.GetComponent<Renderer>().sharedMaterial = material[1];
 
-            ice20.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice21.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice22.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice23.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice24.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice20.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice21.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice22.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice23.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice24.GetComponent<Renderer>().sharedMaterial = material[1];
 
 
         }
         if (attack4.Mark == 14)
         {
-            ice5.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice6.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice7.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice8.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice9.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice5.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice6.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice7.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice8.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice9.GetComponent<Renderer>().sharedMaterial = material[1];
 
-            ice15.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice16.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice17.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice18.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice19.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice15.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice16.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice17.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice18.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice19.GetComponent<Renderer>().sharedMaterial = material[1];
 
-            ice25.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice26.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice27.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice28.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice29.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice25.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice26.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice27.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice28.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice29.GetComponent<Renderer>().sharedMaterial = material[1];
 
-            ice30.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice31.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice32.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice33.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice34.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice30.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice31.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice32.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice33.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice34.GetComponent<Renderer>().sharedMaterial = material[1];
 
 
         }
