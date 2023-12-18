@@ -7,7 +7,7 @@ public class BreakableObject : MonoBehaviour
 {
     //private Animator _animator;
     public float maxHealth = 100f;
-    private float currentHealth;
+    public float currentHealth;
 
     public bool IsItem;
     public item thisItem;
@@ -36,17 +36,29 @@ public class BreakableObject : MonoBehaviour
     private void Break()
     {
         this.gameObject.SetActive(false);
-
+        
         if (IsItem == true)
         {
             for (int i = 0; i < playerInventory.itemList.Count; i++)
             {
-                if (playerInventory.itemList[i] == null)
+                if (playerInventory.itemList[i] = thisItem)
                 {
+                     return;
+                    if (playerInventory.itemList[i] == null)
+                    {
                     playerInventory.itemList[i] = thisItem;
+                    InventoryManager.RefreshItem();
                     break;
+                    }
                 }
             }
         }
+        
+    }
+    
+
+    public float GetCurrentHealth()
+    {
+        return currentHealth;
     }
 }

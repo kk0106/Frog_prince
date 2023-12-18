@@ -34,9 +34,12 @@ public class change : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        _animator.SetBool("cry", true);
 
-        
+        if (other.CompareTag("Player"))
+        {
+            _animator.SetBool("cry", true);
+
+        }
     }
 
     

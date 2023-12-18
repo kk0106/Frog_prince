@@ -43,14 +43,16 @@ public class GameSceneTalkTrigger : MonoBehaviour
        //     player.JumpForce = 3f;
        // }
     }
-    private void OnTriggerEnter(Collider player)
+    private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Player"))
+        {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.RedCry);
+            TalkBox_boy.SetActive(true);
+            TalkBox_girl.SetActive(true);
 
-        AudioManager.Instance.PlaySFX(AudioManager.Instance.RedCry);
-        TalkBox_boy.SetActive(true);
-        TalkBox_girl.SetActive(true);
-
-        Invoke("outt", 2f);
+            Invoke("outt", 2f);
+        }
 
     }
     private void outt()

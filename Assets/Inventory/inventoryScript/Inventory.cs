@@ -11,7 +11,12 @@ public class Inventory : ScriptableObject
 
     public bool HasItem(string itemID)
     {
-        return itemList.Any(item => itemID == itemID);
+        if (itemList != null)
+        {
+            return itemList.Any(item => item != null && itemID == item.itemID);
+        }
+
+        return false;
     }
 
     public item RemoveItem(string itemID)

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using UnityEngine.EventSystems;
+using System.Diagnostics;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -44,11 +45,29 @@ public class InventoryManager : MonoBehaviour
 
     }
 
-    public static bool HasItem(string itemID)
+   public static bool HasItem(string itemID)
+{
+    UnityEngine.Debug.Log($"Checking if item {itemID} is present.");
+
+    // Check if the instance and BackPack are not null
+    if (instance != null && instance.BackPack != null)
     {
-        // Check if the inventory contains an item with the specified itemID
-        return instance.BackPack.HasItem(itemID);
+        // Call the HasItem method of the BackPack
+        bool result = instance.BackPack.HasItem(itemID);
+
+        // Log whether the item is present or not
+        UnityEngine.Debug.Log($"Item {itemID} is {(result ? "present" : "not present")}");
+
+        // Return the result of the HasItem method
+        return result;
     }
+
+    // Log a message if the instance or backpack is null
+    UnityEngine.Debug.Log("Instance or backpack is null.");
+
+    // Return false if the instance or backpack is null
+    return false;
+}
 
     /*public static void CreateNewItem(item item)
     {

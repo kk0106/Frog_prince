@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System.Diagnostics;
 
 public class ResponseHandler : MonoBehaviour
 {
@@ -49,12 +50,12 @@ public class ResponseHandler : MonoBehaviour
                 // Check if the required item with a specific itemID is present in the inventory
                 if (InventoryManager.HasItem(response.itemID))
                 {
-                    // Enable the button
+                    UnityEngine.Debug.Log("Item is present. Enabling button.");
                     responseButton.GetComponent<Button>().interactable = true;
                 }
                 else
                 {
-                    // Disable the button
+                    UnityEngine.Debug.Log("Item is not present. Disabling button.");
                     responseButton.GetComponent<Button>().interactable = false;
                 }
             }
