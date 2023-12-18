@@ -1,17 +1,21 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MermaidHp : MonoBehaviour
 {
-    public int hp;
+    public  int hp;
     public GameObject hp6;
     public GameObject hp5;
     public GameObject hp4;
     public GameObject hp3;
     public GameObject hp2;
     public GameObject hp1;
-   
+    public GameObject hp0;
+
+    
+    public float time;
 
     public GameObject bloom;
 
@@ -19,17 +23,21 @@ public class MermaidHp : MonoBehaviour
     void Start()
     {
       
+        
         hp1.SetActive(false);
         hp2.SetActive(false);
         hp3.SetActive(false);
         hp4.SetActive(false);
         hp5.SetActive(false);
+        hp0.SetActive(false);
         bloom.SetActive(false);
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (hp == 6&&attack1.SetAni==0)
         {
             hp6.SetActive(true);
@@ -45,6 +53,8 @@ public class MermaidHp : MonoBehaviour
             hp6.SetActive(false);
             hp4.SetActive(true);
             hp5.SetActive(false);
+
+            
         }
         if (hp == 3)
         {
@@ -52,6 +62,8 @@ public class MermaidHp : MonoBehaviour
             hp4.SetActive(false);
             hp5.SetActive(false);
             hp3.SetActive(true);
+
+
         }
         if (hp == 2)
         {
@@ -61,14 +73,36 @@ public class MermaidHp : MonoBehaviour
             hp3.SetActive(false);
             hp2.SetActive(true);
         }
+        if (hp == 1)
+        {
+            hp6.SetActive(false);
+            hp4.SetActive(false);
+            hp5.SetActive(false);
+            hp3.SetActive(false);
+            hp1.SetActive(true);
+            hp2.SetActive(false);
+
+           
+        }
+        if (hp == 0)
+        {
+            hp6.SetActive(false);
+            hp4.SetActive(false);
+            hp5.SetActive(false);
+            hp3.SetActive(false);
+            hp0.SetActive(true);
+            hp2.SetActive(false);
+            hp1.SetActive(false);
+        }
     }
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "pp1")
         {
             bloom.SetActive(true);
+
+
             hp -= 1;
-        
            
         }
     }

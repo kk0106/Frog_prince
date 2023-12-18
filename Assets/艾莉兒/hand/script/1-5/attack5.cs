@@ -10,6 +10,8 @@ public class attack5 : MonoBehaviour
     public GameObject hand3;
     public GameObject hand4;
     public GameObject hand5;
+    public GameObject hand6;   
+    public GameObject hand7;
     public GameObject handL;
 
     [Header("value")]
@@ -26,24 +28,60 @@ public class attack5 : MonoBehaviour
     void Start()
     {
 
-        time = 1;
+        if (findHand4.EndInt == 5)
+        {
+            time -= Time.time;
+        }
 
-        AttackValue = 1;
-        WhichAttack = -1;
+
+        AttackValue = 15;
+        SetAni = 0;
 
         hand1.SetActive(false);
         hand2.SetActive(false);
         hand3.SetActive(false);
         hand4.SetActive(false);
         hand5.SetActive(false);
+        hand6.SetActive(false);
+        hand7.SetActive(false);
         handL.SetActive(false);
-        SetAni = -1;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         Debug.Log(WhichAttack);
+
+
+        if(WhichAttack==15||WhichAttack==16||WhichAttack==17)
+        {
+            if(WhichAttack==15)
+            {
+                hand2.SetActive(true);
+                hand5 .SetActive(false);
+                SetAni = 1;
+            }
+
+            if(WhichAttack==16)
+            {
+                hand5.SetActive(true);
+                hand2.SetActive(false);
+                SetAni = 1;
+            }
+
+            if (WhichAttack == 17)
+            {
+                hand2.SetActive(true);
+                hand5.SetActive(true);
+                SetAni = 1;
+            }
+        }
+        else
+        {
+            hand2.SetActive (false);
+            hand5.SetActive (false);
+        }
 
         if (WhichAttack == 0)
         {
@@ -52,12 +90,16 @@ public class attack5 : MonoBehaviour
             hand3.SetActive(false);
             hand4.SetActive(false);
             hand5.SetActive(false);
+            hand6.SetActive(false);
+            hand7.SetActive(false);
             handL.SetActive(false);
         }
 
-        if (WhichAttack == 1)
+        if (WhichAttack == 15)
         {
             hand1.SetActive(true);
+           // hand2.SetActive(true);
+            hand3.SetActive(true);
 
             // AttackValue = 2;
             SetAni = 1;
@@ -65,45 +107,45 @@ public class attack5 : MonoBehaviour
         else
         {
             hand1.SetActive(false);
+            //hand2.SetActive(false);
+            hand3.SetActive(false);
         }
 
-        if (WhichAttack == 2)
+        
+        if (WhichAttack == 16)
         {
-            hand3.SetActive(true);
+            hand6.SetActive(true);
+            hand4.SetActive(true);
+           // hand5.SetActive(true);
+                
 
             //  AttackValue= 3;
             SetAni = 1;
         }
         else
         {
-            hand3.SetActive(false);
+            hand4.SetActive(false);
+           // hand5.SetActive(false);
+            hand6.SetActive(false);
         }
 
-        if (WhichAttack == 3)
+        if (WhichAttack == 17)
         {
-            hand5.SetActive(true);
+           // hand2.SetActive(true);
+          //  hand5.SetActive(true);
+            hand7.SetActive(true);
 
             //  AttackValue = 4;
             SetAni = 1;
         }
         else
         {
-            hand5.SetActive(false);
+           // hand2.SetActive(false);
+           // hand5.SetActive(false);
+            hand7.SetActive(false);
         }
 
-        if (WhichAttack == 4)
-        {
-            hand2.SetActive(true);
-            hand4.SetActive(true);
-
-            // AttackValue = 0;
-            SetAni = 1;
-        }
-        else
-        {
-            hand2.SetActive(false);
-            hand4.SetActive(false);
-        }
+       
         if (WhichAttack == 5)
         {
             handL.SetActive(true);
@@ -122,11 +164,11 @@ public class attack5 : MonoBehaviour
         }
 
 
-        if (time == 3 && IceBack.IceGoBack == 1)
+        if (time == 3 && IceBack5.IceGoBack == 1)
         {
             SetAni = 0;
             Mark = 0;
-            Debug.Log(IceBack.IceGoBack);
+            Debug.Log(IceBack5.IceGoBack);
         }
 
         if (SetAni == 0 && AttackValue != 0)
@@ -137,32 +179,27 @@ public class attack5 : MonoBehaviour
 
         if (time < 0)
         {
-            IceBack.IceGoBack = 0;
-            if (AttackValue == 1)
+            IceBack5.IceGoBack = 0;
+            if (AttackValue == 15)
             {
-                WhichAttack = 1;
-                Mark = 1;
+                WhichAttack = 15;
+                Mark = 15;
             }
         }
 
-        if (IceBack.IceGoBack == 1)
+        if (IceBack5.IceGoBack == 1)
         {
-            if (AttackValue == 2)
+            if (AttackValue == 16)
             {
-                WhichAttack = 2;
-                Mark = 2;
+                WhichAttack = 16;
+                Mark = 16;
             }
-            if (AttackValue == 3)
+            if (AttackValue == 17)
             {
-                WhichAttack = 3;
-                Mark = 3;
+                WhichAttack = 17;
+                Mark = 17;
             }
-            if (AttackValue == 4)
-            {
-                WhichAttack = 4;
-                Mark = 4;
-            }
-
+            
             if (AttackValue == 5)
             {
                 WhichAttack = 5;

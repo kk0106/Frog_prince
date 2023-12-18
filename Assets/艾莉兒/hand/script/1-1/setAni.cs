@@ -35,12 +35,9 @@ public class setAni : MonoBehaviour
       if(time<2)
         {
             ani.SetBool("attack", true);
-           
+           Attacked = 1;
         }
-        if (time < 1.8)
-        {
-            Attacked = 1;
-        }
+        
         if (time < 1.6)
         {
             if(attack1.WhichAttack!=5)

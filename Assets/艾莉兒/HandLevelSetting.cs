@@ -10,12 +10,15 @@ public class HandLevelSetting : MonoBehaviour
     public GameObject blood4;
     public GameObject blood3;
     public GameObject blood2;
+    public GameObject blood1;
+    public GameObject blood0;
 
     public GameObject level1;
     public GameObject level2;
     public GameObject level3;
     public GameObject level4;
     public GameObject level5;
+    public GameObject level6;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +28,8 @@ public class HandLevelSetting : MonoBehaviour
         level3.SetActive(false);
         level4.SetActive(false);
         level5.SetActive(false);
+        level6.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -113,7 +118,7 @@ public class HandLevelSetting : MonoBehaviour
             findHand4.EndInt = 0;
         }
         // 第四關通關
-        /*if (blood2.activeInHierarchy)
+        if (blood2.activeInHierarchy)
         {
             level4.SetActive(false);
             whatlevel = 5;
@@ -122,6 +127,46 @@ public class HandLevelSetting : MonoBehaviour
         {
             level5.SetActive(true);
             findHand4.EndInt = 5;
-        }*/
+        }
+
+        //第五關沒過重來
+        if (findHand5.EndInt == 1 && whatlevel == 5)
+        {
+            attack5.WhichAttack = 15;
+            attack5.AttackValue = 15;
+            findHand5.time = 7;
+            findHand5.EndInt = 0;
+        }
+         // 第五關通關
+         if (blood1.activeInHierarchy)
+         {
+             level5.SetActive(false);
+             whatlevel = 6;
+         }
+         if (whatlevel == 6)
+         {
+             level6.SetActive(true);
+             findHand5.EndInt = 6;
+         }
+
+         //第六關沒過重來
+         if (findHand6.EndInt == 1 && whatlevel == 6)
+         {
+             attack6.WhichAttack = 18;
+             attack6.AttackValue = 18;
+             findHand6.time = 7;
+             findHand6.EndInt = 0;
+         }
+         // 第六關通關
+         if (blood0.activeInHierarchy)
+         {
+             level6.SetActive(false);
+             whatlevel = 7;
+         }
+         if (whatlevel == 6)
+         {
+
+             findHand6.EndInt = 7;
+         }
     }
 }
