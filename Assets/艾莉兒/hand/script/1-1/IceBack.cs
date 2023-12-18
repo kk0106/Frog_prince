@@ -190,7 +190,7 @@ public class IceBack : MonoBehaviour
 
 
 
-        
+        Debug.Log(attack1.SetAni);
 
         if (attack1.SetAni==3)
         {

@@ -46,6 +46,13 @@ public class MermaidHp : MonoBehaviour
             hp4.SetActive(true);
             hp5.SetActive(false);
         }
+        if (hp == 3)
+        {
+            hp6.SetActive(false);
+            hp4.SetActive(false);
+            hp5.SetActive(false);
+            hp3.SetActive(true);
+        }
     }
     private void OnCollisionEnter(Collision other)
     {
@@ -53,7 +60,7 @@ public class MermaidHp : MonoBehaviour
         {
             bloom.SetActive(true);
             hp -= 1;
-            
+        
            
         }
     }

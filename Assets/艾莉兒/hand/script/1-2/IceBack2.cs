@@ -38,7 +38,44 @@ public class IceBack2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (findHand3.EndInt == 3)
+        {
+            fort.SetActive(false);
+        }
+
+        if (setAni2.Attacked == 1 && attack2.AttackValue == 6|| setAni2.Attacked == 1 && attack2.AttackValue == 7|| setAni2.Attacked == 1 && attack2.AttackValue == 8)
+        {
+            if (setAni2.Attacked == 1 && attack2.AttackValue == 6)
+            {
+                ice3.SetActive(false);
+            }
+            if ( setAni2.Attacked == 1 && attack2.AttackValue == 7)
+            {
+                ice7.SetActive(false);
+            }
+            if ( setAni2.Attacked == 1 && attack2.AttackValue == 8)
+            {
+                ice3.SetActive(false);
+                ice7.SetActive(false);
+
+            }
+
+
+
+        }
+        else
+        {
+            ice3.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice7.GetComponent<Renderer>().sharedMaterial = material[0];
+            
+
+            ice3.SetActive(true);
+            ice7.SetActive(true);
+            
+
+        }
+
 
 
         if ( setAni2.Attacked == 1 && attack2.AttackValue == 6)
@@ -46,7 +83,7 @@ public class IceBack2 : MonoBehaviour
             ice.SetActive(false);
             ice1.SetActive(false);
             ice2.SetActive(false);
-            ice3.SetActive(false);
+         //   ice3.SetActive(false);
 
 
         }
@@ -55,12 +92,12 @@ public class IceBack2 : MonoBehaviour
             ice.GetComponent<Renderer>().sharedMaterial = material[0];
             ice1.GetComponent<Renderer>().sharedMaterial = material[0];
             ice2.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice3.GetComponent<Renderer>().sharedMaterial = material[0];
+        //    ice3.GetComponent<Renderer>().sharedMaterial = material[0];
 
             ice.SetActive(true);
             ice1.SetActive(true);
             ice2.SetActive(true);
-            ice3.SetActive(true);
+        //   ice3.SetActive(true);
 
         }
 
@@ -71,7 +108,7 @@ public class IceBack2 : MonoBehaviour
             ice4.SetActive(false);
             ice5.SetActive(false);
             ice6.SetActive(false);
-            ice7.SetActive(false);
+         //   ice7.SetActive(false);
 
 
         }
@@ -82,12 +119,12 @@ public class IceBack2 : MonoBehaviour
             ice4.GetComponent<Renderer>().sharedMaterial = material[0];
             ice5.GetComponent<Renderer>().sharedMaterial = material[0];
             ice6.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice7.GetComponent<Renderer>().sharedMaterial = material[0];
+        //    ice7.GetComponent<Renderer>().sharedMaterial = material[0];
 
             ice4.SetActive(true);
             ice5.SetActive(true);
             ice6.SetActive(true);
-            ice7.SetActive(true);
+          //  ice7.SetActive(true);
 
         }
 
@@ -96,8 +133,8 @@ public class IceBack2 : MonoBehaviour
             ice8.SetActive(false);
             ice9.SetActive(false);
             ice10.SetActive(false);
-            ice3.SetActive(false);
-            ice7.SetActive(false);
+          //  ice3.SetActive(false);
+          //  ice7.SetActive(false);
 
         }
         else
@@ -105,14 +142,14 @@ public class IceBack2 : MonoBehaviour
             ice10.GetComponent<Renderer>().sharedMaterial = material[0];
             ice9.GetComponent<Renderer>().sharedMaterial = material[0];
             ice8.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice3.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice7.GetComponent<Renderer>().sharedMaterial = material[0];
+          //  ice3.GetComponent<Renderer>().sharedMaterial = material[0];
+         //   ice7.GetComponent<Renderer>().sharedMaterial = material[0];
             //attack1.Mark = 0;
             ice10.SetActive(true);
             ice9.SetActive(true);
             ice8.SetActive(true);
-            ice3.SetActive(true);
-            ice7.SetActive(true);
+          //  ice3.SetActive(true);
+          //  ice7.SetActive(true);
         }
 
         if (attack2.SetAni == 3)
