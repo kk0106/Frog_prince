@@ -14,6 +14,8 @@ public class MermaidHp : MonoBehaviour
     public GameObject hp1;
     public GameObject hp0;
 
+    public SpriteRenderer spr;
+    public Sprite[] img;
     
     public float time;
 
@@ -23,6 +25,7 @@ public class MermaidHp : MonoBehaviour
     void Start()
     {
       
+        spr = GetComponent<SpriteRenderer>();
         
         hp1.SetActive(false);
         hp2.SetActive(false);
@@ -37,7 +40,29 @@ public class MermaidHp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
+        if (time < 0)
+        {
+            hp -= 1;
+            time = 0.3f;
+            bloom.SetActive(false);
+            spr.sprite = img[0];
+
+            if (hp == 2)
+            {
+                spr.sprite = img[1];
+            }
+
+            if(hp == 1)
+            {
+                spr.sprite = img[2];
+            }
+        }
+        if (time < 0.11)
+        {
+            bloom.SetActive(true);
+         
+        }
         if (hp == 6&&attack1.SetAni==0)
         {
             hp6.SetActive(true);
@@ -72,6 +97,8 @@ public class MermaidHp : MonoBehaviour
             hp5.SetActive(false);
             hp3.SetActive(false);
             hp2.SetActive(true);
+
+            spr.sprite = img[1];
         }
         if (hp == 1)
         {
@@ -82,7 +109,7 @@ public class MermaidHp : MonoBehaviour
             hp1.SetActive(true);
             hp2.SetActive(false);
 
-           
+           spr.sprite = img[2];
         }
         if (hp == 0)
         {
@@ -94,24 +121,49 @@ public class MermaidHp : MonoBehaviour
             hp2.SetActive(false);
             hp1.SetActive(false);
         }
+
+        if (bloom.activeInHierarchy)
+        {
+            spr.sprite = img[3];
+        }
+        else
+        {
+            spr.sprite = img[0];
+
+            if (hp == 2)
+            {
+                spr.sprite = img[1];
+            }
+
+            if (hp == 1)
+            {
+                spr.sprite = img[2];
+            }
+
+        }
     }
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "pp1")
         {
-            bloom.SetActive(true);
+            //bloom.SetActive(true);
+            time-= Time.deltaTime;
+
+            //  hp -= 1;
+
+            
 
 
-            hp -= 1;
-           
         }
     }
     private void OnCollisionExit(Collision other)
     {
         if (other.gameObject.tag == "pp1")
         {
-            bloom.SetActive(false);
+         //   bloom.SetActive(false);
             Destroy(other.gameObject);
+
+           
         }
     }
 
