@@ -25,6 +25,7 @@ public class hp : MonoBehaviour
     public Vector3 pos5;
     public Vector3 pos6;
     public Vector3 pos8;
+    public Vector3 pos9;
 
    
     public GameObject GGpanel;
@@ -158,6 +159,11 @@ public class hp : MonoBehaviour
             HP -= 1;
             a = 8;
         }
+        if( other.gameObject.tag == "BambooShoots")
+        {
+            HP -= 1;
+            a = 9;
+        }
     }
 
 
@@ -207,6 +213,12 @@ public class hp : MonoBehaviour
         if (a == 8)
         {
             this.gameObject.transform.position = pos8;
+            a = 0;
+            loading.SetActive(false);
+        }
+        if (a == 9)
+        {
+            this.gameObject.transform.position = pos9;
             a = 0;
             loading.SetActive(false);
         }

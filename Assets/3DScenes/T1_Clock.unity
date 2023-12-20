@@ -6354,6 +6354,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1189609635}
   m_CullTransparentMesh: 1
+--- !u!1 &1192805519 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4151079386809592585, guid: 98320209b5107b14e8dd0d617df9c669,
+    type: 3}
+  m_PrefabInstance: {fileID: 1424083146048013059}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1192805520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192805519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 305f4148b189b6c42aca23d794b8bfd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 0
+  A: {fileID: 1709857166}
+--- !u!65 &1192805525
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192805519}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.554643, y: 8.554643, z: 1.4590528}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1203501040 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 390468833825453580, guid: 08d1f6bf806803b408108b852417a419,
@@ -11427,17 +11460,17 @@ PrefabInstance:
     - target: {fileID: 3661505773148254643, guid: 98320209b5107b14e8dd0d617df9c669,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.4373
+      value: 13.59
       objectReference: {fileID: 0}
     - target: {fileID: 3661505773148254643, guid: 98320209b5107b14e8dd0d617df9c669,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.0916963
+      value: 6.33
       objectReference: {fileID: 0}
     - target: {fileID: 3661505773148254643, guid: 98320209b5107b14e8dd0d617df9c669,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.55023
+      value: -2.04
       objectReference: {fileID: 0}
     - target: {fileID: 3661505773148254643, guid: 98320209b5107b14e8dd0d617df9c669,
         type: 3}
@@ -11478,6 +11511,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Medium gear
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151079386809592585, guid: 98320209b5107b14e8dd0d617df9c669,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98320209b5107b14e8dd0d617df9c669, type: 3}
