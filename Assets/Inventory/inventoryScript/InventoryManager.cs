@@ -92,6 +92,7 @@ public class InventoryManager : MonoBehaviour
 
                 // Rearrange the items to remove empty gaps
                 RearrangeItems(instance.BackPack);
+                RefreshItem();
             }
         }
         else

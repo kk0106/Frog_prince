@@ -41,15 +41,16 @@ public class BreakableObject : MonoBehaviour
         {
             for (int i = 0; i < playerInventory.itemList.Count; i++)
             {
-                if (playerInventory.itemList[i] = thisItem)
+                if (playerInventory.itemList[i] == thisItem)
                 {
-                     return;
-                    if (playerInventory.itemList[i] == null)
-                    {
+                    return;
+                }
+
+                if (playerInventory.itemList[i] == null)
+                {
                     playerInventory.itemList[i] = thisItem;
                     InventoryManager.RefreshItem();
                     break;
-                    }
                 }
             }
         }

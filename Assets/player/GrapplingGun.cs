@@ -18,11 +18,11 @@ public class GrapplingGun : MonoBehaviour
     private Animator _animator;
 
     
-    public float grappleRadius = 1.0f; // Adjust this radius to your needs
+    public float grappleRadius = 1f; // Adjust this radius to your needs
     private SpringJoint joint;
     public float damageAmount = 5f;
     public static int IsSwinging;
-    private float maxAllowedDistance = 5f;
+    private float maxAllowedDistance = 4f;
     public GameObject rangePrefab;
     private GameObject currentRangeIndicator;
 
@@ -171,11 +171,11 @@ public class GrapplingGun : MonoBehaviour
         joint.connectedAnchor = grapplePoint;
 
         // Set up SpringJoint properties (adjust these as needed)
-        joint.maxDistance = 1.2f;
+        joint.maxDistance = 0.85f;
         joint.minDistance = 0.5f;
-        joint.spring = 3f;
+        joint.spring = 1.5f;
         joint.damper = 7f;
-        joint.massScale = 10f;
+        joint.massScale = 100f;
 
         lr.positionCount = 2;
     }
