@@ -8440,6 +8440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5
+  currentHealth: 0
   IsItem: 0
   thisItem: {fileID: 0}
   playerInventory: {fileID: 0}
@@ -8782,14 +8783,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 884c0b2b182725f4088ebe309e01819b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blood: {fileID: 0}
-  blood1: {fileID: 0}
-  blood2: {fileID: 0}
+  blood: {fileID: 36365764}
+  blood1: {fileID: 822874186}
+  blood2: {fileID: 286764798}
   HP: 3
   a: 0
-  die: {fileID: 0}
-  die1: {fileID: 0}
-  die2: {fileID: 0}
+  die: {fileID: 1189609635}
+  die1: {fileID: 719531721}
+  die2: {fileID: 407314305}
   pos: {x: 14.32, y: 0.678, z: -30.9}
   pos2: {x: -11.06, y: 0.678, z: -30.9}
   pos3: {x: 0, y: 0, z: 0}
@@ -8798,7 +8799,7 @@ MonoBehaviour:
   pos6: {x: 0, y: 0, z: 0}
   pos8: {x: 0, y: 0, z: 0}
   GGpanel: {fileID: 2131512822}
-  loading: {fileID: 0}
+  loading: {fileID: 1809258202}
 --- !u!114 &1743803327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8830,8 +8831,8 @@ MonoBehaviour:
   MushJumpForce1: 0
   MushJumpForce2: 0
   uiMenu: {fileID: 807083413}
-  BackPack: {fileID: 0}
-  dialogueUI: {fileID: 0}
+  BackPack: {fileID: 1360537533}
+  dialogueUI: {fileID: 61657971}
 --- !u!54 &1743803328
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11964,7 +11965,7 @@ PrefabInstance:
     - target: {fileID: 7672415642408702837, guid: 777e1e96a8e2b28428ddb9a095045601,
         type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 7672415642408702837, guid: 777e1e96a8e2b28428ddb9a095045601,
         type: 3}

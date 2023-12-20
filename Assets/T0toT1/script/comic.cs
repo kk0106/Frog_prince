@@ -38,6 +38,7 @@ public class comic : MonoBehaviour
     public GameObject d12;
 
     public GameObject e1;
+    public GameObject frogball;
 
     public GameObject button;
 
@@ -73,6 +74,7 @@ public class comic : MonoBehaviour
         d12.SetActive(false);
 
         e1.SetActive(false);
+        frogball.SetActive(false);
 
         button.SetActive(false);
     }
@@ -185,9 +187,12 @@ public class comic : MonoBehaviour
         }
         if(time > 22.5)
         {
+            frogball.SetActive(true);
+        }
+        if (time > 26)
+        {
             button.SetActive(true);
         }
-
         
     }
 }
