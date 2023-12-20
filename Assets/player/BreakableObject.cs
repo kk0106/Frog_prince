@@ -7,7 +7,8 @@ public class BreakableObject : MonoBehaviour
 {
     //private Animator _animator;
     public float maxHealth = 100f;
-    public float currentHealth;
+    public  float  currentHealth;
+    public static float a;
 
     public bool IsItem;
     public item thisItem;
@@ -20,7 +21,10 @@ public class BreakableObject : MonoBehaviour
         //_animator = GetComponent<Animator>();
         currentHealth = maxHealth;
     }
-
+    public void Update()
+    {
+        a = currentHealth;
+    }
     // Apply damage to the breakable object
     public void ApplyDamage(float damageAmount)
     {

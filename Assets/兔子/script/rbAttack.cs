@@ -15,6 +15,7 @@ public class rbAttack : MonoBehaviour
         ani = GetComponent<Animator>();
 
         wall.SetActive(true);
+        ani.SetBool("hurt", false);
     }
 
     // Update is called once per frame
@@ -39,6 +40,14 @@ public class rbAttack : MonoBehaviour
         }
     }
 
-  
-    
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "egg")
+        {
+         
+
+            ani.SetBool("hurt", false);
+        }
+    }
 }
