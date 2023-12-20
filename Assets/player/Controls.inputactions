@@ -112,6 +112,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Sell",
+                    "type": "Button",
+                    "id": "017ef6bb-c9c2-46f9-9909-8e2f448c24ed",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "notsell",
+                    "type": "Button",
+                    "id": "61eb97ae-ad49-4c48-ae6a-64a62bb05ec9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -359,6 +377,28 @@
                 },
                 {
                     "name": "",
+                    "id": "d9064add-e2d7-4926-82b0-240ea2d303fd",
+                    "path": "<XInputController>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DialogueSystem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a4483bfa-8c93-42ec-b7ba-815cac8d99ac",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DialogueSystem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "7838ffdf-b448-4901-a5ad-cfb0f72ea50b",
                     "path": "<XInputController>/start",
                     "interactions": "",
@@ -541,6 +581,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "uiback",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6996e4fb-eae9-45b2-a8c2-e821a7aa8aa6",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sell",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "db7cf708-c66c-4ef8-90ef-27d9c1bc3090",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sell",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e20b1398-071b-4e69-a784-eff36faffe2a",
+                    "path": "<Keyboard>/v",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "notsell",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "324c0650-dc10-4d6e-91e1-d28a1a2f2bb8",
+                    "path": "<XInputController>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "notsell",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

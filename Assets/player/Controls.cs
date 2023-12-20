@@ -134,6 +134,24 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Sell"",
+                    ""type"": ""Button"",
+                    ""id"": ""017ef6bb-c9c2-46f9-9909-8e2f448c24ed"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""notsell"",
+                    ""type"": ""Button"",
+                    ""id"": ""61eb97ae-ad49-4c48-ae6a-64a62bb05ec9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -381,6 +399,28 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""d9064add-e2d7-4926-82b0-240ea2d303fd"",
+                    ""path"": ""<XInputController>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DialogueSystem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a4483bfa-8c93-42ec-b7ba-815cac8d99ac"",
+                    ""path"": ""<Keyboard>/g"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""DialogueSystem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""7838ffdf-b448-4901-a5ad-cfb0f72ea50b"",
                     ""path"": ""<XInputController>/start"",
                     ""interactions"": """",
@@ -565,6 +605,50 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""uiback"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6996e4fb-eae9-45b2-a8c2-e821a7aa8aa6"",
+                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sell"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""db7cf708-c66c-4ef8-90ef-27d9c1bc3090"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sell"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e20b1398-071b-4e69-a784-eff36faffe2a"",
+                    ""path"": ""<Keyboard>/v"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""notsell"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""324c0650-dc10-4d6e-91e1-d28a1a2f2bb8"",
+                    ""path"": ""<XInputController>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""notsell"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -585,6 +669,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_playerControls_ShootGun = m_playerControls.FindAction("ShootGun", throwIfNotFound: true);
         m_playerControls_IngameAni = m_playerControls.FindAction("IngameAni", throwIfNotFound: true);
         m_playerControls_uiback = m_playerControls.FindAction("uiback", throwIfNotFound: true);
+        m_playerControls_Sell = m_playerControls.FindAction("Sell", throwIfNotFound: true);
+        m_playerControls_notsell = m_playerControls.FindAction("notsell", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -658,6 +744,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_playerControls_ShootGun;
     private readonly InputAction m_playerControls_IngameAni;
     private readonly InputAction m_playerControls_uiback;
+    private readonly InputAction m_playerControls_Sell;
+    private readonly InputAction m_playerControls_notsell;
     public struct PlayerControlsActions
     {
         private @Controls m_Wrapper;
@@ -674,6 +762,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @ShootGun => m_Wrapper.m_playerControls_ShootGun;
         public InputAction @IngameAni => m_Wrapper.m_playerControls_IngameAni;
         public InputAction @uiback => m_Wrapper.m_playerControls_uiback;
+        public InputAction @Sell => m_Wrapper.m_playerControls_Sell;
+        public InputAction @notsell => m_Wrapper.m_playerControls_notsell;
         public InputActionMap Get() { return m_Wrapper.m_playerControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -719,6 +809,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @uiback.started += instance.OnUiback;
             @uiback.performed += instance.OnUiback;
             @uiback.canceled += instance.OnUiback;
+            @Sell.started += instance.OnSell;
+            @Sell.performed += instance.OnSell;
+            @Sell.canceled += instance.OnSell;
+            @notsell.started += instance.OnNotsell;
+            @notsell.performed += instance.OnNotsell;
+            @notsell.canceled += instance.OnNotsell;
         }
 
         private void UnregisterCallbacks(IPlayerControlsActions instance)
@@ -759,6 +855,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @uiback.started -= instance.OnUiback;
             @uiback.performed -= instance.OnUiback;
             @uiback.canceled -= instance.OnUiback;
+            @Sell.started -= instance.OnSell;
+            @Sell.performed -= instance.OnSell;
+            @Sell.canceled -= instance.OnSell;
+            @notsell.started -= instance.OnNotsell;
+            @notsell.performed -= instance.OnNotsell;
+            @notsell.canceled -= instance.OnNotsell;
         }
 
         public void RemoveCallbacks(IPlayerControlsActions instance)
@@ -790,5 +892,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnShootGun(InputAction.CallbackContext context);
         void OnIngameAni(InputAction.CallbackContext context);
         void OnUiback(InputAction.CallbackContext context);
+        void OnSell(InputAction.CallbackContext context);
+        void OnNotsell(InputAction.CallbackContext context);
     }
 }
