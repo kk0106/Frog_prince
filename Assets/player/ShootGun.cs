@@ -19,20 +19,26 @@ public class ShootGun : MonoBehaviour
             
         }
     }
-    
+
     void Shoot()
     {
         if (eggToShoot)
         {
-        // Create a new instance of the projectile prefab
-        GameObject newProjectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+            // Set the offset distance forward
+            float offsetDistance = 0.5f;
 
-        // Access the Rigidbody of the projectile and apply forward force
-        Rigidbody rb = newProjectile.GetComponent<Rigidbody>();
-        rb.velocity = transform.forward * projectileSpeed;
-        rb.useGravity = false;
-        eggToShoot = false;
+            // Calculate the new position with the offset
+            Vector3 spawnPosition = transform.position + transform.forward * offsetDistance;
+
+            // Create a new instance of the projectile prefab at the new position
+            GameObject newProjectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
+
+            // Access the Rigidbody of the projectile and apply forward force
+            Rigidbody rb = newProjectile.GetComponent<Rigidbody>();
+            rb.velocity = transform.forward * projectileSpeed;
+            rb.useGravity = false;
+
+            eggToShoot = false;
         }
     }
-
 }
