@@ -14,8 +14,10 @@ public class MermaidHp : MonoBehaviour
     public GameObject hp2;
     public GameObject hp1;
     public GameObject hp0;
-    private Animator ani;   
+    private Animator ani;
+    public GameObject godness;
 
+   
     public SpriteRenderer spr;
     public Sprite[] img;
     
@@ -39,6 +41,7 @@ public class MermaidHp : MonoBehaviour
         hp5.SetActive(false);
         hp0.SetActive(false);
         bloom.SetActive(false);
+        godness.SetActive(false);
        
     }
 
@@ -47,8 +50,10 @@ public class MermaidHp : MonoBehaviour
     {
         if (time2 < 0)
         {
-            SceneManager.LoadScene("T1_MermaidDie");
+           godness.SetActive(true);
         }
+       
+
         if (time < 0)
         {
             hp -= 1;
