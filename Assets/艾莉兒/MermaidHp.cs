@@ -2,7 +2,6 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MermaidHp : MonoBehaviour
 {
@@ -14,14 +13,11 @@ public class MermaidHp : MonoBehaviour
     public GameObject hp2;
     public GameObject hp1;
     public GameObject hp0;
-    private Animator ani;   
 
     public SpriteRenderer spr;
     public Sprite[] img;
     
     public float time;
-    public float time2;
-
 
     public GameObject bloom;
 
@@ -30,7 +26,6 @@ public class MermaidHp : MonoBehaviour
     {
       
         spr = GetComponent<SpriteRenderer>();
-        ani = GetComponent<Animator>();
         
         hp1.SetActive(false);
         hp2.SetActive(false);
@@ -45,10 +40,7 @@ public class MermaidHp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (time2 < 0)
-        {
-            SceneManager.LoadScene("T1_MermaidDie");
-        }
+       
         if (time < 0)
         {
             hp -= 1;
@@ -96,7 +88,7 @@ public class MermaidHp : MonoBehaviour
             hp5.SetActive(false);
             hp3.SetActive(true);
 
-            spr.sprite = img[2];
+
         }
         if (hp == 2)
         {
@@ -117,9 +109,7 @@ public class MermaidHp : MonoBehaviour
             hp1.SetActive(true);
             hp2.SetActive(false);
 
-           spr.sprite = img[1];
-            ani.SetBool("die", true);
-            time2-= Time.deltaTime;
+           spr.sprite = img[2];
         }
         if (hp == 0)
         {
