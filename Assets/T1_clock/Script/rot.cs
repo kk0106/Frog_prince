@@ -12,7 +12,7 @@ public class rot : MonoBehaviour
     {
         if (!A.activeInHierarchy)
         {
-            transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime, Space.World);
+            transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime, Space.Self);
         }
     }
 
