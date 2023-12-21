@@ -17,7 +17,7 @@ public class player : MonoBehaviour
 
     public GameObject InMermaid;
     public float InMermaidSpeed;
-
+    AudioManager audioManager;
 
     [Header("Jump")]
     [SerializeField] public static float JumpForce = 3f;
@@ -73,7 +73,7 @@ public class player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         move_ani = GetComponent<Animator>();
-
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         
 
         StartDirectionCheck();
@@ -207,7 +207,7 @@ public class player : MonoBehaviour
             JumpTimeCounter = JumpTime;
             Jumping = true;
             rb.velocity = new Vector2(rb.velocity.x, JumpForce);
-           
+           AudioManager.Instance.PlaySFX(AudioManager.Instance.jump);
         }
 
         

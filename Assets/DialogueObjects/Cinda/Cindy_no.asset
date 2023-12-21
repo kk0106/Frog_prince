@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379cff3bc00ccec4f8df4cb556b6c741, type: 3}
   m_Name: Cindy_no
   m_EditorClassIdentifier: 
-  characterName: "\u767D\u96EA\u516C\u4E3B"
+  characterName: "\u9BAE\u5EA6\u745E\u62C9"
   dialogue:
   - "\u6211\u8981\u760B\u4E86!!!!!\r\r"
   - "\u4E0D\u53EF\u6123\u6B38\uFF0C\u9019\u4E0B\u672C\u516C\u4E3B\u7684\u8170\u8DDF\u670B\u53CB\u90FD\u6C92\u4E86\u3002\r                         
@@ -21,4 +21,6 @@ MonoBehaviour:
   responses:
   - responseText: "\u4ECA\u5929\u4E00\u5B9A\u6703\u5F88\u8B9A\u3002"
     dialogueObject: {fileID: 0}
+    NeedItem: 0
+    itemID: 
   isShopInteraction: 0

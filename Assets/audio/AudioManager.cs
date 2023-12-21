@@ -14,6 +14,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip PapaScar;
     public AudioClip RedCry;
     public AudioClip witch;
+    public AudioClip background;
+    public AudioClip smallcrack;
+    public AudioClip bigcrack;
+    public AudioClip jump;
 
     public static AudioManager Instance
     {
@@ -37,7 +41,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        musicSource.clip = witch;
+        musicSource.clip = background;
         musicSource.Play();
     }
     

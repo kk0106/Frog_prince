@@ -7,11 +7,14 @@ public class hurt_ani : MonoBehaviour
 {
     public Animator animator;
     private BreakableObject breakableObject;
-
+    AudioManager audioManager;
+    private bool hasFunctionBeenCalled = false;
+    private bool hasFunctionBeenCalled2 = false;
+    private bool hasFunctionBeenCalled3 = false;
     // Start is called before the first frame update
     void Start()
     {
-        // You might want to get the BreakableObject component here if needed
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         breakableObject = GetComponent<BreakableObject>();
 
         // Ensure that the animator reference is assigned in the Inspector
@@ -28,12 +31,24 @@ public class hurt_ani : MonoBehaviour
         if (breakableObject != null && breakableObject.currentHealth <= 5f)
         {
             animator.SetBool("hurt2", true);
-            return;
+            
+            if (!hasFunctionBeenCalled)
+            {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.smallcrack);
+            hasFunctionBeenCalled = true;
+            }
+           return; 
         }
 
         if (breakableObject != null && breakableObject.currentHealth <= 10f)
         {
             animator.SetBool("hurt", true);
+           if (!hasFunctionBeenCalled2)
+            {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.smallcrack);
+            hasFunctionBeenCalled2 = true;
+            }
         }
+        
     }
 }
