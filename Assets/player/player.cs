@@ -100,10 +100,15 @@ public class player : MonoBehaviour
 
         Jump();
 
+
+        if (T1EndRb.a == 1)
+        {
+          InMermaid.SetActive(true);
+        }
        
 
-     
-        
+
+
         if (rbcomic.A == 1)
         {
             MoveSpeed = 0;

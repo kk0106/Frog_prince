@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class rbwater : MonoBehaviour
 {
     public GameObject bloom;
@@ -25,7 +26,7 @@ public class rbwater : MonoBehaviour
             bloom.SetActive(true);
         }
 
-        if (time < -1)
+        if (time < 0.67)
         {
             player.SetActive(true);
         }
@@ -35,6 +36,7 @@ public class rbwater : MonoBehaviour
            
             bloom.SetActive(false);
         }
+       
         
            
            
