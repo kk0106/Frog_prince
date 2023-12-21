@@ -6,13 +6,13 @@ public class turnon : MonoBehaviour
 {
     public GameObject A;
     public GameObject clockwork;
-
+    private Animator _animator;
     public GameObject key;
     // Start is called before the first frame update
     void Start()
     {
-       // key.SetActive(true);
-
+        // key.SetActive(true);
+        _animator = GetComponent<Animator>();
         // You should use FindObjectsOfType to find all instances of the MovingPlatform script.
         // You need to store these in an array to loop through them later.
         MovingPlatform[] objectsWithMyScript = FindObjectsOfType<MovingPlatform>();
@@ -28,7 +28,7 @@ public class turnon : MonoBehaviour
 
             key.SetActive(false);
             clockwork.SetActive(true);
-            
+            _animator.SetBool("next", true);
 
             // You can't use the `foreach` loop here; you should use a `for` loop.
             // And you should set the `trigger` variable of each MovingPlatform.

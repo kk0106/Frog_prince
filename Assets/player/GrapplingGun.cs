@@ -22,7 +22,7 @@ public class GrapplingGun : MonoBehaviour
     private SpringJoint joint;
     public float damageAmount = 5f;
     public static int IsSwinging;
-    private float maxAllowedDistance = 4f;
+    private float maxAllowedDistance = 2f;
     public GameObject rangePrefab;
     private GameObject currentRangeIndicator;
 
