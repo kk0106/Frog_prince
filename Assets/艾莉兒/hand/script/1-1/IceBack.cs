@@ -291,7 +291,7 @@ public class IceBack : MonoBehaviour
             ice7.GetComponent<Renderer>().sharedMaterial = material[1];
             ice8.GetComponent<Renderer>().sharedMaterial = material[1];
             ice9.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice5.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice5.GetComponent<Renderer>().sharedMaterial = material[1]; 
             ice16.GetComponent<Renderer>().sharedMaterial = material[1];
             ice17.GetComponent<Renderer>().sharedMaterial = material[1];
             ice18.GetComponent<Renderer>().sharedMaterial = material[1];

@@ -138,7 +138,7 @@ public class player : MonoBehaviour
                 MoveSpeed = InMermaidSpeed;
                 MoveSpeed1 = MoveSpeed;
 
-               JumpForce = 10f;
+               JumpForce = 8f;
 
             
             }
