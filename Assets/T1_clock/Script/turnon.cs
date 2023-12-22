@@ -15,7 +15,7 @@ public class turnon : MonoBehaviour
         _animator = GetComponent<Animator>();
         // You should use FindObjectsOfType to find all instances of the MovingPlatform script.
         // You need to store these in an array to loop through them later.
-        MovingPlatform[] objectsWithMyScript = FindObjectsOfType<MovingPlatform>();
+        
 
         // Now, you have the objects with the MovingPlatform script in the `objectsWithMyScript` array.
     }
