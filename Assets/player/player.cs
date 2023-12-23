@@ -17,6 +17,7 @@ public class player : MonoBehaviour
 
     public GameObject InMermaid;
     public float InMermaidSpeed;
+    public float InMermaidJumpForce;
     AudioManager audioManager;
 
     [Header("Jump")]
@@ -138,7 +139,7 @@ public class player : MonoBehaviour
                 MoveSpeed = InMermaidSpeed;
                 MoveSpeed1 = MoveSpeed;
 
-               JumpForce = 8f;
+               JumpForce = InMermaidJumpForce;
 
             
             }

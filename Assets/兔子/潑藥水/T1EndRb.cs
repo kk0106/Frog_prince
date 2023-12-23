@@ -81,6 +81,7 @@ public class T1EndRb : MonoBehaviour
         if (time < -2)
         {
             SceneManager.LoadScene("T1_Clock");
+            a = 0;
         }
 
         print(a);
