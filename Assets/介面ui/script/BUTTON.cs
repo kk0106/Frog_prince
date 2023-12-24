@@ -96,13 +96,6 @@ public class BUTTON : MonoBehaviour
         }
        
     }
-    public void frog()
-    {
-        if (UserInput.instance.controls.playerControls.IngameAni.WasReleasedThisFrame())
-        {
-            SceneManager.LoadScene("Frog");
-        }
-    }
 
     public void GoStartAni()
     {
