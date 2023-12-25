@@ -3,6 +3,7 @@ using UnityEngine;
 public class DialogueActivator : MonoBehaviour, IInteractable
 {
     [SerializeField] private DialogueObject dialogueObject;
+    public GameObject godness;
 
     public void UpdateDialogueObject(DialogueObject dialogueObject)
     {
@@ -30,14 +31,16 @@ public class DialogueActivator : MonoBehaviour, IInteractable
 
     public void Interact(player player)
     {
-        if (dialogueObject)
+        if (dialogueObject||godness.activeInHierarchy)
         {
             player.DialogueUI.PassDialogueLoopEvents(GetComponents<DialogueResponseEvents>());
             player.DialogueUI.ShowDialogue(dialogueObject);
         }
         else
         {
-            player.DialogueUI.CloseDialogueBox();
+            player.DialogueUI.CloseDialogueBox(); 
         }
     }
+
+    
 }

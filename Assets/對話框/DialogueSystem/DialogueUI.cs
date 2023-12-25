@@ -12,6 +12,8 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private TMP_Text textLabel;
     [SerializeField] private Button[] buttonsToDisable;
 
+    public GameObject godness;
+
     public bool IsOpen { get; private set; }
 
     private DialogueResponseEvents[] ResponseEvents;
@@ -24,7 +26,13 @@ public class DialogueUI : MonoBehaviour
         responseHandler = GetComponent<ResponseHandler>();
         CloseDialogueBox();
     }
-
+    private void Update()
+    {
+            if(godness.activeInHierarchy)
+        {
+            dialogueBox.SetActive(true);
+        }
+    }
     public void ShowDialogue(DialogueObject dialogueObject)
     {
         IsOpen = true;
@@ -60,7 +68,7 @@ public class DialogueUI : MonoBehaviour
         characterNameText.text = dialogueObject.CharacterName;
         dialogueBox.SetActive(true);
             StartCoroutine(StepThroughDialogue(dialogueObject));
-
+        
         
     }
 
