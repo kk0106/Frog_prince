@@ -2003,6 +2003,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36547e6f327e8c34386cb7b8ce91d02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minValue: 0
+  maxValue: 0
   MoveSpeed1: 1.5
   FaceRight: 0
   FaceBack: 0
@@ -8685,6 +8687,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36547e6f327e8c34386cb7b8ce91d02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minValue: 0
+  maxValue: 0
   MoveSpeed1: 1.5
   FaceRight: 0
   FaceBack: 0
@@ -12552,6 +12556,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36547e6f327e8c34386cb7b8ce91d02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minValue: 0
+  maxValue: 0
   MoveSpeed1: 1.5
   FaceRight: 0
   FaceBack: 0
@@ -15811,7 +15817,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hint: {fileID: 0}
+  hint2: {fileID: 0}
   hintText: {fileID: 0}
+  light: {fileID: 0}
 --- !u!64 &2114629194
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19857,7 +19865,7 @@ PrefabInstance:
     - target: {fileID: 6702104469211623306, guid: 9bbdea75c37aed0419d6e6c47e247622,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -69.56
+      value: -45.3
       objectReference: {fileID: 0}
     - target: {fileID: 6702104469211623306, guid: 9bbdea75c37aed0419d6e6c47e247622,
         type: 3}

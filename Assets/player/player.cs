@@ -1,4 +1,5 @@
 using Ink.Parsed;
+using Ink.Runtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -6,6 +7,13 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
+    [Header("z-axis")]
+   
+    public float minValue;
+    public float maxValue;
+
+
+
     [Header("Movement")]
     [SerializeField] public static float MoveSpeed ;
     [SerializeField] private float MoveSpeed1 ;
@@ -72,6 +80,8 @@ public class player : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+       
+
         rb = GetComponent<Rigidbody>();
         move_ani = GetComponent<Animator>();
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
@@ -89,9 +99,27 @@ public class player : MonoBehaviour
 
     private void Update()
     {
+        if(trigger.ismushroom==1)
+        {
+            maxValue = -42.03f;
+            minValue = -47.92f;
+        }
+        else
+        {
+            maxValue = -44.42f;
+            minValue = -45.69f;    
+        }
+
+        Vector3 currentPosition = transform.position;
+
+        // 限制Z??值在指定范??
+        currentPosition.z = Mathf.Clamp(currentPosition.z, minValue, maxValue);
+
+        // ?新的位置?用到玩家?象上
+        transform.position = currentPosition;
 
 
-       
+
         Invoke("alife", 1f);
         if (uiMenu.Opened) return;
         if (dialogueUI.IsOpen) return;
@@ -142,6 +170,8 @@ public class player : MonoBehaviour
                JumpForce = InMermaidJumpForce;
 
             
+                minValue = -76;
+                maxValue = -45.3f;
             }
 
         }

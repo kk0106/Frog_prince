@@ -14,6 +14,7 @@ public class DialogueUI : MonoBehaviour
 
     public GameObject godness;
 
+
     public bool IsOpen { get; private set; }
 
     private DialogueResponseEvents[] ResponseEvents;
@@ -22,6 +23,8 @@ public class DialogueUI : MonoBehaviour
 
     private void Start()
     {
+       
+
         typewriterEffect = GetComponent<TypewriterEffect>();
         responseHandler = GetComponent<ResponseHandler>();
         CloseDialogueBox();
@@ -31,6 +34,7 @@ public class DialogueUI : MonoBehaviour
             if(godness.activeInHierarchy)
         {
             dialogueBox.SetActive(true);
+           
         }
     }
     public void ShowDialogue(DialogueObject dialogueObject)
@@ -68,8 +72,8 @@ public class DialogueUI : MonoBehaviour
         characterNameText.text = dialogueObject.CharacterName;
         dialogueBox.SetActive(true);
             StartCoroutine(StepThroughDialogue(dialogueObject));
-        
-        
+
+       
     }
 
     public void AddResponseEvents(ResponseEvent[] responseEvents)

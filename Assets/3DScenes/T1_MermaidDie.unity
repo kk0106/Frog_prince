@@ -1317,7 +1317,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 292893477}
   m_LocalRotation: {x: 0.02703086, y: 0.034731418, z: -0.0010007456, w: 0.9990306}
-  m_LocalPosition: {x: -26.521833, y: 1.3543143, z: -47.36074}
+  m_LocalPosition: {x: -23.04906, y: 1.3543143, z: -49.710743}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9138,6 +9138,7 @@ MonoBehaviour:
   characterNameText: {fileID: 0}
   textLabel: {fileID: 0}
   buttonsToDisable: []
+  godness: {fileID: 0}
 --- !u!114 &1902969413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9495,7 +9496,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1960976766}
   m_LocalRotation: {x: 0.02703086, y: 0.034731418, z: -0.0010007456, w: 0.9990306}
-  m_LocalPosition: {x: -26.521833, y: 1.3129708, z: -47.36074}
+  m_LocalPosition: {x: -22.541832, y: 1.3129708, z: -49.710743}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10807,7 +10808,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099915300}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30, y: 0.1940174, z: -33.1}
+  m_LocalPosition: {x: -26.02, y: 0.1940174, z: -35.45}
   m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -10946,11 +10947,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36547e6f327e8c34386cb7b8ce91d02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minValue: -35.45
+  maxValue: -34.43
   MoveSpeed1: 1.5
   FaceRight: 0
   FaceBack: 0
   InMermaid: {fileID: 1609611758}
   InMermaidSpeed: 0
+  InMermaidJumpForce: 0
   JumpTime: 0.35
   Jumping: 0
   Falling: 0
