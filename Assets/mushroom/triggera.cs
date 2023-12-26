@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class trigger : MonoBehaviour
+public class triggera : MonoBehaviour
 {
     public GameObject cam;
-    public static int ismushroom;
+    
     // Start is called before the first frame update
     void Start()
     {
-        ismushroom = 0;
+       
         cam.SetActive(false);
     }
 
@@ -23,7 +23,7 @@ public class trigger : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             cam.SetActive (true);
-            ismushroom = 1;
+          
         }
 
 
@@ -34,7 +34,7 @@ public class trigger : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             cam.SetActive(true);
-            ismushroom = 1;
+           
         }
     }
 
@@ -43,7 +43,7 @@ public class trigger : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
            cam.SetActive(false);
-                ismushroom = 0;
+              
         }
     }
 }

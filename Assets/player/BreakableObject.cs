@@ -20,9 +20,11 @@ public class BreakableObject : MonoBehaviour
 
         //_animator = GetComponent<Animator>();
         currentHealth = maxHealth;
+       
     }
     public void Update()
     {
+
         a = currentHealth;
     }
     // Apply damage to the breakable object

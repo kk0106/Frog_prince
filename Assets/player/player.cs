@@ -99,16 +99,12 @@ public class player : MonoBehaviour
 
     private void Update()
     {
-        if(trigger.ismushroom==1)
+        if(ismushroom.ismushrooma==1)
         {
             maxValue = -42.03f;
             minValue = -47.92f;
         }
-        else
-        {
-            maxValue = -44.42f;
-            minValue = -45.69f;    
-        }
+       
 
         Vector3 currentPosition = transform.position;
 
