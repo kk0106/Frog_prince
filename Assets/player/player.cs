@@ -101,10 +101,13 @@ public class player : MonoBehaviour
     {
         if(ismushroom.ismushrooma==1)
         {
-            maxValue = -42.03f;
-            minValue = -47.92f;
+            maxValue = -43.8f;
+            minValue = -48f;
         }
-       
+       if(ismushroom.ismushrooma==0)
+        {
+            
+        }
 
         Vector3 currentPosition = transform.position;
 

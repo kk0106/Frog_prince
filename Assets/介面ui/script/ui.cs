@@ -46,6 +46,17 @@ public class ui : MonoBehaviour
             // Additional hints or actions when the player enters
         }
     }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            hintText.SetActive(true);
+            hint2.SetActive(true);
+            hint.SetActive(true);
+            light.SetActive(true);
+            // Additional hints or actions when the player enters
+        }
+    }
 
     private void OnTriggerExit(Collider other)
     {
