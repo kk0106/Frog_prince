@@ -104,9 +104,20 @@ public class player : MonoBehaviour
             maxValue = -43.8f;
             minValue = -48f;
         }
-       if(ismushroom.ismushrooma==0)
+
+        if (eggTip.IsTip == 1)
         {
-            
+            MoveSpeed = 0;
+            MoveSpeed1 = 0;
+
+            JumpForce = 0;
+        }
+        else
+        {
+            MoveSpeed = 2f;
+            MoveSpeed1 = 2f;
+
+            JumpForce = 3f;
         }
 
         Vector3 currentPosition = transform.position;

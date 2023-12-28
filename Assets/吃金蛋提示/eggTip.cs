@@ -5,12 +5,13 @@ using UnityEngine;
 public class eggTip : MonoBehaviour
 {
     public GameObject panel;
-    public float time;
+    public static int IsTip; 
     
     // Start is called before the first frame update
     void Start()
     {
         panel.SetActive(false);
+        IsTip = 0;
     }
 
     // Update is called once per frame
@@ -19,18 +20,15 @@ public class eggTip : MonoBehaviour
 
         if (panel.activeInHierarchy)
         {
-            time-=Time.deltaTime;
+            IsTip = 1;
         }
 
-        if (time < 0)
-        {
-            Time.timeScale = 0;
-        }
+       
 
         if (UserInput.instance.controls.playerControls.uiChoose.WasPressedThisFrame()){
-            Time.timeScale = 1;
-            time = 0.8f;
+           
             panel.SetActive(false);
+            IsTip = 0;
         }
 
     }

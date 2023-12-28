@@ -37,7 +37,7 @@ public class apple_trap : MonoBehaviour
         CountTime += Time.deltaTime;
         SpwanPosition=transform.position;
         SpwanPosition.x = Random.Range(16f, 21f);
-        SpwanPosition.z = Random.Range(-32.1f,-31.2f);
+        SpwanPosition.z = Random.Range(-31.35f,-31.35f);
        
         if (CountTime > spwanTime)
         {

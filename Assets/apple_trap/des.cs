@@ -23,7 +23,7 @@ public class des : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "wall")
+        if (other.gameObject.tag == "wall"|| other.gameObject.tag == "MushroomA" || other.gameObject.tag == "MushroomC")
         {
            time-=Time.deltaTime;
         }
@@ -31,7 +31,7 @@ public class des : MonoBehaviour
 
     private void OnCollisionStay(Collision other)
     {
-        if (other.gameObject.tag == "wall")
+        if (other.gameObject.tag == "wall" || other.gameObject.tag == "MushroomA" || other.gameObject.tag == "MushroomC")
         {
             time -= Time.deltaTime;
         }

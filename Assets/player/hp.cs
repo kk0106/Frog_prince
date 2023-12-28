@@ -120,7 +120,7 @@ public class hp : MonoBehaviour
             a = 2;
            // this.gameObject.transform.position = pos2;
         }
-        if (other.gameObject.tag == "poison")
+        if (other.gameObject.tag == "poison"|| other.gameObject.tag == "apple2")
         {
             HP -= 1;
             a = 3;

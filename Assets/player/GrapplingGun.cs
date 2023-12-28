@@ -104,7 +104,7 @@ public class GrapplingGun : MonoBehaviour
         {
             return;
         }
-        else if (breakableObject.CompareTag("egg"))
+        else if (breakableObject.CompareTag("NewApple"))
         {
             breakableObject.ApplyDamage(damageAmount);
             // Set eggToShoot to true

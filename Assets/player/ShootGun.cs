@@ -7,10 +7,27 @@ public class ShootGun : MonoBehaviour
     public bool eggToShoot;// Start is called before the first frame update
     public GameObject projectilePrefab;
     public float projectileSpeed = 10f;
- 
+    public static int GetApple;
+
+
+
+    private void Start()
+    {
+        GetApple = 0;
+    }
     // Update is called once per frame
     void Update()
     {
+        if (eggToShoot == true)
+        {
+            GetApple +=1;
+        }
+
+        if(GetApple == 3)
+        {
+            GetApple = 0;
+        }
+
         if (UserInput.instance.controls.playerControls.ShootGun.WasPressedThisFrame())
         {
             // Fire a projectile
@@ -36,7 +53,7 @@ public class ShootGun : MonoBehaviour
             // Access the Rigidbody of the projectile and apply forward force
             Rigidbody rb = newProjectile.GetComponent<Rigidbody>();
             rb.velocity = transform.forward * projectileSpeed;
-            rb.useGravity = false;
+           rb.useGravity = false;
 
             eggToShoot = false;
         }
