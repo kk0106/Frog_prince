@@ -129,49 +129,45 @@ public class DialogueUI : MonoBehaviour
         {
             string dialogue = dialogueObject.Dialogue[i];
 
-            
             // Check if the character name has changed
             if (dialogueObject.CharacterName != currentCharacterName)
             {
                 currentCharacterName = dialogueObject.CharacterName;
                 characterNameText.text = currentCharacterName; // Update the displayed character name
             }
-            
 
             yield return RunTypingEffect(dialogue);
 
             textLabel.text = dialogue;
 
-            if (i == dialogueObject.Dialogue.Length - 1 && dialogueObject.HasResponses) break;
+            if (i == dialogueObject.Dialogue.Length - 1 && dialogueObject.HasResponses)
+            {
+                // Check if the player pressed the "talk" button before showing responses
+                yield return new WaitUntil(() => UserInput.instance.controls.playerControls.talk.WasPressedThisFrame());
+                responseHandler.ShowResponses(dialogueObject.Responses);
+                break;
+            }
 
             yield return null;
             yield return new WaitUntil(() => UserInput.instance.controls.playerControls.talk.WasPressedThisFrame());
         }
+
         if (dialogueObject.IsShopInteraction)
         {
-            if (dialogueObject.HasResponses)
-            {
-                responseHandler.ShowResponses(dialogueObject.Responses);
-            }
-            else
+            if (!dialogueObject.HasResponses)
             {
                 CloseShopDialogueBox();
             }
         }
         else
         {
-
-        
-            if (dialogueObject.HasResponses)
-        {
-            responseHandler.ShowResponses(dialogueObject.Responses);
-        }
-        else
-        {
-            CloseDialogueBox();
-        }
+            if (!dialogueObject.HasResponses)
+            {
+                CloseDialogueBox();
+            }
         }
     }
+
 
     private IEnumerator RunTypingEffect(string dialogue)
     {

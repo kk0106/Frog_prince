@@ -11,6 +11,7 @@ public class ResponseHandler : MonoBehaviour
     [SerializeField] private RectTransform responseBox;
     [SerializeField] private RectTransform responseButtonTemplate;
     [SerializeField] private RectTransform responseContainer;
+    [SerializeField] private GameObject dialogueBox;
     [SerializeField] private InventoryManager inventoryManager;
 
     private DialogueUI dialogueUI;
@@ -73,6 +74,7 @@ public class ResponseHandler : MonoBehaviour
 
             responseBoxHeight += responseButtonTemplate.sizeDelta.y;
         }
+        dialogueBox.SetActive(false);
         responseBox.sizeDelta = new Vector2(responseBox.sizeDelta.x, responseBoxHeight);
         responseBox.gameObject.SetActive(true);
 
