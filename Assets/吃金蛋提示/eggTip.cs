@@ -25,7 +25,7 @@ public class eggTip : MonoBehaviour
 
        
 
-        if (UserInput.instance.controls.playerControls.uiChoose.WasPressedThisFrame()){
+        if (UserInput.instance.controls.playerControls.uiback.WasPressedThisFrame()){
            
             panel.SetActive(false);
             IsTip = 0;
