@@ -16,8 +16,16 @@ public class GrapplingGun : MonoBehaviour
     private Transform grappledObject;
     private float initialDistance;
     private Animator _animator;
+    public uiMenu uiMenu;
+    [SerializeField] private DialogueUI dialogueUI;
 
+    public DialogueUI DialogueUI
+    {
+        get { return dialogueUI; }
+        set { dialogueUI = value; }
+    }
     
+
     public float grappleRadius = 1f; // Adjust this radius to your needs
     private SpringJoint joint;
     public float damageAmount = 5f;
@@ -40,7 +48,8 @@ public class GrapplingGun : MonoBehaviour
 
     void Update()
     {
-        
+        if (dialogueUI.IsOpen) return;
+        if (uiMenu.Opened) return;
         if (UserInput.instance.controls.playerControls.GrappleGun.WasPressedThisFrame())
         {
             if (shootGun.eggToShoot)
