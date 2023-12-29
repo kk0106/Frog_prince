@@ -53,7 +53,7 @@ public class MushroomBack : MonoBehaviour
             a16.SetActive(true);
             a17.SetActive(true);
             a18.SetActive(true);
-            time = 10;
+            time = 5;
 
 
         }
