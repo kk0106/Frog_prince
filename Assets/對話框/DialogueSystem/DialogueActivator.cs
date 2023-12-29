@@ -3,8 +3,8 @@ using UnityEngine;
 public class DialogueActivator : MonoBehaviour, IInteractable
 {
     [SerializeField] private DialogueObject dialogueObject;
-    public GameObject godness;
-
+    public bool instant;
+    
     public void UpdateDialogueObject(DialogueObject dialogueObject)
     {
         this.dialogueObject = dialogueObject;
@@ -15,6 +15,10 @@ public class DialogueActivator : MonoBehaviour, IInteractable
         if (other.CompareTag("Player") && other.TryGetComponent(out player player))
         {
             player.Interactable = this;
+           if (instant == true)
+           {
+             Interact(player);
+           }
         }
     }
 
@@ -31,7 +35,7 @@ public class DialogueActivator : MonoBehaviour, IInteractable
 
     public void Interact(player player)
     {
-        if (dialogueObject||godness.activeInHierarchy)
+        if (dialogueObject)
         {
             player.DialogueUI.PassDialogueLoopEvents(GetComponents<DialogueResponseEvents>());
             player.DialogueUI.ShowDialogue(dialogueObject);

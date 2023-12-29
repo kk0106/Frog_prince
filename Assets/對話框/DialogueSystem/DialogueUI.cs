@@ -11,8 +11,8 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private TMP_Text characterNameText;
     [SerializeField] private TMP_Text textLabel;
     [SerializeField] private Button[] buttonsToDisable;
-
-    public GameObject godness;
+    [SerializeField] private GameObject talkUI;
+    //public GameObject godness;
 
 
     public bool IsOpen { get; private set; }
@@ -29,18 +29,11 @@ public class DialogueUI : MonoBehaviour
         responseHandler = GetComponent<ResponseHandler>();
         CloseDialogueBox();
     }
-    private void Update()
-    {
-            if(godness.activeInHierarchy)
-        {
-            dialogueBox.SetActive(true);
-           
-        }
-    }
+    
     public void ShowDialogue(DialogueObject dialogueObject)
     {
         IsOpen = true;
-
+        talkUI.SetActive(false);
         if (dialogueObject.IsShopInteraction)// Logic to handle shop/shopkeeper interaction                                        
         {
             ShopBG.gameObject.SetActive(true);
@@ -103,6 +96,7 @@ public class DialogueUI : MonoBehaviour
     public void CloseDialogueBox()
     {
         IsOpen = false;
+        talkUI.SetActive(true);
         dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
        // characterNameText.text = string.Empty;
