@@ -23,7 +23,7 @@ public class NewDes : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "wall" || other.gameObject.tag == "MushroomA" || other.gameObject.tag == "MushroomC" || other.gameObject.tag == "poison")
+        if (other.gameObject.tag == "wall"  || other.gameObject.tag == "poison")
         {
             time -= Time.deltaTime;
         }

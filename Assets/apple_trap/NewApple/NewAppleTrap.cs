@@ -145,7 +145,7 @@ public class NewAppleTrap : MonoBehaviour
         {
             Instantiate(apple1, SpwanPosition, Quaternion.identity);
 
-            GoldAppleTime = 4;
+            GoldAppleTime = 2;
         }
 
 
