@@ -8,13 +8,13 @@ public class NewAppleTrap : MonoBehaviour
     public float spwanTime;
     public float CountTime;
 
-    public float GoldAppleTime;
+   // public float GoldAppleTime;
 
     public Vector3 SpwanPosition;
   
 
     public GameObject apple;
-    public GameObject apple1;
+   // public GameObject apple1;
 
     public int a;
 
@@ -30,92 +30,13 @@ public class NewAppleTrap : MonoBehaviour
     void Update()
     {
 
-      /*  if (a == 1)
-        {
-            SpwanPosition = new Vector3(-20.1f, SpwanPosition.y, -48.2f);
-            appleTrap = SpwanPosition;
-        }
-
-        if (a == 2)
-        {
-            SpwanPosition = new Vector3(-20.1f, SpwanPosition.y, -45.8f);
-            appleTrap = SpwanPosition;
-        }
-
-
-        if (a == 3)
-        {
-            SpwanPosition = new Vector3(-20.1f, SpwanPosition.y, -43.6f);
-            appleTrap = SpwanPosition;
-        }
-
-
-        if (a == 4)
-        {
-            SpwanPosition = new Vector3(-17.82f, SpwanPosition.y, -48.2f);
-            appleTrap = SpwanPosition;
-        }
-
-        if (a == 5)
-        {
-            SpwanPosition = new Vector3(-17.82f, SpwanPosition.y, -45.8f);
-            appleTrap = SpwanPosition;
-        }
-
-
-        if (a == 6)
-        {
-            SpwanPosition = new Vector3(-17.82f, SpwanPosition.y, -43.6f);
-            appleTrap = SpwanPosition;
-        }
-
-        if (a == 7)
-        {
-            SpwanPosition = new Vector3(-15.53f, SpwanPosition.y, -48.2f);
-            appleTrap = SpwanPosition;
-        }
-
-        if (a == 8)
-        {
-            SpwanPosition = new Vector3(-15.53f, SpwanPosition.y, -45.8f);
-            appleTrap = SpwanPosition;
-        }
-
-
-        if (a == 9)
-        {
-            SpwanPosition = new Vector3(-15.53f, SpwanPosition.y, -43.6f);
-            appleTrap = SpwanPosition;
-        }
-
-        if (a == 10)
-        {
-            SpwanPosition = new Vector3(-13.24f, SpwanPosition.y, -48.2f);
-            appleTrap = SpwanPosition;
-        }
-
-        if (a == 11)
-        {
-            SpwanPosition = new Vector3(-13.24f, SpwanPosition.y, -45.8f);
-            appleTrap = SpwanPosition;
-        }
-
-
-        if (a == 12)
-        {
-            SpwanPosition = new Vector3(-13.24f, SpwanPosition.y, -43.6f);
-            appleTrap = SpwanPosition;
-        }   */
-
-      
-
         OnMouseDown();
-        //nvoke("Desroy", 1);
+  
     }
     private void OnMouseDown()
     {
 
-      GoldAppleTime-=Time.deltaTime;
+    //  GoldAppleTime-=Time.deltaTime;
 
 
 
@@ -141,12 +62,12 @@ public class NewAppleTrap : MonoBehaviour
     {
         Instantiate(apple, SpwanPosition, Quaternion.identity);
 
-        if (GoldAppleTime < 0)
-        {
-            Instantiate(apple1, SpwanPosition, Quaternion.identity);
-
-            GoldAppleTime = 2;
-        }
+       // if (GoldAppleTime < 0)
+       // {
+       //     Instantiate(apple1, SpwanPosition, Quaternion.identity);
+       //
+        //    GoldAppleTime = 2;
+       // }
 
 
     }

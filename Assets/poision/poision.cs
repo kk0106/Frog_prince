@@ -5,46 +5,34 @@ using UnityEngine;
 public class poision : MonoBehaviour
 {
     public GameObject bubble;
-    public Vector3 poision_pos;
-    public float x;
-    public float z;
+  
+    public float a;
 
-    public float positiontime;
-    public float currentime;
+    public float Ins_Time = 1;
+    public Transform[] points;
+
+   
     // Start is called before the first frame update
     void Start()
     {
-        poision_pos=bubble.transform.position;
-        x = poision_pos.x;
-        z = poision_pos.z;
+
+        InvokeRepeating("ins", Ins_Time, Ins_Time);
+      
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentime+=Time.deltaTime;
-
-        x=Random.Range(10.22f,27.64f); 
-        z=Random.Range(4.16f,-0.12f);
-
         
-
-        
-        if (currentime > positiontime)
-        {
-            ccreate();
-
-           currentime = 0;
-
-            //a = Random.Range(1, 12);
-
-
-        }
-
-
     }
-    private void ccreate()
+
+    void ins()
     {
-        Instantiate(bubble, poision_pos, Quaternion.identity);
+        int Random_points = Random.Range(0, points.Length);
+
+        Instantiate(bubble, points[Random_points].transform.position, points[Random_points].transform.rotation)         ;
     }
+  
+       
+    
 }

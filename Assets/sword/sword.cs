@@ -22,6 +22,7 @@ public class sword : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        profile.impactForce = 1;
         swordd.SetActive(false);
         carrdio.SetActive(false);
 
