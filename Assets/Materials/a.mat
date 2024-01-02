@@ -8,7 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: a
-  m_Shader: {fileID: 4800000, guid: 196da0b4c773c47419766399dcebcb54, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: ce0fb6450fec7b249ad03c922a83fbf1,
+    type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -20,15 +21,37 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Main_Texture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Ramp:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Float: 6.5
     - _InnerRimOffSet: 1.5
+    - _Lighting: 0
     - _Offset: 3.2
+    - _Outline_Size: 0
+    - _QueueControl: 0
+    - _QueueOffset: 0
     - _RimBrightness: 3.2
+    - _Shadow_Brightness: 0.5
     - _Specular: 0
     - _SpecularOffSet: 0.9
     m_Colors:
@@ -37,3 +60,16 @@ Material:
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _TColor: {r: 0.5050285, g: 0.693011, b: 0.9150943, a: 1}
   m_BuildTextureStacks: []
+--- !u!114 &5800288920958018124
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
