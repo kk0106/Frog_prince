@@ -5,7 +5,9 @@ using UnityEngine;
 public class RollBall : MonoBehaviour
 {
     private Rigidbody rb;
-    public int speed;
+    public float speed;
+    public float minValue;
+    public float maxValue;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,14 @@ public class RollBall : MonoBehaviour
        // rb.velocity = Vector3.left*speed;
 
        rb.AddForce(Vector3.left*speed);
-       
+
+
+        Vector3 currentPosition = transform.position;
+
+        // 限制Z??值在指定范??
+        currentPosition.z = Mathf.Clamp(currentPosition.z, minValue, maxValue);
+
+        // ?新的位置?用到玩家?象上
+        transform.position = currentPosition;
     }
 }

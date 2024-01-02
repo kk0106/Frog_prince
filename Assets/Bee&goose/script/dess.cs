@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToonShader : MonoBehaviour
+public class dess : MonoBehaviour
 {
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,10 +16,12 @@ public class ToonShader : MonoBehaviour
     {
         
     }
-    //float3 _WorldSpaceLightPos0;
 
-   // void GetMainLight_float(out float3 lightDir)
-    //{
-    //    lightDir = _WorldSpaceLightPos0;
-    //}
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "end")
+        {
+            Destroy(gameObject);
+        }
+    }
 }
