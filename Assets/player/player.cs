@@ -12,7 +12,8 @@ public class player : MonoBehaviour
     public float minValue;
     public float maxValue;
 
-
+    [Header("T1 z-axis")]
+    public GameObject InT1;
 
     [Header("Movement")]
     [SerializeField] public static float MoveSpeed ;
@@ -23,6 +24,7 @@ public class player : MonoBehaviour
     private Vector3 player00;
     private Animator move_ani;
 
+    [Header("Mermaid")]
     public GameObject InMermaid;
     public float InMermaidSpeed;
     public float InMermaidJumpForce;
@@ -103,6 +105,12 @@ public class player : MonoBehaviour
         {
             maxValue = -43.8f;
             minValue = -48f;
+        }
+
+        if (InT1.activeInHierarchy)
+        {
+            maxValue = -45.98f;
+            minValue = -45.98f;
         }
 
         if (eggTip.IsTip == 1)

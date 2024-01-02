@@ -32,7 +32,7 @@ public class ax : MonoBehaviour
         {
             godness.SetActive(true); 
             time = 3;
-            a = 0;
+             a = 0;
         }
     }
     private void OnCollisionEnter(Collision other)
