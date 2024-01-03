@@ -30,7 +30,7 @@ public class WichTurnFace : MonoBehaviour
 
         if (time < -10)
         {
-            time = 10;
+            time = 6;
         }
 
         if (time >9)

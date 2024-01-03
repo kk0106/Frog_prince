@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class 魔鏡hp : MonoBehaviour
 {
-
+    public GameObject poison;
     public int hp;
     public GameObject BOSS;
     private SpriteRenderer spr;
@@ -24,6 +24,8 @@ public class 魔鏡hp : MonoBehaviour
         if (hp < 0)
         {
             BOSS.gameObject.SetActive(false);
+
+            poison.SetActive(false);
         }
 
         if (hp == 3)

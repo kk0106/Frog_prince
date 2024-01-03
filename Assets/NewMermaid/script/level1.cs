@@ -151,7 +151,7 @@ public class level1 : MonoBehaviour
             ice24.SetActive(true);
             ice25.SetActive(true);
 
-            mark = 0;
+          
         }
         if(BackGround == 1)
         {
@@ -160,9 +160,10 @@ public class level1 : MonoBehaviour
             ice3.SetActive(false);
             ice4.SetActive(false);
             ice5.SetActive(false);
+
+           
         }
-
-
+ 
         if (mark == 0)
         {
             ice1.GetComponent<Renderer>().sharedMaterial = material[0];
@@ -191,49 +192,51 @@ public class level1 : MonoBehaviour
             ice24.GetComponent<Renderer>().sharedMaterial = material[0];
             ice25.GetComponent<Renderer>().sharedMaterial = material[0];
         }
-
+      
         if (mark == 1)
         {
             ice1.GetComponent<Renderer>().sharedMaterial = material[1];
             ice2.GetComponent<Renderer>().sharedMaterial = material[1];
             ice3.GetComponent<Renderer>().sharedMaterial = material[1];
             ice4.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice5.GetComponent<MeshRenderer>().sharedMaterial= material[1];
+            ice5.GetComponent<Renderer>().sharedMaterial = material[1];
         }
+      
+        
         if (mark == 2)
         {
-            ice11.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice12.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice13.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice14.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice15.GetComponent<Renderer>().sharedMaterial = material[1];
+          ice11.GetComponent<Renderer>().sharedMaterial = material[1];
+          ice12.GetComponent<Renderer>().sharedMaterial = material[1];
+          ice13.GetComponent<Renderer>().sharedMaterial = material[1];
+          ice14.GetComponent<Renderer>().sharedMaterial = material[1];
+          ice15.GetComponent<Renderer>().sharedMaterial = material[1];
         }
         if(mark == 3)
         {
-            ice21.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice22.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice23.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice24.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice25.GetComponent<Renderer>().sharedMaterial = material[1];
+          ice21.GetComponent<Renderer>().sharedMaterial = material[1];
+          ice22.GetComponent<Renderer>().sharedMaterial = material[1];
+          ice23.GetComponent<Renderer>().sharedMaterial = material[1];
+          ice24.GetComponent<Renderer>().sharedMaterial = material[1];
+          ice25.GetComponent<Renderer>().sharedMaterial = material[1];
         }
         if (mark == 4)
         {
-            ice6.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice7.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice8.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice9.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice10.GetComponent<Renderer>().sharedMaterial = material[1];
+          ice6.GetComponent<Renderer>().sharedMaterial = material[1];
+          ice7.GetComponent<Renderer>().sharedMaterial = material[1];
+          ice8.GetComponent<Renderer>().sharedMaterial = material[1];
+          ice9.GetComponent<Renderer>().sharedMaterial = material[1];
+          ice10.GetComponent<Renderer>().sharedMaterial = material[1];
 
-            ice16.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice17.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice18.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice19.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice20.GetComponent<Renderer>().sharedMaterial = material[1];
+          ice16.GetComponent<Renderer>().sharedMaterial = material[1];
+          ice17.GetComponent<Renderer>().sharedMaterial = material[1];
+          ice18.GetComponent<Renderer>().sharedMaterial = material[1];
+          ice19.GetComponent<Renderer>().sharedMaterial = material[1];
+          ice20.GetComponent<Renderer>().sharedMaterial = material[1];
         }
 
         if (levelValue != 0)
         {
-            time+=Time.deltaTime;
+            time += Time.deltaTime;
         }
 
         //攻擊1
@@ -242,12 +245,10 @@ public class level1 : MonoBehaviour
             //觸手出現，標記地板
             if (time > 0)
             {
-               
-
                 hand1.SetActive(true);
             }
 
-            if (time > 0.3)
+            if (time > 1.1)
             {
                 mark = 1;
             }
@@ -267,19 +268,18 @@ public class level1 : MonoBehaviour
                 ani1.SetBool("attack", true);
                 ani1.SetBool("normal", false);
                 ani1.SetBool("up", false);
+
+                
             }
 
             //地板消失
             if (time > 3.2)
             {
                 BackGround = 1;
-            }
-
-            //結束地板標記
-            if (time > 3.5)
-            {
                 mark = 0;
             }
+
+            
 
             if (time > 4)
             {
