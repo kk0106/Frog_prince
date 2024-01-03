@@ -3760,6 +3760,7 @@ MonoBehaviour:
   materials:
   - {fileID: 2100000, guid: d5cc5825ea505244fa67dd3656a622b1, type: 2}
   - {fileID: 2100000, guid: a4fce1fec841a5f41b19559dbb99afd7, type: 2}
+  mark: 0
 --- !u!1 &519100533 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8066267997747123814, guid: 3a5bf7fd744eb9045b3f1fbe948ada36,
@@ -8749,6 +8750,37 @@ MonoBehaviour:
   player: {fileID: 1440803626}
   pos: {x: 0, y: 0, z: 0}
   a: 0.9
+--- !u!1 &1002496612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1002496613}
+  m_Layer: 0
+  m_Name: Int1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1002496613
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002496612}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.564269, y: 2.6332707, z: -48.09612}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 27
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1003738991 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8066267997747123814, guid: 3a5bf7fd744eb9045b3f1fbe948ada36,
@@ -12325,7 +12357,7 @@ PrefabInstance:
     - target: {fileID: 6702104469211623306, guid: 9bbdea75c37aed0419d6e6c47e247622,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.77
+      value: 8.39
       objectReference: {fileID: 0}
     - target: {fileID: 6702104469211623306, guid: 9bbdea75c37aed0419d6e6c47e247622,
         type: 3}
@@ -12335,7 +12367,7 @@ PrefabInstance:
     - target: {fileID: 6702104469211623306, guid: 9bbdea75c37aed0419d6e6c47e247622,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -51.43
+      value: -62.4
       objectReference: {fileID: 0}
     - target: {fileID: 6702104469211623306, guid: 9bbdea75c37aed0419d6e6c47e247622,
         type: 3}
@@ -12431,12 +12463,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minValue: 0
   maxValue: 0
-  InT1: {fileID: 0}
+  InT1: {fileID: 1002496612}
   MoveSpeed1: 1.5
   FaceRight: 0
   FaceBack: 0
   InMermaid: {fileID: 1624598248}
-  InMermaidSpeed: 10
+  InMermaidSpeed: 100
   InMermaidJumpForce: 8
   JumpTime: 0.35
   Jumping: 0
@@ -17565,7 +17597,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1986940097}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f37c79bb1d14ad84eb9449d51c7d759f, type: 3}
   m_Name: 
