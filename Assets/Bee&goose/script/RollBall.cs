@@ -19,7 +19,7 @@ public class RollBall : MonoBehaviour
     {
        // rb.velocity = Vector3.left*speed;
 
-       rb.AddForce(Vector3.left*speed);
+       rb.velocity = Vector3.left*speed;
 
 
         Vector3 currentPosition = transform.position;
