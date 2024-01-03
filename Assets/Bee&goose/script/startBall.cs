@@ -7,7 +7,7 @@ public class startBall : MonoBehaviour
     public GameObject[] bee;
     public Transform[] point;
 
-    public float Ins_time=1;
+    public float Ins_time=3;
 
     // Start is called before the first frame update
     void Start()

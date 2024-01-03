@@ -28,7 +28,7 @@ public class gooseManger : MonoBehaviour
         ani3 = gos3.GetComponent<Animator>();
         ani4 = gos4.GetComponent<Animator>();
         ani5 = gos5.GetComponent<Animator>();
-        bee.SetActive(true);
+        //bee.SetActive(true);
     }
 
     // Update is called once per frame
@@ -52,7 +52,7 @@ public class gooseManger : MonoBehaviour
             time = 4;
         }
 
-        if (time == 4)
+        if (time == 4&&TriggerBall.isIN==1)
         {
             ani.SetBool("attack", false);
             ani2.SetBool("attack", false);

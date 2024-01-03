@@ -103,18 +103,18 @@ public class RedApplee : MonoBehaviour
 
         if (!Apple1.activeInHierarchy)
         {
-            AppleCount = 1;
+            AppleCount ++;
         }
 
         if (!Apple2.activeInHierarchy)
         {
-            AppleCount = 2;
+            AppleCount ++;
         }
 
 
         if (!Apple3.activeInHierarchy)
         {
-            AppleCount = 3;
+            AppleCount ++;
         }
 
 
