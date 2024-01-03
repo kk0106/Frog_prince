@@ -26,8 +26,8 @@ public class player : MonoBehaviour
 
     [Header("Mermaid")]
     public GameObject InMermaid;
-    public float InMermaidSpeed=100f;
-    public float InMermaidJumpForce=3f;
+    public float InMermaidSpeed;
+    public float InMermaidJumpForce;
     AudioManager audioManager;
 
     [Header("Jump")]
@@ -120,13 +120,13 @@ public class player : MonoBehaviour
 
             JumpForce = 0;
         }
-        else
+      /*  else
         {
             MoveSpeed = 2f;
             MoveSpeed1 = 2f;
 
             JumpForce = 3f;
-        }
+        }*/
 
         Vector3 currentPosition = transform.position;
 
@@ -152,8 +152,8 @@ public class player : MonoBehaviour
         {
           InMermaid.SetActive(true);
         }
-       
 
+       
 
 
         if (rbcomic.A == 1)
@@ -180,18 +180,18 @@ public class player : MonoBehaviour
 
             JumpForce = 3f;
 
+
             if (InMermaid.activeInHierarchy)
             {
                 MoveSpeed = InMermaidSpeed;
                 MoveSpeed1 = MoveSpeed;
 
-               JumpForce = InMermaidJumpForce;
+                JumpForce = InMermaidJumpForce;
 
-            
+
                 minValue = -76;
                 maxValue = -45.3f;
             }
-
         }
         
         if (UserInput.instance.controls.playerControls.talk.WasPressedThisFrame())
