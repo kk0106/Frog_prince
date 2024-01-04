@@ -9,15 +9,15 @@ public class level1 : MonoBehaviour
     public GameObject ax2;
     public GameObject ax3;
 
-    public int IsTrueAx;
+    public static int IsTrueAx;
 
     [Header("AxHint")]
     public GameObject hint1;
     public GameObject hint2;
     [Header("AxAni")]
-    public Animator axani;
-    public Animator axan2;
-    public Animator axan3;
+    private Animator axani;
+    private Animator axan2;
+    private Animator axan3;
 
     [Header("hand")]
     public GameObject hand1;
@@ -661,62 +661,16 @@ public class level1 : MonoBehaviour
                 hint2.SetActive(true);
             }
 
-            if (time > 1.1)
+            if(time > 1)
             {
-                mark = 0;
+                if (IsTrueAx == 1)
+                {
+                    axani.SetBool("attack", true);                }
             }
-
-            //觸手上升動畫
-            if (time > 1)
-            {
-                ani6.SetBool("up", true);
-                ani6.SetBool("normal", false);
-                ani6.SetBool("attack", false);
-
-            }
-
-            //觸手攻擊動畫
-            if (time > 3)
-            {
-                ani6.SetBool("attack", true);
-                ani6.SetBool("normal", false);
-                ani6.SetBool("up", false);
-
-            }
-
-            //地板消失
-            if (time > 3.2)
-            {
-                BackGround = 0;
-                mark = 0;
-            }
-
-
 
             if (time > 4)
             {
-                BackGround = 0;
-            }
-
-            //恢復觸手動畫
-            if (time > 4.2)
-            {
-                ani6.SetBool("normal", true);
-                ani6.SetBool("up", false);
-                ani6.SetBool("attack", false);
-            }
-
-            //觸手消失
-            if (time > 4.5)
-            {
-                hand6.SetActive(false);
-
-            }
-
-            //進入攻擊2
-            if (time > 5)
-            {
-                levelValue = 6;
+                levelValue = 1;
                 time = 0;
             }
 
