@@ -6129,6 +6129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 754894503}
   - component: {fileID: 754894504}
+  - component: {fileID: 754894505}
   m_Layer: 0
   m_Name: collider
   m_TagString: Untagged
@@ -6164,6 +6165,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.6397886, y: 9.503229, z: 1.0049706}
   m_Center: {x: -0.058225155, y: 0.40519714, z: -0.040834427}
+--- !u!114 &754894505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754894502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1349a913b5a09b6449bcf1d6f3176225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  ax: {fileID: 878023465}
 --- !u!1 &759769277
 GameObject:
   m_ObjectHideFlags: 0
@@ -7483,7 +7498,6 @@ GameObject:
   m_Component:
   - component: {fileID: 878023467}
   - component: {fileID: 878023466}
-  - component: {fileID: 878023469}
   - component: {fileID: 878023468}
   m_Layer: 0
   m_Name: ax3
@@ -7580,18 +7594,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &878023469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 878023465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1349a913b5a09b6449bcf1d6f3176225, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &881792906
 GameObject:
   m_ObjectHideFlags: 0

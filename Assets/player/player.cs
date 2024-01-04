@@ -153,30 +153,30 @@ public class player : MonoBehaviour
           InMermaid.SetActive(true);
         }
 
-       
 
 
-        if (rbcomic.A == 1)
+
+        if (RedApplee.IsRedCom == 1)
         {
             MoveSpeed = 0;
             MoveSpeed1 = 0;
             JumpForce = 0;
-            
         }
+
         else if (GrapplingGun.IsSwinging == 1)
         {
             MoveSpeed = 2.5f;
             MoveSpeed1 = 2.5f;
 
             JumpForce = 3f;
-             
+
 
         }
         else
         {
-            MoveSpeed=2f;
+            MoveSpeed = 2f;
             MoveSpeed1 = MoveSpeed;
-            
+
 
             JumpForce = 3f;
 

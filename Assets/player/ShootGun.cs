@@ -52,7 +52,7 @@ public class ShootGun : MonoBehaviour
 
             // Access the Rigidbody of the projectile and apply forward force
             Rigidbody rb = newProjectile.GetComponent<Rigidbody>();
-            rb.velocity = transform.forward * projectileSpeed;
+            rb.velocity = transform.forward* projectileSpeed;
            rb.useGravity = false;
 
             eggToShoot = false;

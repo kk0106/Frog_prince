@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class RedApplee : MonoBehaviour
 {
+    [Header("spider")]
+    public GameObject sprider;
+    public GameObject GoldApple;
+
+    
+    public GameObject redgirl;
+    public GameObject Redcollider;
+    public GameObject cam;
+    public static int IsRedCom;
 
     public GameObject Apple1;
     public GameObject Apple2;
@@ -11,6 +20,7 @@ public class RedApplee : MonoBehaviour
     public int AppleCount;
     private int a;
 
+    public GameObject talkk;
     public GameObject talk;
     public GameObject StartTalk;
     public GameObject basket;
@@ -24,8 +34,9 @@ public class RedApplee : MonoBehaviour
     private SpriteRenderer spr2;
     public Sprite[] img2;
 
-    private SpriteRenderer spr3;
-    public Sprite[] img3;
+    // private SpriteRenderer spr3;
+    //public Sprite[] img3;
+    private Animator ani1;
 
     public float time;
     public float time1;
@@ -33,6 +44,13 @@ public class RedApplee : MonoBehaviour
 
     void Start()
     {
+        sprider.SetActive(false);
+        GoldApple.SetActive(false);
+
+       IsRedCom = 0;
+
+        cam.SetActive(false);
+
         AppleCount= -2;
         a = 0;
 
@@ -45,7 +63,7 @@ public class RedApplee : MonoBehaviour
 
         spr2=StartTalk.GetComponent<SpriteRenderer>();
 
-        spr3=this.gameObject.GetComponent<SpriteRenderer>();
+        ani1=redgirl.gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -76,10 +94,7 @@ public class RedApplee : MonoBehaviour
             spr2.sprite = img2[3];
         }
 
-        if(time<-1)
-        {
-            spr2.sprite = img2[4];
-        }
+        
 
         if (time <-1.8)
         {
@@ -87,6 +102,9 @@ public class RedApplee : MonoBehaviour
 
             talk.SetActive(true);
             StartTalk.SetActive(false);
+
+            cam.SetActive(false);
+            IsRedCom = 0;
         }
         
 
@@ -156,16 +174,44 @@ public class RedApplee : MonoBehaviour
         {
             AppleCount = 4;
         }
+       
+        if (time1 < -3)
+        {
+            AppleCount = 5;
+
+            a = 1;
+
+            sprider.SetActive(true);
+
+            basket.SetActive(false);
+
+           
+
+            ani1.SetBool("bye", true);
+        }
+
+        if (AppleCount == 5)
+        {
+            StartTalk.SetActive(false);
+            talk.SetActive(false);  
+            talkk.SetActive(false);
+        }
 
         if (AppleCount == 4)
         {
             spr.sprite = img[3];
 
-            spr2.sprite = img2[5];
+            spr2.sprite = img2[4];
 
-            spr3.sprite = img3[1];
+            ani1.SetBool("happy", true);
             talk.SetActive(false);
             StartTalk.SetActive(true);
+
+
+           
+            Redcollider.SetActive(false);
+
+            
         }
     }
 
@@ -174,6 +220,10 @@ public class RedApplee : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             AppleCount = -1;
+
+            IsRedCom = 1;
+
+            cam.SetActive(true);
         }
     }
 }
