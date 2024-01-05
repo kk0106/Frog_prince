@@ -5,11 +5,21 @@ using UnityEngine;
 public class level1 : MonoBehaviour
 {
     [Header("ax")]
-    public GameObject ax;
-    public GameObject ax2;
-    public GameObject ax3;
+    public GameObject ax;//金斧頭
+    public GameObject ax2;//銀斧頭
+    public GameObject ax3;//銅斧頭
 
-    public static int IsTrueAx;
+     static public int IsTrueAx;
+
+    [Header("AxRigidbody")]
+    private Rigidbody rb;
+    private Rigidbody rb2;
+    private Rigidbody rb3;
+
+    [Header("AxRbSpeed")]
+    public float speed;
+    public float speed2;
+    public float speed3;
 
     [Header("AxHint")]
     public GameObject hint1;
@@ -76,6 +86,11 @@ public class level1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rb=ax.GetComponent<Rigidbody>();
+        rb2=ax2.GetComponent<Rigidbody>();
+        rb3=ax3.GetComponent<Rigidbody>();
+
+
         mark = 0;
         levelValue = 1;
         BackGround=0;
@@ -136,6 +151,9 @@ public class level1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
+
+
         if (BackGround == 0)
         {
             //回復場地
@@ -647,6 +665,11 @@ public class level1 : MonoBehaviour
 
         }
 
+        Debug.Log(IsTrueAx);
+
+       
+
+        
 
         if (levelValue == 6)
         {
@@ -663,16 +686,34 @@ public class level1 : MonoBehaviour
 
             if(time > 1)
             {
+
                 if (IsTrueAx == 1)
                 {
-                    axani.SetBool("attack", true);                }
+                    axani.SetBool("attack", true);
+
+                    rb.AddForce ( Vector3.forward * speed);
+                }
+
+
             }
 
             if (time > 4)
             {
+                ax.SetActive(false);
+                ax2.SetActive(false);
+                ax3.SetActive(false);
+
+                hint1.SetActive(false);
+                hint2.SetActive(false);
+            }
+
+
+            if (time > 5)
+            {
                 levelValue = 1;
                 time = 0;
             }
+
 
         }
     }

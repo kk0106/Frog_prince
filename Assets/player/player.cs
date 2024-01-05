@@ -242,8 +242,7 @@ public class player : MonoBehaviour
         }
 
 
-      
-        
+
     }
 
 
@@ -283,6 +282,8 @@ public class player : MonoBehaviour
       
     }
 
+
+    
 
 
     private void OnCollisionStay(Collision other)

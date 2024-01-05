@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class AxAttack : MonoBehaviour
 {
+    public static int a;
    
     // Start is called before the first frame update
     void Start()
     {
-        
+        a = 0;
     }
 
     // Update is called once per frame
@@ -16,12 +17,15 @@ public class AxAttack : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter(Collision other)
+    public void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Player")
         {
 
+
             level1.IsTrueAx = 1;
         }
     }
+
+    
 }

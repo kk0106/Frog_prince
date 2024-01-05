@@ -11,6 +11,7 @@ public class sword : MonoBehaviour
     public GameObject swordd;
     public GameObject carrdio;
 
+  //  public GameObject cam;
 
     [Header("TalkChange")]
     private SpriteRenderer spr_talk;
@@ -22,6 +23,8 @@ public class sword : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       // cam.SetActive(false);
+
         profile.impactForce = 1;
         swordd.SetActive(false);
         carrdio.SetActive(false);
@@ -41,7 +44,7 @@ public class sword : MonoBehaviour
             spr_talk.sprite = img[1];
            time-=Time.deltaTime;
 
-           
+          // cam.SetActive(true);
         }
 
         if (time < 1)
@@ -66,6 +69,8 @@ public class sword : MonoBehaviour
         {
             spr_talk.sprite = img[2];
         }
+
+        
 
         if (a == 2)
         {
