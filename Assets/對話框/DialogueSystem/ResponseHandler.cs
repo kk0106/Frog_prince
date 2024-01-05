@@ -64,25 +64,25 @@ public class ResponseHandler : MonoBehaviour
 
             responseButton.GetComponent<Button>().onClick.AddListener(() => OnPickedResponse(response, responseIndex));
 
-            if (i == 0)
-            {
-                firstResponseButton = responseButton.GetComponent<Button>();
-                firstResponseButton.Select(); // Highlight the first response button
-            }
+           // if (i == 0)
+           // {
+                //firstResponseButton = responseButton.GetComponent<Button>();
+                //firstResponseButton.Select(); // Highlight the first response button
+           // }
 
             tempResponseButtons.Add(responseButton);
 
             responseBoxHeight += responseButtonTemplate.sizeDelta.y;
         }
-        dialogueBox.SetActive(false);
+        //dialogueBox.SetActive(false);
         responseBox.sizeDelta = new Vector2(responseBox.sizeDelta.x, responseBoxHeight);
         responseBox.gameObject.SetActive(true);
 
         // Check if it's a shop interaction
-        if (responses.Length > 0 && responses[0].DialogueObject != null && responses[0].DialogueObject.IsShopInteraction)
-        {
+        //if (responses.Length > 0 && responses[0].DialogueObject != null && responses[0].DialogueObject.IsShopInteraction)
+       // {
             waitForShopInput = true;
-        }
+       // }
     }
 
     void Update()
