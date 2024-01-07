@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.ProBuilder.MeshOperations;
 
 public class player : MonoBehaviour
 {
@@ -37,6 +38,10 @@ public class player : MonoBehaviour
     public bool Falling;
     private float JumpTimeCounter;
     public float y;
+
+    [SerializeField] float jumpHeight=5;
+    [SerializeField] Vector3 gravityScale ;
+    [SerializeField] Vector3 fallGravityScale ;
 
     [Header("camera")]
     [SerializeField] private GameObject _cameraGo;
@@ -242,7 +247,9 @@ public class player : MonoBehaviour
         }
 
 
-
+       
+            move_ani.SetFloat("x", UserInput.instance.moveInput.x);
+        
     }
 
 
@@ -254,11 +261,26 @@ public class player : MonoBehaviour
         {
             JumpTimeCounter = JumpTime;
             Jumping = true;
-            rb.velocity = new Vector2(rb.velocity.x, JumpForce);
+          //  rb.velocity = new Vector2(rb.velocity.x, JumpForce);
            AudioManager.Instance.PlaySFX(AudioManager.Instance.jump);
+
+
+            Physics.gravity = gravityScale;
+            float jumpForce = Mathf.Sqrt((jumpHeight * (Physics.gravity.y *-9.18f)*- 2) * rb.mass);
+            rb.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
+
+
+        }
+        if (rb.velocity.y > 0)
+        {
+            Physics.gravity = gravityScale;
         }
 
-        
+        if (rb.velocity.y < 0)
+        {
+            Physics.gravity = fallGravityScale;
+        }
+
 
         //«ùÄò«öµÛ¸õÁä
         if (UserInput.instance.controls.playerControls.jump.IsPressed())
@@ -354,28 +376,48 @@ public class player : MonoBehaviour
     {
         moveInput = UserInput.instance.moveInput.x;
         moveInput1=UserInput.instance.moveInput.y;
-        if (moveInput > 0 || moveInput < 0)
+         if (moveInput > 0 )
+          {
+             move_ani.SetBool("IsWalk_Right", true);
+             // move_ani.SetBool("IsWalk_Back", false);
+              TurnCheck();
+
+          }
+        if (moveInput < 0)
         {
-            move_ani.SetBool("IsWalk_Right", true);
+             // move_ani.SetBool("IsWalk_Right", false);
+             move_ani.SetBool("IsWalk_Back", true);
             TurnCheck();
-
         }
 
-        else
-        {
-            move_ani.SetBool("IsWalk_Right", false);
-        }
-
-        if(moveInput1> 0 || moveInput1<0)
-        {
-            TurnCheck1();
-            move_ani.SetBool("IsWalk_Back", true);
-            
-        }
-        else
+        if (moveInput == 0)
         {
             move_ani.SetBool("IsWalk_Back", false);
+
+            move_ani.SetBool("IsWalk_Right", false);
+            if (FaceRight)
+            {
+                move_ani.SetBool("Is_Left_Idle", false);
+            }
+            else
+            {
+                move_ani.SetBool("Is_Left_Idle", true);
+            }
+
         }
+
+        
+
+        /*   if(moveInput1> 0 || moveInput1<0)
+          {
+              TurnCheck1();
+              move_ani.SetBool("IsWalk_Back", true);
+
+          }
+          else
+          {
+              move_ani.SetBool("IsWalk_Back", false);
+          }*/
 
         rb.velocity = new Vector3(moveInput * MoveSpeed, rb.velocity.y,moveInput1*MoveSpeed1);
     }
@@ -435,21 +477,38 @@ public class player : MonoBehaviour
     {
         if (FaceRight)
         {
-            Vector3 rotator = new Vector3(transform.rotation.x, 180f, transform.rotation.z);
-            transform.rotation = Quaternion.Euler(rotator);
+           // Vector3 rotator = new Vector3(transform.rotation.x, 180f, transform.rotation.z);
+           // transform.rotation = Quaternion.Euler(rotator);
             FaceRight = !FaceRight;
 
+
+            if(UserInput.instance.moveInput.x == 0)
+            {
+                move_ani.SetBool("Is_Left_Idle", true);
+            }
+           // move_ani.SetBool("Is_Left_Idle", false);
+            // move_ani.SetBool("IsWalk_Right", false);
+            // move_ani.SetBool("IsWalk_Back", true);
             _CamerafollowObject.CallTurn();
         }
         else
         {
-            Vector3 rotator = new Vector3(transform.rotation.x, 0f, transform.rotation.z);
-            transform.rotation = Quaternion.Euler(rotator);
+            //Vector3 rotator = new Vector3(transform.rotation.x, 0f, transform.rotation.z);
+           // transform.rotation = Quaternion.Euler(rotator);
             FaceRight = !FaceRight;
 
+            if (UserInput.instance.moveInput.x == 0)
+            {
+                move_ani.SetBool("Is_Left_Idle", false);
+            }
 
+            // move_ani.SetBool("Is_Left_Idle", false);
+            //move_ani.SetBool("IsWalk_Back", false);
+            //move_ani.SetBool("IsWalk_Right", true);
             _CamerafollowObject.CallTurn();
         }
+
+        
     }
 
 
