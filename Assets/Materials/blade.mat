@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: blade
-  m_Shader: {fileID: -6465566751694194690, guid: ce0fb6450fec7b249ad03c922a83fbf1,
+  m_Shader: {fileID: -6465566751694194690, guid: 6aefb4e4c7b11b1418aaf779db174094,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -82,6 +82,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -113,15 +117,18 @@ Material:
     - _GlossyReflections: 0
     - _Lighting: 1
     - _Metallic: 0
+    - _MidShadow: 0.217
     - _OcclusionStrength: 1
     - _Outline_Size: 8.45
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _Shadow: 1
     - _Shadow_Brightness: 0.65
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
+    - _Specular: 8.62
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
@@ -131,5 +138,10 @@ Material:
     - _BaseColor: {r: 0.83137256, g: 0.87058824, b: 0.9254902, a: 1}
     - _Color: {r: 0.83137256, g: 0.87058824, b: 0.9254902, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _LightDirection: {r: 0.48, g: -0.19, b: -0.5, a: 0}
+    - _MainColor: {r: 1, g: 1, b: 1, a: 0}
+    - _MidShadowColor: {r: 0.8326362, g: 0.87265235, b: 0.9339623, a: 0}
+    - _ShadowColor: {r: 0.86774653, g: 0.9140975, b: 0.9433962, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []

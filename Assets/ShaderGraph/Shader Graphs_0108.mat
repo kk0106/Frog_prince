@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Functional mushrooms
+  m_Name: Shader Graphs_0108
   m_Shader: {fileID: -6465566751694194690, guid: 6aefb4e4c7b11b1418aaf779db174094,
     type: 3}
   m_ValidKeywords: []
@@ -21,16 +21,8 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a3c1e33116ee2bd42a4e85889471d665, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Main_Texture:
-        m_Texture: {fileID: 2800000, guid: a3c1e33116ee2bd42a4e85889471d665, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _Texture:
-        m_Texture: {fileID: 2800000, guid: a3c1e33116ee2bd42a4e85889471d665, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -47,29 +39,19 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Float: 6.5
-    - _Glossiness: 32
-    - _Lighting: 0
-    - _MidShadow: 0.053
-    - _Outline_Size: 0
+    - _MidShadow: 0.474
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RimAmount: 0.716
-    - _RimThreshold: 0.1
-    - _Shadow: 0.182
-    - _Shadow_Brightness: 0.5
-    - _Specular: 5
+    - _Shadow: 0.53
+    - _Specular: 6.27
     m_Colors:
-    - _AmbientColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
-    - _Color: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
-    - _LightDirection: {r: -1, g: 2.72, b: 0.5, a: 0}
-    - _MainColor: {r: 1, g: 1, b: 1, a: 0}
-    - _MidShadowColor: {r: 0.8196079, g: 0.8196079, b: 0.8196079, a: 0}
-    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ShadowColor: {r: 0.8784314, g: 0.8784314, b: 0.8784314, a: 0}
-    - _SpecularColor: {r: 0, g: 0, b: 0, a: 1}
+    - _LightDirection: {r: 1.1, g: 1.84, b: -0.31, a: 0}
+    - _MainColor: {r: 0.6037736, g: 0.34785986, b: 0.259167, a: 0}
+    - _MidShadowColor: {r: 0.8113208, g: 0.5451062, b: 0.4094874, a: 1}
+    - _ShadowColor: {r: 0.4716981, g: 0.2444588, b: 0.14907439, a: 1}
+    - _SpecularColor: {r: 0.8584906, g: 0.55846727, b: 0.44139376, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &7242786207694082460
+--- !u!114 &6589600896199622896
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
