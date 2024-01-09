@@ -69,19 +69,19 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "uiChoose",
-                    "type": "PassThrough",
-                    "id": "5ce15b51-734f-4bb9-99f1-41b5f76eb816",
-                    "expectedControlType": "Vector2",
+                    "name": "startAni",
+                    "type": "Button",
+                    "id": "afc95239-0db2-4455-a34a-21438766dd1e",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "startAni",
-                    "type": "Button",
-                    "id": "afc95239-0db2-4455-a34a-21438766dd1e",
-                    "expectedControlType": "Button",
+                    "name": "uiChoose",
+                    "type": "PassThrough",
+                    "id": "5ce15b51-734f-4bb9-99f1-41b5f76eb816",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -126,6 +126,15 @@
                     "name": "notsell",
                     "type": "Button",
                     "id": "61eb97ae-ad49-4c48-ae6a-64a62bb05ec9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "end",
+                    "type": "Button",
+                    "id": "c3644ed3-cb52-4f0d-b133-8a7844f77cc1",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -421,39 +430,6 @@
                 },
                 {
                     "name": "",
-                    "id": "ffef414c-c2e3-44f0-9163-aa9bdd041990",
-                    "path": "<XInputController>/buttonNorth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "BackPack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1da701dd-f79f-43cc-aa0f-8b946fad0c2b",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "BackPack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "da199ada-4562-4285-be28-8d0085b451f3",
-                    "path": "<XInputController>/leftStick",
-                    "interactions": "",
-                    "processors": "NormalizeVector2",
-                    "groups": "",
-                    "action": "uiChoose",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "64ffbdcc-5905-43ac-9045-56b760a47976",
                     "path": "<XInputController>/buttonEast",
                     "interactions": "",
@@ -553,17 +529,6 @@
                 },
                 {
                     "name": "",
-                    "id": "02c3ad4a-a090-4cd4-8014-137e13d42cd3",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "uiChoose",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "0ccb792a-3b84-4437-9222-49b2b688694f",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
@@ -625,6 +590,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "notsell",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1e5c5d22-3a55-4f6f-bf98-2b886f84ea5a",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "end",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ee05660f-d368-40b8-96dd-e867c9324f18",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "end",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "da199ada-4562-4285-be28-8d0085b451f3",
+                    "path": "<XInputController>/leftStick",
+                    "interactions": "",
+                    "processors": "NormalizeVector2",
+                    "groups": "",
+                    "action": "uiChoose",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "02c3ad4a-a090-4cd4-8014-137e13d42cd3",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "uiChoose",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

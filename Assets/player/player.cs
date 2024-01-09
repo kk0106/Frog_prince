@@ -38,6 +38,7 @@ public class player : MonoBehaviour
     public bool Falling;
     private float JumpTimeCounter;
     public float y;
+    public static bool LongJump;
 
     [SerializeField] float jumpHeight=5;
     [SerializeField] Vector3 gravityScale ;
@@ -87,7 +88,7 @@ public class player : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-       
+        LongJump = false;
 
         rb = GetComponent<Rigidbody>();
         move_ani = GetComponent<Animator>();
@@ -106,6 +107,14 @@ public class player : MonoBehaviour
 
     private void Update()
     {
+        if (NewT0toT1.a == 1)
+        {
+            MoveSpeed = 0;
+            MoveSpeed1 = 0;
+
+            JumpForce = 0;
+        }
+
         if(ismushroom.ismushrooma==1)
         {
             maxValue = -43.8f;
@@ -288,8 +297,8 @@ public class player : MonoBehaviour
             if (JumpTime > 0 && Jumping)
             {
                 rb.velocity = new Vector2(rb.velocity.x, JumpForce);
-                
 
+                LongJump = true;
             }
 
 
@@ -300,6 +309,9 @@ public class player : MonoBehaviour
         {
             Jumping = false;
             Falling = true;
+
+
+            LongJump = false;
         }
       
     }
@@ -376,7 +388,7 @@ public class player : MonoBehaviour
     {
         moveInput = UserInput.instance.moveInput.x;
         moveInput1=UserInput.instance.moveInput.y;
-         if (moveInput > 0 )
+       /*  if (moveInput > 0 )
           {
              move_ani.SetBool("IsWalk_Right", true);
              // move_ani.SetBool("IsWalk_Back", false);
@@ -386,11 +398,11 @@ public class player : MonoBehaviour
         if (moveInput < 0)
         {
              // move_ani.SetBool("IsWalk_Right", false);
-             move_ani.SetBool("IsWalk_Back", true);
+           /  move_ani.SetBool("IsWalk_Back", true);
             TurnCheck();
         }
 
-        if (moveInput == 0)
+        /*if (moveInput == 0)
         {
             move_ani.SetBool("IsWalk_Back", false);
 
@@ -404,20 +416,20 @@ public class player : MonoBehaviour
                 move_ani.SetBool("Is_Left_Idle", true);
             }
 
-        }
+        }*/
 
         
 
-        /*   if(moveInput1> 0 || moveInput1<0)
+           if(moveInput> 0 || moveInput<0)
           {
-              TurnCheck1();
-              move_ani.SetBool("IsWalk_Back", true);
+              TurnCheck();
+              move_ani.SetBool("IsWalk_Right", true);
 
           }
           else
           {
-              move_ani.SetBool("IsWalk_Back", false);
-          }*/
+              move_ani.SetBool("IsWalk_Right", false);
+          }
 
         rb.velocity = new Vector3(moveInput * MoveSpeed, rb.velocity.y,moveInput1*MoveSpeed1);
     }
@@ -477,15 +489,15 @@ public class player : MonoBehaviour
     {
         if (FaceRight)
         {
-           // Vector3 rotator = new Vector3(transform.rotation.x, 180f, transform.rotation.z);
-           // transform.rotation = Quaternion.Euler(rotator);
+           Vector3 rotator = new Vector3(transform.rotation.x, 180f, transform.rotation.z);
+            transform.rotation = Quaternion.Euler(rotator);
             FaceRight = !FaceRight;
 
 
-            if(UserInput.instance.moveInput.x == 0)
-            {
-                move_ani.SetBool("Is_Left_Idle", true);
-            }
+           // if(UserInput.instance.moveInput.x == 0)
+            //{
+              //  move_ani.SetBool("Is_Left_Idle", true);
+            //}
            // move_ani.SetBool("Is_Left_Idle", false);
             // move_ani.SetBool("IsWalk_Right", false);
             // move_ani.SetBool("IsWalk_Back", true);
@@ -493,14 +505,14 @@ public class player : MonoBehaviour
         }
         else
         {
-            //Vector3 rotator = new Vector3(transform.rotation.x, 0f, transform.rotation.z);
-           // transform.rotation = Quaternion.Euler(rotator);
+            Vector3 rotator = new Vector3(transform.rotation.x, 0f, transform.rotation.z);
+            transform.rotation = Quaternion.Euler(rotator);
             FaceRight = !FaceRight;
 
-            if (UserInput.instance.moveInput.x == 0)
-            {
-                move_ani.SetBool("Is_Left_Idle", false);
-            }
+            //if (UserInput.instance.moveInput.x == 0)
+            //{
+              //  move_ani.SetBool("Is_Left_Idle", false);
+            //}
 
             // move_ani.SetBool("Is_Left_Idle", false);
             //move_ani.SetBool("IsWalk_Back", false);

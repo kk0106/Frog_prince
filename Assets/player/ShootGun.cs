@@ -8,12 +8,14 @@ public class ShootGun : MonoBehaviour
     public GameObject projectilePrefab;
     public float projectileSpeed = 10f;
     public static int GetApple;
+    public static int shoseShot;
 
 
 
     private void Start()
     {
         GetApple = 0;
+        shoseShot = 0;
     }
     // Update is called once per frame
     void Update()
@@ -56,6 +58,7 @@ public class ShootGun : MonoBehaviour
            rb.useGravity = false;
 
             eggToShoot = false;
+            shoseShot=1;
         }
     }
 }

@@ -91,19 +91,19 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""uiChoose"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""5ce15b51-734f-4bb9-99f1-41b5f76eb816"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""name"": ""startAni"",
+                    ""type"": ""Button"",
+                    ""id"": ""afc95239-0db2-4455-a34a-21438766dd1e"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""startAni"",
-                    ""type"": ""Button"",
-                    ""id"": ""afc95239-0db2-4455-a34a-21438766dd1e"",
-                    ""expectedControlType"": ""Button"",
+                    ""name"": ""uiChoose"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""5ce15b51-734f-4bb9-99f1-41b5f76eb816"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -148,6 +148,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""name"": ""notsell"",
                     ""type"": ""Button"",
                     ""id"": ""61eb97ae-ad49-4c48-ae6a-64a62bb05ec9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""end"",
+                    ""type"": ""Button"",
+                    ""id"": ""c3644ed3-cb52-4f0d-b133-8a7844f77cc1"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -443,39 +452,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ffef414c-c2e3-44f0-9163-aa9bdd041990"",
-                    ""path"": ""<XInputController>/buttonNorth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BackPack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1da701dd-f79f-43cc-aa0f-8b946fad0c2b"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BackPack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""da199ada-4562-4285-be28-8d0085b451f3"",
-                    ""path"": ""<XInputController>/leftStick"",
-                    ""interactions"": """",
-                    ""processors"": ""NormalizeVector2"",
-                    ""groups"": """",
-                    ""action"": ""uiChoose"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""64ffbdcc-5905-43ac-9045-56b760a47976"",
                     ""path"": ""<XInputController>/buttonEast"",
                     ""interactions"": """",
@@ -575,17 +551,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""02c3ad4a-a090-4cd4-8014-137e13d42cd3"",
-                    ""path"": ""<Mouse>/rightButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""uiChoose"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""0ccb792a-3b84-4437-9222-49b2b688694f"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
@@ -649,6 +614,50 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""notsell"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1e5c5d22-3a55-4f6f-bf98-2b886f84ea5a"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""end"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ee05660f-d368-40b8-96dd-e867c9324f18"",
+                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""end"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""da199ada-4562-4285-be28-8d0085b451f3"",
+                    ""path"": ""<XInputController>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": ""NormalizeVector2"",
+                    ""groups"": """",
+                    ""action"": ""uiChoose"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""02c3ad4a-a090-4cd4-8014-137e13d42cd3"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""uiChoose"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -664,13 +673,14 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_playerControls_jump = m_playerControls.FindAction("jump", throwIfNotFound: true);
         m_playerControls_uiTouch = m_playerControls.FindAction("uiTouch", throwIfNotFound: true);
         m_playerControls_BackPack = m_playerControls.FindAction("BackPack", throwIfNotFound: true);
-        m_playerControls_uiChoose = m_playerControls.FindAction("uiChoose", throwIfNotFound: true);
         m_playerControls_startAni = m_playerControls.FindAction("startAni", throwIfNotFound: true);
+        m_playerControls_uiChoose = m_playerControls.FindAction("uiChoose", throwIfNotFound: true);
         m_playerControls_ShootGun = m_playerControls.FindAction("ShootGun", throwIfNotFound: true);
         m_playerControls_IngameAni = m_playerControls.FindAction("IngameAni", throwIfNotFound: true);
         m_playerControls_uiback = m_playerControls.FindAction("uiback", throwIfNotFound: true);
         m_playerControls_Sell = m_playerControls.FindAction("Sell", throwIfNotFound: true);
         m_playerControls_notsell = m_playerControls.FindAction("notsell", throwIfNotFound: true);
+        m_playerControls_end = m_playerControls.FindAction("end", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -739,13 +749,14 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_playerControls_jump;
     private readonly InputAction m_playerControls_uiTouch;
     private readonly InputAction m_playerControls_BackPack;
-    private readonly InputAction m_playerControls_uiChoose;
     private readonly InputAction m_playerControls_startAni;
+    private readonly InputAction m_playerControls_uiChoose;
     private readonly InputAction m_playerControls_ShootGun;
     private readonly InputAction m_playerControls_IngameAni;
     private readonly InputAction m_playerControls_uiback;
     private readonly InputAction m_playerControls_Sell;
     private readonly InputAction m_playerControls_notsell;
+    private readonly InputAction m_playerControls_end;
     public struct PlayerControlsActions
     {
         private @Controls m_Wrapper;
@@ -757,13 +768,14 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @jump => m_Wrapper.m_playerControls_jump;
         public InputAction @uiTouch => m_Wrapper.m_playerControls_uiTouch;
         public InputAction @BackPack => m_Wrapper.m_playerControls_BackPack;
-        public InputAction @uiChoose => m_Wrapper.m_playerControls_uiChoose;
         public InputAction @startAni => m_Wrapper.m_playerControls_startAni;
+        public InputAction @uiChoose => m_Wrapper.m_playerControls_uiChoose;
         public InputAction @ShootGun => m_Wrapper.m_playerControls_ShootGun;
         public InputAction @IngameAni => m_Wrapper.m_playerControls_IngameAni;
         public InputAction @uiback => m_Wrapper.m_playerControls_uiback;
         public InputAction @Sell => m_Wrapper.m_playerControls_Sell;
         public InputAction @notsell => m_Wrapper.m_playerControls_notsell;
+        public InputAction @end => m_Wrapper.m_playerControls_end;
         public InputActionMap Get() { return m_Wrapper.m_playerControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -794,12 +806,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @BackPack.started += instance.OnBackPack;
             @BackPack.performed += instance.OnBackPack;
             @BackPack.canceled += instance.OnBackPack;
-            @uiChoose.started += instance.OnUiChoose;
-            @uiChoose.performed += instance.OnUiChoose;
-            @uiChoose.canceled += instance.OnUiChoose;
             @startAni.started += instance.OnStartAni;
             @startAni.performed += instance.OnStartAni;
             @startAni.canceled += instance.OnStartAni;
+            @uiChoose.started += instance.OnUiChoose;
+            @uiChoose.performed += instance.OnUiChoose;
+            @uiChoose.canceled += instance.OnUiChoose;
             @ShootGun.started += instance.OnShootGun;
             @ShootGun.performed += instance.OnShootGun;
             @ShootGun.canceled += instance.OnShootGun;
@@ -815,6 +827,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @notsell.started += instance.OnNotsell;
             @notsell.performed += instance.OnNotsell;
             @notsell.canceled += instance.OnNotsell;
+            @end.started += instance.OnEnd;
+            @end.performed += instance.OnEnd;
+            @end.canceled += instance.OnEnd;
         }
 
         private void UnregisterCallbacks(IPlayerControlsActions instance)
@@ -840,12 +855,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @BackPack.started -= instance.OnBackPack;
             @BackPack.performed -= instance.OnBackPack;
             @BackPack.canceled -= instance.OnBackPack;
-            @uiChoose.started -= instance.OnUiChoose;
-            @uiChoose.performed -= instance.OnUiChoose;
-            @uiChoose.canceled -= instance.OnUiChoose;
             @startAni.started -= instance.OnStartAni;
             @startAni.performed -= instance.OnStartAni;
             @startAni.canceled -= instance.OnStartAni;
+            @uiChoose.started -= instance.OnUiChoose;
+            @uiChoose.performed -= instance.OnUiChoose;
+            @uiChoose.canceled -= instance.OnUiChoose;
             @ShootGun.started -= instance.OnShootGun;
             @ShootGun.performed -= instance.OnShootGun;
             @ShootGun.canceled -= instance.OnShootGun;
@@ -861,6 +876,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @notsell.started -= instance.OnNotsell;
             @notsell.performed -= instance.OnNotsell;
             @notsell.canceled -= instance.OnNotsell;
+            @end.started -= instance.OnEnd;
+            @end.performed -= instance.OnEnd;
+            @end.canceled -= instance.OnEnd;
         }
 
         public void RemoveCallbacks(IPlayerControlsActions instance)
@@ -887,12 +905,13 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnUiTouch(InputAction.CallbackContext context);
         void OnBackPack(InputAction.CallbackContext context);
-        void OnUiChoose(InputAction.CallbackContext context);
         void OnStartAni(InputAction.CallbackContext context);
+        void OnUiChoose(InputAction.CallbackContext context);
         void OnShootGun(InputAction.CallbackContext context);
         void OnIngameAni(InputAction.CallbackContext context);
         void OnUiback(InputAction.CallbackContext context);
         void OnSell(InputAction.CallbackContext context);
         void OnNotsell(InputAction.CallbackContext context);
+        void OnEnd(InputAction.CallbackContext context);
     }
 }
