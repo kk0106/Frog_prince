@@ -41,12 +41,15 @@ public class sword : MonoBehaviour
 
         if (a==1||a==2||a==3||a==4)
         {
-            spr_talk.sprite = img[1];
+           
            time-=Time.deltaTime;
 
           // cam.SetActive(true);
         }
-
+        if (time < 1.2)
+        {
+            spr_talk.sprite = img[1];
+        }
         if (time < 1)
         {
            
