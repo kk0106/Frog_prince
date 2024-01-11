@@ -21,7 +21,16 @@ public class DialogueActivator : MonoBehaviour, IInteractable
            }
         }
     }
-
+    public void NullInteract(player player)
+    {
+        
+        {
+            if (player.Interactable is DialogueActivator dialogueActivator && dialogueActivator == this)
+            {
+                player.Interactable = null;
+            }
+        }
+    }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player") && other.TryGetComponent(out player player))

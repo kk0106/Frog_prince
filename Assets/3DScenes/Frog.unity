@@ -10589,7 +10589,6 @@ GameObject:
   - component: {fileID: 464039643}
   - component: {fileID: 464039642}
   - component: {fileID: 464039641}
-  - component: {fileID: 464039644}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -10626,7 +10625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueObject: {fileID: 11400000, guid: 05b9c8d657bbe004eab5a27f3e05c9f2, type: 2}
   events:
-  - name: 
+  - name: Yes
     onPickedResponse:
       m_PersistentCalls:
         m_Calls:
@@ -10638,6 +10637,30 @@ MonoBehaviour:
             m_ObjectArgument: {fileID: 11400000, guid: 18ac4b7ae90cbc547ac52e3544a21808,
               type: 2}
             m_ObjectArgumentAssemblyTypeName: DialogueObject, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 464039642}
+          m_TargetAssemblyTypeName: DialogueActivator, Assembly-CSharp
+          m_MethodName: NullInteract
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1910171966}
+            m_ObjectArgumentAssemblyTypeName: player, Assembly-CSharp
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 464039639}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -10656,7 +10679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueObject: {fileID: 11400000, guid: 05b9c8d657bbe004eab5a27f3e05c9f2, type: 2}
-  instant: 0
+  instant: 1
 --- !u!65 &464039643
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10668,21 +10691,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 247.17264, y: 105.439285, z: 586.384}
-  m_Center: {x: -78.59698, y: 5.257607, z: -33.244156}
---- !u!114 &464039644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 464039639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67485ff83792225448996bc1a50c3bc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hint: {fileID: 205871371}
+  m_Size: {x: 137.76282, y: 105.439285, z: 271.834}
+  m_Center: {x: -33.727856, y: 5.257607, z: -81.773895}
 --- !u!1 &469008731
 GameObject:
   m_ObjectHideFlags: 0
@@ -12989,7 +12999,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &559364761
 Transform:
   m_ObjectHideFlags: 0
@@ -17458,7 +17468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueObject: {fileID: 11400000, guid: 50263520448f9354a86448f5e27e3e6c, type: 2}
-  instant: 0
+  instant: 1
 --- !u!65 &722755180
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17470,8 +17480,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 247.17264, y: 105.439285, z: 586.384}
-  m_Center: {x: -78.59698, y: 5.257607, z: -33.244156}
+  m_Size: {x: 170.81395, y: 162.75432, z: 311.42178}
+  m_Center: {x: -28.40043, y: 33.915203, z: -69.184326}
 --- !u!114 &722755181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21224,7 +21234,6 @@ GameObject:
   - component: {fileID: 877539523}
   - component: {fileID: 877539522}
   - component: {fileID: 877539524}
-  - component: {fileID: 877539528}
   - component: {fileID: 877539526}
   - component: {fileID: 877539525}
   - component: {fileID: 877539527}
@@ -21371,18 +21380,6 @@ MonoBehaviour:
   a: {fileID: 245126071}
   b: {fileID: 1557743540}
   papa: {fileID: 1705631278}
---- !u!114 &877539528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 877539521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d605cda4375d80b418fc98f7305f8dfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &877922965
 GameObject:
   m_ObjectHideFlags: 0
@@ -43756,7 +43753,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1729826806
 RectTransform:
   m_ObjectHideFlags: 0
