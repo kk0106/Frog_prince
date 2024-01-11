@@ -35,9 +35,9 @@ public class hp : MonoBehaviour
     void Start()
     {
         GGpanel.SetActive(false);
-        blood.SetActive(true);
-        blood1 .SetActive(true);
-        blood2 .SetActive(true);
+       // blood.SetActive(true);
+     //   blood1 .SetActive(true);
+       // blood2 .SetActive(true);
         die.SetActive(false);
         die1.SetActive(false);
         die2.SetActive(false);
@@ -61,9 +61,9 @@ public class hp : MonoBehaviour
 
         if (HP== 3)
         {
-            blood.SetActive(true);
-            blood1.SetActive(true);
-            blood2.SetActive(true);
+       //     blood.SetActive(true);
+        //    blood1.SetActive(true);
+         //   blood2.SetActive(true);
             die.SetActive(false);
             die1.SetActive(false);
             die2.SetActive(false);
@@ -72,10 +72,10 @@ public class hp : MonoBehaviour
 
         if(HP== 2)
         {
-            blood.SetActive(false);
-            blood1.SetActive(true);
-            blood2.SetActive(true);
-            die.SetActive(true);
+           // blood.SetActive(false);
+           // blood1.SetActive(true);
+           // blood2.SetActive(true);
+          //  die.SetActive(true);
             die1.SetActive(false);
             die2.SetActive(false);
             GGpanel.SetActive (false);
@@ -83,11 +83,11 @@ public class hp : MonoBehaviour
 
         if(HP== 1)
         {
-            blood.SetActive(false);
-            blood1.SetActive(false);
-            blood2.SetActive(true);
-            die.SetActive(true);
-            die1.SetActive(true);
+          // blood.SetActive(false);
+           // blood1.SetActive(false);
+          //  blood2.SetActive(true);
+          //  die.SetActive(true);
+          //  die1.SetActive(true);
             die2.SetActive(false);
             GGpanel .SetActive(false);
         }
@@ -99,9 +99,9 @@ public class hp : MonoBehaviour
             blood.SetActive(false);
             blood1.SetActive(false);
             blood2.SetActive(false);
-            die.SetActive(true);
-            die1.SetActive(true);
-            die2.SetActive(true);
+          //  die.SetActive(true);
+          //  die1.SetActive(true);
+          //  die2.SetActive(true);
         }
     }
 

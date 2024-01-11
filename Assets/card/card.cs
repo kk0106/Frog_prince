@@ -6,6 +6,9 @@ public class card : MonoBehaviour
 {
     private Animator ani;
     public static int CardDie;
+    public GameObject a1;
+
+
 
     public int a;
     public float time;
@@ -22,6 +25,8 @@ public class card : MonoBehaviour
         a = 0;
 
         cardcollider.SetActive(true);
+
+        a1.SetActive(false);
     }
 
     // Update is called once per frame
@@ -35,14 +40,15 @@ public class card : MonoBehaviour
         if(time< 0)
         {
           
-            ani.SetBool("remove", true);
+           a1.SetActive (true);
 
             CardDie = 1;
         }
 
-        if (time < -0.7f)
+        if (time < -0.2f)
         {
             cardcollider.gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
         }
     }
 

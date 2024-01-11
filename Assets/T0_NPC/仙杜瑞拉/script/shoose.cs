@@ -8,7 +8,7 @@ public class shoose : MonoBehaviour
     public GameObject cardd;
     public GameObject shooses;
     public GameObject shooses2;
-
+    
     public GameObject cindy;
     public GameObject talk;
     public GameObject talkCam; 
@@ -20,6 +20,7 @@ public class shoose : MonoBehaviour
     public Sprite[] Talkimg;
     public float time;
     public float talkTime;
+    public float FinishTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +32,7 @@ public class shoose : MonoBehaviour
         talkCam.gameObject.SetActive(false);
 
         shooses2.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -67,11 +69,37 @@ public class shoose : MonoBehaviour
             talkSpr.sprite = Talkimg[1];
             cindySpr.sprite = Cindyimg[1];
         }
-        if (talkTime < 1)
+        if (talkTime < 0.5)
         {
             time = 5;
             shooses2.SetActive(true);
             talkCam.SetActive(false);
+            talk.SetActive(false) ;
         }
+
+
+        if (!cardd.activeInHierarchy)
+        {
+            FinishTime-= Time.deltaTime;
+
+        }
+
+        if(FinishTime<3)
+        {
+            talkCam.SetActive(true) ;
+            talkSpr.sprite = Talkimg[2];
+            talk.SetActive(true );
+            CardStartTriggerValue.start = 1;
+        }
+
+        if(FinishTime < 0)
+        {
+            talkCam.SetActive(false);
+            talk.SetActive(false);
+
+            CardStartTriggerValue.start = 0;
+        }
+
+        
     }
 }

@@ -115,7 +115,15 @@ public class player : MonoBehaviour
             JumpForce = 0;
         }
 
-        if(ismushroom.ismushrooma==1)
+        if (CardStartTriggerValue.start == 1)
+        {
+            MoveSpeed = 0;
+            MoveSpeed1 = 0;
+
+            JumpForce = 0;
+        }
+
+        if (ismushroom.ismushrooma==1)
         {
             maxValue = -43.8f;
             minValue = -48f;

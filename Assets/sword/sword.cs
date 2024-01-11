@@ -46,7 +46,7 @@ public class sword : MonoBehaviour
 
           // cam.SetActive(true);
         }
-        if (time < 1.2)
+        if (time < 0.9)
         {
             spr_talk.sprite = img[1];
         }
