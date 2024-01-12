@@ -7,12 +7,16 @@ public class ANI_LONGNOSE : MonoBehaviour
     public GameObject a;
     public GameObject b;
     public GameObject papa;
+    public float time;
+    private Animator papaani;
+
     private Animator animator;
     AudioManager audioManager;
     private bool hasFunctionBeenCalled = false;
     // Start is called before the first frame update
     void Start()
     {
+        papaani=papa.GetComponent<Animator>();
         animator = GetComponent<Animator>();  
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
@@ -25,11 +29,24 @@ public class ANI_LONGNOSE : MonoBehaviour
             animator.SetBool("break", true);
             papa.SetActive(true);
             b.SetActive(false);
+
+            time-=Time.deltaTime;
+
              if (!hasFunctionBeenCalled)
             {
             AudioManager.Instance.PlaySFX(AudioManager.Instance.bigcrack);
             hasFunctionBeenCalled = true;
             }
+        }
+
+        if(time<3)
+        {
+            papaani.SetBool("scared", true);
+        }
+
+        if (time < 0)
+        {
+            papaani.SetBool("run", true);
         }
     }
 }
