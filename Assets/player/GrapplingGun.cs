@@ -18,6 +18,7 @@ public class GrapplingGun : MonoBehaviour
     private Animator _animator;
     public uiMenu uiMenu;
     [SerializeField] private DialogueUI dialogueUI;
+    [SerializeField] int time;
 
     public DialogueUI DialogueUI
     {
@@ -52,6 +53,7 @@ public class GrapplingGun : MonoBehaviour
         if (uiMenu.Opened) return;
         if (UserInput.instance.controls.playerControls.GrappleGun.WasPressedThisFrame())
         {
+           StartCoroutine(Eattime());
             if (shootGun.eggToShoot)
             {
             return;
@@ -63,6 +65,7 @@ public class GrapplingGun : MonoBehaviour
         else if (UserInput.instance.controls.playerControls.GrappleGun.WasReleasedThisFrame())
         {
             StopGrapple();
+            StopCoroutine(Eattime());
             grappleCheck = 0;
             if (currentRangeIndicator != null)
             {
@@ -97,14 +100,21 @@ public class GrapplingGun : MonoBehaviour
             // Set the connected anchor of the spring joint to the updated grapple point
             joint.connectedAnchor = grapplePoint;
         }
-        if (UserInput.instance.controls.playerControls.GrappleGun.WasReleasedThisFrame() )
-        {
-            ApplyDamageToBreakableObject();
-        }
+        //if (UserInput.instance.controls.playerControls.GrappleGun.WasReleasedThisFrame() )
+        //{
+       //     ApplyDamageToBreakableObject();
+       // }
         if (IsGrappling())
         {
           //  playerRigidbody.velocity += Physics.gravity * Time.deltaTime;
         }
+    }
+
+    IEnumerator Eattime ()
+    {
+    yield return new WaitForSeconds(time);
+
+       ApplyDamageToBreakableObject();
     }
 
     void ApplyDamageToBreakableObject()
@@ -125,6 +135,7 @@ public class GrapplingGun : MonoBehaviour
             breakableObject.ApplyDamage(damageAmount);
             breakableObject = null;
         }
+        StopGrapple();
     }
 
     void SetupGrappleVisualEffect()

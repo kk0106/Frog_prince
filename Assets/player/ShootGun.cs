@@ -30,7 +30,7 @@ public class ShootGun : MonoBehaviour
             GetApple = 0;
         }
 
-        if (UserInput.instance.controls.playerControls.ShootGun.WasPressedThisFrame())
+        if (UserInput.instance.controls.playerControls.ShootGun.WasReleasedThisFrame())
         {
             // Fire a projectile
             Shoot();
