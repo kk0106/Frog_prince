@@ -79,24 +79,24 @@ public class RedApplee : MonoBehaviour
             spr2.sprite = img2[0];
         }
 
-        if (time <3.5)
+        if (time <2)
         {
             spr2.sprite = img2[1];
         }
 
-        if (time < 2)
+        if (time < 0)
         {
             spr2.sprite = img2[2];
         }
 
-        if (time <0.5)
+        if (time <-3)
         {
             spr2.sprite = img2[3];
         }
 
         
 
-        if (time <-1.8)
+        if (time <-5)
         {
             AppleCount = 0;
 
