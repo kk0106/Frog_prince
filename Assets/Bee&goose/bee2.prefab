@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5794384889394031809}
   - component: {fileID: 5794384889394031807}
   - component: {fileID: 5794384889394031804}
-  - component: {fileID: 5794384889394031805}
   - component: {fileID: 5794384889394031810}
   - component: {fileID: 5794384889394031811}
   - component: {fileID: 5794384889394031808}
+  - component: {fileID: 7566681824531908035}
   m_Layer: 0
   m_Name: bee2
   m_TagString: ball
@@ -109,20 +109,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!136 &5794384889394031805
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5794384889394031814}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 4.0585136
-  m_Height: 8.117029
-  m_Direction: 1
-  m_Center: {x: -0.3616492, y: 0.012447839, z: 0.23968697}
 --- !u!54 &5794384889394031810
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -166,3 +152,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b99b200e80f92f944b3801b7ffc62220, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &7566681824531908035
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5794384889394031814}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.5779214
+  m_Height: 5.155843
+  m_Direction: 1
+  m_Center: {x: 0.045572914, y: -0.24544318, z: 0.13029218}

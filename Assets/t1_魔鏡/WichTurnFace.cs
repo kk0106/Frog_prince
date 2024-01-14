@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class WichTurnFace : MonoBehaviour
 {
+
+    public GameObject apple;
+    public Transform[] points;
+
+    public float Ins_time = 2;
+
+
     public GameObject wiches;
     private Animator ani;
     public static int CanAttack;
@@ -37,6 +44,16 @@ public class WichTurnFace : MonoBehaviour
         {
             ani.SetBool("change", false);
             CanAttack= 0;
+
+            InvokeRepeating("ApppleDown", Ins_time, Ins_time);
         }
     }
+
+    void ApppleDown()
+    {
+        int Random_points = Random.Range(0, points.Length);
+
+        Instantiate(apple, points[Random_points].transform.position, points[Random_points].transform.rotation);
+    }
+
 }

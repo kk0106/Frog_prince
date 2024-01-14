@@ -5,31 +5,64 @@ using UnityEngine;
 public class apple_trap : MonoBehaviour
 {
 
-   
 
-   
+    public GameObject apple;
+    public Transform[] points;
+
+    public static int aa;
+
+    public float Ins_time = 2;
+
 
     public float spwanTime;
     public float CountTime;
 
     public Vector3 SpwanPosition;
 
-    public GameObject apple;
+   // public GameObject apple;
     
     // Start is called before the first frame update
     void Start()
     {
-       //estroy(apple, 1f);
-     
+        //estroy(apple, 1f);
+        InvokeRepeating("ApppleDown", Ins_time, Ins_time);
     }
-
+    
     // Update is called once per frame
     void Update()
     {
-        OnMouseDown();
-       //nvoke("Desroy", 1);
+        // OnMouseDown();
+        //nvoke("Desroy", 1);
+
+        if (points[1])
+        {
+            aa = 1;
+        }
+        if (points[2])
+        {
+            aa = 2;
+        }
+        if (points[3])
+        {
+            aa = 3;
+        }
+        if (points[4])
+        {
+            aa = 4;
+        }
+        if (points[5])
+        {
+            aa = 5;
+        }
+        if (points[6])
+        {
+            aa = 6;
+        }
+
+
+        Debug.Log(aa);
     }
-    private void OnMouseDown()
+  /*  private void OnMouseDown()
     {
 
    
@@ -64,7 +97,12 @@ public class apple_trap : MonoBehaviour
          Instantiate(apple, SpwanPosition, Quaternion.identity);
         
     }
-    
-    
+  */
+    void ApppleDown()
+    {
+        int Random_points = Random.Range(0, points.Length);
+
+        Instantiate(apple, points[Random_points].transform.position, points[Random_points].transform.rotation);
+    }
 
 }

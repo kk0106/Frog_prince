@@ -40,12 +40,18 @@ public class card : MonoBehaviour
         if(time< 0)
         {
           
-           a1.SetActive (true);
+           
 
             CardDie = 1;
         }
 
-        if (time < -0.2f)
+        if (time < -0.8f)
+        {
+           a1.SetActive (true);
+        }
+
+
+        if (time < -1)
         {
             cardcollider.gameObject.SetActive(false);
             this.gameObject.SetActive(false);

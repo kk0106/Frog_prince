@@ -107,15 +107,8 @@ public class player : MonoBehaviour
 
     private void Update()
     {
-        if (NewT0toT1.a == 1)
-        {
-            MoveSpeed = 0;
-            MoveSpeed1 = 0;
-
-            JumpForce = 0;
-        }
-
-        if (CardStartTriggerValue.start == 1)
+        
+        if (CardStartTriggerValue.start == 1|| NewT0toT1.a == 1|| eggTip.IsTip == 1||shoose.isEnd==1)
         {
             MoveSpeed = 0;
             MoveSpeed1 = 0;
@@ -135,13 +128,7 @@ public class player : MonoBehaviour
             minValue = -45.98f;
         }
 
-        if (eggTip.IsTip == 1)
-        {
-            MoveSpeed = 0;
-            MoveSpeed1 = 0;
-
-            JumpForce = 0;
-        }
+       
       /*  else
         {
             MoveSpeed = 2f;
@@ -509,7 +496,7 @@ public class player : MonoBehaviour
            // move_ani.SetBool("Is_Left_Idle", false);
             // move_ani.SetBool("IsWalk_Right", false);
             // move_ani.SetBool("IsWalk_Back", true);
-            _CamerafollowObject.CallTurn();
+           _CamerafollowObject.CallTurn();
         }
         else
         {

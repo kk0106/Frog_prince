@@ -16,6 +16,8 @@ public class shoose : MonoBehaviour
     private SpriteRenderer talkSpr;
 
 
+    public static int isEnd;
+
     public Sprite[] Cindyimg;
     public Sprite[] Talkimg;
     public float time;
@@ -32,6 +34,8 @@ public class shoose : MonoBehaviour
         talkCam.gameObject.SetActive(false);
 
         shooses2.SetActive(false);
+
+        isEnd = 0;
         
     }
 
@@ -81,15 +85,23 @@ public class shoose : MonoBehaviour
         if (!cardd.activeInHierarchy)
         {
             FinishTime-= Time.deltaTime;
+            cindySpr.sprite = Cindyimg[2];
 
+            talk.transform.position=new Vector3 (5.42f, 1, -30.02f);
         }
 
-        if(FinishTime<3)
+        if(FinishTime<4)
         {
             talkCam.SetActive(true) ;
+            
+
+            isEnd = 1;
+        }
+
+        if (FinishTime < 3.8)
+        {
             talkSpr.sprite = Talkimg[2];
-            talk.SetActive(true );
-            CardStartTriggerValue.start = 1;
+            talk.SetActive(true);
         }
 
         if(FinishTime < 0)
@@ -97,7 +109,7 @@ public class shoose : MonoBehaviour
             talkCam.SetActive(false);
             talk.SetActive(false);
 
-            CardStartTriggerValue.start = 0;
+            isEnd = 0;
         }
 
         

@@ -6,7 +6,22 @@ using UnityEngine.Rendering;
 public class gooseManger : MonoBehaviour
 {
     public GameObject bee;
+
     public float time;
+    public float timeA;
+
+    public float time1;
+    public float timeB;
+
+    public float time2;
+    public float timeC;
+
+    public float time3;
+    public float timeD;
+
+    public float time4;
+    public float timeE;
+
     private Animator ani;
     private Animator ani2;
     private Animator ani3;
@@ -36,29 +51,116 @@ public class gooseManger : MonoBehaviour
     {
 
         time -= Time.deltaTime;
-
+        time1 -= Time.deltaTime;
+        time2 -= Time.deltaTime;
+        time3 -= Time.deltaTime;
+        time4 -= Time.deltaTime;
+      
+        //1
         if (time < 0)
         {
             ani.SetBool("attack", true);
-            ani2.SetBool("attack", true);
-            ani3.SetBool("attack", true);
-            ani4.SetBool("attack", true);
-            ani5.SetBool("attack", true);
-
+           
             bee.SetActive(false);
         }
         if(time < -1)
         {
-            time = 4;
+            time = timeA;
         }
 
-        if (time == 4&&TriggerBall.isIN==1)
+        if (time == timeA&&TriggerBall.isIN==1)
         {
             ani.SetBool("attack", false);
+           
+            bee.SetActive(true);
+
+        }
+
+        //2
+        if (time1 < 0)
+        {
+          
+            ani2.SetBool("attack", true);
+         
+            bee.SetActive(false);
+        }
+        if (time1 < -1)
+        {
+            time1 = timeB;
+        }
+
+        if (time1 == timeB && TriggerBall.isIN == 1)
+        {
+           
             ani2.SetBool("attack", false);
+ 
+            bee.SetActive(true);
+
+        }
+
+
+        //3
+        if (time2 < 0)
+        {
+           
+            ani3.SetBool("attack", true);
+           
+            bee.SetActive(false);
+        }
+        if (time2 < -1)
+        {
+            time2 = timeC;
+        }
+
+        if (time2 == timeC && TriggerBall.isIN == 1)
+        {
+           
             ani3.SetBool("attack", false);
+           
+            bee.SetActive(true);
+
+        }
+
+        //4
+
+        if (time3 < 0)
+        {
+            
+            ani4.SetBool("attack", true);       
+
+            bee.SetActive(false);
+        }
+        if (time3 < -1)
+        {
+            time3 = timeD;
+        }
+
+        if (time3 == timeD && TriggerBall.isIN == 1)
+        {
+           
             ani4.SetBool("attack", false);
+
+            bee.SetActive(true);
+
+        }
+
+        //5
+        if (time4 < 0)
+        {
+            ani5.SetBool("attack", true);
+
+            bee.SetActive(false);
+        }
+        if (time4 < -1)
+        {
+            time4 = timeE;
+        }
+
+        if (time4 == timeE && TriggerBall.isIN == 1)
+        {
+          
             ani5.SetBool("attack", false);
+
             bee.SetActive(true);
 
         }

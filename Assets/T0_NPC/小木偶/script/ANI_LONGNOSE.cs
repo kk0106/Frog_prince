@@ -27,8 +27,8 @@ public class ANI_LONGNOSE : MonoBehaviour
         if(!a.activeInHierarchy)
         {
             animator.SetBool("break", true);
-            papa.SetActive(true);
-            b.SetActive(false);
+            
+          //  b.SetActive(false);
 
             time-=Time.deltaTime;
 
@@ -39,12 +39,19 @@ public class ANI_LONGNOSE : MonoBehaviour
             }
         }
 
-        if(time<3)
+        if(time<2)
         {
-            papaani.SetBool("scared", true);
+            papa.SetActive(true);
+          
         }
 
         if (time < 0)
+        {
+
+            papaani.SetBool("scared", true);
+        }
+
+        if (time < -1)
         {
             papaani.SetBool("run", true);
         }

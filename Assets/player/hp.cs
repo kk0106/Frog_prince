@@ -94,7 +94,7 @@ public class hp : MonoBehaviour
 
         if (HP == 0)
         {
-            GGpanel.SetActive(true);
+           // GGpanel.SetActive(true);
 
             blood.SetActive(false);
             blood1.SetActive(false);
@@ -107,7 +107,7 @@ public class hp : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "apple")
+        if (other.gameObject.tag == "apple"|| other.gameObject.tag == "BambooShoots")
         {
             HP -= 1;
 
@@ -160,11 +160,11 @@ public class hp : MonoBehaviour
             HP -= 1;
             a = 8;
         }
-        if( other.gameObject.tag == "BambooShoots")
-        {
-            HP -= 1;
-            a = 9;
-        }
+       // if( other.gameObject.tag == "BambooShoots")
+        //{
+        //    HP -= 1;
+         //   a = 9;
+        //}
         if (other.gameObject.tag == "ball"|| other.gameObject.tag == "goose")
         {
             HP -= 1;
