@@ -692,6 +692,8 @@ public class level1 : MonoBehaviour
                     axani.SetBool("attack", true);
 
                     rb.AddForce ( Vector3.forward * speed);
+
+                    Time.timeScale = 1;
                 }
 
 
