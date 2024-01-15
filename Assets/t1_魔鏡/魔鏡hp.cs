@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class 魔鏡hp : MonoBehaviour
 {
+    public float time;
+    public GameObject boom;
     public GameObject poison;
     public int hp;
     public GameObject BOSS;
@@ -15,6 +17,8 @@ public class 魔鏡hp : MonoBehaviour
         BOSS.SetActive(true);
         hp = 3;
 
+        boom.SetActive(false);
+
       spr = BOSS.GetComponent<SpriteRenderer>();
     }
 
@@ -22,6 +26,16 @@ public class 魔鏡hp : MonoBehaviour
     void Update()
     {
         if (hp < 0)
+        {
+            time-=Time.deltaTime;
+        }
+
+        if(time<1.5)
+        {
+            boom.SetActive(true);
+        }
+
+        if(time< 0.6)
         {
             BOSS.gameObject.SetActive(false);
 
