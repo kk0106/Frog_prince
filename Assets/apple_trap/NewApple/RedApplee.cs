@@ -169,7 +169,11 @@ public class RedApplee : MonoBehaviour
 
            time1-=Time.deltaTime;
         }
-
+        if (time1 < 0.5)
+        {
+            cam.SetActive(true);
+            IsRedCom = 1;
+        }
         if (time1 < 0)
         {
             AppleCount = 4;
@@ -188,7 +192,13 @@ public class RedApplee : MonoBehaviour
            
 
             ani1.SetBool("bye", true);
+
+            cam.SetActive(false);
+
+            IsRedCom = 0;
         }
+
+       
 
         if (AppleCount == 5)
         {
