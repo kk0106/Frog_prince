@@ -29,6 +29,8 @@ public class CardStartTrigger : MonoBehaviour
             cam.SetActive(false);
 
             CardStartTriggerValue.start = 0;
+
+            time = 4;
         }
     }
 }

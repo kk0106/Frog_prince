@@ -15,6 +15,7 @@ public class shoose : MonoBehaviour
     private SpriteRenderer cindySpr;
     private SpriteRenderer talkSpr;
 
+    public GameObject boom;
 
     public static int isEnd;
 
@@ -29,6 +30,7 @@ public class shoose : MonoBehaviour
         cindySpr=cindy.GetComponent<SpriteRenderer>();
         talkSpr = talk.GetComponent<SpriteRenderer>();
 
+        boom.SetActive(false);
        
         talk.gameObject.SetActive(false);
         talkCam.gameObject.SetActive(false);
@@ -47,12 +49,11 @@ public class shoose : MonoBehaviour
             time-=Time.deltaTime;
             
         }
-        if (shooses2.activeInHierarchy)
+        if (shooses2.activeInHierarchy&& BreakableObject.a<=0 )
         {
-            if (BreakableObject.a < 5)
-            {
+            
                 shooses2.SetActive(false) ;
-            }
+            
         }
 
         if (time < 0)
@@ -81,11 +82,15 @@ public class shoose : MonoBehaviour
             talk.SetActive(false) ;
         }
 
+      
+
 
         if (!cardd.activeInHierarchy)
         {
             FinishTime-= Time.deltaTime;
             cindySpr.sprite = Cindyimg[2];
+
+            shooses2.SetActive(false);
 
             talk.transform.position=new Vector3 (5.42f, 1, -30.02f);
         }
@@ -93,12 +98,15 @@ public class shoose : MonoBehaviour
         if(FinishTime<4)
         {
             talkCam.SetActive(true) ;
-            
+           
 
             isEnd = 1;
         }
-
-        if (FinishTime < 3.8)
+        if (FinishTime < 3.2)
+        {
+          boom.SetActive(true) ;
+        }
+        if (FinishTime < 2.9)
         {
             talkSpr.sprite = Talkimg[2];
             talk.SetActive(true);
