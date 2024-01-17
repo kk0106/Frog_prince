@@ -8,7 +8,7 @@ public class card : MonoBehaviour
     public static int CardDie;
     public GameObject a1;
 
-
+    public GameObject cam;
 
     public int a;
     public float time;
@@ -39,15 +39,15 @@ public class card : MonoBehaviour
 
         if(time< 0)
         {
-          
-           
-
+   
             CardDie = 1;
         }
 
         if (time < -0.8f)
         {
            a1.SetActive (true);
+
+            cam.SetActive (true);
         }
 
 

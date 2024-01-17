@@ -6,6 +6,8 @@ public class CardStartTrigger : MonoBehaviour
 {
     public GameObject cam;
     public float time;
+
+    public GameObject trigger;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,9 @@ public class CardStartTrigger : MonoBehaviour
             CardStartTriggerValue.start = 0;
 
             time = 4;
+
+
+            trigger.SetActive(false);
         }
     }
 }

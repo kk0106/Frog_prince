@@ -97,12 +97,12 @@ public class shoose : MonoBehaviour
 
         if(FinishTime<4)
         {
-            talkCam.SetActive(true) ;
+          //  talkCam.SetActive(true) ;
            
 
             isEnd = 1;
         }
-        if (FinishTime < 3.2)
+        if (FinishTime < 3.1)
         {
           boom.SetActive(true) ;
         }
