@@ -18,7 +18,7 @@ public class GrapplingGun : MonoBehaviour
     private Animator _animator;
     public uiMenu uiMenu;
     [SerializeField] private DialogueUI dialogueUI;
-    [SerializeField] int time;
+    [SerializeField] float time;
 
     public DialogueUI DialogueUI
     {
@@ -72,16 +72,16 @@ public class GrapplingGun : MonoBehaviour
                 Destroy(currentRangeIndicator);
             }
         }
-        else if (IsGrappling())
-        {
-            DrawRope();
-        }
+      //  else if (IsGrappling())
+      //  {
+      //      DrawRope();
+     //   }
     }
 
     // Called after Update
     void LateUpdate()
     {
-        DrawRope();
+      //  DrawRope();
 
         if (IsGrappling() && grappledObject)
         {
@@ -197,12 +197,12 @@ public class GrapplingGun : MonoBehaviour
         joint.damper = 7f;
         joint.massScale = 100f;
 
-        lr.positionCount = 2;
+        //lr.positionCount = 2;
     }
 
     void StopGrapple()
     {
-        lr.positionCount = 0;
+       // lr.positionCount = 0;
         Destroy(joint);
         IsSwinging = 0;
 
@@ -211,18 +211,18 @@ public class GrapplingGun : MonoBehaviour
 
     private Vector3 currentGrapplePosition;
 
-    void DrawRope()
-    {
-        if (!IsGrappling() || joint == null)
-        {
-            return;
-        }
+  //  void DrawRope()
+  //  {
+   //     if (!IsGrappling() || joint == null)
+   //     {
+    //        return;
+    //    }
 
-        currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, grapplePoint, Time.deltaTime * 6f);
-        lr.SetPosition(0, gunTip.position);
-        lr.SetPosition(1, currentGrapplePosition);
+     //   currentGrapplePosition = Vector3.Lerp(currentGrapplePosition, grapplePoint, Time.deltaTime * 6f);
+     //   lr.SetPosition(0, gunTip.position);
+     //   lr.SetPosition(1, currentGrapplePosition);
         
-    }
+   // }
 
     public bool IsGrappling()
     {

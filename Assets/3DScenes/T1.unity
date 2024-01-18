@@ -11709,7 +11709,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453116768}
   m_LocalRotation: {x: 0.02703086, y: 0.034731418, z: -0.0010007456, w: 0.9990306}
-  m_LocalPosition: {x: 14.294104, y: 2.133976, z: -60.290096}
+  m_LocalPosition: {x: 91.1196, y: 2.133976, z: -60.290096}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -31198,7 +31198,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119884606}
   m_LocalRotation: {x: 0.02703086, y: 0.034731418, z: -0.0010007456, w: 0.9990306}
-  m_LocalPosition: {x: 13.552678, y: 1.5489533, z: -60.24074}
+  m_LocalPosition: {x: 87.81705, y: 1.5489532, z: -60.24074}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34579,6 +34579,7 @@ GameObject:
   - component: {fileID: 1236977293}
   - component: {fileID: 1236977296}
   - component: {fileID: 1236977297}
+  - component: {fileID: 1236977298}
   m_Layer: 0
   m_Name: GrappleHook
   m_TagString: Untagged
@@ -34674,7 +34675,7 @@ MonoBehaviour:
   player: {fileID: 1565593218}
   uiMenu: {fileID: 1119884607}
   dialogueUI: {fileID: 1687667888}
-  time: 0
+  time: 0.35
   grappleRadius: 1
   damageAmount: 5
   rangePrefab: {fileID: 546388027}
@@ -34813,6 +34814,49 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1236977298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236977291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d5fd4aab3cb2fc42a87c53bdf59312f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grapplingGun: {fileID: 1236977294}
+  quality: 100
+  damper: 30
+  strength: 500
+  velocity: 75
+  waveCount: 3
+  waveHeight: 1
+  affectCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.6441162
+      outSlope: 0.6441162
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.053658918
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1241178954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37503,7 +37547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375762404}
   m_LocalRotation: {x: 0.02703086, y: 0.034731418, z: -0.0010007456, w: 0.9990306}
-  m_LocalPosition: {x: 13.552678, y: 1.5489533, z: -60.24074}
+  m_LocalPosition: {x: 90.37817, y: 1.5489532, z: -60.24074}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -42963,7 +43007,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565593217}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.074509, y: 0.43, z: -45.98}
+  m_LocalPosition: {x: 86.9, y: 0.43, z: -45.98}
   m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_ConstrainProportionsScale: 1
   m_Children:
