@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Mushroom
-  m_Shader: {fileID: -6465566751694194690, guid: ce0fb6450fec7b249ad03c922a83fbf1,
+  m_Shader: {fileID: -6465566751694194690, guid: 6aefb4e4c7b11b1418aaf779db174094,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -74,6 +74,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture:
+        m_Texture: {fileID: 2800000, guid: a90d51df7816f83419fbaa8c8fbaf3d3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -94,20 +98,23 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Float: 1.69
+    - _Float: 4.86
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Lighting: -0.13
     - _Metallic: 0
+    - _MidShadow: 0.277
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Outline_Size: 6.5
     - _Parallax: 0.02
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Shadow: 0.121
     - _Shadow_Brightness: 0.807
     - _SmoothnessTextureChannel: 0
+    - _Specular: 5
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
@@ -115,6 +122,11 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _LightDirection: {r: 1, g: 1.62, b: -2.17, a: 0}
+    - _MainColor: {r: 1, g: 1, b: 1, a: 0}
+    - _MidShadowColor: {r: 0.8196079, g: 0.8196079, b: 0.8196079, a: 0}
+    - _ShadowColor: {r: 0.8784314, g: 0.8784314, b: 0.8784314, a: 0}
+    - _SpecularColor: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4320783327937410663
 MonoBehaviour:
