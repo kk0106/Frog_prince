@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Triangular cake
-  m_Shader: {fileID: -6465566751694194690, guid: ce0fb6450fec7b249ad03c922a83fbf1,
+  m_Shader: {fileID: -6465566751694194690, guid: 6aefb4e4c7b11b1418aaf779db174094,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -29,6 +29,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: e1f07fffff6e71f469a4278ca4200926, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture:
+        m_Texture: {fileID: 2800000, guid: e1f07fffff6e71f469a4278ca4200926, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -46,17 +50,24 @@ Material:
     - _Float: 6.5
     - _Glossiness: 32
     - _Lighting: 0
+    - _MidShadow: 0.308
     - _Outline_Size: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RimAmount: 0.724
     - _RimThreshold: 0.1
+    - _Shadow: 0.068
     - _Shadow_Brightness: 0.5
+    - _Specular: 5
     m_Colors:
     - _AmbientColor: {r: 0.4, g: 0.4, b: 0.4, a: 1}
     - _Color: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
+    - _LightDirection: {r: 1.27, g: 2.01, b: -2.44, a: 0}
+    - _MainColor: {r: 1, g: 1, b: 1, a: 0}
+    - _MidShadowColor: {r: 0.8196079, g: 0.8196079, b: 0.8196079, a: 0}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecularColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    - _ShadowColor: {r: 0.8784314, g: 0.8784314, b: 0.8784314, a: 0}
+    - _SpecularColor: {r: 0.5943396, g: 0.4252711, b: 0.32800817, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &6208858351880512711
 MonoBehaviour:
