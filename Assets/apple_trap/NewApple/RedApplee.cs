@@ -19,6 +19,7 @@ public class RedApplee : MonoBehaviour
     public GameObject Apple3;
     public int AppleCount;
     private int a;
+    public GameObject CatManager;
 
     public GameObject talkk;
     public GameObject talk;
@@ -133,6 +134,7 @@ public class RedApplee : MonoBehaviour
         if (!Apple3.activeInHierarchy)
         {
             AppleCount ++;
+
         }
 
 
@@ -173,6 +175,7 @@ public class RedApplee : MonoBehaviour
         {
             cam.SetActive(true);
             IsRedCom = 1;
+            CatManager.SetActive(false);
         }
         if (time1 < 0)
         {
