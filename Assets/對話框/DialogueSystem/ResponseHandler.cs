@@ -96,11 +96,11 @@ public class ResponseHandler : MonoBehaviour
                 // Handle "yes" input
                 HandleShopInput(true);
             }
-            else if (UserInput.instance.controls.playerControls.notsell.WasPressedThisFrame())
-            {
+            //else if (UserInput.instance.controls.playerControls.notsell.WasPressedThisFrame())
+           // {
                 // Handle "no" input
-                HandleShopInput(false);
-            }
+               // HandleShopInput(false);
+           // }
         }
     }
 

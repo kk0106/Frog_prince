@@ -145,15 +145,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""notsell"",
-                    ""type"": ""Button"",
-                    ""id"": ""61eb97ae-ad49-4c48-ae6a-64a62bb05ec9"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""end"",
                     ""type"": ""Button"",
                     ""id"": ""c3644ed3-cb52-4f0d-b133-8a7844f77cc1"",
@@ -628,28 +619,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""e20b1398-071b-4e69-a784-eff36faffe2a"",
-                    ""path"": ""<Keyboard>/v"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""notsell"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""324c0650-dc10-4d6e-91e1-d28a1a2f2bb8"",
-                    ""path"": ""<XInputController>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""notsell"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""1e5c5d22-3a55-4f6f-bf98-2b886f84ea5a"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
@@ -712,7 +681,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_playerControls_IngameAni = m_playerControls.FindAction("IngameAni", throwIfNotFound: true);
         m_playerControls_uiback = m_playerControls.FindAction("uiback", throwIfNotFound: true);
         m_playerControls_Sell = m_playerControls.FindAction("Sell", throwIfNotFound: true);
-        m_playerControls_notsell = m_playerControls.FindAction("notsell", throwIfNotFound: true);
         m_playerControls_end = m_playerControls.FindAction("end", throwIfNotFound: true);
     }
 
@@ -788,7 +756,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_playerControls_IngameAni;
     private readonly InputAction m_playerControls_uiback;
     private readonly InputAction m_playerControls_Sell;
-    private readonly InputAction m_playerControls_notsell;
     private readonly InputAction m_playerControls_end;
     public struct PlayerControlsActions
     {
@@ -807,7 +774,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @IngameAni => m_Wrapper.m_playerControls_IngameAni;
         public InputAction @uiback => m_Wrapper.m_playerControls_uiback;
         public InputAction @Sell => m_Wrapper.m_playerControls_Sell;
-        public InputAction @notsell => m_Wrapper.m_playerControls_notsell;
         public InputAction @end => m_Wrapper.m_playerControls_end;
         public InputActionMap Get() { return m_Wrapper.m_playerControls; }
         public void Enable() { Get().Enable(); }
@@ -857,9 +823,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Sell.started += instance.OnSell;
             @Sell.performed += instance.OnSell;
             @Sell.canceled += instance.OnSell;
-            @notsell.started += instance.OnNotsell;
-            @notsell.performed += instance.OnNotsell;
-            @notsell.canceled += instance.OnNotsell;
             @end.started += instance.OnEnd;
             @end.performed += instance.OnEnd;
             @end.canceled += instance.OnEnd;
@@ -906,9 +869,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Sell.started -= instance.OnSell;
             @Sell.performed -= instance.OnSell;
             @Sell.canceled -= instance.OnSell;
-            @notsell.started -= instance.OnNotsell;
-            @notsell.performed -= instance.OnNotsell;
-            @notsell.canceled -= instance.OnNotsell;
             @end.started -= instance.OnEnd;
             @end.performed -= instance.OnEnd;
             @end.canceled -= instance.OnEnd;
@@ -944,7 +904,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnIngameAni(InputAction.CallbackContext context);
         void OnUiback(InputAction.CallbackContext context);
         void OnSell(InputAction.CallbackContext context);
-        void OnNotsell(InputAction.CallbackContext context);
         void OnEnd(InputAction.CallbackContext context);
     }
 }
