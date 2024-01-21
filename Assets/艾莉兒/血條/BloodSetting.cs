@@ -25,10 +25,10 @@ public class BloodSetting : MonoBehaviour
     {
         time -= Time.deltaTime;
 
-        if (time ==5)
-        {
-            attack1.SetAni = -1;
-        }
+      //  if (time ==5)
+      //  {
+          //  attack1.SetAni = -1;
+        //}
 
         if (time < 3)
         {
@@ -60,7 +60,7 @@ public class BloodSetting : MonoBehaviour
         }
         if(time < 0)
         {
-            attack1.SetAni = 0;
+            level1.StartGame = 1;
             time = 0.5f;
         }
     }

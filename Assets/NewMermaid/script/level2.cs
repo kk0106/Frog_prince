@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class level1 : MonoBehaviour
+public class level2 : MonoBehaviour
 {
     [Header("ax")]
     public GameObject ax;//金斧頭
     public GameObject ax2;//銀斧頭
     public GameObject ax3;//銅斧頭
 
-     static public int IsTrueAx;
+    static public int IsTrueAx;
 
     [Header("AxRigidbody")]
     private Rigidbody rb;
@@ -48,7 +48,7 @@ public class level1 : MonoBehaviour
     public int Setting;
 
     [Header("LevelValue")]
-    public static  int levelValue;
+    public int levelValue;
     public float time;
     public int BackGround;
     public static int StartGame;
@@ -89,14 +89,14 @@ public class level1 : MonoBehaviour
     {
         StartGame = 0;
 
-        rb=ax.GetComponent<Rigidbody>();
-        rb2=ax2.GetComponent<Rigidbody>();
-        rb3=ax3.GetComponent<Rigidbody>();
+        rb = ax.GetComponent<Rigidbody>();
+        rb2 = ax2.GetComponent<Rigidbody>();
+        rb3 = ax3.GetComponent<Rigidbody>();
 
 
         mark = 0;
-        levelValue = 1;
-        BackGround=0;
+    
+        BackGround = 0;
         Setting = 0;
 
         ani1 = hand1.GetComponent<Animator>();
@@ -106,7 +106,7 @@ public class level1 : MonoBehaviour
         ani5 = hand5.GetComponent<Animator>();
         ani6 = hand6.GetComponent<Animator>();
 
-        axani=ax.GetComponent<Animator>(); 
+        axani = ax.GetComponent<Animator>();
         axan2 = ax2.GetComponent<Animator>();
         axan3 = ax3.GetComponent<Animator>();
 
@@ -148,13 +148,13 @@ public class level1 : MonoBehaviour
         ice25.SetActive(true);
 
         hint1.SetActive(false);
-        hint2.SetActive(false);     
+        hint2.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+
 
 
         if (BackGround == 0)
@@ -186,16 +186,16 @@ public class level1 : MonoBehaviour
             ice24.SetActive(true);
             ice25.SetActive(true);
 
-          
+
         }
-        if(BackGround == 1)
+        if (BackGround == 1)
         {
             ice1.SetActive(false);
             ice2.SetActive(false);
             ice3.SetActive(false);
             ice4.SetActive(false);
             ice5.SetActive(false);
-    
+
         }
 
         if (BackGround == 2)
@@ -261,7 +261,7 @@ public class level1 : MonoBehaviour
             ice24.GetComponent<Renderer>().sharedMaterial = material[0];
             ice25.GetComponent<Renderer>().sharedMaterial = material[0];
         }
-      
+
         if (mark == 1)
         {
             ice1.GetComponent<Renderer>().sharedMaterial = material[1];
@@ -270,37 +270,37 @@ public class level1 : MonoBehaviour
             ice4.GetComponent<Renderer>().sharedMaterial = material[1];
             ice5.GetComponent<Renderer>().sharedMaterial = material[1];
         }
-      
-        
+
+
         if (mark == 2)
         {
-          ice11.GetComponent<Renderer>().sharedMaterial = material[1];
-          ice12.GetComponent<Renderer>().sharedMaterial = material[1];
-          ice13.GetComponent<Renderer>().sharedMaterial = material[1];
-          ice14.GetComponent<Renderer>().sharedMaterial = material[1];
-          ice15.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice11.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice12.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice13.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice14.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice15.GetComponent<Renderer>().sharedMaterial = material[1];
         }
-        if(mark == 3)
+        if (mark == 3)
         {
-          ice21.GetComponent<Renderer>().sharedMaterial = material[1];
-          ice22.GetComponent<Renderer>().sharedMaterial = material[1];
-          ice23.GetComponent<Renderer>().sharedMaterial = material[1];
-          ice24.GetComponent<Renderer>().sharedMaterial = material[1];
-          ice25.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice21.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice22.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice23.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice24.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice25.GetComponent<Renderer>().sharedMaterial = material[1];
         }
         if (mark == 4)
         {
-          ice6.GetComponent<Renderer>().sharedMaterial = material[1];
-          ice7.GetComponent<Renderer>().sharedMaterial = material[1];
-          ice8.GetComponent<Renderer>().sharedMaterial = material[1];
-          ice9.GetComponent<Renderer>().sharedMaterial = material[1];
-          ice10.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice6.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice7.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice8.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice9.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice10.GetComponent<Renderer>().sharedMaterial = material[1];
 
-          ice16.GetComponent<Renderer>().sharedMaterial = material[1];
-          ice17.GetComponent<Renderer>().sharedMaterial = material[1];
-          ice18.GetComponent<Renderer>().sharedMaterial = material[1];
-          ice19.GetComponent<Renderer>().sharedMaterial = material[1];
-          ice20.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice16.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice17.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice18.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice19.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice20.GetComponent<Renderer>().sharedMaterial = material[1];
         }
 
         if (levelValue != 0 && StartGame == 1)
@@ -332,13 +332,13 @@ public class level1 : MonoBehaviour
             }
 
             //觸手攻擊動畫
-            if(time > 3)
+            if (time > 3)
             {
                 ani1.SetBool("attack", true);
                 ani1.SetBool("normal", false);
                 ani1.SetBool("up", false);
 
-                
+
             }
 
             //地板消失
@@ -348,7 +348,7 @@ public class level1 : MonoBehaviour
                 mark = 0;
             }
 
-            
+
 
             if (time > 4)
             {
@@ -356,7 +356,7 @@ public class level1 : MonoBehaviour
             }
 
             //恢復觸手動畫
-            if (time >3.2)
+            if (time > 3.2)
             {
                 ani1.SetBool("normal", true);
                 ani1.SetBool("up", false);
@@ -604,7 +604,7 @@ public class level1 : MonoBehaviour
             if (time > 0)
             {
                 hand6.SetActive(true);
-                
+
             }
 
             if (time > 1.1)
@@ -627,7 +627,7 @@ public class level1 : MonoBehaviour
                 ani6.SetBool("attack", true);
                 ani6.SetBool("normal", false);
                 ani6.SetBool("up", false);
-       
+
             }
 
             //地板消失
@@ -656,7 +656,7 @@ public class level1 : MonoBehaviour
             if (time > 4.5)
             {
                 hand6.SetActive(false);
-              
+
             }
 
             //進入攻擊2
@@ -670,34 +670,34 @@ public class level1 : MonoBehaviour
 
         Debug.Log(IsTrueAx);
 
-       
 
-        
+
+
 
         if (levelValue == 6)
         {
             //觸手出現，標記地板
             if (time > 0)
             {
-               ax.SetActive(true);
-               ax2.SetActive(true);
-               ax3.SetActive(true);
+                ax.SetActive(true);
+                ax2.SetActive(true);
+                ax3.SetActive(true);
 
                 hint1.SetActive(true);
                 hint2.SetActive(true);
             }
 
-            if(time > 1)
+            if (time > 1)
             {
 
                 if (IsTrueAx == 1)
                 {
                     axani.SetBool("attack", true);
 
-                    rb.AddForce ( Vector3.forward * speed);
+                    rb.AddForce(Vector3.forward * speed);
 
-                  //  Time.timeScale = 0;
-                   
+                    //  Time.timeScale = 0;
+
                 }
 
 
@@ -717,7 +717,7 @@ public class level1 : MonoBehaviour
                 {
                     levelValue = 7;
                     time = 0;
-        
+
                 }
             }
 

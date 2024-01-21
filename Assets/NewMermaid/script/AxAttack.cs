@@ -10,19 +10,21 @@ public class AxAttack : MonoBehaviour
     void Start()
     {
         a = 0;
+   
+      
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Player")
         {
 
-
+           
             level1.IsTrueAx = 1;
         }
     }

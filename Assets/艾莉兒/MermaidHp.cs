@@ -17,7 +17,8 @@ public class MermaidHp : MonoBehaviour
     private Animator ani;
     public GameObject godness;
 
-   
+    public static int WhatLevelNow;
+
     public SpriteRenderer spr;
     public Sprite[] img;
     
@@ -42,7 +43,7 @@ public class MermaidHp : MonoBehaviour
         hp0.SetActive(false);
         bloom.SetActive(false);
         godness.SetActive(false);
-       
+        WhatLevelNow = 0;
     }
 
     // Update is called once per frame
@@ -79,20 +80,22 @@ public class MermaidHp : MonoBehaviour
         if (hp == 6&&attack1.SetAni==0)
         {
             hp6.SetActive(true);
+            WhatLevelNow=1;
         }
 
         if (hp == 5) 
         {
             hp5.SetActive(true);
             hp6.SetActive(false);
+            WhatLevelNow = 2;
         }
         if (hp == 4)
         {
             hp6.SetActive(false);
             hp4.SetActive(true);
             hp5.SetActive(false);
+            WhatLevelNow = 3;
 
-            
         }
         if (hp == 3)
         {
@@ -100,6 +103,8 @@ public class MermaidHp : MonoBehaviour
             hp4.SetActive(false);
             hp5.SetActive(false);
             hp3.SetActive(true);
+
+            WhatLevelNow = 4;
 
             spr.sprite = img[2];
         }
@@ -110,6 +115,8 @@ public class MermaidHp : MonoBehaviour
             hp5.SetActive(false);
             hp3.SetActive(false);
             hp2.SetActive(true);
+
+            WhatLevelNow = 5;
 
             spr.sprite = img[1];
         }
@@ -122,7 +129,9 @@ public class MermaidHp : MonoBehaviour
             hp1.SetActive(true);
             hp2.SetActive(false);
 
-           spr.sprite = img[1];
+            WhatLevelNow = 6;
+
+            spr.sprite = img[1];
             ani.SetBool("die", true);
             time2-= Time.deltaTime;
         }
@@ -135,6 +144,8 @@ public class MermaidHp : MonoBehaviour
             hp0.SetActive(true);
             hp2.SetActive(false);
             hp1.SetActive(false);
+
+            WhatLevelNow = 7;
         }
 
         if (bloom.activeInHierarchy)
@@ -159,23 +170,23 @@ public class MermaidHp : MonoBehaviour
     }
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "pp1")
+        if (other.gameObject.tag == "ax"|| other.gameObject.tag == "ax2"|| other.gameObject.tag == "ax3")
         {
-            //bloom.SetActive(true);
+            bloom.SetActive(true);
             time-= Time.deltaTime;
 
-            //  hp -= 1;
-
-            
+              hp -= 1;
 
 
+
+            Debug.Log(hp);
         }
     }
     private void OnCollisionExit(Collision other)
     {
-        if (other.gameObject.tag == "pp1")
+        if (other.gameObject.tag == "ax" || other.gameObject.tag == "ax2" || other.gameObject.tag == "ax3")
         {
-         //   bloom.SetActive(false);
+            bloom.SetActive(false);
             Destroy(other.gameObject);
 
            
