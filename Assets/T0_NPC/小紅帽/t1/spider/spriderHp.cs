@@ -9,6 +9,7 @@ public class spriderHp : MonoBehaviour
     public Sprite[] img;
     public GameObject spider1;
     public GameObject spider2;
+    public GameObject spider3;
     public GameObject Red;
     public  int hp;
     // Start is called before the first frame update
