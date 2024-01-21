@@ -53,7 +53,7 @@ public class MermaidHp : MonoBehaviour
         {
            godness.SetActive(true);
         }
-       
+        Debug.Log(WhatLevelNow);
 
         if (time < 0)
         {
@@ -79,12 +79,14 @@ public class MermaidHp : MonoBehaviour
         }
         if (hp == 6&&attack1.SetAni==0)
         {
+            
             hp6.SetActive(true);
             WhatLevelNow=1;
         }
 
         if (hp == 5) 
         {
+            level1.levelValue =7;
             hp5.SetActive(true);
             hp6.SetActive(false);
             WhatLevelNow = 2;

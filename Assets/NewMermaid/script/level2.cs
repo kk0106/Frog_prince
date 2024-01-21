@@ -34,16 +34,13 @@ public class level2 : MonoBehaviour
     public GameObject hand2;
     public GameObject hand3;
     public GameObject hand4;
-    public GameObject hand5;
-    public GameObject hand6;
-
+   
     [Header("HandAni")]
     private Animator ani1;
     private Animator ani2;
     private Animator ani3;
     private Animator ani4;
-    private Animator ani5;
-    private Animator ani6;
+
 
     public int Setting;
 
@@ -67,18 +64,7 @@ public class level2 : MonoBehaviour
     public GameObject ice11;
     public GameObject ice12;
     public GameObject ice13;
-    public GameObject ice14;
-    public GameObject ice15;
-    public GameObject ice16;
-    public GameObject ice17;
-    public GameObject ice18;
-    public GameObject ice19;
-    public GameObject ice20;
-    public GameObject ice21;
-    public GameObject ice22;
-    public GameObject ice23;
-    public GameObject ice24;
-    public GameObject ice25;
+ 
 
     [Header("IceMatrial")]
     public Material[] material;
@@ -87,7 +73,7 @@ public class level2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartGame = 0;
+        levelValue = 1;
 
         rb = ax.GetComponent<Rigidbody>();
         rb2 = ax2.GetComponent<Rigidbody>();
@@ -103,9 +89,7 @@ public class level2 : MonoBehaviour
         ani2 = hand2.GetComponent<Animator>();
         ani3 = hand3.GetComponent<Animator>();
         ani4 = hand4.GetComponent<Animator>();
-        ani5 = hand5.GetComponent<Animator>();
-        ani6 = hand6.GetComponent<Animator>();
-
+       
         axani = ax.GetComponent<Animator>();
         axan2 = ax2.GetComponent<Animator>();
         axan3 = ax3.GetComponent<Animator>();
@@ -117,9 +101,9 @@ public class level2 : MonoBehaviour
         hand1.SetActive(false);//直1
         hand2.SetActive(false);//直2
         hand3.SetActive(false);//直3
-        hand4.SetActive(false);//直4
-        hand5.SetActive(false);//直5
-        hand6.SetActive(false);//側邊攻擊
+        hand4.SetActive(false);//側邊攻擊
+     // hand5.SetActive(false);//直5
+     // hand6.SetActive(false);//側邊攻擊
 
         ice1.SetActive(true);
         ice2.SetActive(true);
@@ -134,18 +118,7 @@ public class level2 : MonoBehaviour
         ice11.SetActive(true);
         ice12.SetActive(true);
         ice13.SetActive(true);
-        ice14.SetActive(true);
-        ice15.SetActive(true);
-        ice16.SetActive(true);
-        ice17.SetActive(true);
-        ice18.SetActive(true);
-        ice19.SetActive(true);
-        ice20.SetActive(true);
-        ice21.SetActive(true);
-        ice22.SetActive(true);
-        ice23.SetActive(true);
-        ice24.SetActive(true);
-        ice25.SetActive(true);
+       
 
         hint1.SetActive(false);
         hint2.SetActive(false);
@@ -173,20 +146,7 @@ public class level2 : MonoBehaviour
             ice11.SetActive(true);
             ice12.SetActive(true);
             ice13.SetActive(true);
-            ice14.SetActive(true);
-            ice15.SetActive(true);
-            ice16.SetActive(true);
-            ice17.SetActive(true);
-            ice18.SetActive(true);
-            ice19.SetActive(true);
-            ice20.SetActive(true);
-            ice21.SetActive(true);
-            ice22.SetActive(true);
-            ice23.SetActive(true);
-            ice24.SetActive(true);
-            ice25.SetActive(true);
-
-
+           
         }
         if (BackGround == 1)
         {
@@ -194,44 +154,30 @@ public class level2 : MonoBehaviour
             ice2.SetActive(false);
             ice3.SetActive(false);
             ice4.SetActive(false);
-            ice5.SetActive(false);
-
+           
         }
 
         if (BackGround == 2)
         {
-            ice11.SetActive(false);
-            ice12.SetActive(false);
-            ice13.SetActive(false);
-            ice14.SetActive(false);
-            ice15.SetActive(false);
+            ice5.SetActive(false);
+            ice6.SetActive(false);
+            ice7.SetActive(false);
+            ice8.SetActive(false);
+            
 
         }
 
         if (BackGround == 3)
         {
-            ice21.SetActive(false);
-            ice22.SetActive(false);
-            ice23.SetActive(false);
-            ice24.SetActive(false);
-            ice25.SetActive(false);
-
-        }
-        if (BackGround == 4)
-        {
-            ice6.SetActive(false);
-            ice7.SetActive(false);
-            ice8.SetActive(false);
             ice9.SetActive(false);
             ice10.SetActive(false);
+            ice11.SetActive(false);
+            ice12.SetActive(false);
+            ice13.SetActive(false);
 
-            ice16.SetActive(false);
-            ice17.SetActive(false);
-            ice18.SetActive(false);
-            ice19.SetActive(false);
-            ice20.SetActive(false);
 
         }
+       
 
         if (mark == 0)
         {
@@ -248,18 +194,7 @@ public class level2 : MonoBehaviour
             ice11.GetComponent<Renderer>().sharedMaterial = material[0];
             ice12.GetComponent<Renderer>().sharedMaterial = material[0];
             ice13.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice14.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice15.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice16.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice17.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice18.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice19.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice20.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice21.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice22.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice23.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice24.GetComponent<Renderer>().sharedMaterial = material[0];
-            ice25.GetComponent<Renderer>().sharedMaterial = material[0];
+            
         }
 
         if (mark == 1)
@@ -268,42 +203,30 @@ public class level2 : MonoBehaviour
             ice2.GetComponent<Renderer>().sharedMaterial = material[1];
             ice3.GetComponent<Renderer>().sharedMaterial = material[1];
             ice4.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice5.GetComponent<Renderer>().sharedMaterial = material[1];
+           
         }
 
 
         if (mark == 2)
         {
-            ice11.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice12.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice13.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice14.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice15.GetComponent<Renderer>().sharedMaterial = material[1];
-        }
-        if (mark == 3)
-        {
-            ice21.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice22.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice23.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice24.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice25.GetComponent<Renderer>().sharedMaterial = material[1];
-        }
-        if (mark == 4)
-        {
+            ice5.GetComponent<Renderer>().sharedMaterial = material[1];
             ice6.GetComponent<Renderer>().sharedMaterial = material[1];
             ice7.GetComponent<Renderer>().sharedMaterial = material[1];
             ice8.GetComponent<Renderer>().sharedMaterial = material[1];
+
+        }
+        if (mark == 3)
+        {
             ice9.GetComponent<Renderer>().sharedMaterial = material[1];
             ice10.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice11.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice12.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice13.GetComponent<Renderer>().sharedMaterial = material[1];
 
-            ice16.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice17.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice18.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice19.GetComponent<Renderer>().sharedMaterial = material[1];
-            ice20.GetComponent<Renderer>().sharedMaterial = material[1];
         }
+       
 
-        if (levelValue != 0 && StartGame == 1)
+        if (levelValue != 0 )
         {
             time += Time.deltaTime;
         }
@@ -372,7 +295,7 @@ public class level2 : MonoBehaviour
             //進入攻擊2
             if (time > 5)
             {
-                levelValue = 2;
+               levelValue = 2;
                 time = 0;
             }
 
@@ -441,13 +364,13 @@ public class level2 : MonoBehaviour
             //進入攻擊2
             if (time > 5)
             {
-                levelValue = 3;
+               levelValue = 3;
                 time = 0;
             }
 
         }
 
-        if (levelValue == 3)
+        if (levelValue== 3)
         {
             //觸手出現，標記地板
             if (time > 0)
@@ -516,18 +439,20 @@ public class level2 : MonoBehaviour
 
         }
 
+       
+
         if (levelValue == 4)
         {
             //觸手出現，標記地板
             if (time > 0)
             {
                 hand4.SetActive(true);
-                hand5.SetActive(true);
+
             }
 
             if (time > 1.1)
             {
-                mark = 4;
+                mark = 0;
             }
 
             //觸手上升動畫
@@ -537,10 +462,6 @@ public class level2 : MonoBehaviour
                 ani4.SetBool("normal", false);
                 ani4.SetBool("attack", false);
 
-                ani5.SetBool("up", true);
-                ani5.SetBool("normal", false);
-                ani5.SetBool("attack", false);
-                //Setting = 1;
             }
 
             //觸手攻擊動畫
@@ -549,84 +470,6 @@ public class level2 : MonoBehaviour
                 ani4.SetBool("attack", true);
                 ani4.SetBool("normal", false);
                 ani4.SetBool("up", false);
-
-                ani5.SetBool("attack", true);
-                ani5.SetBool("normal", false);
-                ani5.SetBool("up", false);
-
-            }
-
-            //地板消失
-            if (time > 3.2)
-            {
-                BackGround = 4;
-                mark = 0;
-            }
-
-
-
-            if (time > 4)
-            {
-                BackGround = 0;
-            }
-
-            //恢復觸手動畫
-            if (time > 3.2)
-            {
-                ani4.SetBool("normal", true);
-                ani4.SetBool("up", false);
-                ani4.SetBool("attack", false);
-
-                ani5.SetBool("normal", true);
-                ani5.SetBool("up", false);
-                ani5.SetBool("attack", false);
-            }
-
-            //觸手消失
-            if (time > 4.5)
-            {
-                hand4.SetActive(false);
-                hand5.SetActive(false);
-            }
-
-            //進入攻擊2
-            if (time > 5)
-            {
-                levelValue = 5;
-                time = 0;
-            }
-
-        }
-
-        if (levelValue == 5)
-        {
-            //觸手出現，標記地板
-            if (time > 0)
-            {
-                hand6.SetActive(true);
-
-            }
-
-            if (time > 1.1)
-            {
-                mark = 0;
-            }
-
-            //觸手上升動畫
-            if (time > 1)
-            {
-                ani6.SetBool("up", true);
-                ani6.SetBool("normal", false);
-                ani6.SetBool("attack", false);
-
-            }
-
-            //觸手攻擊動畫
-            if (time > 3)
-            {
-                ani6.SetBool("attack", true);
-                ani6.SetBool("normal", false);
-                ani6.SetBool("up", false);
 
             }
 
@@ -647,22 +490,22 @@ public class level2 : MonoBehaviour
             //恢復觸手動畫
             if (time > 4.2)
             {
-                ani6.SetBool("normal", true);
-                ani6.SetBool("up", false);
-                ani6.SetBool("attack", false);
+                ani4.SetBool("normal", true);
+                ani4.SetBool("up", false);
+                ani4.SetBool("attack", false);
             }
 
             //觸手消失
             if (time > 4.5)
             {
-                hand6.SetActive(false);
+                hand4.SetActive(false);
 
             }
 
             //進入攻擊2
             if (time > 5)
             {
-                levelValue = 6;
+               levelValue = 5;
                 time = 0;
             }
 
@@ -674,7 +517,7 @@ public class level2 : MonoBehaviour
 
 
 
-        if (levelValue == 6)
+        if (levelValue == 5)
         {
             //觸手出現，標記地板
             if (time > 0)
@@ -713,9 +556,9 @@ public class level2 : MonoBehaviour
                 hint2.SetActive(false);
 
 
-                if (MermaidHp.WhatLevelNow == 2)
+                if (MermaidHp.WhatLevelNow == 3)
                 {
-                    levelValue = 7;
+                    levelValue = 5;
                     time = 0;
 
                 }

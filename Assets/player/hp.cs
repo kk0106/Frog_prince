@@ -173,7 +173,15 @@ public class hp : MonoBehaviour
     }
 
 
-   private void GoPos()
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "ball" || other.gameObject.tag == "goose")
+        {
+            HP -= 1;
+            a = 10;
+        }
+    }
+    private void GoPos()
     {
         if(a==1)
         {
