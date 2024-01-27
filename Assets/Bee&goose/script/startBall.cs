@@ -9,6 +9,8 @@ public class startBall : MonoBehaviour
 
     public float Ins_time=3;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {

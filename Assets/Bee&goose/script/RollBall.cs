@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class RollBall : MonoBehaviour
 {
+
+    public float time;
+
     private Rigidbody rb;
     public float speed;
     public float minValue;
@@ -17,9 +20,15 @@ public class RollBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // rb.velocity = Vector3.left*speed;
+        
+        
+        rb.velocity = Vector3.left * speed;
+        
 
-       rb.velocity = Vector3.left*speed;
+       
+
+        // rb.velocity = Vector3.left*speed;
+
 
 
         Vector3 currentPosition = transform.position;
