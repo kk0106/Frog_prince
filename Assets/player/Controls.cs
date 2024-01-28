@@ -152,6 +152,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""NewUiControl"",
+                    ""type"": ""Button"",
+                    ""id"": ""1585a0cc-fadc-4311-8258-12c459356135"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -660,11 +669,56 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""uiChoose"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b654c90d-5b0c-4e08-b193-9afb949dbdbc"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBorad"",
+                    ""action"": ""NewUiControl"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e16db3f3-4370-435e-b69a-772c722490a0"",
+                    ""path"": ""<XInputController>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""NewUiControl"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""KeyBorad"",
+            ""bindingGroup"": ""KeyBorad"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""GamePad"",
+            ""bindingGroup"": ""GamePad"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<XInputController>"",
+                    ""isOptional"": true,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
         // playerControls
         m_playerControls = asset.FindActionMap("playerControls", throwIfNotFound: true);
@@ -682,6 +736,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_playerControls_uiback = m_playerControls.FindAction("uiback", throwIfNotFound: true);
         m_playerControls_Sell = m_playerControls.FindAction("Sell", throwIfNotFound: true);
         m_playerControls_end = m_playerControls.FindAction("end", throwIfNotFound: true);
+        m_playerControls_NewUiControl = m_playerControls.FindAction("NewUiControl", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -757,6 +812,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_playerControls_uiback;
     private readonly InputAction m_playerControls_Sell;
     private readonly InputAction m_playerControls_end;
+    private readonly InputAction m_playerControls_NewUiControl;
     public struct PlayerControlsActions
     {
         private @Controls m_Wrapper;
@@ -775,6 +831,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @uiback => m_Wrapper.m_playerControls_uiback;
         public InputAction @Sell => m_Wrapper.m_playerControls_Sell;
         public InputAction @end => m_Wrapper.m_playerControls_end;
+        public InputAction @NewUiControl => m_Wrapper.m_playerControls_NewUiControl;
         public InputActionMap Get() { return m_Wrapper.m_playerControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -826,6 +883,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @end.started += instance.OnEnd;
             @end.performed += instance.OnEnd;
             @end.canceled += instance.OnEnd;
+            @NewUiControl.started += instance.OnNewUiControl;
+            @NewUiControl.performed += instance.OnNewUiControl;
+            @NewUiControl.canceled += instance.OnNewUiControl;
         }
 
         private void UnregisterCallbacks(IPlayerControlsActions instance)
@@ -872,6 +932,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @end.started -= instance.OnEnd;
             @end.performed -= instance.OnEnd;
             @end.canceled -= instance.OnEnd;
+            @NewUiControl.started -= instance.OnNewUiControl;
+            @NewUiControl.performed -= instance.OnNewUiControl;
+            @NewUiControl.canceled -= instance.OnNewUiControl;
         }
 
         public void RemoveCallbacks(IPlayerControlsActions instance)
@@ -889,6 +952,24 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         }
     }
     public PlayerControlsActions @playerControls => new PlayerControlsActions(this);
+    private int m_KeyBoradSchemeIndex = -1;
+    public InputControlScheme KeyBoradScheme
+    {
+        get
+        {
+            if (m_KeyBoradSchemeIndex == -1) m_KeyBoradSchemeIndex = asset.FindControlSchemeIndex("KeyBorad");
+            return asset.controlSchemes[m_KeyBoradSchemeIndex];
+        }
+    }
+    private int m_GamePadSchemeIndex = -1;
+    public InputControlScheme GamePadScheme
+    {
+        get
+        {
+            if (m_GamePadSchemeIndex == -1) m_GamePadSchemeIndex = asset.FindControlSchemeIndex("GamePad");
+            return asset.controlSchemes[m_GamePadSchemeIndex];
+        }
+    }
     public interface IPlayerControlsActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -905,5 +986,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnUiback(InputAction.CallbackContext context);
         void OnSell(InputAction.CallbackContext context);
         void OnEnd(InputAction.CallbackContext context);
+        void OnNewUiControl(InputAction.CallbackContext context);
     }
 }

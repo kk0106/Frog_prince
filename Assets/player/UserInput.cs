@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class UserInput : MonoBehaviour
 {
@@ -8,6 +9,11 @@ public class UserInput : MonoBehaviour
     [HideInInspector] public Vector2 moveInput;
 
     public static UserInput instance;
+
+    private PlayerInput _playerInput;
+    public bool menuOpenCloseInput { get; private set; }
+
+    private InputAction _newmenucontrol;
    
     private void Awake()
     {
@@ -24,6 +30,9 @@ public class UserInput : MonoBehaviour
 
         controls = new Controls();
         controls.playerControls.Movement.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
+
+        _playerInput=GetComponent<PlayerInput>();
+        _newmenucontrol = _playerInput.actions["NewUIControl"];
     }
 
     private void OnEnable()
@@ -34,6 +43,12 @@ public class UserInput : MonoBehaviour
     private void OnDisable()
     {
         controls.Disable();
+    }
+
+
+    private void Update()
+    {
+        menuOpenCloseInput=_newmenucontrol.WasPressedThisFrame();
     }
 }
 
