@@ -33,7 +33,7 @@ public class UserInput : MonoBehaviour
 
         _playerInput=GetComponent<PlayerInput>();
    
-        _newmenucontrol = _playerInput.actions["NewUIControl"];
+       // _newmenucontrol = _playerInput.actions["NewUIControl"];
     }
 
     private void Start()
