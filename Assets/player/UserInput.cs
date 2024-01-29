@@ -32,9 +32,14 @@ public class UserInput : MonoBehaviour
         controls.playerControls.Movement.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
 
         _playerInput=GetComponent<PlayerInput>();
+   
         _newmenucontrol = _playerInput.actions["NewUIControl"];
     }
 
+    private void Start()
+    {
+     //   _newmenucontrol = _playerInput.actions["NewUIControl"];
+    }
     private void OnEnable()
     {
         controls.Enable();
