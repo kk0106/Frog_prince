@@ -88,7 +88,8 @@ public class shoose : MonoBehaviour
         if (!cardd.activeInHierarchy)
         {
             FinishTime-= Time.deltaTime;
-            cindySpr.sprite = Cindyimg[2];
+
+            Invoke("cc", 1.4f);
 
             shooses2.SetActive(false);
 
@@ -121,5 +122,10 @@ public class shoose : MonoBehaviour
         }
 
         
+    }
+
+    public void cc()
+    {
+        cindySpr.sprite = Cindyimg[2];
     }
 }

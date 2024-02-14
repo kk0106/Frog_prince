@@ -21,7 +21,7 @@ public class shadow : MonoBehaviour
     {
         if (other.gameObject.tag == "apple")
         {
-            Instantiate(shadows, new Vector3(other.transform.position.x,0.1f,other.transform.position.z),Quaternion.Euler(90,0,0));
+            Instantiate(shadows, new Vector3(other.transform.position.x,0.1f, -31.35f),Quaternion.Euler(90,0,0));
         }
     }
 }

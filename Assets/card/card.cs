@@ -43,7 +43,7 @@ public class card : MonoBehaviour
             CardDie = 1;
         }
 
-        if (time < -0.8f)
+        if (time < -0.45f)
         {
            a1.SetActive (true);
 
