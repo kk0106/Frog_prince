@@ -25,7 +25,7 @@ public class AxAttack : MonoBehaviour
         {
 
            
-            level1.IsTrueAx = 1;
+          //  level1.IsTrueAx = 1;
         }
     }
 

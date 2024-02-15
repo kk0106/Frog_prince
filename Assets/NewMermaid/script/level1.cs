@@ -4,30 +4,11 @@ using UnityEngine;
 
 public class level1 : MonoBehaviour
 {
-    [Header("ax")]
-    public GameObject ax;//金斧頭
-    public GameObject ax2;//銀斧頭
-    public GameObject ax3;//銅斧頭
 
-     static public int IsTrueAx;
+    [Header("attack")]
+   public GameObject AxAttackButton;//斧頭攻擊開關
+  
 
-    [Header("AxRigidbody")]
-    private Rigidbody rb;
-    private Rigidbody rb2;
-    private Rigidbody rb3;
-
-    [Header("AxRbSpeed")]
-    public float speed;
-    public float speed2;
-    public float speed3;
-
-    [Header("AxHint")]
-    public GameObject hint1;
-    public GameObject hint2;
-    [Header("AxAni")]
-    private Animator axani;
-    private Animator axan2;
-    private Animator axan3;
 
     [Header("hand")]
     public GameObject hand1;
@@ -89,10 +70,7 @@ public class level1 : MonoBehaviour
     {
         StartGame = 0;
 
-        rb=ax.GetComponent<Rigidbody>();
-        rb2=ax2.GetComponent<Rigidbody>();
-        rb3=ax3.GetComponent<Rigidbody>();
-
+     
 
         mark = 0;
         levelValue = 1;
@@ -106,13 +84,10 @@ public class level1 : MonoBehaviour
         ani5 = hand5.GetComponent<Animator>();
         ani6 = hand6.GetComponent<Animator>();
 
-        axani=ax.GetComponent<Animator>(); 
-        axan2 = ax2.GetComponent<Animator>();
-        axan3 = ax3.GetComponent<Animator>();
+     
 
-        ax.SetActive(false);
-        ax2.SetActive(false);
-        ax3.SetActive(false);
+       AxAttackButton.SetActive(false);
+    
 
         hand1.SetActive(false);//直1
         hand2.SetActive(false);//直2
@@ -147,8 +122,7 @@ public class level1 : MonoBehaviour
         ice24.SetActive(true);
         ice25.SetActive(true);
 
-        hint1.SetActive(false);
-        hint2.SetActive(false);     
+       
     }
 
     // Update is called once per frame
@@ -668,7 +642,7 @@ public class level1 : MonoBehaviour
 
         }
 
-        Debug.Log(IsTrueAx);
+      //  Debug.Log(IsTrueAx);
 
        
 
@@ -679,38 +653,27 @@ public class level1 : MonoBehaviour
             //觸手出現，標記地板
             if (time > 0)
             {
-               ax.SetActive(true);
-               ax2.SetActive(true);
-               ax3.SetActive(true);
+               AxAttackButton.SetActive(true);
+              // ax2.SetActive(true);
+              // ax3.SetActive(true);
 
-                hint1.SetActive(true);
-                hint2.SetActive(true);
+              //  hint1.SetActive(true);
+              //  hint2.SetActive(true);
             }
 
             if(time > 1)
             {
 
-                if (IsTrueAx == 1)
-                {
-                    axani.SetBool("attack", true);
-
-                    rb.AddForce ( Vector3.forward * speed);
-
-                  //  Time.timeScale = 0;
-                   
-                }
-
-
             }
 
             if (time > 6)
             {
-                ax.SetActive(false);
-                ax2.SetActive(false);
-                ax3.SetActive(false);
+             //   ax.SetActive(false);
+              //  ax2.SetActive(false);
+              //  ax3.SetActive(false);
 
-                hint1.SetActive(false);
-                hint2.SetActive(false);
+              //  hint1.SetActive(false);
+              //  hint2.SetActive(false);
 
 
                 if (MermaidHp.WhatLevelNow == 2)

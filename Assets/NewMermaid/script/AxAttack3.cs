@@ -27,7 +27,7 @@ public class AxAttack3 : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
 
-            level1.IsTrueAx = 3;
+          //  level1.IsTrueAx = 3;
 
           //  ani.SetBool("attack", true);
 

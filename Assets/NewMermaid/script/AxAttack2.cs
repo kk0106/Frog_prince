@@ -21,7 +21,7 @@ public class AxAttack2 : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
 
-            level1.IsTrueAx = 2;
+          //  level1.IsTrueAx = 2;
         }
     }
 }

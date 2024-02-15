@@ -9,8 +9,6 @@ public class PlayerInMermaid : MonoBehaviour
     public float minValue;
     public float maxValue;
 
-    [Header("T1 z-axis")]
-    public GameObject InT1;
 
     [Header("Movement")]
     [SerializeField] public static float MoveSpeed;
@@ -63,20 +61,10 @@ public class PlayerInMermaid : MonoBehaviour
 
     public GameObject BackPack;
     bool areOpen;
-    [SerializeField] private DialogueUI dialogueUI;
+    
 
 
-    public DialogueUI DialogueUI
-    {
-        get { return dialogueUI; }
-        set { dialogueUI = value; }
-    }
-
-    public void SetDialogueUI(DialogueUI newDialogueUI)
-    {
-        dialogueUI = newDialogueUI;
-    }
-
+    
     public IInteractable Interactable { get; set; }
 
 
@@ -102,40 +90,12 @@ public class PlayerInMermaid : MonoBehaviour
 
     private void Update()
     {
-        if (NewT0toT1.a == 1)
-        {
-            MoveSpeed = 0;
-            MoveSpeed1 = 0;
+       
 
-            JumpForce = 0;
-        }
+     
+       
 
-        if (ismushroom.ismushrooma == 1)
-        {
-            maxValue = -43.8f;
-            minValue = -48f;
-        }
-
-        if (InT1.activeInHierarchy)
-        {
-            maxValue = -45.98f;
-            minValue = -45.98f;
-        }
-
-        if (eggTip.IsTip == 1)
-        {
-            MoveSpeed = 0;
-            MoveSpeed1 = 0;
-
-            JumpForce = 0;
-        }
-        /*  else
-          {
-              MoveSpeed = 2f;
-              MoveSpeed1 = 2f;
-
-              JumpForce = 3f;
-          }*/
+       
 
         Vector3 currentPosition = transform.position;
 
@@ -149,8 +109,8 @@ public class PlayerInMermaid : MonoBehaviour
 
         Invoke("alife", 1f);
         if (uiMenu.Opened) return;
-        if (dialogueUI.IsOpen) return;
-        OpenBackPack();
+        
+      
         if (areOpen == true) return;
         Move();
 
@@ -206,7 +166,7 @@ public class PlayerInMermaid : MonoBehaviour
         if (UserInput.instance.controls.playerControls.talk.WasPressedThisFrame())
 
         {
-            if (dialogueUI.IsOpen) return;
+           
             //nteractable?.Interact(this);
         }
 
@@ -269,22 +229,11 @@ public class PlayerInMermaid : MonoBehaviour
             AudioManager.Instance.PlaySFX(AudioManager.Instance.jump);
 
 
-           // Physics.gravity = gravityScale;
-            //float jumpForce = Mathf.Sqrt((jumpHeight * (Physics.gravity.y * -9.18f) * -2) * rb.mass);
-            //rb.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
+           
 
 
         }
-      /*  if (rb.velocity.y > 0)
-        {
-            Physics.gravity = gravityScale;
-        }
-
-        if (rb.velocity.y < 0)
-        {
-            Physics.gravity = fallGravityScale;
-        }*/
-
+      
 
         //«ùÄò«öµÛ¸õÁä
         if (UserInput.instance.controls.playerControls.jump.IsPressed())
