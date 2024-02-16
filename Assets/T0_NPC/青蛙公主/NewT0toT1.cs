@@ -30,20 +30,20 @@ public class NewT0toT1 : MonoBehaviour
         {
 
               black.SetActive(true);
-            time -= Time.deltaTime;
+              time += Time.deltaTime;
         }
        
 
        
 
-        if(time < 2)
-        {
-            ball.SetActive(true);
-        }
-
-        if (time < 1.5)
+        if(time>1.5)
         {
             com.SetActive(true);
+        }
+
+        if (time >6.5)
+        {
+            ball.SetActive(true);
         }
     }
 
