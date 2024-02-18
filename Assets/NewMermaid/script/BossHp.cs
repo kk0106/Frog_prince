@@ -9,6 +9,9 @@ public class BossHp : MonoBehaviour
     public GameObject bloom;
     public float time;
 
+    [Header("LevelSetting")]
+    public static int WhatLevelNow;
+
     [Header("hp")]
     public GameObject hp;
     public int hpint;
@@ -24,7 +27,9 @@ public class BossHp : MonoBehaviour
         hpint = 6;
 
         HpSpr =hp.GetComponent<SpriteRenderer>();
-      
+
+
+        WhatLevelNow =1;
     }
 
     // Update is called once per frame
@@ -47,14 +52,23 @@ public class BossHp : MonoBehaviour
             hp.SetActive(true);
         }
 
+        if (time > 2.5)
+        {
+            level1.StartGame = 1;
+        }
+
         //¦å¶q³]©w
         if (hpint == 6)
         {
             HpSpr.sprite = Hpimg[0];
+
+            WhatLevelNow = 1;
         }
         if (hpint == 5)
         {
             HpSpr.sprite = Hpimg[1];
+
+            WhatLevelNow = 2;
         }
         if (hpint == 4)
         {

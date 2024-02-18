@@ -654,43 +654,29 @@ public class level1 : MonoBehaviour
             if (time > 0)
             {
                AxAttackButton.SetActive(true);
-              // ax2.SetActive(true);
-              // ax3.SetActive(true);
-
-              //  hint1.SetActive(true);
-              //  hint2.SetActive(true);
             }
 
-            if(time > 1)
+        
+            if (time > 5)
             {
-
+                AxAttackButton.SetActive(false);
             }
+
 
             if (time > 6)
             {
-             //   ax.SetActive(false);
-              //  ax2.SetActive(false);
-              //  ax3.SetActive(false);
-
-              //  hint1.SetActive(false);
-              //  hint2.SetActive(false);
-
-
-                if (MermaidHp.WhatLevelNow == 2)
+                if (BossHp.WhatLevelNow == 2)
                 {
                     levelValue = 7;
                     time = 0;
         
                 }
+                else if(BossHp.WhatLevelNow == 1)
+                {
+                    levelValue = 1; 
+                    time = 0;
+                }
             }
-
-
-            if (time > 7)
-            {
-                levelValue = 1;
-                time = 0;
-            }
-
 
         }
     }

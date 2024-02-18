@@ -27,7 +27,7 @@ public class SetHand : MonoBehaviour
     {
        
 
-        if (MermaidHp.WhatLevelNow == 1)
+        if (BossHp.WhatLevelNow == 1)
         {
             level1.SetActive(true);
             level2.SetActive(false);
@@ -37,7 +37,7 @@ public class SetHand : MonoBehaviour
             level6.SetActive(false);
         }
 
-        if (MermaidHp.WhatLevelNow == 2)
+        if (BossHp.WhatLevelNow == 2)
         {
             level1.SetActive(false);
             level2.SetActive(true);
