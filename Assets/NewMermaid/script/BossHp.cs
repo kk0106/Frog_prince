@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossHp : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class BossHp : MonoBehaviour
     public GameObject boss;
     public GameObject bloom;
     public float time;
+    public GameObject StartHp;
 
     [Header("LevelSetting")]
     public static int WhatLevelNow;
@@ -15,7 +17,7 @@ public class BossHp : MonoBehaviour
     [Header("hp")]
     public GameObject hp;
     public int hpint;
-    private SpriteRenderer HpSpr;
+    private Image HpSpr;
     public Sprite[] Hpimg;
     // Start is called before the first frame update
     void Start()
@@ -23,10 +25,11 @@ public class BossHp : MonoBehaviour
         bloom.SetActive(false);
         boss.SetActive(false);
         hp.SetActive(false);
+        StartHp.SetActive(false);
 
         hpint = 6;
 
-        HpSpr =hp.GetComponent<SpriteRenderer>();
+        HpSpr =hp.GetComponent<Image>();
 
 
         WhatLevelNow =1;
@@ -43,18 +46,25 @@ public class BossHp : MonoBehaviour
             bloom.SetActive (true);
         }
 
+
         if (time > 1.5)
         {
             boss.SetActive(true);
         }
         if (time > 2)
         {
-            hp.SetActive(true);
+           StartHp.SetActive(true);
         }
 
         if (time > 2.5)
         {
             level1.StartGame = 1;
+        }
+
+        if (time > 3)
+        {
+            hp.SetActive (true);
+            StartHp.SetActive(false) ;
         }
 
         //¦å¶q³]©w
