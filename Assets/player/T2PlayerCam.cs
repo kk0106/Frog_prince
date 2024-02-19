@@ -7,16 +7,19 @@ public class T2PlayerCam : MonoBehaviour
 
     public GameObject player;
     public Vector3 PlayerPos;
+    public float CamHight;
 
     // Start is called before the first frame update
     void Start()
     {
-       PlayerPos=player.transform.position;
+      // PlayerPos=player.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.gameObject.transform.position = new Vector3(PlayerPos.x, PlayerPos.y,PlayerPos.z);
+
+        PlayerPos = player.transform.position;
+        this.gameObject.transform.position = new Vector3(PlayerPos.x,CamHight,PlayerPos.z);
     }
 }
