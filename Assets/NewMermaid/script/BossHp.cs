@@ -83,6 +83,8 @@ public class BossHp : MonoBehaviour
         if (hpint == 4)
         {
             HpSpr.sprite = Hpimg[2];
+
+            WhatLevelNow = 3;
         }
         if (hpint == 3)
         {

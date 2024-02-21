@@ -46,5 +46,16 @@ public class SetHand : MonoBehaviour
             level5.SetActive(false);
             level6.SetActive(false);
         }
+
+
+        if (BossHp.WhatLevelNow == 3)
+        {
+            level1.SetActive(false);
+            level2.SetActive(false);
+            level3.SetActive(true);
+            level4.SetActive(false);
+            level5.SetActive(false);
+            level6.SetActive(false);
+        }
     }
 }
