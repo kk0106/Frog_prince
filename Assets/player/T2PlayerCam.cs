@@ -8,6 +8,7 @@ public class T2PlayerCam : MonoBehaviour
     public GameObject player;
     public Vector3 PlayerPos;
     public float CamHight;
+    public float CamXSetting;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,6 @@ public class T2PlayerCam : MonoBehaviour
     {
 
         PlayerPos = player.transform.position;
-        this.gameObject.transform.position = new Vector3(PlayerPos.x,CamHight,PlayerPos.z);
+        this.gameObject.transform.position = new Vector3(PlayerPos.x+CamXSetting,CamHight,PlayerPos.z);
     }
 }
