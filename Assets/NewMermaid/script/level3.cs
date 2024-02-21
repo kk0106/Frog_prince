@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
-using static Unity.Burst.Intrinsics.X86;
 
-public class level22 : MonoBehaviour
+public class level3 : MonoBehaviour
 {
     [Header("attack")]
     public GameObject AxAttackButton;//斧頭攻擊開關
@@ -16,14 +14,16 @@ public class level22 : MonoBehaviour
     public GameObject hand2;
     public GameObject hand3;
     public GameObject hand4;
-    
+    public GameObject hand5;
+
 
     [Header("HandAni")]
     private Animator ani1;
     private Animator ani2;
     private Animator ani3;
     private Animator ani4;
-    
+    private Animator ani5;
+
 
     public int Setting;
 
@@ -47,7 +47,14 @@ public class level22 : MonoBehaviour
     public GameObject ice11;
     public GameObject ice12;
     public GameObject ice13;
-  
+    public GameObject ice14;
+    public GameObject ice15;
+    public GameObject ice16;
+    public GameObject ice17;
+    public GameObject ice18;
+    public GameObject ice19;
+
+
 
     [Header("IceMatrial")]
     public Material[] material;
@@ -69,7 +76,8 @@ public class level22 : MonoBehaviour
         ani2 = hand2.GetComponent<Animator>();
         ani3 = hand3.GetComponent<Animator>();
         ani4 = hand4.GetComponent<Animator>();
-       
+        ani5 = hand5.GetComponent<Animator>();
+
 
 
 
@@ -80,7 +88,8 @@ public class level22 : MonoBehaviour
         hand2.SetActive(false);//直2
         hand3.SetActive(false);//直3
         hand4.SetActive(false);//直4
-       
+        hand5.SetActive(false);
+
 
         ice1.SetActive(true);
         ice2.SetActive(true);
@@ -95,7 +104,13 @@ public class level22 : MonoBehaviour
         ice11.SetActive(true);
         ice12.SetActive(true);
         ice13.SetActive(true);
-       
+        ice14.SetActive(true);
+        ice15.SetActive(true);
+        ice16.SetActive(true);
+        ice17.SetActive(true);
+        ice18.SetActive(true);
+        ice19.SetActive(true);
+
 
     }
 
@@ -119,11 +134,17 @@ public class level22 : MonoBehaviour
             ice11.SetActive(true);
             ice12.SetActive(true);
             ice13.SetActive(true);
+            ice14.SetActive(true);
+            ice15.SetActive(true);
+            ice16.SetActive(true);
+            ice17.SetActive(true);
+            ice18.SetActive(true);
+            ice19.SetActive(true);
 
         }
         if (BackGround == 1)
         {
-            ice1.SetActive(false);
+            
             ice2.SetActive(false);
             ice3.SetActive(false);
             ice4.SetActive(false);
@@ -136,17 +157,33 @@ public class level22 : MonoBehaviour
             ice6.SetActive(false);
             ice7.SetActive(false);
             ice8.SetActive(false);
+            ice9.SetActive(false);
+            ice10.SetActive(false);
+            ice11.SetActive(false);
+            ice12.SetActive(false);
+            ice13.SetActive(false);
+            ice2.SetActive(false);
 
 
         }
 
         if (BackGround == 3)
         {
-            ice9.SetActive(false);
-            ice10.SetActive(false);
+            ice14.SetActive(false);
             ice11.SetActive(false);
+            ice15.SetActive(false);
+            ice4.SetActive(false);
+            ice16.SetActive(false);
+            ice17.SetActive(false);
+            ice18.SetActive(false);
+            ice19.SetActive(false);
+            ice5.SetActive(false);
+            ice6.SetActive(false);
+            ice1.SetActive(false);
+            ice2.SetActive(false);
             ice12.SetActive(false);
-            ice13.SetActive(false);
+            ice3.SetActive(false);
+           
 
 
         }
@@ -167,12 +204,20 @@ public class level22 : MonoBehaviour
             ice11.GetComponent<Renderer>().sharedMaterial = material[0];
             ice12.GetComponent<Renderer>().sharedMaterial = material[0];
             ice13.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice14.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice15.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice16.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice17.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice18.GetComponent<Renderer>().sharedMaterial = material[0];
+            ice19.GetComponent<Renderer>().sharedMaterial = material[0];
+
+
 
         }
 
         if (mark == 1)
         {
-            ice1.GetComponent<Renderer>().sharedMaterial = material[1];
+            
             ice2.GetComponent<Renderer>().sharedMaterial = material[1];
             ice3.GetComponent<Renderer>().sharedMaterial = material[1];
             ice4.GetComponent<Renderer>().sharedMaterial = material[1];
@@ -186,15 +231,32 @@ public class level22 : MonoBehaviour
             ice6.GetComponent<Renderer>().sharedMaterial = material[1];
             ice7.GetComponent<Renderer>().sharedMaterial = material[1];
             ice8.GetComponent<Renderer>().sharedMaterial = material[1];
-
-        }
-        if (mark == 3)
-        {
             ice9.GetComponent<Renderer>().sharedMaterial = material[1];
             ice10.GetComponent<Renderer>().sharedMaterial = material[1];
             ice11.GetComponent<Renderer>().sharedMaterial = material[1];
             ice12.GetComponent<Renderer>().sharedMaterial = material[1];
             ice13.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice2.GetComponent<Renderer>().sharedMaterial = material[1];
+          
+
+        }
+        if (mark == 3)
+        {
+            ice14.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice11.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice15.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice4.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice16.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice17.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice18.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice19.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice5.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice6.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice1.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice2.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice12.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice3.GetComponent<Renderer>().sharedMaterial = material[1];
+          
 
         }
 
@@ -211,6 +273,7 @@ public class level22 : MonoBehaviour
             if (time > 0)
             {
                 hand1.SetActive(true);
+                ice1.SetActive(false);
             }
 
             if (time > 1.1)
@@ -484,13 +547,13 @@ public class level22 : MonoBehaviour
 
         }
 
-            if (levelValue == 5)
+        if (levelValue == 5)
         {
             //觸手出現，標記地板
             if (time > 0)
             {
                 AxAttackButton.SetActive(true);
-               
+
             }
 
 
@@ -508,7 +571,7 @@ public class level22 : MonoBehaviour
                     time = 0;
 
                     ax.SetActive(false);
-        
+
 
 
 
@@ -519,11 +582,10 @@ public class level22 : MonoBehaviour
                     time = 0;
 
                     ax.SetActive(false);
-                  
+
                 }
             }
 
         }
     }
 }
-
