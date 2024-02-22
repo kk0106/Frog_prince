@@ -89,18 +89,26 @@ public class BossHp : MonoBehaviour
         if (hpint == 3)
         {
             HpSpr.sprite = Hpimg[3];
+
+            WhatLevelNow = 4;
         }
         if (hpint == 2)
         {
             HpSpr.sprite = Hpimg[4];
+
+            WhatLevelNow = 5;
         }
         if (hpint == 1)
         {
             HpSpr.sprite = Hpimg[5];
+
+            WhatLevelNow = 6;
         }
         if (hpint == 0)
         {
             HpSpr.sprite = Hpimg[6];
+
+            WhatLevelNow = 7;
         }
     }
     private void OnTriggerEnter(Collider other)

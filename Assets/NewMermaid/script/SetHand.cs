@@ -57,5 +57,37 @@ public class SetHand : MonoBehaviour
             level5.SetActive(false);
             level6.SetActive(false);
         }
+
+
+        if (BossHp.WhatLevelNow == 4)
+        {
+            level1.SetActive(false);
+            level2.SetActive(false);
+            level3.SetActive(false);
+            level4.SetActive(true);
+            level5.SetActive(false);
+            level6.SetActive(false);
+        }
+
+        if (BossHp.WhatLevelNow == 5)
+        {
+            level1.SetActive(false);
+            level2.SetActive(false);
+            level3.SetActive(false);
+            level4.SetActive(false);
+            level5.SetActive(true);
+            level6.SetActive(false);
+        }
+
+
+        if (BossHp.WhatLevelNow == 6)
+        {
+            level1.SetActive(false);
+            level2.SetActive(false);
+            level3.SetActive(false);
+            level4.SetActive(false);
+            level5.SetActive(false);
+            level6.SetActive(true);
+        }
     }
 }

@@ -23,15 +23,16 @@ public class rbControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
 
-        ani.SetBool("run", true);
 
         if (a==1)
         {
             time -= Time.deltaTime;
+            ani.SetBool("run", true);
         }
-
-        if(time < 0)
+        
+        if(time < 0.048)
         {
             speed = 0.05f;
         }
@@ -39,15 +40,11 @@ public class rbControl : MonoBehaviour
         transform.position += transform.right * speed;
     }
 
-  
 
 
-    private void OnTriggerEnter(Collider other)
+
+    public void A()
     {
-        if (other.gameObject.tag == "Player")
-        {
-          
-            a = 1;
-        }
+        a =1;
     }
 }

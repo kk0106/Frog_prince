@@ -8,9 +8,12 @@ public class ax : MonoBehaviour
     public int a;
     public float time;
     public GameObject godness;
+
+    public GameObject cam;
     // Start is called before the first frame update
     void Start()
     {
+        cam.SetActive(false);
         godness.SetActive(false);
         a = 0;
         ani=GetComponent<Animator>();
@@ -30,6 +33,7 @@ public class ax : MonoBehaviour
         }
         if (time < 0)
         {
+            cam.SetActive(true);
             godness.SetActive(true); 
             time = 3;
              a = 0;
