@@ -161,6 +161,24 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AllInput"",
+                    ""type"": ""Button"",
+                    ""id"": ""88c2954e-9cca-49de-be32-b8dd7cd339c5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""KeepStory"",
+                    ""type"": ""Button"",
+                    ""id"": ""65c11f32-92e9-4d68-9ff3-94be92d956d8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -691,6 +709,61 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""NewUiControl"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c6b9fe2a-e805-4a4b-a5c4-e9dcd55230b5"",
+                    ""path"": ""<XInputController>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyBorad"",
+                    ""action"": ""AllInput"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2f9b154d-0e39-445b-8da3-34adb75022a6"",
+                    ""path"": ""<XInputController>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""AllInput"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0495c564-2d9b-482e-a74a-5d88f375c8de"",
+                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""AllInput"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e04cfb81-6471-4614-8f20-fec3aa1360c9"",
+                    ""path"": ""<XInputController>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""AllInput"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4a5adf54-2f25-4808-b95d-dd96b1883f78"",
+                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""KeepStory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -737,6 +810,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_playerControls_Sell = m_playerControls.FindAction("Sell", throwIfNotFound: true);
         m_playerControls_end = m_playerControls.FindAction("end", throwIfNotFound: true);
         m_playerControls_NewUiControl = m_playerControls.FindAction("NewUiControl", throwIfNotFound: true);
+        m_playerControls_AllInput = m_playerControls.FindAction("AllInput", throwIfNotFound: true);
+        m_playerControls_KeepStory = m_playerControls.FindAction("KeepStory", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -813,6 +888,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_playerControls_Sell;
     private readonly InputAction m_playerControls_end;
     private readonly InputAction m_playerControls_NewUiControl;
+    private readonly InputAction m_playerControls_AllInput;
+    private readonly InputAction m_playerControls_KeepStory;
     public struct PlayerControlsActions
     {
         private @Controls m_Wrapper;
@@ -832,6 +909,8 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Sell => m_Wrapper.m_playerControls_Sell;
         public InputAction @end => m_Wrapper.m_playerControls_end;
         public InputAction @NewUiControl => m_Wrapper.m_playerControls_NewUiControl;
+        public InputAction @AllInput => m_Wrapper.m_playerControls_AllInput;
+        public InputAction @KeepStory => m_Wrapper.m_playerControls_KeepStory;
         public InputActionMap Get() { return m_Wrapper.m_playerControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -886,6 +965,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @NewUiControl.started += instance.OnNewUiControl;
             @NewUiControl.performed += instance.OnNewUiControl;
             @NewUiControl.canceled += instance.OnNewUiControl;
+            @AllInput.started += instance.OnAllInput;
+            @AllInput.performed += instance.OnAllInput;
+            @AllInput.canceled += instance.OnAllInput;
+            @KeepStory.started += instance.OnKeepStory;
+            @KeepStory.performed += instance.OnKeepStory;
+            @KeepStory.canceled += instance.OnKeepStory;
         }
 
         private void UnregisterCallbacks(IPlayerControlsActions instance)
@@ -935,6 +1020,12 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @NewUiControl.started -= instance.OnNewUiControl;
             @NewUiControl.performed -= instance.OnNewUiControl;
             @NewUiControl.canceled -= instance.OnNewUiControl;
+            @AllInput.started -= instance.OnAllInput;
+            @AllInput.performed -= instance.OnAllInput;
+            @AllInput.canceled -= instance.OnAllInput;
+            @KeepStory.started -= instance.OnKeepStory;
+            @KeepStory.performed -= instance.OnKeepStory;
+            @KeepStory.canceled -= instance.OnKeepStory;
         }
 
         public void RemoveCallbacks(IPlayerControlsActions instance)
@@ -987,5 +1078,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnSell(InputAction.CallbackContext context);
         void OnEnd(InputAction.CallbackContext context);
         void OnNewUiControl(InputAction.CallbackContext context);
+        void OnAllInput(InputAction.CallbackContext context);
+        void OnKeepStory(InputAction.CallbackContext context);
     }
 }
