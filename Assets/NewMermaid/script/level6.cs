@@ -970,7 +970,7 @@ public class level6 : MonoBehaviour
             //地板消失
             if (time > 1)
             {
-                BackGround = 3;
+                BackGround = 7;
                 mark = 0;
             }
 
@@ -1334,10 +1334,10 @@ public class level6 : MonoBehaviour
 
 
 
-            if (time > 2.5)
-            {
-                BackGround = 0;
-            }
+            //if (time > 2.5)
+            //{
+             //   BackGround = 0;
+            //}
 
             //恢復觸手動畫
             if (time > 1.6)
@@ -1369,7 +1369,7 @@ public class level6 : MonoBehaviour
             }
 
             //進入攻擊2
-            if (time > 3.5)
+            if (time > 3)
             {
                 levelValue = 13;
                 time = 0;
@@ -1378,7 +1378,140 @@ public class level6 : MonoBehaviour
         }
 
 
-        if (levelValue == 3)
+        if (levelValue == 13)
+        {
+            //觸手出現，標記地板
+            if (time > 0)
+            {
+                hand1.SetActive(true);
+            }
+
+            if (time > 0.4)
+            {
+                mark = 1;
+            }
+
+            //觸手上升動畫
+            if (time > 0.3)
+            {
+                ani1.SetBool("up", true);
+                ani1.SetBool("normal", false);
+                ani1.SetBool("attack", false);
+                //Setting = 1;           
+            }
+
+            //觸手攻擊動畫
+            if (time > 1.4)
+            {
+                ani1.SetBool("attack", true);
+                ani1.SetBool("normal", false);
+                ani1.SetBool("up", false);
+            }
+
+            //地板消失
+            if (time > 1.6)
+            {
+                BackGround = 1;
+                mark = 0;
+            }
+
+
+
+           // if (time > 1.3)
+            //{
+            //    BackGround = 0;
+          //  }
+
+            //恢復觸手動畫
+            if (time > 1.6)
+            {
+                ani1.SetBool("normal", true);
+                ani1.SetBool("up", false);
+                ani1.SetBool("attack", false);
+            }
+
+            //觸手消失
+            if (time > 3)
+            {
+                hand1.SetActive(false);
+            }
+
+            //進入攻擊2
+            if (time > 3.5)
+            {
+                levelValue = 14;
+                time = 0;
+            }
+
+        }
+
+        if (levelValue == 15)
+        {
+            //觸手出現，標記地板
+            if (time > 0)
+            {
+                hand2.SetActive(true);
+            }
+
+            if (time > 0.4)
+            {
+                mark = 2;
+            }
+
+            //觸手上升動畫
+            if (time > 0.3)
+            {
+                ani2.SetBool("up", true);
+                ani2.SetBool("normal", false);
+                ani2.SetBool("attack", false);
+            }
+
+            //觸手攻擊動畫
+            if (time > 1.4)
+            {
+                ani2.SetBool("attack", true);
+                ani2.SetBool("normal", false);
+                ani2.SetBool("up", false);
+            }
+
+            //地板消失
+            if (time > 1.6)
+            {
+                BackGround = 2;
+                mark = 0;
+            }
+
+
+
+          //  if (time > 1.3)
+         //   {
+            //    BackGround = 0;
+           // }
+
+            //恢復觸手動畫
+            if (time > 1.6)
+            {
+                ani2.SetBool("normal", true);
+                ani2.SetBool("up", false);
+                ani2.SetBool("attack", false);
+            }
+
+            //觸手消失
+            if (time > 3)
+            {
+                hand2.SetActive(false);
+            }
+
+            //進入攻擊2
+            if (time > 3.5)
+            {
+                levelValue = 16;
+                time = 0;
+            }
+
+        }
+
+        if (levelValue == 17)
         {
             //觸手出現，標記地板
             if (time > 0)
@@ -1416,10 +1549,10 @@ public class level6 : MonoBehaviour
 
 
 
-            if (time > 2.5)
-            {
-                BackGround = 0;
-            }
+           // if (time > 1.3)
+           // {
+           //     BackGround = 0;
+           // }
 
             //恢復觸手動畫
             if (time > 1.6)
@@ -1438,7 +1571,207 @@ public class level6 : MonoBehaviour
             //進入攻擊2
             if (time > 3.5)
             {
-                levelValue = 4;
+                levelValue = 18;
+                time = 0;
+            }
+
+        }
+
+       
+
+        if (levelValue == 18)
+        {
+            //觸手出現，標記地板
+            if (time > 0)
+            {
+                hand5.SetActive(true);
+            }
+
+            if (time > 0.4)
+            {
+                mark = 5;
+            }
+
+            //觸手上升動畫
+            if (time > 0.3)
+            {
+                ani5.SetBool("up", true);
+                ani5.SetBool("normal", false);
+                ani5.SetBool("attack", false);
+            }
+
+            //觸手攻擊動畫
+            if (time > 1.4)
+            {
+                ani5.SetBool("attack", true);
+                ani5.SetBool("normal", false);
+                ani5.SetBool("up", false);
+            }
+
+            //地板消失
+            if (time > 1.6)
+            {
+                BackGround = 5;
+                mark = 0;
+            }
+
+
+
+           // if (time > 1.3)
+          //  {
+          //      BackGround = 0;
+           // }
+
+            //恢復觸手動畫
+            if (time > 1.6)
+            {
+                ani5.SetBool("normal", true);
+                ani5.SetBool("up", false);
+                ani5.SetBool("attack", false);
+            }
+
+            //觸手消失
+            if (time > 3)
+            {
+                hand5.SetActive(false);
+            }
+
+            //進入攻擊2
+            if (time > 3.5)
+            {
+                levelValue = 19;
+                time = 0;
+            }
+
+        }
+
+        if (levelValue == 16)
+        {
+            //觸手出現，標記地板
+            if (time > 0)
+            {
+                hand6.SetActive(true);
+            }
+
+            if (time > 0.4)
+            {
+                mark = 6;
+            }
+
+            //觸手上升動畫
+            if (time > 0.3)
+            {
+                ani6.SetBool("up", true);
+                ani6.SetBool("normal", false);
+                ani6.SetBool("attack", false);
+            }
+
+            //觸手攻擊動畫
+            if (time > 1.4)
+            {
+                ani6.SetBool("attack", true);
+                ani6.SetBool("normal", false);
+                ani6.SetBool("up", false);
+            }
+
+            //地板消失
+            if (time > 1.6)
+            {
+                BackGround = 6;
+                mark = 0;
+            }
+
+
+
+         //   if (time > 1.3)
+         //   {
+         //       BackGround = 0;
+           // }
+
+            //恢復觸手動畫
+            if (time > 1.6)
+            {
+                ani6.SetBool("normal", true);
+                ani6.SetBool("up", false);
+                ani6.SetBool("attack", false);
+            }
+
+            //觸手消失
+            if (time > 3)
+            {
+                hand6.SetActive(false);
+            }
+
+            //進入攻擊2
+            if (time > 3.5)
+            {
+                levelValue = 17;
+                time = 0;
+            }
+
+        }
+
+        if (levelValue == 14)
+        {
+            //觸手出現，標記地板
+            if (time > 0)
+            {
+                hand7.SetActive(true);
+            }
+
+            if (time > 0.4)
+            {
+                mark = 7;
+            }
+
+            //觸手上升動畫
+            if (time > 0.3)
+            {
+                ani7.SetBool("up", true);
+                ani7.SetBool("normal", false);
+                ani7.SetBool("attack", false);
+            }
+
+            //觸手攻擊動畫
+            if (time > 1.4)
+            {
+                ani7.SetBool("attack", true);
+                ani7.SetBool("normal", false);
+                ani7.SetBool("up", false);
+            }
+
+            //地板消失
+            if (time > 1.6)
+            {
+                BackGround = 7;
+                mark = 0;
+            }
+
+
+
+          //  if (time > 1.3)
+          //  {
+           //     BackGround = 0;
+           // }
+
+            //恢復觸手動畫
+            if (time > 1.6)
+            {
+                ani7.SetBool("normal", true);
+                ani7.SetBool("up", false);
+                ani7.SetBool("attack", false);
+            }
+
+            //觸手消失
+            if (time > 3)
+            {
+                hand7.SetActive(false);
+            }
+
+            //進入攻擊2
+            if (time > 3.5)
+            {
+                levelValue = 15;
                 time = 0;
             }
 
@@ -1446,7 +1779,7 @@ public class level6 : MonoBehaviour
 
 
 
-        if (levelValue == 5)
+        if (levelValue == 19)
         {
             //觸手出現，標記地板
             if (time > 0)
@@ -1464,7 +1797,7 @@ public class level6 : MonoBehaviour
 
             if (time > 6)
             {
-                if (BossHp.WhatLevelNow == 3)
+                if (BossHp.WhatLevelNow == 7)
                 {
                     levelValue = 7;
                     time = 0;
@@ -1475,9 +1808,10 @@ public class level6 : MonoBehaviour
 
 
                 }
-                else if (BossHp.WhatLevelNow == 2)
+                else if (BossHp.WhatLevelNow == 6)
                 {
                     levelValue = 1;
+                    BackGround = 0;
                     time = 0;
 
                     ax.SetActive(false);

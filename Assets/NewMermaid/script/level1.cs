@@ -643,7 +643,7 @@ public class level1 : MonoBehaviour
       //  Debug.Log(IsTrueAx);
 
        
-
+       
         
 
         if (levelValue == 6)
@@ -669,6 +669,7 @@ public class level1 : MonoBehaviour
                     time = 0;
 
                     ax.SetActive(false);
+                    AxAttackButton.SetActive(false);
 
                 }
                 else if(BossHp.WhatLevelNow == 1)
@@ -677,6 +678,8 @@ public class level1 : MonoBehaviour
                     time = 0;
 
                     ax.SetActive(false);
+
+                    AxAttackButton.SetActive(false);
                 }
             }
 

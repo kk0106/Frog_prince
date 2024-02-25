@@ -734,7 +734,7 @@ public class level5 : MonoBehaviour
 
             if (time > 6)
             {
-                if (BossHp.WhatLevelNow == 3)
+                if (BossHp.WhatLevelNow == 6)
                 {
                     levelValue = 7;
                     time = 0;
@@ -745,7 +745,7 @@ public class level5 : MonoBehaviour
 
 
                 }
-                else if (BossHp.WhatLevelNow == 2)
+                else if (BossHp.WhatLevelNow == 5)
                 {
                     levelValue = 1;
                     time = 0;

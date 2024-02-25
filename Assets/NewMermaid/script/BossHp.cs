@@ -19,9 +19,19 @@ public class BossHp : MonoBehaviour
     public int hpint;
     private Image HpSpr;
     public Sprite[] Hpimg;
+
+    [Header("Boss")]
+    public Sprite[] BossImg;
+    public SpriteRenderer BossSpr;
+    public float BossHurtTime;
+    public bool BossHurt;
+
+    public GameObject godness;
     // Start is called before the first frame update
     void Start()
     {
+        godness.SetActive(false);
+
         bloom.SetActive(false);
         boss.SetActive(false);
         hp.SetActive(false);
@@ -31,13 +41,51 @@ public class BossHp : MonoBehaviour
 
         HpSpr =hp.GetComponent<Image>();
 
+        BossSpr =boss.GetComponent<SpriteRenderer>();
+
 
         WhatLevelNow =1;
+
+        BossHurt =false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (BossHurt)
+        {
+            BossSpr.sprite = BossImg[0];
+
+            BossHurtTime += Time.deltaTime;
+        }
+
+        if (BossHurtTime > 2)
+        {
+            BossSpr.sprite = BossImg[1];
+
+            if(hpint>4)
+            {
+                BossSpr.sprite = BossImg[1];
+            }
+
+            if (hpint > 2&&hpint<5)
+            {
+                BossSpr.sprite = BossImg[2];
+            }
+
+            if (hpint > 0 && hpint < 3)
+            {
+                BossSpr.sprite = BossImg[3];
+            }
+        }
+
+        if (BossHurtTime > 2.5)
+        {
+            BossHurt=false;
+            BossHurtTime = 0;
+        }
+
+
         //起始設定(含動畫)
         time += Time.deltaTime;
 
@@ -72,11 +120,15 @@ public class BossHp : MonoBehaviour
         {
             HpSpr.sprite = Hpimg[0];
 
+            BossSpr.sprite = BossImg[1];
+
             WhatLevelNow = 1;
         }
         if (hpint == 5)
         {
             HpSpr.sprite = Hpimg[1];
+
+            BossSpr.sprite = BossImg[1];
 
             WhatLevelNow = 2;
         }
@@ -84,11 +136,15 @@ public class BossHp : MonoBehaviour
         {
             HpSpr.sprite = Hpimg[2];
 
+            BossSpr.sprite = BossImg[2];
+
             WhatLevelNow = 3;
         }
         if (hpint == 3)
         {
             HpSpr.sprite = Hpimg[3];
+
+            BossSpr.sprite = BossImg[2];
 
             WhatLevelNow = 4;
         }
@@ -96,11 +152,15 @@ public class BossHp : MonoBehaviour
         {
             HpSpr.sprite = Hpimg[4];
 
+            BossSpr.sprite = BossImg[3];
+
             WhatLevelNow = 5;
         }
         if (hpint == 1)
         {
             HpSpr.sprite = Hpimg[5];
+
+            BossSpr.sprite = BossImg[3];
 
             WhatLevelNow = 6;
         }
@@ -108,7 +168,13 @@ public class BossHp : MonoBehaviour
         {
             HpSpr.sprite = Hpimg[6];
 
+            BossSpr.sprite = BossImg[3];
+            
             WhatLevelNow = 7;
+
+            godness.SetActive(true);
+            boss.SetActive(false);
+            hp.SetActive(false);
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -116,6 +182,7 @@ public class BossHp : MonoBehaviour
         if (other.gameObject.tag == "ax")
         {
             hpint -= 1;
+            BossHurt = true;
         }
     }
 }
