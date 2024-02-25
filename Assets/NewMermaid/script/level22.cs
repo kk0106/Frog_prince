@@ -213,13 +213,13 @@ public class level22 : MonoBehaviour
                 hand1.SetActive(true);
             }
 
-            if (time > 1.1)
+            if (time > 0.4)
             {
                 mark = 1;
             }
 
             //觸手上升動畫
-            if (time > 1)
+            if (time > 0.3)
             {
                 ani1.SetBool("up", true);
                 ani1.SetBool("normal", false);
@@ -228,7 +228,7 @@ public class level22 : MonoBehaviour
             }
 
             //觸手攻擊動畫
-            if (time > 3)
+            if (time > 1.4)
             {
                 ani1.SetBool("attack", true);
                 ani1.SetBool("normal", false);
@@ -238,7 +238,7 @@ public class level22 : MonoBehaviour
             }
 
             //地板消失
-            if (time > 3.2)
+            if (time > 1.6)
             {
                 BackGround = 1;
                 mark = 0;
@@ -246,13 +246,13 @@ public class level22 : MonoBehaviour
 
 
 
-            if (time > 4)
+            if (time > 2.5)
             {
                 BackGround = 0;
             }
 
             //恢復觸手動畫
-            if (time > 3.2)
+            if (time > 1.6)
             {
                 ani1.SetBool("normal", true);
                 ani1.SetBool("up", false);
@@ -260,13 +260,13 @@ public class level22 : MonoBehaviour
             }
 
             //觸手消失
-            if (time > 4.5)
+            if (time > 3)
             {
                 hand1.SetActive(false);
             }
 
             //進入攻擊2
-            if (time > 5)
+            if (time > 3.5)
             {
                 levelValue = 2;
                 time = 0;
@@ -282,13 +282,13 @@ public class level22 : MonoBehaviour
                 hand2.SetActive(true);
             }
 
-            if (time > 1.1)
+            if (time > 0.4)
             {
                 mark = 2;
             }
 
             //觸手上升動畫
-            if (time > 1)
+            if (time > 0.3)
             {
                 ani2.SetBool("up", true);
                 ani2.SetBool("normal", false);
@@ -297,7 +297,7 @@ public class level22 : MonoBehaviour
             }
 
             //觸手攻擊動畫
-            if (time > 3)
+            if (time > 1.4)
             {
                 ani2.SetBool("attack", true);
                 ani2.SetBool("normal", false);
@@ -307,7 +307,7 @@ public class level22 : MonoBehaviour
             }
 
             //地板消失
-            if (time > 3.2)
+            if (time > 1.6)
             {
                 BackGround = 2;
                 mark = 0;
@@ -315,13 +315,13 @@ public class level22 : MonoBehaviour
 
 
 
-            if (time > 4)
+            if (time > 2.5)
             {
                 BackGround = 0;
             }
 
             //恢復觸手動畫
-            if (time > 3.2)
+            if (time > 1.6)
             {
                 ani2.SetBool("normal", true);
                 ani2.SetBool("up", false);
@@ -329,13 +329,13 @@ public class level22 : MonoBehaviour
             }
 
             //觸手消失
-            if (time > 4.5)
+            if (time > 3)
             {
                 hand2.SetActive(false);
             }
 
             //進入攻擊2
-            if (time > 5)
+            if (time > 3.5)
             {
                 levelValue = 3;
                 time = 0;
@@ -351,13 +351,13 @@ public class level22 : MonoBehaviour
                 hand3.SetActive(true);
             }
 
-            if (time > 1.1)
+            if (time > 0.4)
             {
                 mark = 3;
             }
 
             //觸手上升動畫
-            if (time > 1)
+            if (time > 0.3)
             {
                 ani3.SetBool("up", true);
                 ani3.SetBool("normal", false);
@@ -366,7 +366,7 @@ public class level22 : MonoBehaviour
             }
 
             //觸手攻擊動畫
-            if (time > 3)
+            if (time > 1.4)
             {
                 ani3.SetBool("attack", true);
                 ani3.SetBool("normal", false);
@@ -376,7 +376,7 @@ public class level22 : MonoBehaviour
             }
 
             //地板消失
-            if (time > 3.2)
+            if (time > 1.6)
             {
                 BackGround = 3;
                 mark = 0;
@@ -384,13 +384,13 @@ public class level22 : MonoBehaviour
 
 
 
-            if (time > 4)
+            if (time > 2.5)
             {
                 BackGround = 0;
             }
 
             //恢復觸手動畫
-            if (time > 3.2)
+            if (time > 1.6)
             {
                 ani3.SetBool("normal", true);
                 ani3.SetBool("up", false);
@@ -398,13 +398,13 @@ public class level22 : MonoBehaviour
             }
 
             //觸手消失
-            if (time > 4.5)
+            if (time > 3)
             {
                 hand3.SetActive(false);
             }
 
             //進入攻擊2
-            if (time > 5)
+            if (time > 3.5)
             {
                 levelValue = 4;
                 time = 0;
@@ -423,13 +423,13 @@ public class level22 : MonoBehaviour
 
             }
 
-            if (time > 1.1)
+            if (time > 0.4)
             {
                 mark = 0;
             }
 
             //觸手上升動畫
-            if (time > 1)
+            if (time > 0.3)
             {
                 ani4.SetBool("up", true);
                 ani4.SetBool("normal", false);
@@ -438,7 +438,7 @@ public class level22 : MonoBehaviour
             }
 
             //觸手攻擊動畫
-            if (time > 3)
+            if (time > 1.4)
             {
                 ani4.SetBool("attack", true);
                 ani4.SetBool("normal", false);
@@ -447,7 +447,7 @@ public class level22 : MonoBehaviour
             }
 
             //地板消失
-            if (time > 3.2)
+            if (time > 3)
             {
                 BackGround = 0;
                 mark = 0;
@@ -455,13 +455,13 @@ public class level22 : MonoBehaviour
 
 
 
-            if (time > 4)
+            if (time > 2.5)
             {
                 BackGround = 0;
             }
 
             //恢復觸手動畫
-            if (time > 4.2)
+            if (time > 3)
             {
                 ani4.SetBool("normal", true);
                 ani4.SetBool("up", false);
@@ -469,14 +469,14 @@ public class level22 : MonoBehaviour
             }
 
             //觸手消失
-            if (time > 4.5)
+            if (time > 3)
             {
                 hand4.SetActive(false);
 
             }
 
             //進入攻擊2
-            if (time > 5)
+            if (time > 3.5)
             {
                 levelValue = 5;
                 time = 0;

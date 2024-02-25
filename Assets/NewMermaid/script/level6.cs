@@ -327,7 +327,33 @@ public class level6 : MonoBehaviour
 
         }
 
-       
+        if (BackGround == 12)
+        {
+            ice3.SetActive(false);
+            ice9.SetActive(false);
+            ice14.SetActive(false);
+            ice20.SetActive(false);
+            ice25.SetActive(false);
+            ice26.SetActive(false);
+            ice21.SetActive(false);
+            ice17.SetActive(false);
+            ice12.SetActive(false);
+            ice8.SetActive(false);
+            ice1.SetActive(false);
+            ice7.SetActive(false);
+            ice12.SetActive(false);
+            ice18.SetActive(false);
+            ice23.SetActive(false);
+            ice29.SetActive(false);
+            ice32.SetActive(false);
+            ice28.SetActive(false);
+            ice23.SetActive(false);
+            ice19.SetActive(false);
+            ice14.SetActive(false);
+
+
+        }
+
 
         if (mark == 0)
         {
@@ -478,7 +504,36 @@ public class level6 : MonoBehaviour
 
         }
 
-        
+        if (mark == 12)
+        {
+            ice3.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice9.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice14.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice20.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice25.GetComponent<Renderer>().sharedMaterial = material[1];
+
+            ice26.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice21.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice17.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice12.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice8.GetComponent<Renderer>().sharedMaterial = material[1];
+
+            ice1.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice7.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice12.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice18.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice23.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice29.GetComponent<Renderer>().sharedMaterial = material[1];
+
+            ice32.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice28.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice23.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice19.GetComponent<Renderer>().sharedMaterial = material[1];
+            ice14.GetComponent<Renderer>().sharedMaterial = material[1];
+
+        }
+
+
 
         if (levelValue != 0)
         {
@@ -494,45 +549,30 @@ public class level6 : MonoBehaviour
                 hand1.SetActive(true);
             }
 
-            if (time > 1.1)
+            if (time > 0.3)
             {
                 mark = 1;
             }
 
             //觸手上升動畫
-            if (time > 1)
+            if (time > 0.2)
             {
                 ani1.SetBool("up", true);
                 ani1.SetBool("normal", false);
                 ani1.SetBool("attack", false);
-                //Setting = 1;
-                ani2.SetBool("up", true);
-                ani2.SetBool("normal", false);
-                ani2.SetBool("attack", false);
-                ani3.SetBool("up", true);
-                ani3.SetBool("normal", false);
-                ani3.SetBool("attack", false);
+                //Setting = 1;           
             }
 
             //觸手攻擊動畫
-            if (time > 3)
+            if (time > 0.7)
             {
                 ani1.SetBool("attack", true);
                 ani1.SetBool("normal", false);
                 ani1.SetBool("up", false);
-
-                ani2.SetBool("attack", true);
-                ani2.SetBool("normal", false);
-                ani2.SetBool("up", false);
-
-                ani3.SetBool("attack", true);
-                ani3.SetBool("normal", false);
-                ani3.SetBool("up", false);
-
             }
 
             //地板消失
-            if (time > 3.2)
+            if (time > 1)
             {
                 BackGround = 1;
                 mark = 0;
@@ -540,37 +580,27 @@ public class level6 : MonoBehaviour
 
 
 
-            if (time > 4)
+            if (time > 1.3)
             {
                 BackGround = 0;
             }
 
             //恢復觸手動畫
-            if (time > 3.2)
+            if (time > 1)
             {
                 ani1.SetBool("normal", true);
                 ani1.SetBool("up", false);
                 ani1.SetBool("attack", false);
-
-                ani2.SetBool("normal", true);
-                ani2.SetBool("up", false);
-                ani2.SetBool("attack", false);
-
-                ani3.SetBool("normal", true);
-                ani3.SetBool("up", false);
-                ani3.SetBool("attack", false);
             }
 
             //觸手消失
-            if (time > 4.5)
+            if (time > 1.5)
             {
                 hand1.SetActive(false);
-                hand2.SetActive(false);
-                hand3.SetActive(false);
             }
 
             //進入攻擊2
-            if (time > 5)
+            if (time > 1.7)
             {
                 levelValue = 2;
                 time = 0;
@@ -583,53 +613,32 @@ public class level6 : MonoBehaviour
             //觸手出現，標記地板
             if (time > 0)
             {
-                hand4.SetActive(true);
-                hand5.SetActive(true);
-                hand6.SetActive(true);
+                hand2.SetActive(true);           
             }
 
-            if (time > 1.1)
+            if (time > 0.3)
             {
                 mark = 2;
             }
 
             //觸手上升動畫
-            if (time > 1)
+            if (time > 0.2)
             {
-                ani4.SetBool("up", true);
-                ani4.SetBool("normal", false);
-                ani4.SetBool("attack", false);
-                //Setting = 1;
-
-                ani5.SetBool("up", true);
-                ani5.SetBool("normal", false);
-                ani5.SetBool("attack", false);
-
-                ani6.SetBool("up", true);
-                ani6.SetBool("normal", false);
-                ani6.SetBool("attack", false);
+                ani2.SetBool("up", true);
+                ani2.SetBool("normal", false);
+                ani2.SetBool("attack", false);
             }
 
             //觸手攻擊動畫
-            if (time > 3)
+            if (time > 0.7)
             {
-                ani4.SetBool("attack", true);
-                ani4.SetBool("normal", false);
-                ani4.SetBool("up", false);
-
-                ani5.SetBool("attack", true);
-                ani5.SetBool("normal", false);
-                ani5.SetBool("up", false);
-
-                ani6.SetBool("attack", true);
-                ani6.SetBool("normal", false);
-                ani6.SetBool("up", false);
-
-
+                ani2.SetBool("attack", true);
+                ani2.SetBool("normal", false);
+                ani2.SetBool("up", false);
             }
 
             //地板消失
-            if (time > 3.2)
+            if (time > 1)
             {
                 BackGround = 2;
                 mark = 0;
@@ -637,38 +646,27 @@ public class level6 : MonoBehaviour
 
 
 
-            if (time > 4)
+            if (time > 1.3)
             {
                 BackGround = 0;
             }
 
             //恢復觸手動畫
-            if (time > 3.2)
+            if (time > 1)
             {
-                ani4.SetBool("normal", true);
-                ani4.SetBool("up", false);
-                ani4.SetBool("attack", false);
-
-                ani5.SetBool("normal", true);
-                ani5.SetBool("up", false);
-                ani5.SetBool("attack", false);
-
-                ani6.SetBool("normal", true);
-                ani6.SetBool("up", false);
-                ani6.SetBool("attack", false);
+                ani2.SetBool("normal", true);
+                ani2.SetBool("up", false);
+                ani2.SetBool("attack", false);
             }
 
             //觸手消失
-            if (time > 4.5)
+            if (time > 1.5)
             {
-                hand4.SetActive(false);
-                hand5.SetActive(false);
-                hand6.SetActive(false);
-
+                hand2.SetActive(false);
             }
 
             //進入攻擊2
-            if (time > 5)
+            if (time > 1.7)
             {
                 levelValue = 3;
                 time = 0;
@@ -681,52 +679,32 @@ public class level6 : MonoBehaviour
             //觸手出現，標記地板
             if (time > 0)
             {
-                hand2.SetActive(true);
-                hand5.SetActive(true);
-                hand7.SetActive(true);
+                hand3.SetActive(true);
             }
 
-            if (time > 1.1)
+            if (time > 0.3)
             {
                 mark = 3;
             }
 
             //觸手上升動畫
-            if (time > 1)
+            if (time > 0.2)
             {
-                ani2.SetBool("up", true);
-                ani2.SetBool("normal", false);
-                ani2.SetBool("attack", false);
-                //Setting = 1;
-                ani5.SetBool("up", true);
-                ani5.SetBool("normal", false);
-                ani5.SetBool("attack", false);
-
-                ani7.SetBool("up", true);
-                ani7.SetBool("normal", false);
-                ani7.SetBool("attack", false);
+                ani3.SetBool("up", true);
+                ani3.SetBool("normal", false);
+                ani3.SetBool("attack", false);
             }
 
             //觸手攻擊動畫
-            if (time > 3)
+            if (time > 0.7)
             {
-                ani2.SetBool("attack", true);
-                ani2.SetBool("normal", false);
-                ani2.SetBool("up", false);
-
-                ani5.SetBool("attack", true);
-                ani5.SetBool("normal", false);
-                ani5.SetBool("up", false);
-
-                ani7.SetBool("attack", true);
-                ani7.SetBool("normal", false);
-                ani7.SetBool("up", false);
-
-
+                ani3.SetBool("attack", true);
+                ani3.SetBool("normal", false);
+                ani3.SetBool("up", false);
             }
 
             //地板消失
-            if (time > 3.2)
+            if (time > 1)
             {
                 BackGround = 3;
                 mark = 0;
@@ -734,37 +712,731 @@ public class level6 : MonoBehaviour
 
 
 
-            if (time > 4)
+            if (time > 1.3)
             {
                 BackGround = 0;
             }
 
             //恢復觸手動畫
-            if (time > 3.2)
+            if (time > 1)
             {
-                ani2.SetBool("normal", true);
-                ani2.SetBool("up", false);
-                ani2.SetBool("attack", false);
+                ani3.SetBool("normal", true);
+                ani3.SetBool("up", false);
+                ani3.SetBool("attack", false);
+            }
 
+            //觸手消失
+            if (time > 1.5)
+            {
+                hand3.SetActive(false);
+            }
+
+            //進入攻擊2
+            if (time > 1.7)
+            {
+                levelValue = 4;
+                time = 0;
+            }
+
+        }
+
+        if (levelValue == 4)
+        {
+            //觸手出現，標記地板
+            if (time > 0)
+            {
+                hand4.SetActive(true);
+            }
+
+            if (time > 0.3)
+            {
+                mark = 4;
+            }
+
+            //觸手上升動畫
+            if (time > 0.2)
+            {
+                ani4.SetBool("up", true);
+                ani4.SetBool("normal", false);
+                ani4.SetBool("attack", false);
+            }
+
+            //觸手攻擊動畫
+            if (time > 0.7)
+            {
+                ani4.SetBool("attack", true);
+                ani4.SetBool("normal", false);
+                ani4.SetBool("up", false);
+            }
+
+            //地板消失
+            if (time > 1)
+            {
+                BackGround = 4;
+                mark = 0;
+            }
+
+
+
+            if (time > 1.3)
+            {
+                BackGround = 0;
+            }
+
+            //恢復觸手動畫
+            if (time > 1)
+            {
+                ani4.SetBool("normal", true);
+                ani4.SetBool("up", false);
+                ani4.SetBool("attack", false);
+            }
+
+            //觸手消失
+            if (time > 1.5)
+            {
+                hand4.SetActive(false);
+            }
+
+            //進入攻擊2
+            if (time > 1.7)
+            {
+                levelValue = 5;
+                time = 0;
+            }
+
+        }
+
+        if (levelValue == 5)
+        {
+            //觸手出現，標記地板
+            if (time > 0)
+            {
+                hand5.SetActive(true);
+            }
+
+            if (time > 0.3)
+            {
+                mark = 5;
+            }
+
+            //觸手上升動畫
+            if (time > 0.2)
+            {
+                ani5.SetBool("up", true);
+                ani5.SetBool("normal", false);
+                ani5.SetBool("attack", false);
+            }
+
+            //觸手攻擊動畫
+            if (time > 0.7)
+            {
+                ani5.SetBool("attack", true);
+                ani5.SetBool("normal", false);
+                ani5.SetBool("up", false);
+            }
+
+            //地板消失
+            if (time > 1)
+            {
+                BackGround = 5;
+                mark = 0;
+            }
+
+
+
+            if (time > 1.3)
+            {
+                BackGround = 0;
+            }
+
+            //恢復觸手動畫
+            if (time > 1)
+            {
                 ani5.SetBool("normal", true);
                 ani5.SetBool("up", false);
                 ani5.SetBool("attack", false);
+            }
 
+            //觸手消失
+            if (time > 1.5)
+            {
+                hand5.SetActive(false);
+            }
+
+            //進入攻擊2
+            if (time > 1.7)
+            {
+                levelValue = 6;
+                time = 0;
+            }
+
+        }
+
+        if (levelValue == 6)
+        {
+            //觸手出現，標記地板
+            if (time > 0)
+            {
+                hand6.SetActive(true);
+            }
+
+            if (time > 0.3)
+            {
+                mark = 6;
+            }
+
+            //觸手上升動畫
+            if (time > 0.2)
+            {
+                ani6.SetBool("up", true);
+                ani6.SetBool("normal", false);
+                ani6.SetBool("attack", false);
+            }
+
+            //觸手攻擊動畫
+            if (time > 0.7)
+            {
+                ani6.SetBool("attack", true);
+                ani6.SetBool("normal", false);
+                ani6.SetBool("up", false);
+            }
+
+            //地板消失
+            if (time > 1)
+            {
+                BackGround = 6;
+                mark = 0;
+            }
+
+
+
+            if (time > 1.3)
+            {
+                BackGround = 0;
+            }
+
+            //恢復觸手動畫
+            if (time > 1)
+            {
+                ani6.SetBool("normal", true);
+                ani6.SetBool("up", false);
+                ani6.SetBool("attack", false);
+            }
+
+            //觸手消失
+            if (time > 1.5)
+            {
+                hand6.SetActive(false);
+            }
+
+            //進入攻擊2
+            if (time > 1.7)
+            {
+                levelValue = 7;
+                time = 0;
+            }
+
+        }
+
+        if (levelValue == 7)
+        {
+            //觸手出現，標記地板
+            if (time > 0)
+            {
+                hand7.SetActive(true);
+            }
+
+            if (time > 0.3)
+            {
+                mark = 7;
+            }
+
+            //觸手上升動畫
+            if (time > 0.2)
+            {
+                ani7.SetBool("up", true);
+                ani7.SetBool("normal", false);
+                ani7.SetBool("attack", false);
+            }
+
+            //觸手攻擊動畫
+            if (time > 0.7)
+            {
+                ani7.SetBool("attack", true);
+                ani7.SetBool("normal", false);
+                ani7.SetBool("up", false);
+            }
+
+            //地板消失
+            if (time > 1)
+            {
+                BackGround = 3;
+                mark = 0;
+            }
+
+
+
+            if (time > 1.3)
+            {
+                BackGround = 0;
+            }
+
+            //恢復觸手動畫
+            if (time > 1)
+            {
                 ani7.SetBool("normal", true);
                 ani7.SetBool("up", false);
                 ani7.SetBool("attack", false);
             }
 
             //觸手消失
-            if (time > 4.5)
+            if (time > 1.5)
             {
-                hand2.SetActive(false);
-                hand5.SetActive(false);
                 hand7.SetActive(false);
             }
 
             //進入攻擊2
-            if (time > 5)
+            if (time > 1.7)
+            {
+                levelValue = 8;
+                time = 0;
+            }
+
+        }
+
+        if (levelValue == 8)
+        {
+            //觸手出現，標記地板
+            if (time > 0)
+            {
+                hand8.SetActive(true);
+            }
+
+            if (time > 0.4)
+            {
+                mark = 8;
+            }
+
+            //觸手上升動畫
+            if (time > 0.3)
+            {
+                ani8.SetBool("up", true);
+                ani8.SetBool("normal", false);
+                ani8.SetBool("attack", false);
+            }
+
+            //觸手攻擊動畫
+            if (time > 1.4)
+            {
+                ani8.SetBool("attack", true);
+                ani8.SetBool("normal", false);
+                ani8.SetBool("up", false);
+            }
+
+            //地板消失
+            if (time > 1.6)
+            {
+                BackGround = 8;
+                mark = 0;
+            }
+
+
+
+            if (time > 2.5)
+            {
+                BackGround = 0;
+            }
+
+            //恢復觸手動畫
+            if (time > 1.6)
+            {
+                ani8.SetBool("normal", true);
+                ani8.SetBool("up", false);
+                ani8.SetBool("attack", false);
+            }
+
+            //觸手消失
+            if (time > 3)
+            {
+                hand8.SetActive(false);
+            }
+
+            //進入攻擊2
+            if (time > 3.5)
+            {
+                levelValue = 9;
+                time = 0;
+            }
+
+        }
+
+        if (levelValue == 9)
+        {
+            //觸手出現，標記地板
+            if (time > 0)
+            {
+                hand9.SetActive(true);
+            }
+
+            if (time > 0.4)
+            {
+                mark = 9;
+            }
+
+            //觸手上升動畫
+            if (time > 0.3)
+            {
+                ani9.SetBool("up", true);
+                ani9.SetBool("normal", false);
+                ani9.SetBool("attack", false);
+            }
+
+            //觸手攻擊動畫
+            if (time > 1.4)
+            {
+                ani9.SetBool("attack", true);
+                ani9.SetBool("normal", false);
+                ani9.SetBool("up", false);
+            }
+
+            //地板消失
+            if (time > 1.6)
+            {
+                BackGround = 9;
+                mark = 0;
+            }
+
+
+
+            if (time > 2.5)
+            {
+                BackGround = 0;
+            }
+
+            //恢復觸手動畫
+            if (time > 1.6)
+            {
+                ani9.SetBool("normal", true);
+                ani9.SetBool("up", false);
+                ani9.SetBool("attack", false);
+            }
+
+            //觸手消失
+            if (time > 3)
+            {
+                hand9.SetActive(false);
+            }
+
+            //進入攻擊2
+            if (time > 3.5)
+            {
+                levelValue = 10;
+                time = 0;
+            }
+
+        }
+
+        if (levelValue == 10)
+        {
+            //觸手出現，標記地板
+            if (time > 0)
+            {
+                hand10.SetActive(true);
+            }
+
+            if (time > 0.4)
+            {
+                mark = 10;
+            }
+
+            //觸手上升動畫
+            if (time > 0.3)
+            {
+                ani10.SetBool("up", true);
+                ani10.SetBool("normal", false);
+                ani10.SetBool("attack", false);
+            }
+
+            //觸手攻擊動畫
+            if (time > 1.4)
+            {
+                ani10.SetBool("attack", true);
+                ani10.SetBool("normal", false);
+                ani10.SetBool("up", false);
+            }
+
+            //地板消失
+            if (time > 1.6)
+            {
+                BackGround = 10;
+                mark = 0;
+            }
+
+
+
+            if (time > 2.5)
+            {
+                BackGround = 0;
+            }
+
+            //恢復觸手動畫
+            if (time > 1.6)
+            {
+                ani10.SetBool("normal", true);
+                ani10.SetBool("up", false);
+                ani10.SetBool("attack", false);
+            }
+
+            //觸手消失
+            if (time > 3)
+            {
+                hand10.SetActive(false);
+            }
+
+            //進入攻擊2
+            if (time > 3.5)
+            {
+                levelValue = 11;
+                time = 0;
+            }
+
+        }
+
+
+        if (levelValue == 11)
+        {
+            //觸手出現，標記地板
+            if (time > 0)
+            {
+                hand11.SetActive(true);
+            }
+
+            if (time > 0.4)
+            {
+                mark = 11;
+            }
+
+            //觸手上升動畫
+            if (time > 0.3)
+            {
+                ani11.SetBool("up", true);
+                ani11.SetBool("normal", false);
+                ani11.SetBool("attack", false);
+            }
+
+            //觸手攻擊動畫
+            if (time > 1.4)
+            {
+                ani11.SetBool("attack", true);
+                ani11.SetBool("normal", false);
+                ani11.SetBool("up", false);
+            }
+
+            //地板消失
+            if (time > 1.6)
+            {
+                BackGround = 11;
+                mark = 0;
+            }
+
+
+
+            if (time > 2.5)
+            {
+                BackGround = 0;
+            }
+
+            //恢復觸手動畫
+            if (time > 1.6)
+            {
+                ani11.SetBool("normal", true);
+                ani11.SetBool("up", false);
+                ani11.SetBool("attack", false);
+            }
+
+            //觸手消失
+            if (time > 3)
+            {
+                hand11.SetActive(false);
+            }
+
+            //進入攻擊2
+            if (time > 3.5)
+            {
+                levelValue = 12;
+                time = 0;
+            }
+
+        }
+
+        if (levelValue == 12)
+        {
+            //觸手出現，標記地板
+            if (time > 0)
+            {
+                hand8.SetActive(true);
+                hand9.SetActive(true);
+                hand10.SetActive(true);
+                hand11.SetActive(true);
+            }
+
+            if (time > 0.4)
+            {
+                mark = 12;
+            }
+
+            //觸手上升動畫
+            if (time > 0.3)
+            {
+                ani8.SetBool("up", true);
+                ani8.SetBool("normal", false);
+                ani8.SetBool("attack", false);
+
+                ani9.SetBool("up", true);
+                ani9.SetBool("normal", false);
+                ani9.SetBool("attack", false);
+
+                ani10.SetBool("up", true);
+                ani10.SetBool("normal", false);
+                ani10.SetBool("attack", false);
+
+                ani11.SetBool("up", true);
+                ani11.SetBool("normal", false);
+                ani11.SetBool("attack", false);
+            }
+
+            //觸手攻擊動畫
+            if (time > 1.4)
+            {
+                ani8.SetBool("attack", true);
+                ani8.SetBool("normal", false);
+                ani8.SetBool("up", false);
+
+                ani9.SetBool("attack", true);
+                ani9.SetBool("normal", false);
+                ani9.SetBool("up", false);
+
+                ani10.SetBool("attack", true);
+                ani10.SetBool("normal", false);
+                ani10.SetBool("up", false);
+
+                ani11.SetBool("attack", true);
+                ani11.SetBool("normal", false);
+                ani11.SetBool("up", false);
+            }
+
+            //地板消失
+            if (time > 1.6)
+            {
+                BackGround = 12;
+                mark = 0;
+            }
+
+
+
+            if (time > 2.5)
+            {
+                BackGround = 0;
+            }
+
+            //恢復觸手動畫
+            if (time > 1.6)
+            {
+                ani8.SetBool("normal", true);
+                ani8.SetBool("up", false);
+                ani8.SetBool("attack", false);
+
+                ani9.SetBool("normal", true);
+                ani9.SetBool("up", false);
+                ani9.SetBool("attack", false);
+
+                ani10.SetBool("normal", true);
+                ani10.SetBool("up", false);
+                ani10.SetBool("attack", false);
+
+                ani11.SetBool("normal", true);
+                ani11.SetBool("up", false);
+                ani11.SetBool("attack", false);
+            }
+
+            //觸手消失
+            if (time > 3)
+            {
+                hand8.SetActive(false);
+                hand9.SetActive(false);
+                hand10.SetActive(false);
+                hand11.SetActive(false);
+            }
+
+            //進入攻擊2
+            if (time > 3.5)
+            {
+                levelValue = 13;
+                time = 0;
+            }
+
+        }
+
+
+        if (levelValue == 3)
+        {
+            //觸手出現，標記地板
+            if (time > 0)
+            {
+                hand3.SetActive(true);
+            }
+
+            if (time > 0.4)
+            {
+                mark = 3;
+            }
+
+            //觸手上升動畫
+            if (time > 0.3)
+            {
+                ani3.SetBool("up", true);
+                ani3.SetBool("normal", false);
+                ani3.SetBool("attack", false);
+            }
+
+            //觸手攻擊動畫
+            if (time > 1.4)
+            {
+                ani3.SetBool("attack", true);
+                ani3.SetBool("normal", false);
+                ani3.SetBool("up", false);
+            }
+
+            //地板消失
+            if (time > 1.6)
+            {
+                BackGround = 3;
+                mark = 0;
+            }
+
+
+
+            if (time > 2.5)
+            {
+                BackGround = 0;
+            }
+
+            //恢復觸手動畫
+            if (time > 1.6)
+            {
+                ani3.SetBool("normal", true);
+                ani3.SetBool("up", false);
+                ani3.SetBool("attack", false);
+            }
+
+            //觸手消失
+            if (time > 3)
+            {
+                hand3.SetActive(false);
+            }
+
+            //進入攻擊2
+            if (time > 3.5)
             {
                 levelValue = 4;
                 time = 0;
@@ -773,76 +1445,6 @@ public class level6 : MonoBehaviour
         }
 
 
-
-        if (levelValue == 4)
-        {
-            //觸手出現，標記地板
-            if (time > 0)
-            {
-                hand8.SetActive(true);
-
-            }
-
-            if (time > 1.1)
-            {
-                mark = 0;
-            }
-
-            //觸手上升動畫
-            if (time > 1)
-            {
-                ani8.SetBool("up", true);
-                ani8.SetBool("normal", false);
-                ani8.SetBool("attack", false);
-
-            }
-
-            //觸手攻擊動畫
-            if (time > 3)
-            {
-                ani8.SetBool("attack", true);
-                ani8.SetBool("normal", false);
-                ani8.SetBool("up", false);
-
-            }
-
-            //地板消失
-            if (time > 3.2)
-            {
-                BackGround = 0;
-                mark = 0;
-            }
-
-
-
-            if (time > 4)
-            {
-                BackGround = 0;
-            }
-
-            //恢復觸手動畫
-            if (time > 4.2)
-            {
-                ani8.SetBool("normal", true);
-                ani8.SetBool("up", false);
-                ani8.SetBool("attack", false);
-            }
-
-            //觸手消失
-            if (time > 4.5)
-            {
-                hand8.SetActive(false);
-
-            }
-
-            //進入攻擊2
-            if (time > 5)
-            {
-                levelValue = 5;
-                time = 0;
-            }
-
-        }
 
         if (levelValue == 5)
         {
