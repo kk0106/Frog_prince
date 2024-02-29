@@ -25,4 +25,8 @@ public class gonext : MonoBehaviour
     {
         SceneManager.LoadScene("T1_NewMermaid");
     }
+    public void go2()
+    {
+        SceneManager.LoadScene("T1_MermaidDie");
+    }
 }

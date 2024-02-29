@@ -25,8 +25,11 @@ public class BossHp : MonoBehaviour
     public SpriteRenderer BossSpr;
     public float BossHurtTime;
     public bool BossHurt;
-
+    
+    [Header("Godness")]
     public GameObject godness;
+    private Animator ani;
+    public float GodTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +46,7 @@ public class BossHp : MonoBehaviour
 
         BossSpr =boss.GetComponent<SpriteRenderer>();
 
+        ani=godness.GetComponent<Animator>();   
 
         WhatLevelNow =1;
 
@@ -52,6 +56,15 @@ public class BossHp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (godness.activeInHierarchy)
+        {
+            GodTime += Time.deltaTime;
+        }
+        if (GodTime > 1)
+        {
+            ani.SetBool("normal", true);
+        }
+
         if (BossHurt)
         {
             BossSpr.sprite = BossImg[0];

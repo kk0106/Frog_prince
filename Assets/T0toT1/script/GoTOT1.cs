@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GoTOT1 : MonoBehaviour
 {
+    public GameObject comic;
     // Start is called before the first frame update
     void Start()
     {
-        
+        comic.SetActive(false);
     }
 
     // Update is called once per frame
@@ -19,6 +20,6 @@ public class GoTOT1 : MonoBehaviour
 
     public void goo()
     {
-        SceneManager.LoadScene("T1");
+        comic.SetActive(true);
     }
 }
