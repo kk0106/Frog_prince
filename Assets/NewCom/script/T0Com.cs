@@ -35,6 +35,8 @@ public class T0Com : MonoBehaviour
                 if (UserInput.instance.controls.playerControls.KeepStory.WasPressedThisFrame())
                 {
                     SceneManager.LoadScene("Frog");
+
+                time = 0;
                 }
         }
 

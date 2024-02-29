@@ -179,6 +179,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""howplay"",
+                    ""type"": ""Button"",
+                    ""id"": ""04de0590-0664-49ca-b0d1-f6178e0f3aab"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -764,6 +773,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""KeepStory"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c40484ee-87e2-42e4-968b-ed6acfcbb9c6"",
+                    ""path"": ""<XInputController>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""GamePad"",
+                    ""action"": ""howplay"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -812,6 +832,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_playerControls_NewUiControl = m_playerControls.FindAction("NewUiControl", throwIfNotFound: true);
         m_playerControls_AllInput = m_playerControls.FindAction("AllInput", throwIfNotFound: true);
         m_playerControls_KeepStory = m_playerControls.FindAction("KeepStory", throwIfNotFound: true);
+        m_playerControls_howplay = m_playerControls.FindAction("howplay", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -890,6 +911,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_playerControls_NewUiControl;
     private readonly InputAction m_playerControls_AllInput;
     private readonly InputAction m_playerControls_KeepStory;
+    private readonly InputAction m_playerControls_howplay;
     public struct PlayerControlsActions
     {
         private @Controls m_Wrapper;
@@ -911,6 +933,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @NewUiControl => m_Wrapper.m_playerControls_NewUiControl;
         public InputAction @AllInput => m_Wrapper.m_playerControls_AllInput;
         public InputAction @KeepStory => m_Wrapper.m_playerControls_KeepStory;
+        public InputAction @howplay => m_Wrapper.m_playerControls_howplay;
         public InputActionMap Get() { return m_Wrapper.m_playerControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -971,6 +994,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @KeepStory.started += instance.OnKeepStory;
             @KeepStory.performed += instance.OnKeepStory;
             @KeepStory.canceled += instance.OnKeepStory;
+            @howplay.started += instance.OnHowplay;
+            @howplay.performed += instance.OnHowplay;
+            @howplay.canceled += instance.OnHowplay;
         }
 
         private void UnregisterCallbacks(IPlayerControlsActions instance)
@@ -1026,6 +1052,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @KeepStory.started -= instance.OnKeepStory;
             @KeepStory.performed -= instance.OnKeepStory;
             @KeepStory.canceled -= instance.OnKeepStory;
+            @howplay.started -= instance.OnHowplay;
+            @howplay.performed -= instance.OnHowplay;
+            @howplay.canceled -= instance.OnHowplay;
         }
 
         public void RemoveCallbacks(IPlayerControlsActions instance)
@@ -1080,5 +1109,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnNewUiControl(InputAction.CallbackContext context);
         void OnAllInput(InputAction.CallbackContext context);
         void OnKeepStory(InputAction.CallbackContext context);
+        void OnHowplay(InputAction.CallbackContext context);
     }
 }

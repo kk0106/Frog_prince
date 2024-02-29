@@ -157,6 +157,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "howplay",
+                    "type": "Button",
+                    "id": "04de0590-0664-49ca-b0d1-f6178e0f3aab",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -740,6 +749,17 @@
                     "processors": "",
                     "groups": "GamePad",
                     "action": "KeepStory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c40484ee-87e2-42e4-968b-ed6acfcbb9c6",
+                    "path": "<XInputController>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "howplay",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -53,7 +53,7 @@ public class UserInput : MonoBehaviour
 
     private void Update()
     {
-        menuOpenCloseInput=_newmenucontrol.WasPressedThisFrame();
+      //  menuOpenCloseInput=_newmenucontrol.WasPressedThisFrame();
     }
 }
 

@@ -4,37 +4,29 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class uiMenu : MonoBehaviour
+public class uiMenu1 : MonoBehaviour
 {
-    public GameObject menu;
-    public bool Opened;
+    //public GameObject menu;
+    //public bool Opened;
     public GameObject firstResponseButton;
     // Start is called before the first frame update
     void Start()
     {
-        menu.SetActive(false);
+      //  menu.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (UserInput.instance.controls.playerControls.uiTouch.WasPressedThisFrame())
-        {
-            Opened=!Opened;
-            menu.SetActive(Opened);
+        //if (UserInput.instance.controls.playerControls.uiTouch.WasPressedThisFrame())
+       // {
+          //  Opened=!Opened;
+          //  menu.SetActive(Opened);
             EventSystem.current.SetSelectedGameObject(firstResponseButton);
-        }
+       // }
        
           
-        if(Opened)
-        {
-            Time.timeScale = 0;
-
-        }
-        else
-        {
-            Time.timeScale = 1;
-        }
+        
     }
     
 

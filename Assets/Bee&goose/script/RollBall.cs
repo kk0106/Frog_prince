@@ -6,7 +6,7 @@ public class RollBall : MonoBehaviour
 {
 
     public float time;
-
+    public Vector3 StartForce;
     private Rigidbody rb;
     public float speed;
     public float minValue;
@@ -20,10 +20,10 @@ public class RollBall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
-        rb.velocity = Vector3.left * speed;
-        
+
+
+        //  rb.velocity = Vector3.left * speed;
+        rb.AddForce(StartForce, ForceMode.Impulse);
 
        
 
