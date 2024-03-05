@@ -107,7 +107,7 @@ public class hp : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "apple"|| other.gameObject.tag == "BambooShoots")
+        if (other.gameObject.tag == "apple"|| other.gameObject.tag == "BambooShoots" || other.gameObject.tag == "card")
         {
             HP -= 1;
 

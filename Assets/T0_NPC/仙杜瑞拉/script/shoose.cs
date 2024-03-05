@@ -81,6 +81,11 @@ public class shoose : MonoBehaviour
             talkCam.SetActive(false);
             talk.SetActive(false) ;
         }
+        if (talkTime < 0.49999)
+        {
+            talkTime = 4.5f;
+
+        }
 
       
 
@@ -98,7 +103,7 @@ public class shoose : MonoBehaviour
 
         if(FinishTime<4)
         {
-          //  talkCam.SetActive(true) ;
+            talkCam.SetActive(true) ;
            
 
             isEnd = 1;

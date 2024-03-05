@@ -6,12 +6,13 @@ public class CardStartTrigger : MonoBehaviour
 {
     public GameObject cam;
     public float time;
+    public GameObject CindyTalkStart;
 
     public GameObject trigger;
     // Start is called before the first frame update
     void Start()
     {
-        
+        CindyTalkStart.SetActive(false);
     }
 
     // Update is called once per frame
@@ -25,10 +26,14 @@ public class CardStartTrigger : MonoBehaviour
         if (time <2.5)
         {
             cam.SetActive(true);
+
+            CindyTalkStart.SetActive(true );
         }
         if(time < 0)
         {
             cam.SetActive(false);
+
+            CindyTalkStart.SetActive(false );
 
             CardStartTriggerValue.start = 0;
 

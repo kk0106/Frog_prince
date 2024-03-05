@@ -61,11 +61,24 @@ public class PlayerInMermaid : MonoBehaviour
 
     public GameObject BackPack;
     bool areOpen;
-    
+    [SerializeField] private DialogueUI dialogueUI;
 
 
-    
+    public DialogueUI DialogueUI
+    {
+        get { return dialogueUI; }
+        set { dialogueUI = value; }
+    }
+
+    public void SetDialogueUI(DialogueUI newDialogueUI)
+    {
+        dialogueUI = newDialogueUI;
+    }
+
     public IInteractable Interactable { get; set; }
+
+
+
 
 
     // Start is called before the first frame update
@@ -90,12 +103,20 @@ public class PlayerInMermaid : MonoBehaviour
 
     private void Update()
     {
-       
 
-     
-       
+        Invoke("alife", 1f);
+        if (uiMenu.Opened) return;
+        if (dialogueUI.IsOpen) return;
+        OpenBackPack();
+        if (areOpen == true) return;
+        Move();
 
-       
+        Jump();
+
+
+
+
+
 
         Vector3 currentPosition = transform.position;
 
@@ -166,8 +187,8 @@ public class PlayerInMermaid : MonoBehaviour
         if (UserInput.instance.controls.playerControls.talk.WasPressedThisFrame())
 
         {
-           
-            //nteractable?.Interact(this);
+            if (dialogueUI.IsOpen) return;
+          //z  object value = Interactable?.Interact(playe);
         }
 
         if (GrapplingGun.grappleCheck == 1 && FaceRight)

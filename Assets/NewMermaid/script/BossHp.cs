@@ -60,7 +60,7 @@ public class BossHp : MonoBehaviour
         {
             GodTime += Time.deltaTime;
         }
-        if (GodTime > 1)
+        if (GodTime > 0.3)
         {
             ani.SetBool("normal", true);
         }

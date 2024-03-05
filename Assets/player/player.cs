@@ -198,8 +198,8 @@ public class player : MonoBehaviour
                 JumpForce = InMermaidJumpForce;
 
 
-                minValue = -76;
-                maxValue = -45.3f;
+                minValue = -80;
+                maxValue = -40f;
             }
         }
         
