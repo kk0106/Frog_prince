@@ -12582,6 +12582,12 @@ MonoBehaviour:
   pos8: {x: 2.9780197, y: 2.028983, z: -67.85459}
   pos9: {x: 0, y: 0, z: 0}
   pos10: {x: 0, y: 0, z: 0}
+  pos11: {x: 0, y: 0, z: 0}
+  pos12: {x: 0, y: 0, z: 0}
+  pos13: {x: 0, y: 0, z: 0}
+  WolfPos: {x: 0, y: 0, z: 0}
+  wolf: {fileID: 1440803626}
+  wolfvalue: 0
   GGpanel: {fileID: 2146582688}
   loading: {fileID: 1745992290}
 --- !u!95 &1440803630
@@ -19140,6 +19146,12 @@ MonoBehaviour:
   smallcrack: {fileID: 8300000, guid: b6ad7e4e6953fd5419b34d8313e21fd7, type: 3}
   bigcrack: {fileID: 8300000, guid: 0fe8208635ba52348af5fb88f0028c49, type: 3}
   jump: {fileID: 8300000, guid: 3e379c409223f9f48b62dfd6b42acd39, type: 3}
+  lick: {fileID: 0}
+  spit: {fileID: 0}
+  glass1: {fileID: 0}
+  glass2: {fileID: 0}
+  glass3: {fileID: 0}
+  smash: {fileID: 0}
 --- !u!4 &2128704498
 Transform:
   m_ObjectHideFlags: 0
