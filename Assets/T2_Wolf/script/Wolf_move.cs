@@ -11,12 +11,17 @@ public class Wolf_move : MonoBehaviour
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody>();
-        
+        speed = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         this.rb.velocity = Vector3.right*speed;
+
+        if (StartTrigger.startValue == 2)
+        {
+            speed = 2;
+        }
     }
 }
