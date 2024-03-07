@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class AudioTrigOnce : MonoBehaviour
 {
+    [SerializeField] AudioSource SFXSource;
     AudioManager audioManager;
+    public AudioClip custom;
+    private bool hasPlayedSFX = false;
     // Start is called before the first frame update
     void awake()
     {
@@ -18,9 +21,11 @@ public class AudioTrigOnce : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player")&&!hasPlayedSFX)
         {
-            AudioManager.Instance.PlaySFX(AudioManager.Instance.witch);
+                        
+                SFXSource.PlayOneShot(custom);
+            hasPlayedSFX = true;
         }
     }
     private void OnTriggerExit(Collider other)

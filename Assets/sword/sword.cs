@@ -20,6 +20,9 @@ public class sword : MonoBehaviour
     public float time;
     public static int a;
 
+
+    AudioManager audioManager;
+    private bool hasPlayedSFX = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -75,9 +78,11 @@ public class sword : MonoBehaviour
 
         
 
-        if (a == 2)
+        if (a == 2 && !hasPlayedSFX)
         {
             CameraShakeManger.Instance.ScreenShakeFromProfile(profile, impulseSource);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.smash);
+            hasPlayedSFX = true;
         }
 
         if (a == 3)

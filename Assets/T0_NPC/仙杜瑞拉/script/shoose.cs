@@ -24,6 +24,9 @@ public class shoose : MonoBehaviour
     public float time;
     public float talkTime;
     public float FinishTime;
+
+    AudioManager audioManager;
+    private bool hasPlayedSFX = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,8 +62,9 @@ public class shoose : MonoBehaviour
         if (time < 0)
         {
             talkCam.SetActive(true);
-
-            talkTime-=Time.deltaTime;
+            
+            talkTime -=Time.deltaTime;
+            
         }
 
         if (talkTime < 3)
@@ -131,6 +135,10 @@ public class shoose : MonoBehaviour
 
     public void cc()
     {
+        if (!hasPlayedSFX) { 
         cindySpr.sprite = Cindyimg[2];
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.CinMad);
+        hasPlayedSFX = true;
+        }
     }
 }

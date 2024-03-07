@@ -7357,6 +7357,12 @@ MonoBehaviour:
   smallcrack: {fileID: 8300000, guid: b6ad7e4e6953fd5419b34d8313e21fd7, type: 3}
   bigcrack: {fileID: 8300000, guid: 0fe8208635ba52348af5fb88f0028c49, type: 3}
   jump: {fileID: 8300000, guid: 3e379c409223f9f48b62dfd6b42acd39, type: 3}
+  lick: {fileID: 8300000, guid: fbc923840aa48f84ea2276d378d13a10, type: 3}
+  spit: {fileID: 8300000, guid: 3d3fc7315bb194e40839a2ad755dd8dc, type: 3}
+  glass1: {fileID: 8300000, guid: 564a01f79594fc34cb9f421bb3344afe, type: 3}
+  glass2: {fileID: 8300000, guid: 6517e5e345d5b644ab0049ff0ae37433, type: 3}
+  glass3: {fileID: 8300000, guid: df0bff252b3893c4a8d182d26a87c6e0, type: 3}
+  smash: {fileID: 8300000, guid: dc01805bcf99eea46b6c29078ab4ba6e, type: 3}
 --- !u!4 &283055686
 Transform:
   m_ObjectHideFlags: 0
@@ -12639,7 +12645,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506892691}
   m_LocalRotation: {x: 0.02703086, y: 0.034731418, z: -0.0010007456, w: 0.9990306}
-  m_LocalPosition: {x: 18.529142, y: 1.8107958, z: -45.593803}
+  m_LocalPosition: {x: -26.470858, y: 1.736296, z: -45.593803}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25135,6 +25141,7 @@ GameObject:
   - component: {fileID: 948336143}
   - component: {fileID: 948336142}
   - component: {fileID: 948336141}
+  - component: {fileID: 948336144}
   m_Layer: 0
   m_Name: Trigger (1)
   m_TagString: Untagged
@@ -25214,6 +25221,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 137.76282, y: 105.439285, z: 271.834}
   m_Center: {x: -33.727856, y: 5.257607, z: -81.773895}
+--- !u!114 &948336144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948336139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6976659cb7330504cbba0cc7985a81ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SFXSource: {fileID: 1349196494}
+  custom: {fileID: 8300000, guid: 3217af197c6459e418f24bb15fcf7a4a, type: 3}
 --- !u!1 &951084533
 GameObject:
   m_ObjectHideFlags: 0
@@ -33772,7 +33793,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271236916}
   m_LocalRotation: {x: 0.02703086, y: 0.034731418, z: -0.0010007456, w: 0.9990306}
-  m_LocalPosition: {x: 18.529142, y: 3.496296, z: -45.593803}
+  m_LocalPosition: {x: -26.470858, y: 1.736296, z: -45.593803}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -38399,7 +38420,7 @@ Animator:
   m_GameObject: {fileID: 1414594815}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c2b2040bdb06fba48967e82c8975d7f9, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -46432,6 +46453,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6976659cb7330504cbba0cc7985a81ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SFXSource: {fileID: 0}
+  custom: {fileID: 0}
 --- !u!1 &1706792054
 GameObject:
   m_ObjectHideFlags: 0
@@ -53955,7 +53978,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1910171961}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15, y: 2, z: -31.35}
+  m_LocalPosition: {x: -30, y: 0.24, z: -31.35}
   m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -54137,6 +54160,8 @@ MonoBehaviour:
   pos9: {x: 11.21, y: 1.78, z: -31.597}
   pos10: {x: 0, y: 0, z: 0}
   pos11: {x: 0, y: 0, z: 0}
+  pos12: {x: 0, y: 0, z: 0}
+  pos13: {x: 0, y: 0, z: 0}
   WolfPos: {x: 0, y: 0, z: 0}
   wolf: {fileID: 1910171961}
   wolfvalue: 0

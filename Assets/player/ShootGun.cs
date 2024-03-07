@@ -10,7 +10,7 @@ public class ShootGun : MonoBehaviour
     public static int GetApple;
     public static int shoseShot;
 
-
+    AudioManager audioManager;
 
     private void Start()
     {
@@ -51,7 +51,7 @@ public class ShootGun : MonoBehaviour
 
             // Create a new instance of the projectile prefab at the new position
             GameObject newProjectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
-
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.spit);
             // Access the Rigidbody of the projectile and apply forward force
             Rigidbody rb = newProjectile.GetComponent<Rigidbody>();
             rb.velocity = transform.forward* projectileSpeed;

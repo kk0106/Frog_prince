@@ -25935,7 +25935,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 13.4
+  field of view: 13.54
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -25961,7 +25961,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047795485}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.25959, y: 65.33253, z: -131.49222}
+  m_LocalPosition: {x: -12.022232, y: 64.76546, z: -133.18344}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34828,6 +34828,8 @@ MonoBehaviour:
   pos9: {x: 0, y: 0, z: 0}
   pos10: {x: 0, y: 0, z: 0}
   pos11: {x: 0, y: 0, z: 0}
+  pos12: {x: 0, y: 0, z: 0}
+  pos13: {x: 0, y: 0, z: 0}
   WolfPos: {x: 0, y: 0, z: 0}
   wolf: {fileID: 1377419555}
   wolfvalue: 5
@@ -36226,6 +36228,12 @@ MonoBehaviour:
   smallcrack: {fileID: 8300000, guid: b6ad7e4e6953fd5419b34d8313e21fd7, type: 3}
   bigcrack: {fileID: 8300000, guid: 0fe8208635ba52348af5fb88f0028c49, type: 3}
   jump: {fileID: 8300000, guid: 3e379c409223f9f48b62dfd6b42acd39, type: 3}
+  lick: {fileID: 8300000, guid: fbc923840aa48f84ea2276d378d13a10, type: 3}
+  spit: {fileID: 8300000, guid: 3d3fc7315bb194e40839a2ad755dd8dc, type: 3}
+  glass1: {fileID: 0}
+  glass2: {fileID: 0}
+  glass3: {fileID: 0}
+  smash: {fileID: 8300000, guid: dc01805bcf99eea46b6c29078ab4ba6e, type: 3}
 --- !u!4 &1463248093
 Transform:
   m_ObjectHideFlags: 0

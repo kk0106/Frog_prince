@@ -28,8 +28,9 @@ public class hp : MonoBehaviour
     public Vector3 pos9;
     public Vector3 pos10;
     public Vector3 pos11;
+    public Vector3 pos12;
+    public Vector3 pos13;
 
-   
     public Vector3 WolfPos;
     public GameObject wolf;
     public float wolfvalue;
@@ -185,6 +186,16 @@ public class hp : MonoBehaviour
             HP -= 1;
             a = 11;
         }
+        if (other.gameObject.tag == "Monster")
+        {
+            HP -= 1;
+            a = 12;
+        }
+        if (other.gameObject.tag == "Monster2")
+        {
+            HP -= 1;
+            a = 13;
+        }
     }
 
 
@@ -200,6 +211,16 @@ public class hp : MonoBehaviour
         {
             HP -= 1;
             a = 11;
+        }
+        if (other.gameObject.tag == "Monster")
+        {
+            HP -= 1;
+            a = 12;
+        }
+        if (other.gameObject.tag == "Monster2")
+        {
+            HP -= 1;
+            a = 13;
         }
     }
     private void GoPos()
@@ -268,6 +289,18 @@ public class hp : MonoBehaviour
         if (a == 11)
         {
             this.gameObject.transform.position = pos11;
+            a = 0;
+            loading.SetActive(false);
+        }
+        if (a == 12)
+        {
+            this.gameObject.transform.position = pos12;
+            a = 0;
+            loading.SetActive(false);
+        }
+        if (a == 13)
+        {
+            this.gameObject.transform.position = pos13;
             a = 0;
             loading.SetActive(false);
         }

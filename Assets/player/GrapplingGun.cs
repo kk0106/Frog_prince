@@ -35,6 +35,8 @@ public class GrapplingGun : MonoBehaviour
     public GameObject rangePrefab;
     private GameObject currentRangeIndicator;
 
+    AudioManager audioManager;
+
 
     private void Start()
     {
@@ -196,7 +198,7 @@ public class GrapplingGun : MonoBehaviour
         joint.spring = 1.5f;
         joint.damper = 7f;
         joint.massScale = 100f;
-
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.lick);
         //lr.positionCount = 2;
     }
 

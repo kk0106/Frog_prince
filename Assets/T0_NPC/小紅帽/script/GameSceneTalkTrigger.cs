@@ -9,9 +9,10 @@ public class GameSceneTalkTrigger : MonoBehaviour
     public GameObject nose;
     
     AudioManager audioManager;
+    private bool hasPlayedSFX = false;
 
     // Start is called before the first frame update
-   private void awake()
+    private void awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
@@ -45,9 +46,10 @@ public class GameSceneTalkTrigger : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !hasPlayedSFX)
         {
             AudioManager.Instance.PlaySFX(AudioManager.Instance.RedCry);
+            hasPlayedSFX = true;
             TalkBox_boy.SetActive(true);
             TalkBox_girl.SetActive(true);
 

@@ -11,6 +11,11 @@ public class 魔鏡hp : MonoBehaviour
     public GameObject BOSS;
     private SpriteRenderer spr;
     public Sprite[] img;
+
+    AudioManager audioManager;
+    private bool hasPlayedSFX3 = false;
+    private bool hasPlayedSFX2 = false;
+    private bool hasPlayedSFX = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +27,10 @@ public class 魔鏡hp : MonoBehaviour
       spr = BOSS.GetComponent<SpriteRenderer>();
     }
 
+    private void awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -30,9 +39,11 @@ public class 魔鏡hp : MonoBehaviour
             time-=Time.deltaTime;
         }
 
-        if(time<1.5)
+        if(time<1.5 && !hasPlayedSFX3)
         {
             boom.SetActive(true);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.glass3);
+            hasPlayedSFX3 = true;
         }
 
         if(time< 0.6)
@@ -45,14 +56,19 @@ public class 魔鏡hp : MonoBehaviour
         if (hp == 3)
         {
             spr.sprite = img[0];
+           
         }
-        if(hp == 2)
+        if(hp == 2 && !hasPlayedSFX)
         {
             spr.sprite = img[1];
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.glass1);
+            hasPlayedSFX = true;
         }
-        if (hp == 1)
+        if (hp == 1 && !hasPlayedSFX2)
         {
             spr.sprite = img[2];
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.glass2);
+            hasPlayedSFX2 = true; // Update the flag to indicate that the sound has been played
         }
 
     }

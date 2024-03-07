@@ -18,6 +18,13 @@ public class AudioManager : MonoBehaviour
     public AudioClip smallcrack;
     public AudioClip bigcrack;
     public AudioClip jump;
+    public AudioClip lick;
+    public AudioClip spit;
+    public AudioClip glass1;
+    public AudioClip glass2;
+    public AudioClip glass3;
+    public AudioClip smash;
+
 
     public static AudioManager Instance
     {
