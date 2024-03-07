@@ -27,8 +27,13 @@ public class hp : MonoBehaviour
     public Vector3 pos8;
     public Vector3 pos9;
     public Vector3 pos10;
+    public Vector3 pos11;
 
    
+    public Vector3 WolfPos;
+    public GameObject wolf;
+    public float wolfvalue;
+
     public GameObject GGpanel;
     public GameObject loading;
     // Start is called before the first frame update
@@ -48,6 +53,10 @@ public class hp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        WolfPos=wolf.transform.position;
+
+        pos11 = new Vector3(WolfPos.x + wolfvalue, 0.24f, -45.43f);
+
         if (a > 0)
         {
             loading.SetActive(true);
@@ -170,6 +179,12 @@ public class hp : MonoBehaviour
             HP -= 1;
             a = 10;
         }
+
+        if (other.gameObject.tag == "wolf" )
+        {
+            HP -= 1;
+            a = 11;
+        }
     }
 
 
@@ -179,6 +194,12 @@ public class hp : MonoBehaviour
         {
             HP -= 1;
             a = 10;
+        }
+
+        if (other.gameObject.tag == "wolf")
+        {
+            HP -= 1;
+            a = 11;
         }
     }
     private void GoPos()
@@ -240,6 +261,13 @@ public class hp : MonoBehaviour
         if (a == 10)
         {
             this.gameObject.transform.position = pos10;
+            a = 0;
+            loading.SetActive(false);
+        }
+
+        if (a == 11)
+        {
+            this.gameObject.transform.position = pos11;
             a = 0;
             loading.SetActive(false);
         }

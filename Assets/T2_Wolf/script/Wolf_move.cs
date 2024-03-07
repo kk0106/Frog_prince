@@ -21,7 +21,15 @@ public class Wolf_move : MonoBehaviour
 
         if (StartTrigger.startValue == 2)
         {
+            speed = 1;
+        }
+        if (StartTrigger.startValue == 4)
+        {
             speed = 2;
+        }
+        if (StartTrigger.startValue == 3)
+        {
+            speed = 0;
         }
     }
 }

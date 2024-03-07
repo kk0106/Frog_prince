@@ -20,13 +20,23 @@ public class StartTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(startValue==1)
+        if(startValue>0)
         {
             time+=Time.deltaTime;
         }
-        if (time >5)
+        if (time >2)
         {
             startValue = 2;
+        }
+        if (time > 4)
+        {
+            startValue = 3;
+        }
+        if (time > 6)
+        {
+            startValue = 4;
+
+            cam.SetActive(false);
         }
     }
 
