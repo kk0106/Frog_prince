@@ -177,17 +177,17 @@ public class player : MonoBehaviour
             MoveSpeed = 2.5f;
             MoveSpeed1 = 2.5f;
 
-            JumpForce = 2f;
+            JumpForce = 3f;
 
 
         }
         else
         {
-            MoveSpeed = 2f;
+            MoveSpeed = 2.5f;
             MoveSpeed1 = MoveSpeed;
 
 
-            JumpForce = 2f;
+            JumpForce = 3f;
 
 
             if (InMermaid.activeInHierarchy)
