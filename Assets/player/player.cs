@@ -177,7 +177,7 @@ public class player : MonoBehaviour
             MoveSpeed = 2.5f;
             MoveSpeed1 = 2.5f;
 
-            JumpForce = 3f;
+            JumpForce = 2.5f;
 
 
         }
@@ -187,7 +187,7 @@ public class player : MonoBehaviour
             MoveSpeed1 = MoveSpeed;
 
 
-            JumpForce = 3f;
+            JumpForce = 2.5f;
 
 
             if (InMermaid.activeInHierarchy)
@@ -269,9 +269,9 @@ public class player : MonoBehaviour
            AudioManager.Instance.PlaySFX(AudioManager.Instance.jump);
 
 
-          //  Physics.gravity = gravityScale;
-           // float jumpForce = Mathf.Sqrt((jumpHeight * (Physics.gravity.y *-9.18f)*- 2) * rb.mass);
-         //   rb.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
+          //  Physics.gravitpForce = Mathf.Sqrt((jumpHeight * (Physics.gravity.y *-9.18f)*- 2) * rb.mass);
+         //   rb.AddForce(Vector2.y = gravityScale;
+           // float jumup * jumpForce, ForceMode.Impulse);
 
 
         }
