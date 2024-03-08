@@ -59,7 +59,7 @@ public class player : MonoBehaviour
     public float MushJumpForce2;
     public static int B;
 
-
+    public GameObject clock;
     private float moveInput;
     private float moveInput1;
     private Rigidbody rb;
@@ -162,8 +162,7 @@ public class player : MonoBehaviour
           InMermaid.SetActive(true);
         }
 
-
-
+       
 
         if (RedApplee.IsRedCom == 1)
         {
@@ -171,7 +170,12 @@ public class player : MonoBehaviour
             MoveSpeed1 = 0;
             JumpForce = 0;
         }
-
+        else if (clock.activeInHierarchy)
+        {
+            MoveSpeed = 2;
+            MoveSpeed1 = 2;
+            JumpForce = 3.5f;
+        }
         else if (GrapplingGun.IsSwinging == 1)
         {
             MoveSpeed = 2.5f;
