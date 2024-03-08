@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class t1com : MonoBehaviour
 {
@@ -96,6 +97,11 @@ public class t1com : MonoBehaviour
         if (time < -6)
         {
             com13 .SetActive(true);
+        }
+
+        if (time < -8)
+        {
+            SceneManager.LoadScene("T2_WOLF");
         }
 
         time-=Time.deltaTime;
