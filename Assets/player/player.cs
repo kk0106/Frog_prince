@@ -183,7 +183,7 @@ public class player : MonoBehaviour
         }
         else
         {
-            MoveSpeed = 2.5f;
+            MoveSpeed = 2f;
             MoveSpeed1 = MoveSpeed;
 
 
