@@ -11,6 +11,7 @@ public class hp : MonoBehaviour
     public int HP;
     public int a;
 
+    public static int BeeDes;
 
     [Header("die")]
     public GameObject die;
@@ -30,6 +31,7 @@ public class hp : MonoBehaviour
     public Vector3 pos11;
     public Vector3 pos12;
     public Vector3 pos13;
+    public Vector3 pos14;
 
     public Vector3 WolfPos;
     public GameObject wolf;
@@ -49,6 +51,8 @@ public class hp : MonoBehaviour
         die2.SetActive(false);
         HP = 3;
         loading.SetActive(false);
+
+        BeeDes = 0;
     }
 
     // Update is called once per frame
@@ -62,6 +66,7 @@ public class hp : MonoBehaviour
         {
             loading.SetActive(true);
             Invoke("GoPos", 0.3f);
+            
         }
         if (a > 0&&HP==0)
         {
@@ -179,6 +184,7 @@ public class hp : MonoBehaviour
         {
             HP -= 1;
             a = 10;
+            BeeDes = 1;
         }
 
         if (other.gameObject.tag == "wolf" )
@@ -244,6 +250,11 @@ public class hp : MonoBehaviour
             this.gameObject.transform.position = pos3;
             a = 0;
             loading.SetActive(false);
+
+            if (BossCamTrigger.a == 1)
+            {
+                this.gameObject.transform.position = pos14;
+            }
         }
 
         if (a == 4)
@@ -284,6 +295,8 @@ public class hp : MonoBehaviour
             this.gameObject.transform.position = pos10;
             a = 0;
             loading.SetActive(false);
+
+            BeeDes = 0;
         }
 
         if (a == 11)

@@ -23,4 +23,13 @@ public class attackDes : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("end"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
