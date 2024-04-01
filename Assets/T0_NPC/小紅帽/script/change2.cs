@@ -6,16 +6,21 @@ public class change2 : MonoBehaviour
 {
     public float speed = 5.0f; // Speed at which the character moves
     private Animator _animator;
+
+    public GameObject shadow;
+    private Animator ani;
     // Start is called before the first frame update
     void Start()
     {
         _animator = GetComponent<Animator>();
+        ani = shadow.gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     public void UpdateAnimation2()
     {
         _animator.SetBool("next2", true);
+       ani.SetBool("next2", true);
     }
 
 /*public void UpdateAnimation3()
