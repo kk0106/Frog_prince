@@ -18,7 +18,7 @@ public class change2 : MonoBehaviour
         _animator.SetBool("next2", true);
     }
 
-public void UpdateAnimation3()
+/*public void UpdateAnimation3()
 {
     _animator.SetBool("next3", true);
 }
@@ -27,9 +27,9 @@ public void UpdateAnimation3()
         _animator.SetBool("next4", true);
     }
    
-
+    */
     // Function to make the character walk out of the screen
-    public void WalkOutOfScreen()
+    /*public void WalkOutOfScreen()
     {
         StartCoroutine(MoveCharacter());
     }
@@ -49,5 +49,5 @@ public void UpdateAnimation3()
 
         // Character is out of the screen, you can disable or destroy the character at this point
         gameObject.SetActive(false);
-    }
+    }*/
 }
