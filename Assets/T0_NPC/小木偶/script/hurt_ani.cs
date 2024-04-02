@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class hurt_ani : MonoBehaviour
 {
+    public GameObject shadow_long;
+    private Animator anii;
+
     public Animator animator;
     private BreakableObject breakableObject;
     AudioManager audioManager;
@@ -16,6 +19,8 @@ public class hurt_ani : MonoBehaviour
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         breakableObject = GetComponent<BreakableObject>();
+
+        anii = shadow_long.gameObject.GetComponent<Animator>();
 
         // Ensure that the animator reference is assigned in the Inspector
        // if (animator == null)
@@ -31,7 +36,7 @@ public class hurt_ani : MonoBehaviour
         if (breakableObject != null && breakableObject.currentHealth <= 5f)
         {
             animator.SetBool("hurt2", true);
-            
+            anii.SetBool("hurt2", true);
             if (!hasFunctionBeenCalled)
             {
             AudioManager.Instance.PlaySFX(AudioManager.Instance.smallcrack);
@@ -43,7 +48,8 @@ public class hurt_ani : MonoBehaviour
         if (breakableObject != null && breakableObject.currentHealth <= 10f)
         {
             animator.SetBool("hurt", true);
-           if (!hasFunctionBeenCalled2)
+            anii.SetBool("hurt", true);
+            if (!hasFunctionBeenCalled2)
             {
             AudioManager.Instance.PlaySFX(AudioManager.Instance.smallcrack);
             hasFunctionBeenCalled2 = true;

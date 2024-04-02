@@ -10,6 +10,9 @@ public class shoose : MonoBehaviour
     public GameObject shooses2;
     
     public GameObject cindy;
+
+    private Animator cindyAni;
+
     public GameObject talk;
     public GameObject talkCam; 
     private SpriteRenderer cindySpr;

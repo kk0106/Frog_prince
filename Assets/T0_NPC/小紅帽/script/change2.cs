@@ -7,23 +7,51 @@ public class change2 : MonoBehaviour
     public float speed = 5.0f; // Speed at which the character moves
     private Animator _animator;
 
-    public GameObject shadow;
-    private Animator ani;
+    public GameObject nose;
+    public GameObject trigger;
+    public float time;
+
+   // public GameObject shadow;
+   // private Animator ani;
     // Start is called before the first frame update
     void Start()
     {
+
+        trigger.SetActive(false);   
         _animator = GetComponent<Animator>();
-        ani = shadow.gameObject.GetComponent<Animator>();
+     //   ani = shadow.gameObject.GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        if (!nose.activeInHierarchy)
+        {
+            _animator.SetBool("next2", true);
+
+            time += Time.deltaTime;
+        }
+
+        if (time > 3)
+        {
+            trigger.SetActive(true);
+        }
+        if(time >3.1)
+        {
+            _animator.SetBool("talk", true);
+        }
+
     }
 
     // Update is called once per frame
-    public void UpdateAnimation2()
+    
+
+    public void UpdateAnimation31()
     {
-        _animator.SetBool("next2", true);
-       ani.SetBool("next2", true);
+       // _animator.SetBool("talk", true);
+        //   ani.SetBool("next2", true);
     }
 
-/*public void UpdateAnimation3()
+    public void UpdateAnimation3()
 {
     _animator.SetBool("next3", true);
 }
@@ -32,9 +60,9 @@ public class change2 : MonoBehaviour
         _animator.SetBool("next4", true);
     }
    
-    */
+    
     // Function to make the character walk out of the screen
-    /*public void WalkOutOfScreen()
+    public void WalkOutOfScreen()
     {
         StartCoroutine(MoveCharacter());
     }
@@ -54,5 +82,5 @@ public class change2 : MonoBehaviour
 
         // Character is out of the screen, you can disable or destroy the character at this point
         gameObject.SetActive(false);
-    }*/
+    }
 }

@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class ANI_LONGNOSE : MonoBehaviour
 {
+    public GameObject BoyShadow;
+    private Animator BoyShadow_ani;
+
+    public GameObject BoyDie;
+    private Animator BoyDie_ani;
+
+    public GameObject BoyDie_sh;
+    private Animator BoyDieSh_ani;
+
+    public float timeDie;
+
     public GameObject a;
     public GameObject b;
     public GameObject papa;
@@ -16,7 +27,13 @@ public class ANI_LONGNOSE : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        papaani=papa.GetComponent<Animator>();
+
+        BoyDie_ani = BoyDie.gameObject.GetComponent<Animator>();
+        BoyShadow_ani = BoyShadow.gameObject.GetComponent<Animator>();
+        BoyDieSh_ani = BoyDie_sh.gameObject.GetComponent<Animator>();
+
+
+        papaani =papa.GetComponent<Animator>();
         animator = GetComponent<Animator>();  
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
@@ -24,13 +41,25 @@ public class ANI_LONGNOSE : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       if(timeDie > 0.55)
+        {
+            BoyDie_ani.SetBool("fall", true);
+            BoyDieSh_ani.SetBool("fall", true);
+        }
+
         if(!a.activeInHierarchy)
         {
-            animator.SetBool("break", true);
-            
-          //  b.SetActive(false);
+            timeDie += Time.deltaTime;
 
-            time-=Time.deltaTime;
+            animator.SetBool("break", true);
+
+            BoyShadow_ani.SetBool("break", true);
+
+           
+
+            //  b.SetActive(false);
+
+            time -=Time.deltaTime;
 
              if (!hasFunctionBeenCalled)
             {

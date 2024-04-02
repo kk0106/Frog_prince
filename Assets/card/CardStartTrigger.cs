@@ -8,11 +8,16 @@ public class CardStartTrigger : MonoBehaviour
     public float time;
     public GameObject CindyTalkStart;
 
+    public GameObject cindy;
+    private Animator ani;
+
     public GameObject trigger;
     // Start is called before the first frame update
     void Start()
     {
         CindyTalkStart.SetActive(false);
+
+        ani= cindy.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,7 +31,7 @@ public class CardStartTrigger : MonoBehaviour
         if (time <2.5)
         {
             cam.SetActive(true);
-
+            ani.SetBool("talk",true);
             CindyTalkStart.SetActive(true );
         }
         if(time < 0)
@@ -34,7 +39,7 @@ public class CardStartTrigger : MonoBehaviour
             cam.SetActive(false);
 
             CindyTalkStart.SetActive(false );
-
+            ani.SetBool("talk", false);
             CardStartTriggerValue.start = 0;
 
             time = 4;
