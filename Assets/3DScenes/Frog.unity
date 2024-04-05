@@ -39564,7 +39564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1489315832}
   - component: {fileID: 1489315834}
-  - component: {fileID: 1489315833}
+  - component: {fileID: 1489315835}
   m_Layer: 0
   m_Name: PrincessCamTrigger (1)
   m_TagString: Untagged
@@ -39587,22 +39587,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1489315833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1489315831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52a69d4bf35ac8d45b687d772eecaf70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  a: 0
-  text1: {fileID: 1745862728}
-  text2: {fileID: 1002167578}
-  time: 0
 --- !u!65 &1489315834
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39616,6 +39600,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.09814552, y: 0.34779656, z: 0.46181238}
   m_Center: {x: -0.6816214, y: 0.54625577, z: -0.36571646}
+--- !u!114 &1489315835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489315831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a088246bbe53ff408ece1ded86ab3aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  a: 0
+  text1: {fileID: 1745862728}
+  text2: {fileID: 1002167578}
+  time: 0
 --- !u!1001 &1489333449
 PrefabInstance:
   m_ObjectHideFlags: 0
