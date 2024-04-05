@@ -28,11 +28,15 @@ public class shoose : MonoBehaviour
     public float talkTime;
     public float FinishTime;
 
+    private Animator ani;
+
     AudioManager audioManager;
     private bool hasPlayedSFX = false;
     // Start is called before the first frame update
     void Start()
     {
+        ani=cindy.gameObject.GetComponent<Animator>();
+
         cindySpr=cindy.GetComponent<SpriteRenderer>();
         talkSpr = talk.GetComponent<SpriteRenderer>();
 
@@ -79,14 +83,18 @@ public class shoose : MonoBehaviour
         if(talkTime < 2)
         {
             talkSpr.sprite = Talkimg[1];
-            cindySpr.sprite = Cindyimg[1];
+            // cindySpr.sprite = Cindyimg[1];
+
+            ani.SetBool("talk", true);
         }
         if (talkTime < 0.5)
         {
             time = 5;
             shooses2.SetActive(true);
-            talkCam.SetActive(false);
+         //   talkCam.SetActive(false);
             talk.SetActive(false) ;
+
+            ani.SetBool("talk", false);
         }
         if (talkTime < 0.49999)
         {
@@ -140,7 +148,8 @@ public class shoose : MonoBehaviour
     {
         if (!hasPlayedSFX) { 
         cindySpr.sprite = Cindyimg[2];
-        AudioManager.Instance.PlaySFX(AudioManager.Instance.CinMad);
+            ani.SetBool("mad", true);
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.CinMad);
         hasPlayedSFX = true;
         }
     }

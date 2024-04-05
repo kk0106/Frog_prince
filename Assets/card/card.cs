@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class card : MonoBehaviour
 {
+    public GameObject cardd;
+
     private Animator ani;
     public static int CardDie;
     public GameObject a1;
@@ -18,7 +20,7 @@ public class card : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ani = GetComponent<Animator>();
+        ani = cardd.gameObject.GetComponent<Animator>();
 
         CardDie = 0;
 
@@ -55,6 +57,7 @@ public class card : MonoBehaviour
         {
             cardcollider.gameObject.SetActive(false);
             this.gameObject.SetActive(false);
+            cardd.SetActive(false);
         }
     }
 

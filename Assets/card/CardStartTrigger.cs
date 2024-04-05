@@ -36,7 +36,7 @@ public class CardStartTrigger : MonoBehaviour
         }
         if(time < 0)
         {
-            cam.SetActive(false);
+          //  cam.SetActive(false);
 
             CindyTalkStart.SetActive(false );
             ani.SetBool("talk", false);
