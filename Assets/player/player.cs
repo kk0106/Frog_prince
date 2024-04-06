@@ -343,14 +343,14 @@ public class player : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.y, MushJumpForce2);
         }
 
-        if(other.gameObject.tag== "MushroomC")
-        {
-            rb.velocity = new Vector3(rb.velocity.y, MushJumpForce);
-        }
+       // if(other.gameObject.tag== "MushroomC")
+        //{
+          //  rb.velocity = new Vector3(rb.velocity.y, MushJumpForce);
+        //}
     }
     
 
-    private void alife()
+    /*private void alife()
     {
         if (gameObject.tag == "MushroomC")
         {
@@ -368,7 +368,7 @@ public class player : MonoBehaviour
         }
 
     }
-
+    */
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Trident")
