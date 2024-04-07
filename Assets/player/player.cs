@@ -119,13 +119,13 @@ public class player : MonoBehaviour
         if (ismushroom.ismushrooma==1)
         {
             maxValue = -43.8f;
-            minValue = -48f;
+            minValue = -45.17398f;
         }
 
         if (InT1.activeInHierarchy)
         {
-            maxValue = -45.98f;
-            minValue = -45.98f;
+            maxValue = -45.17398f;
+            minValue = -45.17398f;
         }
 
        
