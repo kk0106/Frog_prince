@@ -20,7 +20,7 @@ public class player : MonoBehaviour
     [SerializeField] public static float MoveSpeed ;
     [SerializeField] private float MoveSpeed1 ;
     [SerializeField] public bool FaceRight;
-    [SerializeField] public bool FaceBack;
+   
     
     private Vector3 player00;
     private Animator move_ani;
@@ -96,7 +96,7 @@ public class player : MonoBehaviour
         
 
         StartDirectionCheck();
-        StartDirectionCheck1();
+        
 
         _CamerafollowObject = _cameraGo.GetComponent<CameraFollowObject>();
 
@@ -119,13 +119,13 @@ public class player : MonoBehaviour
         if (ismushroom.ismushrooma==1)
         {
             maxValue = -43.8f;
-            minValue = -45.17398f;
+            minValue = -48f;
         }
 
         if (InT1.activeInHierarchy)
         {
-            maxValue = -45.17398f;
-            minValue = -45.17398f;
+            maxValue = -43.8f;
+            minValue = -48f;
         }
 
        
@@ -446,17 +446,7 @@ public class player : MonoBehaviour
     }
 
     //偵測腳色是否面向後方
-    private void StartDirectionCheck1()
-    {
-        if (player00.z > 0)
-        {
-            FaceBack = true;
-        }
-        else
-        {
-            FaceBack = false;
-        }
-    }
+   
 
 
     private void TurnCheck()
@@ -471,17 +461,7 @@ public class player : MonoBehaviour
         }
     }
 
-    private void TurnCheck1()
-    {
-        if (UserInput.instance.moveInput.y > 0 && !FaceBack)
-        {
-            Turn1();
-        }
-        else if (UserInput.instance.moveInput.y < 0 && FaceBack)
-        {
-            Turn1();
-        }
-    }
+   
 
     //更改腳色面向
     private void Turn()
@@ -523,24 +503,7 @@ public class player : MonoBehaviour
     }
 
 
-    private void Turn1()
-    {
-        if (FaceBack)
-        {
-            Vector3 rotator = new Vector3(transform.rotation.x, 25f, transform.rotation.z);
-            transform.rotation = Quaternion.Euler(rotator);
-            FaceBack = !FaceBack;
-
-            
-        }
-        else
-        {
-            Vector3 rotator = new Vector3(transform.rotation.x, -25f, transform.rotation.z);
-            transform.rotation = Quaternion.Euler(rotator);
-            FaceBack = !FaceBack;
-
-        }
-    }
+    
 
     void OpenBackPack()
     {
