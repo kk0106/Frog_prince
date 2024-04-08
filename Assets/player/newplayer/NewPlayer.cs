@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class NewPlayer : MonoBehaviour
 {
-    Vector3 currentMovement;
+    private Animator ani;
 
     [Header("ground check")]
     public LayerMask WhatIsGround;
@@ -28,10 +28,29 @@ public class NewPlayer : MonoBehaviour
    public Vector3 fallGravityScale ;
 
 
+    bool areOpen;
+    [SerializeField] private DialogueUI dialogueUI;
+
+
+    public DialogueUI DialogueUI
+    {
+        get { return dialogueUI; }
+        set { dialogueUI = value; }
+    }
+
+    public void SetDialogueUI(DialogueUI newDialogueUI)
+    {
+        dialogueUI = newDialogueUI;
+    }
+
+    public IInteractable Interactable { get; set; }
+
+
     // Start is called before the first frame update
 
     void Start()
     {
+        ani = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         MoveSpeed = 2f;
 
@@ -64,11 +83,19 @@ public class NewPlayer : MonoBehaviour
     void Update()
     {
         Move();
-       
-        if(IsGrounded&&isJumpPressed)
+
+        if (GrapplingGun.grappleCheck == 1)
         {
-         //   Physics.gravity = gravityScale;
-          //  float jumpForce =Mathf.Sqrt(jumpHeight*(Physics.gravity.y*gravityScale.y)*-2)*rb.mass;
+            ani.SetBool("tongue", true);
+        }
+        if (GrapplingGun.grappleCheck == 0)
+        {
+            ani.SetBool("tongue", false);
+        }
+
+
+        if (IsGrounded&&isJumpPressed)
+        {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
 
@@ -89,10 +116,19 @@ public class NewPlayer : MonoBehaviour
         {
             isJumpPressed = false;
         }
+        if (UserInput.instance.controls.playerControls.jump.IsPressed())
+        {
+            jumpForce = 0.35F;
+
+        }
+        else
+        {
+            jumpForce = 0.3F;
+        }
 
 
 
-        RaycastHit hit;
+            RaycastHit hit;
         if (Physics.Raycast(GroundPoint.position, Vector3.down, out hit, .3f, WhatIsGround))
         {
             IsGrounded = true;
@@ -101,15 +137,40 @@ public class NewPlayer : MonoBehaviour
         {
             IsGrounded = false;
         }
+
+
+
+        Invoke("alife", 1f);
+        if (dialogueUI.IsOpen) return;
+        if (areOpen == true) return;
+
+        if (UserInput.instance.controls.playerControls.talk.WasPressedThisFrame())
+
+        {
+            if (dialogueUI.IsOpen) return;
+           // Interactable?.Interact(NewPlayer);
+        }
     }
     private void Move()
     {
-        
+          
             moveInput = UserInput.instance.moveInput.x;
             rb.velocity = new Vector3(moveInput * MoveSpeed, rb.velocity.y);
+
+        if (moveInput > 0 || moveInput < 0)
+        {
+          
+         ani.SetBool("walk", true);
+
+        }
+        else
+        {
+            ani.SetBool("walk", false);
+        }
+
     }
 
-   
-    
-    
+
+
+
 }

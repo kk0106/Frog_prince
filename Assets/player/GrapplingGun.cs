@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GrapplingGun : MonoBehaviour
 {
+
     public static int grappleCheck;
     public ShootGun shootGun;
     private LineRenderer lr;
@@ -42,6 +43,7 @@ public class GrapplingGun : MonoBehaviour
     {
         playerRigidbody = player.GetComponent<Rigidbody>();
         _animator = GetComponent<Animator>();
+     
     }
 
     void Awake()
@@ -62,6 +64,8 @@ public class GrapplingGun : MonoBehaviour
             }
             StartGrapple();
             grappleCheck = 1;
+
+            
             
         }
         else if (UserInput.instance.controls.playerControls.GrappleGun.WasReleasedThisFrame())
@@ -73,6 +77,7 @@ public class GrapplingGun : MonoBehaviour
             {
                 Destroy(currentRangeIndicator);
             }
+
         }
       //  else if (IsGrappling())
       //  {
