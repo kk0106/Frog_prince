@@ -118,12 +118,12 @@ public class NewPlayer : MonoBehaviour
         }
         if (UserInput.instance.controls.playerControls.jump.IsPressed())
         {
-            jumpForce = 0.35F;
+            jumpForce = 0.33F;
 
         }
         else
         {
-            jumpForce = 0.3F;
+            jumpForce = 0.25F;
         }
 
 
