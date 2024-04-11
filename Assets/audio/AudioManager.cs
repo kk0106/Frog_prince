@@ -24,7 +24,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip glass2;
     public AudioClip glass3;
     public AudioClip smash;
-
+    public AudioClip raccoonCry;
+    public AudioClip woodlaugh;
+    public AudioClip turtleCry;
 
     public static AudioManager Instance
     {

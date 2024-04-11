@@ -59,7 +59,7 @@ public class GameSceneTalkTrigger : MonoBehaviour
     }
     private void outt()
     {
-
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.woodlaugh);
         TalkBox_boy.SetActive(false);
         TalkBox_girl.SetActive(false);
        // this.gameObject.SetActive(false);

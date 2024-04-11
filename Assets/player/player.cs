@@ -149,6 +149,7 @@ public class player : MonoBehaviour
         if (UserInput.instance.controls.playerControls.jump.WasPressedThisFrame())
         {
             isJumpPressed = true;
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.jump);
         }
         if (UserInput.instance.controls.playerControls.jump.WasReleasedThisFrame())
         {
@@ -157,6 +158,7 @@ public class player : MonoBehaviour
         if (UserInput.instance.controls.playerControls.jump.IsPressed())
         {
             jumpForce = jf1;
+            
 
         }
         else if (UserInput.instance.controls.playerControls.jump.WasReleasedThisFrame())
