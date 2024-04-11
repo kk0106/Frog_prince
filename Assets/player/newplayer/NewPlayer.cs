@@ -20,7 +20,9 @@ public class NewPlayer : MonoBehaviour
 
     [Header("Jump")]
    public bool isJumpPressed=false;
-    public float jumpForce=10;
+    public float jumpForce;
+    public float jf1;
+    public float jf2;
     public bool isJumping=false;
     public float jumpHeight;
 
@@ -116,14 +118,14 @@ public class NewPlayer : MonoBehaviour
         {
             isJumpPressed = false;
         }
-        if (UserInput.instance.controls.playerControls.jump.IsPressed())
+      if (UserInput.instance.controls.playerControls.jump.IsPressed())
         {
-            jumpForce = 0.33F;
+            jumpForce = jf1;
 
         }
-        else
+        else if(UserInput.instance.controls.playerControls.jump.WasReleasedThisFrame())
         {
-            jumpForce = 0.25F;
+            jumpForce = jf2;
         }
 
 

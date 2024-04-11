@@ -5,15 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class T0Com : MonoBehaviour
 {
-
+    public static float change;
     public GameObject t0;
     public float time;
-    public GameObject AIcon;
+    //public GameObject AIcon;
+    public GameObject penal;
     // Start is called before the first frame update
     void Start()
     {
-       
-        AIcon.SetActive(false);
+        change = 0;
+       penal.SetActive(false);
+       // AIcon.SetActive(false);
         t0.SetActive(false);
     }
 
@@ -24,11 +26,11 @@ public class T0Com : MonoBehaviour
 
         if (time > 4.5)
         {
-            t0.SetActive(true);
+       //     t0.SetActive(true);
 
         }
       
-        if (time > 7)
+        /*if (time > 10)
         {
             AIcon.SetActive (true);
 
@@ -38,8 +40,25 @@ public class T0Com : MonoBehaviour
 
                 time = 0;
                 }
+        }*/
+
+        if (time > 17.6)
+        {
+
+
+           penal.SetActive(true);
+
         }
 
+        if (time > 18.05)
+        {
 
+
+            change = 1;
+                SceneManager.LoadScene("Frog");
+
+                time = 0;
+            
+        }
     }
 }
