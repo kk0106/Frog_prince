@@ -12989,7 +12989,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 15.44
+  field of view: 11.1
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -13014,8 +13014,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506892691}
-  m_LocalRotation: {x: 0.031168072, y: 0.027487863, z: -0.00085748476, w: 0.9991358}
-  m_LocalPosition: {x: 8.651123, y: 1.8107958, z: -43.60819}
+  m_LocalRotation: {x: 0.02703086, y: 0.034731418, z: -0.0010007456, w: 0.9990306}
+  m_LocalPosition: {x: -27.05086, y: 1.8107958, z: -45.593803}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -54005,31 +54005,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36547e6f327e8c34386cb7b8ce91d02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minValue: -31.35
-  maxValue: -31.35
-  InT1: {fileID: 57865321}
-  MoveSpeed1: 1.5
-  FaceRight: 0
-  InMermaid: {fileID: 57865321}
-  InMermaidSpeed: 0
-  InMermaidJumpForce: 0
-  JumpTime: 0.35
-  Jumping: 0
-  Falling: 0
-  y: 0
-  jumpHeight: 2
-  gravityScale: {x: 0, y: -5, z: 0}
-  fallGravityScale: {x: 0, y: -10, z: 0}
-  _cameraGo: {fileID: 752845203}
-  _CamerafollowObject: {fileID: 752845205}
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 256
   GroundPoint: {fileID: 1205904384}
-  MushJumpForce: 0
-  MushJumpForce1: 0
-  MushJumpForce2: 0
-  clock: {fileID: 57865321}
+  IsGrounded: 0
+  MoveSpeed: 0
+  FaceRight: 0
+  isJumpPressed: 0
+  jumpForce: 0
+  jf1: 0
+  jf2: 0
+  isJumping: 0
+  jumpHeight: 2
+  gravityScale: {x: 0, y: -5, z: 0}
+  fallGravityScale: {x: 0, y: -10, z: 0}
   uiMenu: {fileID: 506892697}
   BackPack: {fileID: 480753123}
   dialogueUI: {fileID: 2048691855}
@@ -57299,7 +57289,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2048691849
 RectTransform:
   m_ObjectHideFlags: 0

@@ -7333,7 +7333,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453116768}
   m_LocalRotation: {x: 0.02703086, y: 0.034731418, z: -0.0010007456, w: 0.9990306}
-  m_LocalPosition: {x: 4.9872756, y: 2.3659127, z: -60.29997}
+  m_LocalPosition: {x: 5.0258093, y: 2.365908, z: -60.30265}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10659,6 +10659,7 @@ GameObject:
   - component: {fileID: 648029520}
   - component: {fileID: 648029519}
   - component: {fileID: 648029518}
+  - component: {fileID: 648029524}
   m_Layer: 0
   m_Name: NewPlayer
   m_TagString: Player
@@ -10673,7 +10674,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648029517}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f977c07211532449a46a0a2ba1ef2fc, type: 3}
   m_Name: 
@@ -10815,6 +10816,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &648029524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648029517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36547e6f327e8c34386cb7b8ce91d02e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  GroundPoint: {fileID: 154652699}
+  IsGrounded: 0
+  MoveSpeed: 5
+  FaceRight: 0
+  isJumpPressed: 0
+  jumpForce: 0
+  jf1: 0.3
+  jf2: 0.35
+  isJumping: 0
+  jumpHeight: 2
+  gravityScale: {x: 0, y: -10, z: 0}
+  fallGravityScale: {x: 0, y: -15, z: 0}
+  uiMenu: {fileID: 1119884607}
+  BackPack: {fileID: 1485582811}
+  dialogueUI: {fileID: 1687667888}
 --- !u!1 &651105007
 GameObject:
   m_ObjectHideFlags: 0
@@ -17786,7 +17817,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119884606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -71.7338, y: 5.612299, z: -60.200035}
+  m_LocalPosition: {x: -71.726105, y: 5.612299, z: -60.200035}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21850,7 +21881,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375762404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -71.7338, y: 5.612299, z: -60.200035}
+  m_LocalPosition: {x: -71.726105, y: 5.612299, z: -60.200035}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23853,31 +23884,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36547e6f327e8c34386cb7b8ce91d02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minValue: -48
-  maxValue: -45.81715
-  InT1: {fileID: 1659967069}
-  MoveSpeed1: 1.5
-  FaceRight: 0
-  InMermaid: {fileID: 1497900950}
-  InMermaidSpeed: 0
-  InMermaidJumpForce: 0
-  JumpTime: 0.35
-  Jumping: 0
-  Falling: 0
-  y: 0
-  jumpHeight: 5
-  gravityScale: {x: 0, y: -10, z: 0}
-  fallGravityScale: {x: 0, y: -15, z: 0}
-  _cameraGo: {fileID: 1865546829}
-  _CamerafollowObject: {fileID: 1865546832}
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 256
   GroundPoint: {fileID: 336522325}
-  MushJumpForce: 7
-  MushJumpForce1: 5
-  MushJumpForce2: 3
-  clock: {fileID: 1659967069}
+  IsGrounded: 0
+  MoveSpeed: 0
+  FaceRight: 0
+  isJumpPressed: 0
+  jumpForce: 0
+  jf1: 0
+  jf2: 0
+  isJumping: 0
+  jumpHeight: 5
+  gravityScale: {x: 0, y: -10, z: 0}
+  fallGravityScale: {x: 0, y: -15, z: 0}
   uiMenu: {fileID: 1119884607}
   BackPack: {fileID: 1485582811}
   dialogueUI: {fileID: 1687667888}

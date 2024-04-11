@@ -17,8 +17,8 @@ public class stop : MonoBehaviour
     {
         if(A.activeInHierarchy)
         {
-            player.MoveSpeed = 0f;
-            player.JumpForce = 0f;
+            //player.MoveSpeed = 0f;
+          //  player.JumpForce = 0f;
             
         }
     }
