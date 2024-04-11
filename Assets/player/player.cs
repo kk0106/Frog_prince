@@ -102,10 +102,13 @@ public class player : MonoBehaviour
 
     private void Update()
     {
-
-
-         
+        if (UserInput.instance.controls.playerControls.Movement.WasPressedThisFrame())
+        {
             Move();
+        }
+
+
+        Move();
 
         if (GrapplingGun.grappleCheck == 1)
         {
