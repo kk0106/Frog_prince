@@ -6,7 +6,7 @@ public class 魔鏡hp : MonoBehaviour
 {
     public float time;
     public GameObject boom;
-    public GameObject poison;
+   
     public int hp;
     public GameObject BOSS;
     private SpriteRenderer spr;
@@ -27,7 +27,7 @@ public class 魔鏡hp : MonoBehaviour
       spr = BOSS.GetComponent<SpriteRenderer>();
     }
 
-    private void awake()
+    private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
@@ -50,7 +50,6 @@ public class 魔鏡hp : MonoBehaviour
         {
             BOSS.gameObject.SetActive(false);
 
-            poison.SetActive(false);
         }
 
         if (hp == 3)
