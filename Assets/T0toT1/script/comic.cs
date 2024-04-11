@@ -34,7 +34,7 @@ public class comic : MonoBehaviour
         {
             if (UserInput.instance.controls.playerControls.KeepStory.WasPerformedThisFrame())
             {
-                SceneManager.LoadScene("T1");
+                SceneManager.LoadScene("T1 1");
             }
         }
     }

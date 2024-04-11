@@ -1841,7 +1841,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &325783706
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2422,8 +2422,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.7726868
+  m_Center: {x: 0, y: -0.27268684, z: 0}
 --- !u!23 &453190545
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8989,7 +8989,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1819621430
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9348,7 +9348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1858735488
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11209,7 +11209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2091065700
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11621,7 +11621,7 @@ Animator:
   m_GameObject: {fileID: 2130209043}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c43bec6873f0d4b4aabdb83bce441bf3, type: 2}
+  m_Controller: {fileID: 9100000, guid: f0c3019cb57743d4588b030330d46781, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -11643,32 +11643,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36547e6f327e8c34386cb7b8ce91d02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minValue: -34
-  maxValue: -34
-  InT1: {fileID: 1279472992}
-  MoveSpeed1: 1.5
-  FaceRight: 0
-  FaceBack: 0
-  InMermaid: {fileID: 1279472992}
-  InMermaidSpeed: 0
-  InMermaidJumpForce: 0
-  JumpTime: 0.35
-  Jumping: 0
-  Falling: 0
-  y: 0
-  jumpHeight: 5
-  gravityScale: {x: 0, y: -10, z: 0}
-  fallGravityScale: {x: 0, y: -15, z: 0}
-  _cameraGo: {fileID: 1033399397}
-  _CamerafollowObject: {fileID: 1033399398}
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 256
   GroundPoint: {fileID: 1337408100}
-  MushJumpForce: 7
-  MushJumpForce1: 5
-  MushJumpForce2: 3
-  clock: {fileID: 1516812659}
+  IsGrounded: 0
+  MoveSpeed: 0
+  FaceRight: 0
+  isJumpPressed: 0
+  jumpForce: 0
+  jf1: 0
+  jf2: 0
+  isJumping: 0
+  jumpHeight: 5
+  gravityScale: {x: 0, y: -10, z: 0}
+  fallGravityScale: {x: 0, y: -15, z: 0}
+  SwingGravityScale: {x: 0, y: 0, z: 0}
   uiMenu: {fileID: 292893479}
   BackPack: {fileID: 1819621429}
   dialogueUI: {fileID: 1902969412}
