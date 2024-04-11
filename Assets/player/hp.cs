@@ -33,9 +33,9 @@ public class hp : MonoBehaviour
     public Vector3 pos13;
     public Vector3 pos14;
 
-    public Vector3 WolfPos;
-    public GameObject wolf;
-    public float wolfvalue;
+    //public Vector3 WolfPos;
+   // public GameObject wolf;
+    //public float wolfvalue;
 
     public GameObject GGpanel;
     public GameObject loading;
@@ -58,9 +58,9 @@ public class hp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        WolfPos=wolf.transform.position;
+      //  WolfPos=wolf.transform.position;
 
-        pos11 = new Vector3(WolfPos.x + wolfvalue, 0.24f, -45.43f);
+      //  pos11 = new Vector3(WolfPos.x + wolfvalue, 0.24f, -45.43f);
 
         if (a > 0)
         {
@@ -130,24 +130,14 @@ public class hp : MonoBehaviour
             a = 1;
             
         }
-        if (other.gameObject.tag == "hole")
-        {
-            HP -= 1;
-            a = 2;
-           // this.gameObject.transform.position = pos2;
-        }
+       
         if (other.gameObject.tag == "poison"|| other.gameObject.tag == "apple2")
         {
             HP -= 1;
             a = 3;
            // this.gameObject.transform.position = pos3;
         }
-        if (other.gameObject.tag == "egg")
-        {
-            HP -= 1;
-          //  a = 4;
-            //this.gameObject.transform.position = pos4;
-        }
+       
         if (other.gameObject.tag == "Swamp")
         {
             HP -= 1;
@@ -155,11 +145,7 @@ public class hp : MonoBehaviour
             //this.gameObject.transform.position = pos4;
         }
 
-        if(other.gameObject.tag == "Trident")
-        {
-            HP -= 1;
-            a = 6;
-        }
+        
         if (other.gameObject.tag == "spring")
         {
             HP -= 1;
@@ -175,11 +161,7 @@ public class hp : MonoBehaviour
             HP -= 1;
             a = 8;
         }
-       // if( other.gameObject.tag == "BambooShoots")
-        //{
-        //    HP -= 1;
-         //   a = 9;
-        //}
+      
         if (other.gameObject.tag == "ball"|| other.gameObject.tag == "goose")
         {
             HP -= 1;

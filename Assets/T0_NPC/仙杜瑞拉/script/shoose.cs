@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class shoose : MonoBehaviour
 {
-
+    public GameObject shadow;
     public GameObject cardd;
     public GameObject shooses;
     public GameObject shooses2;
@@ -126,6 +126,7 @@ public class shoose : MonoBehaviour
         if (FinishTime < 3.1)
         {
           boom.SetActive(true) ;
+            shadow.SetActive(false) ;
         }
         if (FinishTime < 2.9)
         {

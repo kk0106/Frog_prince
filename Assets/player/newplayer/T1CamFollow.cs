@@ -9,14 +9,14 @@ public class T1CamFollow : MonoBehaviour
     public Vector3 player_pos;
     private float x;
     private float z;
-
+    public float y;
     // Start is called before the first frame update
  
 
     // Update is called once per frame
     void Update()
     {
-       player_pos = new Vector3(player.transform.position.x, 0, player.transform.position.z);
+       player_pos = new Vector3(player.transform.position.x, y, player.transform.position.z);
     
 
         this.gameObject.transform.position =player_pos;

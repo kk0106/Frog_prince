@@ -31,6 +31,7 @@ public class player : MonoBehaviour
 
     public Vector3 gravityScale;
     public Vector3 fallGravityScale;
+    public Vector3 SwingGravityScale;
 
     AudioManager audioManager;
 
@@ -102,7 +103,9 @@ public class player : MonoBehaviour
     private void Update()
     {
 
-        Move();
+
+         
+            Move();
 
         if (GrapplingGun.grappleCheck == 1)
         {
@@ -122,6 +125,18 @@ public class player : MonoBehaviour
         if (rb.velocity.y > 0)
         {
             Physics.gravity = gravityScale;
+
+            if (GrapplingGun.IsSwinging == 1)
+        {
+            MoveSpeed = 4f;
+            Physics.gravity = gravityScale;
+        }
+        else
+        {
+            MoveSpeed = 2f;
+           
+
+        }
         }
         else
         {
