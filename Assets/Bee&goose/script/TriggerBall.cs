@@ -10,12 +10,10 @@ public class TriggerBall : MonoBehaviour
    // public GameObject bee4;
     public GameObject bee5;
     public static int isIN;
-    public GameObject cam;
 
     // Start is called before the first frame update
     void Start()
     {
-        cam.SetActive(false);
         bee1.SetActive(false); 
         bee2.SetActive(false);
         bee3.SetActive(false);
@@ -40,8 +38,6 @@ public class TriggerBall : MonoBehaviour
            // bee4.SetActive (true);
             bee5.SetActive (true);
             isIN = 1;
-
-            cam.SetActive (true);
         }
     }
 }

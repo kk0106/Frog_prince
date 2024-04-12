@@ -10154,6 +10154,12 @@ MonoBehaviour:
   timeF: 6
   time6: 7
   timeG: 7
+  time7: 8
+  timeH: 8
+  time8: 9
+  timeI: 9
+  time9: 10
+  timeJ: 10
   gos: {fileID: 1041141290}
   gos2: {fileID: 491260168}
   gos3: {fileID: 1642795672}
@@ -10161,6 +10167,9 @@ MonoBehaviour:
   gos5: {fileID: 1224783703}
   gos6: {fileID: 1077468527}
   gos7: {fileID: 53183013}
+  gos8: {fileID: 1188546201}
+  gos9: {fileID: 1895303173}
+  gos10: {fileID: 66814735}
 --- !u!114 &413903730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11252,6 +11261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 1.6
   boom: {fileID: 338552169}
+  poison: {fileID: 1646124022}
   hp: 3
   BOSS: {fileID: 805392727}
   img:
@@ -28937,7 +28947,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119884606}
   m_LocalRotation: {x: 0.02703086, y: 0.034731418, z: -0.0010007456, w: 0.9990306}
-  m_LocalPosition: {x: -73.72184, y: 2.1189537, z: -61.000748}
+  m_LocalPosition: {x: -73.72184, y: 2.1189532, z: -62.260742}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -35489,7 +35499,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375762404}
   m_LocalRotation: {x: 0.02703086, y: 0.034731418, z: -0.0010007456, w: 0.9990306}
-  m_LocalPosition: {x: -73.72184, y: 2.1189537, z: -61.000748}
+  m_LocalPosition: {x: -73.72184, y: 2.1189532, z: -62.260742}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -39777,7 +39787,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565593217}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -77.2, y: 1, z: -46.74}
+  m_LocalPosition: {x: -77.2, y: 1, z: -48}
   m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -39851,7 +39861,7 @@ Animator:
   m_GameObject: {fileID: 1565593217}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f0c3019cb57743d4588b030330d46781, type: 2}
+  m_Controller: {fileID: 9100000, guid: c43bec6873f0d4b4aabdb83bce441bf3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -39894,6 +39904,9 @@ MonoBehaviour:
   pos12: {x: 0, y: 0, z: 0}
   pos13: {x: 0, y: 0, z: 0}
   pos14: {x: -18, y: 2, z: -46}
+  WolfPos: {x: 0, y: 0, z: 0}
+  wolf: {fileID: 1565593217}
+  wolfvalue: 0
   GGpanel: {fileID: 1859971031}
   loading: {fileID: 570453432}
 --- !u!114 &1565593222
@@ -39908,22 +39921,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36547e6f327e8c34386cb7b8ce91d02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minValue: -48
+  maxValue: -43.8
+  InT1: {fileID: 1659967069}
+  MoveSpeed1: 1.5
+  FaceRight: 0
+  InMermaid: {fileID: 1497900950}
+  InMermaidSpeed: 0
+  InMermaidJumpForce: 0
+  JumpTime: 0.35
+  Jumping: 0
+  Falling: 0
+  y: 0
+  jumpHeight: 5
+  gravityScale: {x: 0, y: -10, z: 0}
+  fallGravityScale: {x: 0, y: -15, z: 0}
+  _cameraGo: {fileID: 6926177}
+  _CamerafollowObject: {fileID: 6926179}
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 256
   GroundPoint: {fileID: 336522325}
-  IsGrounded: 0
-  MoveSpeed: 0
-  FaceRight: 0
-  isJumpPressed: 0
-  jumpForce: 0
-  jf1: 0
-  jf2: 0
-  isJumping: 0
-  jumpHeight: 5
-  gravityScale: {x: 0, y: -10, z: 0}
-  fallGravityScale: {x: 0, y: -15, z: 0}
-  SwingGravityScale: {x: 0, y: 0, z: 0}
+  MushJumpForce: 7
+  MushJumpForce1: 5
+  MushJumpForce2: 3
+  clock: {fileID: 1659967069}
   uiMenu: {fileID: 1119884607}
   BackPack: {fileID: 1485582811}
   dialogueUI: {fileID: 1687667888}
@@ -41914,7 +41936,6 @@ MonoBehaviour:
   bee2: {fileID: 1992516393}
   bee3: {fileID: 122445095}
   bee5: {fileID: 705711424}
-  cam: {fileID: 0}
 --- !u!65 &1616803519
 BoxCollider:
   m_ObjectHideFlags: 0
