@@ -127,17 +127,34 @@ public class hp : MonoBehaviour
             HP -= 1;
 
            // this.gameObject.transform.position = pos;
-            a = 1;
+            a = 1;  
             
         }
-       
-        if (other.gameObject.tag == "poison"|| other.gameObject.tag == "apple2")
+
+
+        if (other.gameObject.tag == "apple2")
+        {
+            HP -= 1;
+            a = 2;
+            // this.gameObject.transform.position = pos3;
+        }
+
+
+        if (other.gameObject.tag == "poison")
         {
             HP -= 1;
             a = 3;
            // this.gameObject.transform.position = pos3;
         }
-       
+
+        if (other.gameObject.tag == "die")
+        {
+            HP -= 1;
+            a = 4;
+            // this.gameObject.transform.position = pos3;
+        }
+
+
         if (other.gameObject.tag == "Swamp")
         {
             HP -= 1;
@@ -233,10 +250,7 @@ public class hp : MonoBehaviour
             a = 0;
             loading.SetActive(false);
 
-            if (BossCamTrigger.a == 1)
-            {
-                this.gameObject.transform.position = pos14;
-            }
+           
         }
 
         if (a == 4)

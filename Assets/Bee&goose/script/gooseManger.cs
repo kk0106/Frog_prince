@@ -28,14 +28,7 @@ public class gooseManger : MonoBehaviour
     public float time6;
     public float timeG;
 
-    public float time7;
-    public float timeH;
-
-    public float time8;
-    public float timeI;
-
-    public float time9;
-    public float timeJ;
+  
 
     private Animator ani;
     private Animator ani2;
@@ -44,9 +37,7 @@ public class gooseManger : MonoBehaviour
     private Animator ani5;
     private Animator ani6;
     private Animator ani7;
-    private Animator ani8;
-    private Animator ani9;
-    private Animator ani10;
+    
    
 
 
@@ -57,10 +48,7 @@ public class gooseManger : MonoBehaviour
     public GameObject gos5; 
     public GameObject gos6;
     public GameObject gos7;
-    public GameObject gos8;
-    public GameObject gos9;
-    public GameObject gos10;
-   
+  
 
     // Start is called before the first frame update
     void Start()
@@ -72,9 +60,7 @@ public class gooseManger : MonoBehaviour
         ani5 = gos5.GetComponent<Animator>();
         ani6 = gos6.GetComponent<Animator>();
         ani7 = gos7.GetComponent<Animator>();
-        ani8 = gos8.GetComponent<Animator>();
-        ani9 = gos9.GetComponent<Animator>();
-        ani10 = gos10.GetComponent<Animator>();
+       
 
         //bee.SetActive(true);
     }
@@ -90,9 +76,7 @@ public class gooseManger : MonoBehaviour
         time4 -= Time.deltaTime;
         time5 -= Time.deltaTime;
         time6 -= Time.deltaTime;
-        time7 -= Time.deltaTime;
-        time8 -= Time.deltaTime;
-        time9 -= Time.deltaTime;
+      
      
 
         //1
@@ -248,71 +232,6 @@ public class gooseManger : MonoBehaviour
 
 
         //8
-        if (time7 < 0)
-        {
-
-            ani8.SetBool("attack", true);
-
-            bee.SetActive(false);
-        }
-        if (time7 < -1)
-        {
-            time7= timeH;
-        }
-
-        if (time7== timeH && TriggerBall.isIN == 1)
-        {
-
-            ani8.SetBool("attack", false);
-
-            bee.SetActive(true);
-
-        }
-
-        //9
-
-        if (time8 < 0)
-        {
-
-            ani9.SetBool("attack", true);
-
-            bee.SetActive(false);
-        }
-        if (time8 < -1)
-        {
-            time8 = timeI;
-        }
-
-        if (time8== timeI && TriggerBall.isIN == 1)
-        {
-
-            ani9.SetBool("attack", false);
-
-            bee.SetActive(true);
-
-        }
-
-        //10
-
-        if (time9 < 0)
-        {
-
-            ani10.SetBool("attack", true);
-
-            bee.SetActive(false);
-        }
-        if (time9 < -1)
-        {
-            time9 = timeJ;
-        }
-
-        if (time9 == timeJ && TriggerBall.isIN == 1)
-        {
-
-            ani10.SetBool("attack", false);
-
-            bee.SetActive(true);
-
-        }
+      
     }
 }
