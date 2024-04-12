@@ -23,7 +23,6 @@ public class sword : MonoBehaviour
 
     AudioManager audioManager;
     private bool hasPlayedSFX = false;
-    private bool hasPlayedSFX2 = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -72,11 +71,9 @@ public class sword : MonoBehaviour
             
         }
 
-        if (a==4 && !hasPlayedSFX2)
+        if (a==4)
         {
             spr_talk.sprite = img[2];
-            AudioManager.Instance.PlaySFX(AudioManager.Instance.raccoonCry);
-            hasPlayedSFX2 = true;
         }
 
         
